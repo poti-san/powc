@@ -38,7 +38,7 @@ class ISequentialStream(IUnknown):
     ]
 
 
-class StorageMode(IntEnum):
+class StorageMode(IntFlag):
     """STGM"""
 
     DIRECT = 0x00000000
