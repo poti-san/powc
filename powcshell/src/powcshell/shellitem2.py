@@ -26,8 +26,6 @@ from .shellitemenum import EnumShellItems, IEnumShellItems
 class IShellItem2(IShellItem):
     """"""
 
-    """IShellItem2インターフェイスのラッパー。"""
-
     _iid_ = GUID("{7e9fb0d3-919f-4307-ab2e-9b1860310c93}")
     _methods_ = [
         STDMETHOD(c_int32, "GetPropertyStore", (c_uint32, POINTER(GUID), POINTER(POINTER(IUnknown)))),
@@ -57,7 +55,14 @@ class IShellItem2(IShellItem):
 
 
 class ShellItem2(ShellItem):
-    """シェル項目。IShellItem2インターフェイスのラッパーです。"""
+    """シェル項目。IShellItem2インターフェイスのラッパーです。
+
+    Note:
+        \\_\\_iter\\_\\_、parent等でIShellItemが必要な場合は以下のコードでShellItemを作成してください。
+
+        >>> from powc.core import queryinterface
+        >>> item = ShellItem(queryinterface(item2.wrapped_obj, IShellItem))
+    """
 
     __o: Any  # IShellItem2
 
@@ -208,17 +213,6 @@ class ShellItem2(ShellItem):
         return self.parent_nothrow.value
 
     @property
-    def parent_v1_nothrow(self) -> ComResult[ShellItem]:
-        """親フォルダをIShellItemインターフェイスで取得します。"""
-        p = POINTER(IShellItem)()
-        return cr(self.__o.GetParent(byref(p)), ShellItem(p))
-
-    @property
-    def parent_v1(self) -> ShellItem:
-        """親フォルダをIShellItemインターフェイスで取得します。"""
-        return self.parent_nothrow.value
-
-    @property
     def iter_items(self) -> "Iterator[ShellItem2]":
         """フォルダ内の項目を列挙します。"""
         penum = EnumShellItems(self.bind_to_handler(BindHandlerID.ENUMITEMS, IEnumShellItems))
@@ -228,14 +222,3 @@ class ShellItem2(ShellItem):
     def items(self) -> "tuple[ShellItem2,...]":
         """フォルダ内の項目を列挙します。"""
         return tuple(self.iter_items)
-
-    @property
-    def iter_items_v1(self) -> Iterator[ShellItem]:
-        """フォルダ内の項目をIShellItemとして列挙します。"""
-        penum = EnumShellItems(self.bind_to_handler(BindHandlerID.ENUMITEMS, IEnumShellItems))
-        return (ShellItem(o) for o in penum)
-
-    @property
-    def items_v1(self) -> tuple[ShellItem, ...]:
-        """フォルダ内の項目をIShellItemとして列挙します。"""
-        return tuple(self.iter_items_v1)
