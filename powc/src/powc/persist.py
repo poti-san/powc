@@ -1,0 +1,169 @@
+"""
+IPersist、IPersistFile、IPersistStreamのラッパーです。
+"""
+
+from ctypes import POINTER, byref, c_int32, c_uint32, c_uint64, c_void_p, c_wchar_p
+from typing import Any
+
+from comtypes import GUID, STDMETHOD, IUnknown
+
+from .core import ComResult, cotaskmem, cr, queryinterface
+from .stream import ComStream, IStream, StorageMode
+
+
+class IPersist(IUnknown):
+    """"""
+
+    _iid_ = GUID("{0000010c-0000-0000-C000-000000000046}")
+    _methods_ = [
+        STDMETHOD(c_int32, "GetClassID", (POINTER(GUID),)),
+    ]
+    __slots__ = ()
+
+
+class IPersistFile(IPersist):
+    """"""
+
+    _iid_ = GUID("{0000010b-0000-0000-C000-000000000046}")
+    _methods_ = [
+        STDMETHOD(c_int32, "IsDirty", ()),
+        STDMETHOD(c_int32, "Load", (c_wchar_p, c_uint32)),
+        STDMETHOD(c_int32, "Save", (c_wchar_p, c_int32)),
+        STDMETHOD(c_int32, "SaveCompleted", (c_wchar_p,)),
+        STDMETHOD(c_int32, "GetCurFile", (POINTER(c_wchar_p),)),
+    ]
+    __slots__ = ()
+
+
+class IPersistStream(IPersist):
+    """"""
+
+    _iid_ = GUID("{00000109-0000-0000-C000-000000000046}")
+    _methods_ = [
+        STDMETHOD(c_int32, "IsDirty", ()),
+        STDMETHOD(c_int32, "Load", (POINTER(IStream),)),
+        STDMETHOD(c_int32, "Save", (POINTER(IStream), c_int32)),
+        STDMETHOD(c_int32, "GetSizeMax", (POINTER(c_uint64),)),
+    ]
+    __slots__ = ()
+
+
+class Persist:
+    """IPersistインターフェイスのラッパーです。"""
+
+    __o: Any  # POINTER(IPersist)
+
+    __slots__ = ("__o",)
+
+    def __init__(self, o: Any) -> None:
+        self.__o = queryinterface(o, IPersist)
+
+    @property
+    def wrapped_obj(self) -> c_void_p:
+        return self.__o
+
+    @property
+    def get_clsid_nothrow(self) -> ComResult[GUID]:
+        x = GUID()
+        return cr(self.__o.GetClassID(byref(x)), x)
+
+    @property
+    def get_clsid(self) -> GUID:
+        return self.get_clsid_nothrow.value
+
+
+class PersistFile(Persist):
+    """ファイルによる永続化管理。IPersistFileインターフェイスのラッパーです。"""
+
+    __o: Any  # POINTER(IPersistFile)
+
+    def __init__(self, o: Any) -> None:
+        super().__init__(o)
+        self.__o = queryinterface(o, IPersistFile)
+
+    @property
+    def wrapped_obj(self) -> c_void_p:
+        return self.__o
+
+    @property
+    def isdirty_nothrow(self) -> ComResult[bool]:
+        hr = self.__o.IsDirty()
+        return cr(hr, hr == 0)
+
+    @property
+    def isdirty(self) -> bool:
+        return self.isdirty_nothrow.value
+
+    def load_nothrow(self, path: str, mode: StorageMode) -> ComResult[bool]:
+        hr = self.__o.Load(path, int(mode))
+        return cr(hr, hr == 0)
+
+    def load(self, path: str, mode: StorageMode) -> bool:
+        return self.load_nothrow(path, mode).value
+
+    def save_nothrow(self, path: str, remembers: bool) -> ComResult[bool]:
+        hr = self.__o.Save(path, 1 if remembers else 0)
+        return cr(hr, hr == 0)
+
+    def save(self, path: str, remembers: bool) -> bool:
+        return self.save_nothrow(path, remembers).value
+
+    def savecompleted_nothrow(self, path: str) -> ComResult[bool]:
+        hr = self.__o.SaveCompleted(path)
+        return cr(hr, hr == 0)
+
+    def savecompleted(self, path: str) -> bool:
+        return self.savecompleted_nothrow(path).value
+
+    @property
+    def curfile_nothrow(self) -> ComResult[str]:
+        with cotaskmem(c_wchar_p()) as p:
+            return cr(self.__o.GetCurFile(p), p.value or "")
+
+    @property
+    def curfile(self) -> str:
+        return self.curfile_nothrow.value
+
+
+class PersistStream(Persist):
+    """ストリームによる永続化管理。IPersistStreamインターフェイスのラッパーです。"""
+
+    __o: Any  # POINTER(IPersistStream)
+
+    def __init__(self, o: Any) -> None:
+        super().__init__(o)
+        self.__o = queryinterface(o, IPersistStream)
+
+    @property
+    def wrapped_obj(self) -> c_void_p:
+        return self.__o
+
+    @property
+    def isdirty_nothrow(self) -> ComResult[bool]:
+        hr = self.__o.IsDirty()
+        return cr(hr, hr == 0)
+
+    @property
+    def isdirty(self) -> bool:
+        return self.isdirty_nothrow.value
+
+    def load_nothrow(self, stream: ComStream) -> ComResult[None]:
+        return cr(self.__o.Load(stream.wrapped_obj), None)
+
+    def load(self, stream: ComStream) -> None:
+        return self.load(stream)
+
+    def save_nothrow(self, stream: ComStream, clears_dirty: bool) -> ComResult[None]:
+        return cr(self.__o.Save(stream.wrapped_obj, clears_dirty), None)
+
+    def save(self, stream: ComStream, clears_dirty: bool) -> None:
+        return self.save(stream, clears_dirty)
+
+    @property
+    def sizemax_nothrow(self) -> ComResult[int]:
+        x = c_uint64()
+        return cr(self.__o.GetSizeMax(byref(x)), x.value)
+
+    @property
+    def sizemax(self) -> int:
+        return self.sizemax_nothrow.value
