@@ -1,7 +1,8 @@
 """シェル項目ファイル操作の便利機能。"""
 
 from inspect import signature as inspect_sig
-from typing import Any, Callable, OrderedDict, TextIO, override
+from pprint import pp
+from typing import IO, Any, Callable, OrderedDict, TextIO, override
 
 from comtypes import hresult
 
@@ -183,17 +184,12 @@ class ShellFileOperationProgressSinkForCall(ShellFileOperationProgressSinkBase):
         )
         return hresult.S_OK
 
+    @staticmethod
+    def for_print(f: TextIO | None = None) -> "ShellFileOperationProgressSinkForCall":
+        """メソッドの呼び出しをすべてprintで報告するインスタンスを作成します。"""
+        return ShellFileOperationProgressSinkForCall(lambda s, dict: print(f"{s}({dict})", file=f))
 
-class ShellFileOperationProgressSinkForPrint(ShellFileOperationProgressSinkForCall):
-    """ShellFileOperationのコールバッククラス。
-
-    メソッドの呼び出しをすべてprintで報告します。
-    """
-
-    __f: TextIO | None
-
-    __slots__ = ("__f",)
-
-    def __init__(self, f: TextIO | None = None) -> None:
-        self.__f = f
-        super().__init__(lambda s, dict: print(f"{s}({dict})", file=self.__f))
+    @staticmethod
+    def for_pprint(stream: IO[str] | None = None) -> "ShellFileOperationProgressSinkForCall":
+        """メソッドの呼び出しをすべてpprint.ppで報告するインスタンスを作成します。"""
+        return ShellFileOperationProgressSinkForCall(lambda s, dict: pp(f"{s}({dict})", stream=stream))
