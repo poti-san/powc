@@ -1,1 +1,1 @@
-$Global:packagenames = "powc", "powcpropsys", "powcshell", "powcdeviceprop", "powccoreaudio"
+$Global:packagenames = "powc", "powcpropsys", "powcshell"
