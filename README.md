@@ -3,10 +3,46 @@
 PythonからWindowsのCOM機能を使いやすくするためのパッケージ集です。
 基本的にcomtypesパッケージのみに依存する設計です。
 
-ローカルパッケージとしての利用を前提としています。使用時はダウンロードして`pip install e.ps1`を実行してください。
+次のようなコードを記述できます。
 
-## GitHubリポジトリに関する注意
-GitHubに不慣れなので、更新時はおそらくすべて削除してアップロードしなおします。
+**デスクトップのシェル項目の表示名と解析名列挙**
+
+```python
+from powcshell.knownfolderid import KnownFolderID
+from powcshell.shellitem2 import ShellItem2
+
+item = ShellItem2.create_knownfolder(KnownFolderID.DESKTOP)
+for item in item.items:
+    print(f"{item.name_normaldisplay}: {item.name_desktopabsediting}")
+```
+
+**特殊フォルダを関連付けで開く**
+
+```python
+from powcshell.knownfolderid import KnownFolderID
+from powcshell.shellitem2 import ShellItem2
+
+# フォント
+ShellItem2.create_knownfolder(KnownFolderID.FONTS).execute_fs("open")
+
+# プログラムのアンインストールまたは変更
+ShellItem2.create_knownfolder(KnownFolderID.CHANGE_REMOVE_PROGRAMS).execute_fs("open")
+```
+
+**システムプロパティの列挙**
+
+```python
+from powcpropsys.propsys import PropertySystem
+
+ps = PropertySystem.create()
+
+for desc in ps.propdescs_all:
+    print(f"{str(desc)} {desc.propkey}")
+```
+
+## インストール
+
+ローカルパッケージとしての利用を前提としています。使用時はダウンロードして`pip install e.ps1`を実行してください。
 
 ## ファイル構成
 
