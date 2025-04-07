@@ -175,7 +175,7 @@ class IKnownFolder(IUnknown):
 class KnownFolder:
     """既知フォルダ。IKnownFolderインターフェイスのラッパーです。"""
 
-    __o: Any  # POINTER(KnownFolder)
+    __o: Any  # POINTER(IKnownFolder)
 
     __slots__ = ("__o",)
 
@@ -329,8 +329,6 @@ class KnownFolderManager:
         >>> kfmanager = KnownFolderManager.create()
     """
 
-    CLSID_KNOWNFOLDERMANAGER: Final = GUID("{4df0c730-df9d-4ae3-9153-aa6b82e9795a}")
-
     __o: Any  # POINTER(IKnownFolderManager)
 
     __slots__ = ("__o",)
@@ -344,7 +342,8 @@ class KnownFolderManager:
 
     @staticmethod
     def create() -> "KnownFolderManager":
-        return KnownFolderManager(CoCreateInstance(KnownFolderManager.CLSID_KNOWNFOLDERMANAGER, IKnownFolderManager))
+        CLSID_KnownFolderManager = GUID("{4df0c730-df9d-4ae3-9153-aa6b82e9795a}")
+        return KnownFolderManager(CoCreateInstance(CLSID_KnownFolderManager, IKnownFolderManager))
 
     def folderid_from_csidl_nothrow(self, csidl: int) -> ComResult[GUID]:
         x = GUID()

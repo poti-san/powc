@@ -390,8 +390,6 @@ class _ShellFileOperationProgressSink(COMObject):
 class ShellFileOperation:
     """シェルのファイル操作。IShellItemインターフェイスのラッパーです。"""
 
-    CLSID_FileOperation: Final = GUID("{3ad05575-8857-4850-9277-11b85bdb8e09}")
-
     __o: Any  # POINTER(IFileOperation)
 
     __slots__ = ("__o",)
@@ -405,7 +403,8 @@ class ShellFileOperation:
 
     @staticmethod
     def create() -> "ShellFileOperation":
-        return ShellFileOperation(CoCreateInstance(ShellFileOperation.CLSID_FileOperation, IFileOperation))
+        CLSID_FileOperation = GUID("{3ad05575-8857-4850-9277-11b85bdb8e09}")
+        return ShellFileOperation(CoCreateInstance(CLSID_FileOperation, IFileOperation))
 
     def advise_nothrow(self, sink: ShellFileOperationProgressSinkBase) -> ComResult[int]:
         cookie = c_uint32()

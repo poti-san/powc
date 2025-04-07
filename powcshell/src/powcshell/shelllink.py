@@ -91,8 +91,6 @@ class ShellLink:
         >>> ShellLink.create_from_stream(stream)
     """
 
-    CLSID_SHELLLINK: Final[GUID] = GUID("{00021401-0000-0000-C000-000000000046}")
-
     __MAX_PATH: Final[int] = 260
     __INFOTIPSIZE: Final[int] = 1024
 
@@ -129,7 +127,8 @@ class ShellLink:
 
     @staticmethod
     def create() -> "ShellLink":
-        return ShellLink(CoCreateInstance(ShellLink.CLSID_SHELLLINK, IShellLinkW))
+        CLSID_ShellLink = GUID("{00021401-0000-0000-C000-000000000046}")
+        return ShellLink(CoCreateInstance(CLSID_ShellLink, IShellLinkW))
 
     @staticmethod
     def create_from_file(path: str, mode: StorageMode = StorageMode.READ) -> "ShellLink":

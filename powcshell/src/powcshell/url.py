@@ -74,10 +74,6 @@ class UniformResourceLocator:
         >>> UniformResourceLocator.create_from_stream(stream)
     """
 
-    CLSID_INTERNET_SHORTCUT = guid_from_define(
-        0xFBF23B40, 0xE3F0, 0x101B, 0x84, 0x88, 0x00, 0xAA, 0x00, 0x3E, 0x56, 0xF8
-    )
-
     __IURL_INVOKECOMMAND_FL_ALLOW_UI = 0x0001
     __IURL_INVOKECOMMAND_FL_USE_DEFAULT_VERB = 0x0002
 
@@ -106,9 +102,10 @@ class UniformResourceLocator:
 
     @staticmethod
     def create() -> "UniformResourceLocator":
-        return UniformResourceLocator(
-            CoCreateInstance(UniformResourceLocator.CLSID_INTERNET_SHORTCUT, IUniformResourceLocatorW)
+        CLSID_InternetShortcut = guid_from_define(
+            0xFBF23B40, 0xE3F0, 0x101B, 0x84, 0x88, 0x00, 0xAA, 0x00, 0x3E, 0x56, 0xF8
         )
+        return UniformResourceLocator(CoCreateInstance(CLSID_InternetShortcut, IUniformResourceLocatorW))
 
     @staticmethod
     def create_from_file(path: str, mode: StorageMode = StorageMode.READ) -> "UniformResourceLocator":
