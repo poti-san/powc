@@ -46,7 +46,7 @@ class ShellFontItemInfo:
     @staticmethod
     def iter() -> "Iterator[ShellFontItemInfo]":
         font_folder = ShellItem2.create_knownfolder(KnownFolderID.FONTS)
-        return (ShellFontItemInfo(font) for font in font_folder.iter_items)
+        return (ShellFontItemInfo(font) for font in font_folder.iter_items())
 
     @property
     def activestatus_raw_nothrow(self) -> ComResult[PropVariant]:

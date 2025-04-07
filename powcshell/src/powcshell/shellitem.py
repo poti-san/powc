@@ -17,6 +17,7 @@ from comtypes import GUID, STDMETHOD, IUnknown
 
 from powc.core import ComResult, cotaskmem, cr, queryinterface
 from powc.stream import ComStream, IStream
+from powcshell.knownfolderid import KnownFolderID
 
 from .itemidlist import ItemIDList
 from .shellexec import ShellExecute, ShellExecuteOption, ShowCommand
@@ -122,7 +123,7 @@ from .shellitemenum import EnumShellItems, IEnumShellItems  # isort: skip  # noq
 class ShellItem:
     """シェル項目。IShellItemインターフェイスのラッパーです。"""
 
-    __o: Any  # IShellItem
+    __o: Any  # POINTER(IShellItem)
 
     __slots__ = ("__o",)
 
@@ -147,7 +148,7 @@ class ShellItem:
         return f"ShellItem({name.value_unchecked})" or "" if name else super().__str__()
 
     @staticmethod
-    def create_knownfolder_nothrow(folder_id: GUID, flags: int = 0) -> "ComResult[ShellItem]":
+    def create_knownfolder_nothrow(folder_id: KnownFolderID | GUID, flags: int = 0) -> "ComResult[ShellItem]":
         """既知フォルダのシェルアイテムを作成します。"""
         global _SHCreateItemInKnownFolder
 
@@ -155,12 +156,14 @@ class ShellItem:
         return cr(_SHCreateItemInKnownFolder(folder_id, flags, None, IShellItem._iid_, byref(p)), ShellItem(p))
 
     @staticmethod
-    def create_knownfolder(folder_id: GUID, flags: int = 0) -> "ShellItem":
+    def create_knownfolder(folder_id: KnownFolderID | GUID, flags: int = 0) -> "ShellItem":
         """既知フォルダのシェルアイテムを作成します。"""
         return ShellItem.create_knownfolder_nothrow(folder_id, flags).value
 
     @staticmethod
-    def create_knownfolder_item_nothrow(folder_id: GUID, itemname: str, flags: int = 0) -> "ComResult[ShellItem]":
+    def create_knownfolder_item_nothrow(
+        folder_id: KnownFolderID | GUID, itemname: str, flags: int = 0
+    ) -> "ComResult[ShellItem]":
         """既知フォルダ内のシェルアイテムを作成します。"""
         global _SHCreateItemInKnownFolder
 
@@ -168,7 +171,7 @@ class ShellItem:
         return cr(_SHCreateItemInKnownFolder(folder_id, flags, itemname, IShellItem._iid_, byref(p)), ShellItem(p))
 
     @staticmethod
-    def create_knownfolder_item(folder_id: GUID, itemname: str, flags: int = 0) -> "ShellItem":
+    def create_knownfolder_item(folder_id: KnownFolderID | GUID, itemname: str, flags: int = 0) -> "ShellItem":
         """既知フォルダ内のシェルアイテムを作成します。"""
         return ShellItem.create_knownfolder_item_nothrow(folder_id, itemname, flags).value
 
@@ -353,7 +356,6 @@ class ShellItem:
         """項目を比較します。"""
         return self.compare_nothrow(other, hint).value
 
-    @property
     def iter_items(self) -> "Iterator[ShellItem]":
         """フォルダ内の項目を列挙します。"""
         p = self.bind_to_handler(BindHandlerID.ENUMITEMS.value, IEnumShellItems)
@@ -363,7 +365,7 @@ class ShellItem:
     @property
     def items(self) -> "tuple[ShellItem, ...]":
         """フォルダ内の項目を列挙します。"""
-        return tuple(self.iter_items)
+        return tuple(self.iter_items())
 
     def open_stream_nothrow(self) -> ComResult[ComStream]:
         """ファイルのストリームを開きます。"""

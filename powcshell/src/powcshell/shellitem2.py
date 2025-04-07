@@ -87,26 +87,26 @@ class ShellItem2(ShellItem):
         return f"ShellItem2({name.value_unchecked})" or "" if name else super().__str__()
 
     @staticmethod
-    def create_knownfolder_nothrow(folder_id: GUID | KnownFolderID, flags: int = 0) -> "ComResult[ShellItem2]":
+    def create_knownfolder_nothrow(folder_id: KnownFolderID | GUID, flags: int = 0) -> "ComResult[ShellItem2]":
         """既知フォルダのシェルアイテムを作成します。"""
         p = POINTER(IShellItem2)()
         return cr(_SHCreateItemInKnownFolder(folder_id, flags, None, IShellItem2._iid_, byref(p)), ShellItem2(p))
 
     @staticmethod
-    def create_knownfolder(folder_id: GUID | KnownFolderID, flags: int = 0) -> "ShellItem2":
+    def create_knownfolder(folder_id: KnownFolderID | GUID, flags: int = 0) -> "ShellItem2":
         """既知フォルダのシェルアイテムを作成します。"""
         return ShellItem2.create_knownfolder_nothrow(folder_id, flags).value
 
     @staticmethod
     def create_knownfolder_item_nothrow(
-        folder_id: GUID | KnownFolderID, itemname: str, flags: int = 0
+        folder_id: KnownFolderID | GUID, itemname: str, flags: int = 0
     ) -> "ComResult[ShellItem2]":
         """既知フォルダ内のシェルアイテムを作成します。"""
         p = POINTER(IShellItem2)()
         return cr(_SHCreateItemInKnownFolder(folder_id, flags, itemname, IShellItem2._iid_, byref(p)), ShellItem2(p))
 
     @staticmethod
-    def create_knownfolder_item(folder_id: GUID | KnownFolderID, itemname: str, flags: int = 0) -> "ShellItem2":
+    def create_knownfolder_item(folder_id: KnownFolderID | GUID, itemname: str, flags: int = 0) -> "ShellItem2":
         """既知フォルダ内のシェルアイテムを作成します。"""
         return ShellItem2.create_knownfolder_item_nothrow(folder_id, itemname, flags).value
 
@@ -267,7 +267,6 @@ class ShellItem2(ShellItem):
         """親フォルダを取得します。"""
         return self.parent_nothrow.value
 
-    @property
     def iter_items(self) -> "Iterator[ShellItem2]":
         """フォルダ内の項目を列挙します。"""
         penum = EnumShellItems(self.bind_to_handler(BindHandlerID.ENUMITEMS, IEnumShellItems))
@@ -276,4 +275,4 @@ class ShellItem2(ShellItem):
     @property
     def items(self) -> "tuple[ShellItem2,...]":
         """フォルダ内の項目を列挙します。"""
-        return tuple(self.iter_items)
+        return tuple(self.iter_items())

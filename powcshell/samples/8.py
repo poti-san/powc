@@ -9,7 +9,7 @@ from powcshell.shellitemutil.fontiteminfo import ShellFontItemInfo
 
 font_folder = ShellItem2.create_knownfolder(KnownFolderID.FONTS)
 result = defaultdict(list)
-for font_file in font_folder.iter_items:
+for font_file in font_folder.iter_items():
     info = ShellFontItemInfo(font_file)
     result[info.vendors or ()].append(info.familyname or "")
 

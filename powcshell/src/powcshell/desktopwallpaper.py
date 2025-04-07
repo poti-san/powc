@@ -253,6 +253,10 @@ class DesktopWallpaper:
         x = c_int32()
         return cr(self.__o.GetStatus(byref(x)), DesktopSlideshowState(x.value))
 
+    @property
+    def status(self) -> DesktopSlideshowState:
+        return self.status_nothrow.value
+
     def set_enable_nothrow(self, value: bool) -> ComResult[None]:
         x = c_int32()
         return cr(self.__o.Enable(byref(x), 1 if value else 0), None)
