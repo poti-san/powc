@@ -37,7 +37,7 @@ class ISequentialStream(IUnknown):
         STDMETHOD(c_int32, "Write", (c_void_p, c_uint32, POINTER(c_uint32))),
     ]
 
-    __slots__ = ("__o",)
+    __slots__ = ()
 
 
 class StorageMode(IntFlag):
@@ -142,7 +142,7 @@ class IStream(ISequentialStream):
 
     _iid_ = GUID("{0000000c-0000-0000-C000-000000000046}")
 
-    __slots__ = ("__o",)
+    __slots__ = ()
 
 
 IStream._methods_ = [
