@@ -6,9 +6,9 @@ from typing import Any, Iterable, Iterator
 
 from comtypes import GUID, STDMETHOD, IUnknown
 
-from powc import _propsys
 from powc.core import ComResult, cr, queryinterface
 
+from . import _propsys
 from .propkey import PropertyKey
 from .propsys import PropertySystem
 from .propvariant import PropVariant

@@ -6,13 +6,12 @@ from typing import TYPE_CHECKING, Any, Iterator, Sequence, overload
 
 from comtypes import GUID, STDMETHOD, IUnknown
 
-from powc import _ole32
 from powc.core import ComResult, check_hresult, cr, queryinterface
 from powcpropsys.propdesc import IPropertyDescriptionList, PropertyDescriptionList
 from powcpropsys.propkey import PropertyKey
 from powcpropsys.propstore import GetPropertyStoreFlag, IPropertyStore, PropertyStore
 
-from . import _shell32
+from . import _ole32, _shell32
 from .shellitem import IShellItem, ShellItem
 from .shellitem2 import ShellItem2
 from .shellitemenum import EnumShellItems, IEnumShellItems

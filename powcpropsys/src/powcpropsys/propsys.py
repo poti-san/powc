@@ -5,9 +5,9 @@ from typing import Any
 
 from comtypes import GUID, STDMETHOD, IUnknown
 
-from powc import _propsys
 from powc.core import ComResult, cotaskmem, cr, queryinterface
 
+from . import _propsys
 from .propdesc import (
     IPropertyDescription,
     IPropertyDescriptionList,

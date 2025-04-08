@@ -4,8 +4,9 @@ from ctypes import POINTER, Structure, byref, c_int32, c_uint32, c_wchar_p
 
 from comtypes import GUID
 
-from powc import _propsys
 from powc.core import ComResult, cotaskmem, cr, guid_from_define
+
+from . import _propsys
 
 
 class PropertyKey(Structure):

@@ -25,10 +25,11 @@ from ctypes import (
 )
 from datetime import datetime
 
-from powc import _ole32, _propsys
 from powc.core import ComResult, CoTaskMem, check_hresult, cotaskmem, cotaskmemfree, cr
 from powc.datetime import FILETIME
 from powc.variant import VARENUM
+
+from . import _ole32, _propsys
 
 
 class PropVariant(Union):

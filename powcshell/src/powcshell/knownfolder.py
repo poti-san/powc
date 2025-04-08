@@ -12,7 +12,7 @@ from ctypes import (
 )
 from dataclasses import dataclass
 from enum import IntEnum, IntFlag
-from typing import Any, Final, Sequence
+from typing import Any, Sequence
 
 from comtypes import GUID, STDMETHOD, CoCreateInstance, IUnknown
 

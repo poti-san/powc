@@ -3,7 +3,7 @@
 import typing
 from ctypes import POINTER, byref, c_int32, c_uint32, c_void_p, c_wchar_p
 from enum import IntFlag
-from typing import Any, Final
+from typing import Any
 
 from comtypes import GUID, STDMETHOD, CoCreateInstance, COMObject, IUnknown, hresult
 
