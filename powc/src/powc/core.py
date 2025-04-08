@@ -8,6 +8,8 @@ from typing import TYPE_CHECKING, Any, Iterator, NoReturn
 
 from comtypes import GUID, IUnknown
 
+from . import _ole32
+
 
 class ComResult[T]:
     """COMメソッドまたは関数の結果を値とエラーコードとして保持します。最低限の機能のみ実装します。"""
@@ -68,11 +70,11 @@ def cr[T](hr: int, value: T) -> ComResult[T]:
     return ComResult[T](hr, value)
 
 
-_CoTaskMemFree = windll.ole32.CoTaskMemFree
+_CoTaskMemFree = _ole32.CoTaskMemFree
 _CoTaskMemFree.argtypes = (c_void_p,)
 _CoTaskMemFree.restype = None
 
-_CoTaskMemAlloc = windll.ole32.CoTaskMemAlloc
+_CoTaskMemAlloc = _ole32.CoTaskMemAlloc
 _CoTaskMemAlloc.argtypes = (c_size_t,)
 _CoTaskMemAlloc.restype = c_void_p
 

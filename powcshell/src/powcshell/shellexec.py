@@ -11,9 +11,10 @@ from ctypes import (
     c_wchar_p,
     get_last_error,
     sizeof,
-    windll,
 )
 from enum import IntEnum
+
+from . import _shell32
 
 
 class ShowCommand(IntEnum):
@@ -90,7 +91,7 @@ class _SHELLEXECUTEINFOW(Structure):
     __slots__ = tuple(field[0] for field in _fields_)
 
 
-_ShellExecuteExW = windll.shell32.ShellExecuteExW
+_ShellExecuteExW = _shell32.ShellExecuteExW
 _ShellExecuteExW.argtypes = (POINTER(_SHELLEXECUTEINFOW),)
 _ShellExecuteExW.restype = c_int32
 

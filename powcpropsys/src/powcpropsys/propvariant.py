@@ -22,10 +22,10 @@ from ctypes import (
     c_void_p,
     c_wchar_p,
     cast,
-    windll,
 )
 from datetime import datetime
 
+from powc import _ole32, _propsys
 from powc.core import ComResult, CoTaskMem, check_hresult, cotaskmem, cotaskmemfree, cr
 from powc.datetime import FILETIME
 from powc.variant import VARENUM
@@ -382,27 +382,27 @@ class PropVariant(Union):
             cotaskmemfree(pp)
 
 
-_PropVariantClear = windll.ole32.PropVariantClear
+_PropVariantClear = _ole32.PropVariantClear
 _PropVariantClear.argtypes = (POINTER(PropVariant),)
 _PropVariantClear.restype = c_int32
 
-_PropVariantCopy = windll.ole32.PropVariantCopy
+_PropVariantCopy = _ole32.PropVariantCopy
 _PropVariantCopy.argtypes = (POINTER(PropVariant), POINTER(PropVariant))
 _PropVariantCopy.restype = c_int32
 
-_PropVariantToStringAlloc = windll.propsys.PropVariantToStringAlloc
+_PropVariantToStringAlloc = _propsys.PropVariantToStringAlloc
 _PropVariantToStringAlloc.argtypes = (POINTER(PropVariant), POINTER(c_wchar_p))
 _PropVariantToStringAlloc.restype = c_int32
 
-_PropVariantChangeType = windll.propsys.PropVariantChangeType
+_PropVariantChangeType = _propsys.PropVariantChangeType
 _PropVariantChangeType.argtypes = (POINTER(PropVariant), POINTER(PropVariant), c_int32, c_int32)
 _PropVariantChangeType.restype = c_int32
 
-_PropVariantGetElementCount = windll.propsys.PropVariantGetElementCount
+_PropVariantGetElementCount = _propsys.PropVariantGetElementCount
 _PropVariantGetElementCount.argtypes = (POINTER(PropVariant),)
 _PropVariantGetElementCount.restype = c_int32
 
-_InitPropVariantFromPropVariantVectorElem = windll.propsys.InitPropVariantFromPropVariantVectorElem
+_InitPropVariantFromPropVariantVectorElem = _propsys.InitPropVariantFromPropVariantVectorElem
 _InitPropVariantFromPropVariantVectorElem.argtypes = (
     POINTER(PropVariant),
     POINTER(POINTER(c_wchar_p)),
@@ -410,6 +410,6 @@ _InitPropVariantFromPropVariantVectorElem.argtypes = (
 )
 _InitPropVariantFromPropVariantVectorElem.restype = c_int32
 
-_PropVariantToStringVectorAlloc = windll.propsys.PropVariantToStringVectorAlloc
+_PropVariantToStringVectorAlloc = _propsys.PropVariantToStringVectorAlloc
 _PropVariantToStringVectorAlloc.argtypes = (POINTER(PropVariant), POINTER(c_void_p), POINTER(c_uint32))
 _PropVariantToStringVectorAlloc.restype = c_int32

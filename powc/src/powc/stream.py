@@ -16,7 +16,6 @@ from ctypes import (
     c_void_p,
     c_wchar_p,
     cast,
-    windll,
 )
 from dataclasses import dataclass
 from datetime import datetime
@@ -26,6 +25,7 @@ from typing import Any, Generator
 from comtypes import GUID, STDMETHOD, IUnknown
 from comtypes.hresult import E_FAIL, S_OK
 
+from . import _shlwapi
 from .core import ComResult, cotaskmem, cr, queryinterface
 from .datetime import filetimeint64_to_datetime
 
@@ -153,11 +153,11 @@ IStream._methods_ = [
     STDMETHOD(c_int32, "Clone", (POINTER(IStream),)),
 ]
 
-_SHCreateStreamOnFileEx = windll.shlwapi.SHCreateStreamOnFileEx
+_SHCreateStreamOnFileEx = _shlwapi.SHCreateStreamOnFileEx
 _SHCreateStreamOnFileEx.argtypes = (c_wchar_p, c_uint32, c_uint32, c_int32, POINTER(IStream), POINTER(POINTER(IStream)))
 _SHCreateStreamOnFileEx.restype = c_int32
 
-_SHCreateMemStream = windll.shlwapi.SHCreateMemStream
+_SHCreateMemStream = _shlwapi.SHCreateMemStream
 _SHCreateMemStream.argtypes = (POINTER(c_byte), c_uint32)
 _SHCreateMemStream.restype = POINTER(IStream)
 

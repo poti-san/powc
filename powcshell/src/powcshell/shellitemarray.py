@@ -1,16 +1,18 @@
 """シェルアイテム配列。"""
 
-from ctypes import POINTER, _Pointer, byref, c_int32, c_uint32, c_void_p, windll
+from ctypes import POINTER, _Pointer, byref, c_int32, c_uint32, c_void_p
 from enum import IntFlag
 from typing import TYPE_CHECKING, Any, Iterator, Sequence, overload
 
 from comtypes import GUID, STDMETHOD, IUnknown
 
+from powc import _ole32
 from powc.core import ComResult, check_hresult, cr, queryinterface
 from powcpropsys.propdesc import IPropertyDescriptionList, PropertyDescriptionList
 from powcpropsys.propkey import PropertyKey
 from powcpropsys.propstore import GetPropertyStoreFlag, IPropertyStore, PropertyStore
 
+from . import _shell32
 from .shellitem import IShellItem, ShellItem
 from .shellitem2 import ShellItem2
 from .shellitemenum import EnumShellItems, IEnumShellItems
@@ -302,19 +304,19 @@ class ShellItemArray:
         return tuple(ShellItemArray.create_from_clipboard().iter_items_v1())
 
 
-_SHCreateShellItemArray = windll.shell32.SHCreateShellItemArray
+_SHCreateShellItemArray = _shell32.SHCreateShellItemArray
 _SHCreateShellItemArray.argtypes = (c_void_p, c_void_p, c_uint32, POINTER(c_void_p), POINTER(POINTER(IShellItemArray)))
 _SHCreateShellItemArray.restype = c_int32
 
-_SHCreateShellItemArrayFromDataObject = windll.shell32.SHCreateShellItemArrayFromDataObject
+_SHCreateShellItemArrayFromDataObject = _shell32.SHCreateShellItemArrayFromDataObject
 _SHCreateShellItemArrayFromDataObject.argtypes = (POINTER(IUnknown), POINTER(GUID), POINTER(POINTER(IUnknown)))
 _SHCreateShellItemArrayFromDataObject.restype = c_int32
 
-_SHCreateShellItemArrayFromIDLists = windll.shell32.SHCreateShellItemArrayFromIDLists
+_SHCreateShellItemArrayFromIDLists = _shell32.SHCreateShellItemArrayFromIDLists
 _SHCreateShellItemArrayFromIDLists.argtypes = (c_uint32, POINTER(c_void_p), POINTER(POINTER(IShellItemArray)))
 _SHCreateShellItemArrayFromIDLists.restype = c_int32
 
-_SHCreateShellItemArrayFromShellItem = windll.shell32.SHCreateShellItemArrayFromShellItem
+_SHCreateShellItemArrayFromShellItem = _shell32.SHCreateShellItemArrayFromShellItem
 _SHCreateShellItemArrayFromShellItem.argtypes = (
     POINTER(IShellItem),
     POINTER(GUID),
@@ -322,6 +324,6 @@ _SHCreateShellItemArrayFromShellItem.argtypes = (
 )
 _SHCreateShellItemArrayFromShellItem.restype = c_int32
 
-_OleGetClipboard = windll.ole32.OleGetClipboard
+_OleGetClipboard = _ole32.OleGetClipboard
 _OleGetClipboard.argtypes = (POINTER(POINTER(IUnknown)),)
 _OleGetClipboard.restype = c_int32

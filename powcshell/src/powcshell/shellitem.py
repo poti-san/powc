@@ -1,15 +1,6 @@
 """シェル項目。"""
 
-from ctypes import (
-    POINTER,
-    _Pointer,
-    byref,
-    c_int32,
-    c_uint32,
-    c_void_p,
-    c_wchar_p,
-    windll,
-)
+from ctypes import POINTER, _Pointer, byref, c_int32, c_uint32, c_void_p, c_wchar_p
 from enum import IntEnum, IntFlag
 from typing import TYPE_CHECKING, Any, Iterator
 
@@ -19,6 +10,7 @@ from powc.core import ComResult, cotaskmem, cr, queryinterface
 from powc.stream import ComStream, IStream
 from powcshell.knownfolderid import KnownFolderID
 
+from . import _shell32
 from .itemidlist import ItemIDList
 from .shellexec import ShellExecute, ShellExecuteOption, ShowCommand
 
@@ -399,7 +391,7 @@ class ShellItem:
         )
 
 
-_SHCreateItemInKnownFolder = windll.shell32.SHCreateItemInKnownFolder
+_SHCreateItemInKnownFolder = _shell32.SHCreateItemInKnownFolder
 _SHCreateItemInKnownFolder.argtypes = (
     POINTER(GUID),
     c_uint32,
@@ -411,10 +403,10 @@ _SHCreateItemInKnownFolder.argtypes = (
 )
 _SHCreateItemInKnownFolder.restype = c_int32
 
-_SHCreateItemFromParsingName = windll.shell32.SHCreateItemFromParsingName
+_SHCreateItemFromParsingName = _shell32.SHCreateItemFromParsingName
 _SHCreateItemFromParsingName.argtypes = (c_wchar_p, POINTER(IUnknown), POINTER(GUID), POINTER(POINTER(IUnknown)))
 _SHCreateItemFromParsingName.restype = c_int32
 
-_SHCreateItemFromIDList = windll.shell32.SHCreateItemFromIDList
+_SHCreateItemFromIDList = _shell32.SHCreateItemFromIDList
 _SHCreateItemFromIDList.argtypes = (c_void_p, POINTER(GUID), POINTER(POINTER(IUnknown)))
 _SHCreateItemFromIDList.restype = c_int32

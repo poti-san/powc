@@ -1,7 +1,9 @@
 from contextlib import contextmanager
-from ctypes import c_size_t, c_uint32, c_void_p, windll
+from ctypes import c_size_t, c_uint32, c_void_p
 from enum import IntFlag
 from typing import Any, Iterator
+
+from . import _kernel32
 
 
 class GlobalHandleFlag(IntFlag):
@@ -14,12 +16,12 @@ class GlobalHandleFlag(IntFlag):
     POINTER = FIXED | ZEROINIT
 
 
-_GlobalAlloc = windll.kernel32.GlobalAlloc
+_GlobalAlloc = _kernel32.GlobalAlloc
 _GlobalAlloc.argtypes = (c_uint32, c_size_t)
 _GlobalAlloc.restype = c_void_p
 
 
-_GlobalFree = windll.kernel32.GlobalFree
+_GlobalFree = _kernel32.GlobalFree
 _GlobalFree.argtypes = (c_void_p,)
 _GlobalFree.restype = c_void_p
 

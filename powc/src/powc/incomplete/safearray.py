@@ -4,11 +4,12 @@ SAFEARRAY関係の機能を提供します。未完成です。
 
 # NOTE: 未完成
 
-from ctypes import POINTER, Structure, c_int32, c_uint32, c_void_p, windll
+from ctypes import POINTER, Structure, c_int32, c_uint32, c_void_p
 from typing import Sequence
 
 from powc.core import check_hresult
 
+from .. import _oleaut32
 from ..variant import VARENUM
 
 
@@ -57,22 +58,22 @@ class SafeArray:
         check_hresult(_SafeArrayUnlock(self.__p))
 
 
-_SafeArrayCreate = windll.oleaut32.SafeArrayCreate
+_SafeArrayCreate = _oleaut32.SafeArrayCreate
 _SafeArrayCreate.argtypes = (c_int32, c_uint32, POINTER(SafeArrayBound))
 _SafeArrayCreate.restype = c_void_p
 
-_SafeArrayDestroy = windll.oleaut32.SafeArrayDestroy
+_SafeArrayDestroy = _oleaut32.SafeArrayDestroy
 _SafeArrayDestroy.argtypes = (c_void_p,)
 _SafeArrayDestroy.restype = c_int32
 
-_SafeArrayDestroyData = windll.oleaut32.SafeArrayDestroyData
+_SafeArrayDestroyData = _oleaut32.SafeArrayDestroyData
 _SafeArrayDestroyData.argtypes = (c_void_p,)
 _SafeArrayDestroyData.restype = c_int32
 
-_SafeArrayLock = windll.oleaut32.SafeArrayLock
+_SafeArrayLock = _oleaut32.SafeArrayLock
 _SafeArrayLock.argtypes = (c_void_p,)
 _SafeArrayLock.restype = c_int32
 
-_SafeArrayUnlock = windll.oleaut32.SafeArrayUnlock
+_SafeArrayUnlock = _oleaut32.SafeArrayUnlock
 _SafeArrayUnlock.argtypes = (c_void_p,)
 _SafeArrayUnlock.restype = c_int32

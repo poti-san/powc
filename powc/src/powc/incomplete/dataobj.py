@@ -11,7 +11,6 @@ from ctypes import (
     c_uint32,
     c_void_p,
     c_wchar_p,
-    windll,
 )
 from enum import IntEnum, IntFlag
 from typing import TYPE_CHECKING, Any, Iterator
@@ -20,6 +19,8 @@ from comtypes import GUID, STDMETHOD, IUnknown
 
 from powc.core import ComResult, check_hresult, cr, queryinterface
 from powc.stream import IStream
+
+from .. import _ole32
 
 # from .__statdata import IEnumSTATDATA
 
@@ -82,7 +83,7 @@ class STGMEDIUM(Structure):
         _ReleaseStgMedium(self)
 
 
-_ReleaseStgMedium = windll.ole32.ReleaseStgMedium
+_ReleaseStgMedium = _ole32.ReleaseStgMedium
 _ReleaseStgMedium.argtypes = (POINTER(STGMEDIUM),)
 _ReleaseStgMedium.restype = c_int32
 
@@ -256,14 +257,14 @@ class DataObject:
         return self.set_clipboard_nothrow(flush).value
 
 
-_OleGetClipboard = windll.ole32.OleGetClipboard
+_OleGetClipboard = _ole32.OleGetClipboard
 _OleGetClipboard.argtypes = (POINTER(POINTER(IDataObject)),)
 _OleGetClipboard.restype = c_int32
 
-_OleSetClipboard = windll.ole32.OleSetClipboard
+_OleSetClipboard = _ole32.OleSetClipboard
 _OleSetClipboard.argtypes = (POINTER(IDataObject),)
 _OleSetClipboard.restype = c_int32
 
-_OleFlushClipboard = windll.ole32.OleFlushClipboard
+_OleFlushClipboard = _ole32.OleFlushClipboard
 _OleFlushClipboard.argtypes = ()
 _OleFlushClipboard.restype = c_int32

@@ -1,11 +1,12 @@
 """プロパティストア。"""
 
-from ctypes import POINTER, byref, c_int32, c_uint32, c_void_p, windll
+from ctypes import POINTER, byref, c_int32, c_uint32, c_void_p
 from enum import IntFlag
 from typing import Any, Iterable, Iterator
 
 from comtypes import GUID, STDMETHOD, IUnknown
 
+from powc import _propsys
 from powc.core import ComResult, cr, queryinterface
 
 from .propkey import PropertyKey
@@ -161,6 +162,6 @@ class PropertyStore:
         )
 
 
-_PSCreateMemoryPropertyStore = windll.propsys.PSCreateMemoryPropertyStore
+_PSCreateMemoryPropertyStore = _propsys.PSCreateMemoryPropertyStore
 _PSCreateMemoryPropertyStore.argtypes = (POINTER(GUID), POINTER(POINTER(IUnknown)))
 _PSCreateMemoryPropertyStore.restype = c_int32

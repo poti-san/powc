@@ -2,19 +2,10 @@
 VARIANT型関係の機能を提供します。
 """
 
-from ctypes import (
-    POINTER,
-    Union,
-    byref,
-    c_byte,
-    c_int16,
-    c_int32,
-    c_uint16,
-    c_wchar_p,
-    windll,
-)
+from ctypes import POINTER, Union, byref, c_byte, c_int16, c_int32, c_uint16, c_wchar_p
 from enum import IntFlag
 
+from . import _oleaut32, _propsys
 from .core import ComResult, cotaskmem, cr
 
 
@@ -156,24 +147,24 @@ class Variant(Union):
 
 # oleauto32
 
-_VariantClear = windll.oleaut32.VariantClear
+_VariantClear = _oleaut32.VariantClear
 _VariantClear.argtypes = (POINTER(Variant),)
 _VariantClear.restype = c_int32
 
-_VariantCopy = windll.oleaut32.VariantCopy
+_VariantCopy = _oleaut32.VariantCopy
 _VariantCopy.argtypes = (POINTER(Variant), POINTER(Variant))
 _VariantCopy.restype = c_int32
 
-_VariantCopyInd = windll.oleaut32.VariantCopyInd
+_VariantCopyInd = _oleaut32.VariantCopyInd
 _VariantCopyInd.argtypes = (POINTER(Variant), POINTER(Variant))
 _VariantCopyInd.restype = c_int32
 
-_VariantChangeType = windll.oleaut32.VariantChangeType
+_VariantChangeType = _oleaut32.VariantChangeType
 _VariantChangeType.argtypes = (POINTER(Variant), POINTER(Variant), c_uint16, c_int32)
 _VariantChangeType.restype = c_int32
 
 # propsys
 
-_VariantToStringAlloc = windll.propsys.VariantToStringAlloc
+_VariantToStringAlloc = _propsys.VariantToStringAlloc
 _VariantToStringAlloc.argtypes = (POINTER(Variant), POINTER(c_wchar_p))
 _VariantToStringAlloc.restype = c_int32

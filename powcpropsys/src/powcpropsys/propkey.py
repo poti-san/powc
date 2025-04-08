@@ -1,9 +1,10 @@
 """プロパティキー。"""
 
-from ctypes import POINTER, Structure, byref, c_int32, c_uint32, c_wchar_p, windll
+from ctypes import POINTER, Structure, byref, c_int32, c_uint32, c_wchar_p
 
 from comtypes import GUID
 
+from powc import _propsys
 from powc.core import ComResult, cotaskmem, cr, guid_from_define
 
 
@@ -55,10 +56,10 @@ class PropertyKey(Structure):
         return self.canonicalname_nothrow.value
 
 
-_PSGetPropertyKeyFromName = windll.propsys.PSGetPropertyKeyFromName
+_PSGetPropertyKeyFromName = _propsys.PSGetPropertyKeyFromName
 _PSGetPropertyKeyFromName.argtypes = (c_wchar_p, POINTER(PropertyKey))
 _PSGetPropertyKeyFromName.restype = c_int32
 
-_PSGetNameFromPropertyKey = windll.propsys.PSGetNameFromPropertyKey
+_PSGetNameFromPropertyKey = _propsys.PSGetNameFromPropertyKey
 _PSGetNameFromPropertyKey.argtypes = (POINTER(PropertyKey), POINTER(c_wchar_p))
 _PSGetNameFromPropertyKey.restype = c_int32

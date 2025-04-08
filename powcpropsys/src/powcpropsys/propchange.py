@@ -1,9 +1,10 @@
-from ctypes import POINTER, byref, c_int32, c_uint32, c_void_p, windll
+from ctypes import POINTER, byref, c_int32, c_uint32, c_void_p
 from enum import IntFlag
 from typing import Any
 
 from comtypes import GUID, STDMETHOD, IUnknown
 
+from powc import _propsys
 from powc.core import ComResult, cr, queryinterface
 
 from .propkey import PropertyKey
@@ -174,7 +175,7 @@ class PropertyChangeArray:
         return self.is_key_in_array_nothrow(key).value
 
 
-_PSCreatePropertyChangeArray = windll.propsys.PSCreatePropertyChangeArray
+_PSCreatePropertyChangeArray = _propsys.PSCreatePropertyChangeArray
 _PSCreatePropertyChangeArray.restype = c_int32
 _PSCreatePropertyChangeArray.argtypes = (
     POINTER(PropertyKey),
@@ -185,7 +186,7 @@ _PSCreatePropertyChangeArray.argtypes = (
     POINTER(POINTER(IUnknown)),
 )
 
-_PSCreateSimplePropertyChange = windll.propsys.PSCreateSimplePropertyChange
+_PSCreateSimplePropertyChange = _propsys.PSCreateSimplePropertyChange
 _PSCreateSimplePropertyChange.restype = c_int32
 _PSCreateSimplePropertyChange.argtypes = (
     c_int32,

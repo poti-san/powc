@@ -1,10 +1,11 @@
 """プロパティシステム。"""
 
-from ctypes import POINTER, byref, c_int32, c_uint32, c_void_p, c_wchar_p, windll
+from ctypes import POINTER, byref, c_int32, c_uint32, c_void_p, c_wchar_p
 from typing import Any
 
 from comtypes import GUID, STDMETHOD, IUnknown
 
+from powc import _propsys
 from powc.core import ComResult, cotaskmem, cr, queryinterface
 
 from .propdesc import (
@@ -168,6 +169,6 @@ class PropertySystem:
         return tuple(propdesc.propkey for propdesc in self.propdescs_system)
 
 
-_PSGetPropertySystem = windll.propsys.PSGetPropertySystem
+_PSGetPropertySystem = _propsys.PSGetPropertySystem
 _PSGetPropertySystem.argtypes = (POINTER(GUID), POINTER(POINTER(IUnknown)))
 _PSGetPropertySystem.restype = c_int32
