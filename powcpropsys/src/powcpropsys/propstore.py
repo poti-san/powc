@@ -2,7 +2,7 @@
 
 from ctypes import POINTER, byref, c_int32, c_uint32, c_void_p
 from enum import IntFlag
-from typing import Any, Iterable, Iterator
+from typing import Any, Iterable, Iterator, OrderedDict
 
 from comtypes import GUID, STDMETHOD, IUnknown
 
@@ -136,25 +136,44 @@ class PropertyStore:
         return tuple(self.items_iter)
 
     @property
-    def itemdict(self) -> dict[PropertyKey, PropVariant]:
-        return dict(self.items_iter)
+    def itemdict(self) -> OrderedDict[PropertyKey, PropVariant]:
+        return OrderedDict(self.items_iter)
 
-    def iter_validkeys_in_propsystem(self, propsys: PropertySystem | None = None) -> Iterator[PropertyKey]:
+    def iter_keys_in_propsystem(self, propsys: PropertySystem | None = None) -> Iterator[PropertyKey]:
+        """
+        プロパティシステムに登録されたキーでプロパティストアでも有効なキーのイテレーターを返します。
+        返されるキーにはプロパティストア自体からは列挙できないキーも含まれます。
+        """
+
         propsys = propsys if propsys else PropertySystem.create()
         keys = propsys.get_propkeys_system()
-        return self.iter_validkeys_in_keys(keys)
+        return self.iter_keys_in_keys(keys)
 
-    def iter_validkeys_in_keys(self, keys: Iterable[PropertyKey]) -> Iterator[PropertyKey]:
+    def iter_keys_in_keys(self, keys: Iterable[PropertyKey]) -> Iterator[PropertyKey]:
+        """
+        キーに対応するキーのイテレーターを返します。
+        返されるキーにはプロパティストア自体からは列挙できないキーも含まれます。
+        """
         return (key for key, value in ((key, self.get_value_nothrow(key)) for key in keys) if not value.value.is_empty)
 
-    def iter_validitems_in_propsystem(
+    def iter_items_in_propsystem(
         self, propsys: PropertySystem | None = None
     ) -> Iterable[tuple[PropertyKey, PropVariant]]:
+        """
+        プロパティシステムに登録されたキーに対応する項目のイテレーターを返します。
+        返される項目にはプロパティストア自体に含まれるキーでは取得できない項目も含まれます。
+        """
+
         propsys = propsys if propsys else PropertySystem.create()
         keys = propsys.get_propkeys_system()
-        return self.iter_validitems_in_keys(keys)
+        return self.iter_items_in_keys(keys)
 
-    def iter_validitems_in_keys(self, keys: Iterable[PropertyKey]) -> Iterable[tuple[PropertyKey, PropVariant]]:
+    def iter_items_in_keys(self, keys: Iterable[PropertyKey]) -> Iterable[tuple[PropertyKey, PropVariant]]:
+        """
+        キーに対応する項目のイテレーターを返します。
+        返される項目にはプロパティストア自体に含まれるキーでは取得できない項目も含まれます。
+        """
+
         return (
             (key, value.value_unchecked)
             for key, value in ((key, self.get_value_nothrow(key)) for key in keys)

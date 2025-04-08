@@ -1,4 +1,4 @@
-"""フォントのベンダー一覧と関連フォントの表示"""
+# フォントのベンダー一覧とファミリー名の表示
 
 from collections import defaultdict
 from operator import itemgetter

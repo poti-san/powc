@@ -5,7 +5,7 @@ from powcshell.shellitem2 import ShellItem2
 
 for item in ShellItem2.create_knownfolder(KnownFolderID.COMPUTER_FOLDER).iter_items():
     props = item.propstore
-    propinfos = tuple(props.iter_validitems_in_propsystem())
+    propinfos = tuple(props.iter_items_in_propsystem())
     pass
 
 pass

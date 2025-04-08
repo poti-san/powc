@@ -1,4 +1,4 @@
-"""特殊フォルダを関連付けで開く"""
+# 特殊フォルダを関連付けで開く
 
 from powcshell.knownfolderid import KnownFolderID
 from powcshell.shellitem2 import ShellItem2

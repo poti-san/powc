@@ -1,4 +1,4 @@
-"""フォントの表示名列挙"""
+# フォントの表示名列挙
 
 from powcshell.knownfolderid import KnownFolderID
 from powcshell.shellitem2 import ShellItem2

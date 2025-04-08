@@ -1,4 +1,4 @@
-"""ファイルをシェル操作で削除"""
+# ファイルをシェル操作で削除
 
 from pathlib import Path
 from pprint import pformat
