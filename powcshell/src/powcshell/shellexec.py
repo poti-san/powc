@@ -88,7 +88,7 @@ class _SHELLEXECUTEINFOW(Structure):
         ("hMonitor", c_void_p),
         ("hProcess", c_void_p),
     )
-    __slots__ = tuple(field[0] for field in _fields_)
+    __slots__ = ()
 
 
 _ShellExecuteExW = _shell32.ShellExecuteExW
@@ -98,8 +98,6 @@ _ShellExecuteExW.restype = c_int32
 
 class ShellExecute:
     """パスまたはアイテムIDリストのシェル操作機能を提供します。"""
-
-    __slots__ = ()
 
     @staticmethod
     def execute_pidl(

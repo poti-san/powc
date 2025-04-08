@@ -3,8 +3,8 @@
 from comtypes import GUID
 
 
-class FolderTypeID(GUID):
-    """既知フォルダ種類ID。"""
+class FolderTypeID:
+    """既知フォルダ種類ID定数。"""
 
     INVALID = GUID("{57807898-8c4f-4462-bb63-71042380b109}")
     GENERIC = GUID("{5c4f28b5-f869-4e84-8e60-f11db97c5cc7}")

@@ -37,6 +37,8 @@ class ISequentialStream(IUnknown):
         STDMETHOD(c_int32, "Write", (c_void_p, c_uint32, POINTER(c_uint32))),
     ]
 
+    __slots__ = ("__o",)
+
 
 class StorageMode(IntFlag):
     """STGM"""
@@ -140,6 +142,8 @@ class IStream(ISequentialStream):
 
     _iid_ = GUID("{0000000c-0000-0000-C000-000000000046}")
 
+    __slots__ = ("__o",)
+
 
 IStream._methods_ = [
     STDMETHOD(c_int32, "Seek", (c_int64, c_uint32, POINTER(c_uint64))),
@@ -177,16 +181,16 @@ class ComStream:
         return self.__o
 
     @staticmethod
-    def createonfile_nothrow(path: str, mode: StorageMode, creates: bool) -> "ComResult[ComStream]":
+    def create_on_file_nothrow(path: str, mode: StorageMode | int, creates: bool) -> "ComResult[ComStream]":
         p = POINTER(IStream)()
         return cr(_SHCreateStreamOnFileEx(path, int(mode), 0, 1 if creates else 0, None, byref(p)), ComStream(p))
 
     @staticmethod
-    def createonfile(path: str, mode: StorageMode, creates: bool) -> "ComStream":
-        return ComStream.createonfile_nothrow(path, mode, creates).value
+    def create_on_file(path: str, mode: StorageMode | int, creates: bool) -> "ComStream":
+        return ComStream.create_on_file_nothrow(path, mode, creates).value
 
     @staticmethod
-    def createonmem_nothrow(buffer: Buffer) -> "ComResult[ComStream]":
+    def create_on_mem_nothrow(buffer: Buffer) -> "ComResult[ComStream]":
         if buffer is None:
             p = _SHCreateMemStream(None, 0)
         else:
@@ -199,8 +203,8 @@ class ComStream:
         return cr(S_OK if p else E_FAIL, ComStream(p))
 
     @staticmethod
-    def createonmem(buffer: Buffer) -> "ComStream":
-        return ComStream.createonmem_nothrow(buffer).value
+    def create_on_mem(buffer: Buffer) -> "ComStream":
+        return ComStream.create_on_mem_nothrow(buffer).value
 
     @dataclass
     class BytesAndSize:
@@ -225,11 +229,11 @@ class ComStream:
     def write_bytes(self, data) -> int:
         return self.write_bytes_nothrow(data).value
 
-    def seek_nothrow(self, move: int, origin: StreamSeek) -> ComResult[int]:
+    def seek_nothrow(self, move: int, origin: StreamSeek | int) -> ComResult[int]:
         x = c_uint64()
         return cr(self.__o.Seek(move, origin, byref(x)), x.value)
 
-    def seek(self, move: int, origin: StreamSeek) -> int:
+    def seek(self, move: int, origin: StreamSeek | int) -> int:
         return self.seek_nothrow(move, origin).value
 
     @property
@@ -250,10 +254,10 @@ class ComStream:
 
     # STDMETHOD(c_int32, "CopyTo", (POINTER(IStream), c_uint64, POINTER(c_uint64), POINTER(c_uint64))),
 
-    def commit_nothrow(self, flags: StorageCommit) -> ComResult[None]:
+    def commit_nothrow(self, flags: StorageCommit | int) -> ComResult[None]:
         return cr(self.__o.Commit(int(flags)), None)
 
-    def commit(self, flags: StorageCommit) -> None:
+    def commit(self, flags: StorageCommit | int) -> None:
         return self.commit_nothrow(flags).value
 
     def revert_nothrow(self) -> ComResult[None]:
@@ -262,19 +266,19 @@ class ComStream:
     def revert(self) -> None:
         return self.revert_nothrow().value
 
-    def lock_region_nothrow(self, offset: int, size: int, locktype: LockType) -> ComResult[None]:
+    def lock_region_nothrow(self, offset: int, size: int, locktype: LockType | int) -> ComResult[None]:
         return cr(self.__o.LockRegion(offset, size, int(locktype)), None)
 
-    def unlock_region_nothrow(self, offset: int, size: int, locktype: LockType) -> ComResult[None]:
+    def unlock_region_nothrow(self, offset: int, size: int, locktype: LockType | int) -> ComResult[None]:
         return cr(self.__o.UnlockRegion(offset, size, int(locktype)), None)
 
-    def lock_region(self, offset: int, size: int, locktype: LockType) -> None:
+    def lock_region(self, offset: int, size: int, locktype: LockType | int) -> None:
         return self.lock_region_nothrow(offset, size, locktype).value
 
-    def unlock_region(self, offset: int, size: int, locktype: LockType) -> None:
+    def unlock_region(self, offset: int, size: int, locktype: LockType | int) -> None:
         return self.unlock_region_nothrow(offset, size, locktype).value
 
-    def get_stat_nothrow(self, flags: StatFlag) -> ComResult[ComStorageStat]:
+    def get_stat_nothrow(self, flags: StatFlag | int) -> ComResult[ComStorageStat]:
         x = _STATSTG()
         hr = self.__o.Stat(byref(x), int(flags))
         if hr < 0:
@@ -297,7 +301,7 @@ class ComStream:
                 ),
             )
 
-    def get_stat(self, flags: StatFlag) -> ComStorageStat:
+    def get_stat(self, flags: StatFlag | int) -> ComStorageStat:
         return self.get_stat_nothrow(flags).value
 
     @property

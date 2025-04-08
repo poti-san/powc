@@ -8,7 +8,6 @@ from comtypes import GUID, STDMETHOD, IUnknown
 
 from powc.core import ComResult, cotaskmem, cr, queryinterface
 from powc.stream import ComStream, IStream
-from powcshell.knownfolderid import KnownFolderID
 
 from . import _shell32
 from .itemidlist import ItemIDList
@@ -139,38 +138,53 @@ class ShellItem:
         name = self.name_desktopabsparsing_nothrow
         return f"ShellItem({name.value_unchecked})" or "" if name else super().__str__()
 
+    # TODO: flags
     @staticmethod
-    def create_knownfolder_nothrow(folder_id: KnownFolderID | GUID, flags: int = 0) -> "ComResult[ShellItem]":
-        """既知フォルダのシェルアイテムを作成します。"""
+    def create_knownfolder_nothrow(folder_id: GUID, flags: int = 0) -> "ComResult[ShellItem]":
+        """既知フォルダのシェルアイテムを作成します。
+
+        Args:
+            folder_id (GUID): `KnownFolderID`定数の値。
+            flags (int, optional): _description_. Defaults to 0.
+
+        Returns:
+            ComResult[ShellItem]: _description_
+        """
         global _SHCreateItemInKnownFolder
 
         p = POINTER(IShellItem)()
         return cr(_SHCreateItemInKnownFolder(folder_id, flags, None, IShellItem._iid_, byref(p)), ShellItem(p))
 
     @staticmethod
-    def create_knownfolder(folder_id: KnownFolderID | GUID, flags: int = 0) -> "ShellItem":
-        """既知フォルダのシェルアイテムを作成します。"""
+    def create_knownfolder(folder_id: GUID, flags: int = 0) -> "ShellItem":
         return ShellItem.create_knownfolder_nothrow(folder_id, flags).value
 
-    @staticmethod
-    def create_knownfolder_item_nothrow(
-        folder_id: KnownFolderID | GUID, itemname: str, flags: int = 0
-    ) -> "ComResult[ShellItem]":
-        """既知フォルダ内のシェルアイテムを作成します。"""
-        global _SHCreateItemInKnownFolder
+    create_knownfolder.__doc__ = create_knownfolder_nothrow.__doc__
 
+    @staticmethod
+    def create_knownfolder_item_nothrow(folder_id: GUID, itemname: str, flags: int = 0) -> "ComResult[ShellItem]":
+        """既知フォルダ内のシェルアイテムを作成します。
+
+        Args:
+            folder_id (GUID): `KnownFolderID`定数の値。
+            itemname (str): _description_
+            flags (int, optional): _description_. Defaults to 0.
+
+        Returns:
+            ComResult[ShellItem]: _description_
+        """
         p = POINTER(IShellItem)()
         return cr(_SHCreateItemInKnownFolder(folder_id, flags, itemname, IShellItem._iid_, byref(p)), ShellItem(p))
 
     @staticmethod
-    def create_knownfolder_item(folder_id: KnownFolderID | GUID, itemname: str, flags: int = 0) -> "ShellItem":
-        """既知フォルダ内のシェルアイテムを作成します。"""
+    def create_knownfolder_item(folder_id: GUID, itemname: str, flags: int = 0) -> "ShellItem":
         return ShellItem.create_knownfolder_item_nothrow(folder_id, itemname, flags).value
+
+    create_knownfolder_item.__doc__ = create_knownfolder_item_nothrow.__doc__
 
     @staticmethod
     def create_parsingname_nothrow(name: str) -> "ComResult[ShellItem]":
         """解析名からシェルアイテムを作成します。"""
-        global _SHCreateItemFromParsingName
         p = POINTER(IShellItem)()
         return cr(_SHCreateItemFromParsingName(name, None, IShellItem._iid_, byref(p)), ShellItem(p))
 

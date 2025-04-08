@@ -44,6 +44,8 @@ class IShellItemArray(IUnknown):
         STDMETHOD(c_int32, "EnumItems", (POINTER(IEnumShellItems),)),
     ]
 
+    __slots__ = ()
+
 
 class ShellItemArray:
     """

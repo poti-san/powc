@@ -75,7 +75,7 @@ class Variant(Union):
     # DECIMAL decVal;
     _fields_ = (("vt", c_int16), ("data", c_byte * 24))
 
-    __slots__ = ("vt", "data")
+    __slots__ = ()
 
     def clear(self) -> None:
         _VariantClear(self)

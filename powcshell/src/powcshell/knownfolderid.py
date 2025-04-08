@@ -3,8 +3,8 @@
 from comtypes import GUID
 
 
-class KnownFolderID(GUID):
-    """既知フォルダのID。"""
+class KnownFolderID:
+    """既知フォルダID定数。"""
 
     NETWORK_FOLDER = GUID("{D20BEEC4-5CA8-4905-AE3B-BF251EA09B53}")
     COMPUTER_FOLDER = GUID("{0AC0837C-BBF8-452A-850D-79D08E667CA7}")

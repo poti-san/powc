@@ -6,9 +6,8 @@ from comtypes import GUID, STDMETHOD, CoCreateInstance, IUnknown
 
 from powc.core import ComResult, cotaskmem, cr, queryinterface
 from powc.stream import StorageMode
-from powcshell.knownfolderid import KnownFolderID
 
-from .foldertypeid import FolderTypeID
+from .knownfolderid import KnownFolderID
 from .shellitem import IShellItem, ShellItem
 from .shellitem2 import IShellItem2, ShellItem2
 from .shellitemarray import IShellItemArray, ShellItemArray
@@ -67,6 +66,7 @@ class IShellLibrary(IUnknown):
         STDMETHOD(c_int32, "Save", (POINTER(IShellItem), c_wchar_p, c_int32, POINTER(POINTER(IShellItem)))),
         STDMETHOD(c_int32, "SaveInKnownFolder", (POINTER(GUID), c_wchar_p, c_int32, POINTER(POINTER(IShellItem)))),
     ]
+    __slots__ = ()
 
 
 class ShellLibrary:
@@ -272,20 +272,23 @@ class ShellLibrary:
         return self.set_pinned_to_navbar_nothrow(value).value
 
     @property
-    def folder_type_nothrow(self) -> ComResult[FolderTypeID | GUID]:
+    def folder_type_nothrow(self) -> ComResult[GUID]:
+        """フォルダの種類（`FolderTypeID`定数）を取得します。"""
         x = GUID()
         return cr(self.__o.GetFolderType(byref(x)), x)
 
     @property
-    def folder_type(self) -> FolderTypeID | GUID:
+    def folder_type(self) -> GUID:
+        """フォルダの種類（`FolderTypeID`定数）を取得または設定します。"""
         return self.folder_type_nothrow.value
 
-    def set_folder_type_nothrow(self, value: FolderTypeID | GUID) -> ComResult[None]:
-        return cr(self.__o.SetFolderType(GUID(value)), None)
+    def set_folder_type_nothrow(self, value: GUID) -> ComResult[None]:
+        """フォルダの種類（`FolderTypeID`定数）を設定します。"""
+        return cr(self.__o.SetFolderType(value), None)
 
     @folder_type.setter
-    def folder_type(self, value: FolderTypeID | GUID) -> None:
-        return self.set_folder_type_nothrow(GUID(value)).value
+    def folder_type(self, value: GUID) -> None:
+        return self.set_folder_type_nothrow(value).value
 
     @property
     def icon_nothrow(self) -> ComResult[str]:

@@ -168,6 +168,8 @@ class ShellFileOperationProgressSinkBase:
         >>>     ...
     """
 
+    __slots__ = ()
+
     def start_operations(self) -> int:
         return hresult.S_OK
 
@@ -252,6 +254,8 @@ class _ShellFileOperationProgressSink(COMObject):
     IShellItemPointer = Any
 
     __sink: ShellFileOperationProgressSinkBase
+
+    __slots__ = ("__sink",)
 
     def __init__(self, sink: ShellFileOperationProgressSinkBase) -> None:
         self.__sink = sink

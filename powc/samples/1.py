@@ -1,6 +1,6 @@
 from powc.stream import ComStream
 
-stream = ComStream.createonmem(bytes((0, 0, 0, 0, 6)))
+stream = ComStream.create_on_mem(bytes((0, 0, 0, 0, 6)))
 if stream is None:
     raise ValueError
 x = stream.read_bytes_all()

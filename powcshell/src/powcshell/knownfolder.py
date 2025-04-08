@@ -18,7 +18,6 @@ from comtypes import GUID, STDMETHOD, CoCreateInstance, IUnknown
 
 from powc.core import ComResult, cotaskmem, cotaskmemfree, cr, queryinterface
 
-from .foldertypeid import FolderTypeID
 from .itemidlist import ItemIDList
 from .shellitem import IShellItem, ShellItem
 from .shellitem2 import IShellItem2, ShellItem2
@@ -116,7 +115,7 @@ class _KNOWNFOLDER_DEFINITION(Structure):
         ("kfdFlags", c_int32),
         ("ftidType", GUID),
     )
-    __slots__ = tuple(field[0] for field in _fields_)
+    __slots__ = ()
 
 
 @dataclass(frozen=True)
@@ -135,7 +134,8 @@ class KnownFolderDefinition:
     security: str | None
     attributes: int
     flags: KnownFolderDefinitionFlag
-    foldertype_id: FolderTypeID
+    foldertype_id: GUID
+    """`FolderTypeID`クラスのGUID定数。"""
 
     @staticmethod
     def empty() -> "KnownFolderDefinition":
@@ -152,7 +152,7 @@ class KnownFolderDefinition:
             "",
             0,
             KnownFolderDefinitionFlag(0),
-            FolderTypeID(GUID()),
+            GUID(),
         )
 
 
@@ -239,12 +239,14 @@ class KnownFolder:
         return self.get_idlist_nothrow(flags).value
 
     @property
-    def foldertype_nothrow(self) -> ComResult[FolderTypeID]:
+    def foldertype_nothrow(self) -> ComResult[GUID]:
+        """フォルダの種類（`FolderTypeID`定数）を取得します。"""
         x = GUID()
-        return cr(self.__o.GetFolderType(byref(x)), FolderTypeID(x))
+        return cr(self.__o.GetFolderType(byref(x)), x)
 
     @property
-    def foldertype(self) -> FolderTypeID:
+    def foldertype(self) -> GUID:
+        """フォルダの種類（`FolderTypeID`定数）を取得します。"""
         return self.foldertype_nothrow.value
 
     @property
@@ -281,7 +283,7 @@ class KnownFolder:
                     cast(x.pszSecurity, c_wchar_p).value,
                     x.dwAttributes,
                     KnownFolderDefinitionFlag(x.kfdFlags),
-                    FolderTypeID(x.ftidType),
+                    x.ftidType,
                 ),
             )
         finally:

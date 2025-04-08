@@ -3,7 +3,7 @@
 """
 
 from contextlib import contextmanager
-from ctypes import POINTER, WinError, _Pointer, c_size_t, c_void_p, memmove, windll
+from ctypes import POINTER, WinError, _Pointer, c_size_t, c_void_p, memmove
 from typing import TYPE_CHECKING, Any, Iterator, NoReturn
 
 from comtypes import GUID, IUnknown

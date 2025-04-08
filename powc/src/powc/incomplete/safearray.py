@@ -19,6 +19,8 @@ class SafeArrayBound(Structure):
         ("lbound", c_int32),
     )
 
+    __slots__ = ()
+
 
 class SafeArray:
     """このクラスは未完成です。"""

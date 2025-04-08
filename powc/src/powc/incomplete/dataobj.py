@@ -68,6 +68,8 @@ class STGMEDIUM(Structure):
         ("unk_for_release", POINTER(IUnknown)),
     )
 
+    __slots__ = ()
+
     if TYPE_CHECKING:
         typed: int
         bitmap_handle: int
@@ -100,6 +102,8 @@ class DeviceTargetDevice(Structure):
         # ("data", c_byte * N)
     )
 
+    __slots__ = ()
+
 
 class FormatEtc(Structure):
     _fields_ = (
@@ -109,6 +113,8 @@ class FormatEtc(Structure):
         ("index", c_int32),
         ("_tymed", c_uint32),
     )
+
+    __slots__ = ()
 
     if TYPE_CHECKING:
         format: ClipFormat
@@ -135,6 +141,8 @@ class FormatEtc(Structure):
 
 class IEnumFORMATETC(IUnknown):
     _iid_ = GUID("{00000103-0000-0000-C000-000000000046}")
+
+    __slots__ = ()
 
 
 IEnumFORMATETC._methods_ = [
@@ -191,6 +199,8 @@ class IDataObject(IUnknown):
         # TODO: STDMETHOD(c_int32, "EnumDAdvise", (POINTER(POINTER(IEnumSTATDATA)),)),
         STDMETHOD(c_int32, "EnumDAdvise", (POINTER(POINTER(IUnknown)),)),
     ]
+
+    __slots__ = ()
 
 
 class DataObject:

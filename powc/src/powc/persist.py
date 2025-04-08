@@ -77,6 +77,8 @@ class PersistFile(Persist):
 
     __o: Any  # POINTER(IPersistFile)
 
+    __slots__ = ("__o",)
+
     def __init__(self, o: Any) -> None:
         super().__init__(o)
         self.__o = queryinterface(o, IPersistFile)
@@ -129,6 +131,8 @@ class PersistStream(Persist):
     """ストリームによる永続化管理。IPersistStreamインターフェイスのラッパーです。"""
 
     __o: Any  # POINTER(IPersistStream)
+
+    __slots__ = ("__o",)
 
     def __init__(self, o: Any) -> None:
         super().__init__(o)

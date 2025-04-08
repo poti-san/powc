@@ -16,7 +16,8 @@ class FILETIME(Structure):
         ("low", c_uint32),
         ("high", c_uint32),
     )
-    __slots__ = tuple(field[0] for field in _fields_)
+
+    __slots__ = ()
 
     def __int__(self) -> int:
         """64ビット整数に変換します。"""

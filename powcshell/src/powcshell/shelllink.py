@@ -46,6 +46,7 @@ class IShellLinkW(IUnknown):
         STDMETHOD(c_int32, "Resolve", (c_void_p, c_uint32)),
         STDMETHOD(c_int32, "SetPath", (c_wchar_p,)),
     ]
+    __slots__ = ()
 
 
 class ShellLinkGetPath(IntFlag):

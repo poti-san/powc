@@ -43,7 +43,7 @@ class PropVariant(Union):
     # DECIMAL decVal;
     _fields_ = (("vt", c_uint16), ("data", c_byte * 24))
 
-    __slots__ = ("vt", "data")
+    __slots__ = ()
 
     def clear(self) -> None:
         _PropVariantClear(self)

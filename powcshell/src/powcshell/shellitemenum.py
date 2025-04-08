@@ -20,6 +20,8 @@ class IEnumShellItems(IUnknown):
 
     _iid_ = GUID("{70629033-e363-4a28-a567-0db78006e6d7}")
 
+    __slots__ = ()
+
 
 IEnumShellItems._methods_ = [
     STDMETHOD(c_int32, "Next", (c_uint32, POINTER(POINTER(IShellItem)), POINTER(c_uint32))),
@@ -59,5 +61,4 @@ class EnumShellItems:
         if hr == 1:
             raise StopIteration()
         check_hresult(hr)
-        return x
         return x
