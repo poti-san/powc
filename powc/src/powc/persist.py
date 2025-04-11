@@ -14,16 +14,17 @@ from .stream import ComStream, IStream, StorageMode
 class IPersist(IUnknown):
     """"""
 
+    __slots__ = ()
     _iid_ = GUID("{0000010c-0000-0000-C000-000000000046}")
     _methods_ = [
         STDMETHOD(c_int32, "GetClassID", (POINTER(GUID),)),
     ]
-    __slots__ = ()
 
 
 class IPersistFile(IPersist):
     """"""
 
+    __slots__ = ()
     _iid_ = GUID("{0000010b-0000-0000-C000-000000000046}")
     _methods_ = [
         STDMETHOD(c_int32, "IsDirty", ()),
@@ -32,12 +33,12 @@ class IPersistFile(IPersist):
         STDMETHOD(c_int32, "SaveCompleted", (c_wchar_p,)),
         STDMETHOD(c_int32, "GetCurFile", (POINTER(c_wchar_p),)),
     ]
-    __slots__ = ()
 
 
 class IPersistStream(IPersist):
     """"""
 
+    __slots__ = ()
     _iid_ = GUID("{00000109-0000-0000-C000-000000000046}")
     _methods_ = [
         STDMETHOD(c_int32, "IsDirty", ()),
@@ -45,15 +46,13 @@ class IPersistStream(IPersist):
         STDMETHOD(c_int32, "Save", (POINTER(IStream), c_int32)),
         STDMETHOD(c_int32, "GetSizeMax", (POINTER(c_uint64),)),
     ]
-    __slots__ = ()
 
 
 class Persist:
     """IPersistインターフェイスのラッパーです。"""
 
-    __o: Any  # POINTER(IPersist)
-
     __slots__ = ("__o",)
+    __o: Any  # POINTER(IPersist)
 
     def __init__(self, o: Any) -> None:
         self.__o = query_interface(o, IPersist)
@@ -75,9 +74,8 @@ class Persist:
 class PersistFile(Persist):
     """ファイルによる永続化管理。IPersistFileインターフェイスのラッパーです。"""
 
-    __o: Any  # POINTER(IPersistFile)
-
     __slots__ = ("__o",)
+    __o: Any  # POINTER(IPersistFile)
 
     def __init__(self, o: Any) -> None:
         super().__init__(o)
@@ -130,9 +128,8 @@ class PersistFile(Persist):
 class PersistStream(Persist):
     """ストリームによる永続化管理。IPersistStreamインターフェイスのラッパーです。"""
 
-    __o: Any  # POINTER(IPersistStream)
-
     __slots__ = ("__o",)
+    __o: Any  # POINTER(IPersistStream)
 
     def __init__(self, o: Any) -> None:
         super().__init__(o)

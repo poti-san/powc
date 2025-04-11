@@ -16,6 +16,7 @@ from types import NotImplementedType
 from typing import Any, Iterator
 
 from comtypes import GUID, STDMETHOD, IUnknown
+from comtypes.hresult import E_FAIL
 
 from . import _ole32
 from .core import (
@@ -166,9 +167,8 @@ class MonikerReduce(IntFlag):
 
 
 class IMoniker(IPersistStream):
-    _iid_ = GUID("{0000000f-0000-0000-C000-000000000046}")
-
     __slots__ = ()
+    _iid_ = GUID("{0000000f-0000-0000-C000-000000000046}")
 
 
 class IEnumMoniker(IUnknown):
@@ -191,7 +191,7 @@ IMoniker._methods_ = [
     STDMETHOD(c_int32, "Inverse", (POINTER(POINTER(IMoniker)),)),
     STDMETHOD(c_int32, "CommonPrefixWith", (POINTER(IMoniker), POINTER(POINTER(IMoniker)))),
     STDMETHOD(c_int32, "RelativePathTo", (POINTER(IMoniker), POINTER(POINTER(IMoniker)))),
-    STDMETHOD(c_int32, "GetDisplayName", (POINTER(IMoniker), POINTER(IMoniker), POINTER(c_wchar_p))),
+    STDMETHOD(c_int32, "GetDisplayName", (POINTER(IBindCtx), POINTER(IMoniker), POINTER(c_wchar_p))),
     STDMETHOD(
         c_int32,
         "ParseDisplayName",
@@ -293,10 +293,18 @@ class Moniker:
     #     /* [in] */ BOOL fOnlyIfNotGeneric,
     #     /* [out] */ __RPC__deref_out_opt IMoniker **ppmkComposite) = 0;
 
+    def __enum(self, forward: bool) -> "ComResult[MonikerEnumerator]":
+        x = POINTER(IEnumMoniker)()
+        # IMoniker.Enumは列挙可能なコンポーネントがない場合にS_OKとx=NULLを返します。
+        # 成功終了にもかかわらずMonikerEnumerator.__oがNoneで想定外の動作となるため、特別対応します。
+        hr = self.__o.Enum(1 if forward else 0, byref(x))
+        if hr == 0 and x.contents.value == 0:
+            hr = E_FAIL
+        return cr(hr, MonikerEnumerator(x))
+
     @property
     def enum_forward_nothrow(self) -> "ComResult[MonikerEnumerator]":
-        x = POINTER(IEnumMoniker)()
-        return cr(self.__o.Enum(1, byref(x)), MonikerEnumerator(x))
+        return self.__enum(True)
 
     @property
     def enum_forward(self) -> "MonikerEnumerator":
@@ -304,8 +312,7 @@ class Moniker:
 
     @property
     def enum_backward_nothrow(self) -> "ComResult[MonikerEnumerator]":
-        x = POINTER(IEnumMoniker)()
-        return cr(self.__o.Enum(0, byref(x)), MonikerEnumerator(x))
+        return self.__enum(False)
 
     @property
     def enum_backward(self) -> "MonikerEnumerator":
@@ -366,15 +373,23 @@ class Moniker:
     def get_relpath_to(self, other: "Moniker") -> "Moniker":
         return self.get_relpath_to_nothrow(other).value
 
-    def get_displayname_nothrow(self, left: "Moniker | None" = None, bc: "BindCtx | None" = None) -> ComResult[str]:
+    def get_displayname_nothrow(self, bc: "BindCtx", left: "Moniker | None" = None) -> ComResult[str]:
         with cotaskmem(c_wchar_p()) as p:
             return cr(
-                self.__o.GetDisplayName(bc.wrapped_obj if bc else None, left.wrapped_obj if left else None),
+                self.__o.GetDisplayName(bc.wrapped_obj, left.wrapped_obj if left else None, byref(p)),
                 p.value or "",
             )
 
-    def get_displayname(self, left: "Moniker | None" = None, bc: "BindCtx | None" = None) -> str:
-        return self.get_displayname_nothrow(left, bc).value
+    def get_displayname(self, bc: "BindCtx", left: "Moniker | None" = None) -> str:
+        return self.get_displayname_nothrow(bc, left).value
+
+    @property
+    def displayname_nothrow(self) -> ComResult[str]:
+        return self.get_displayname_nothrow(BindCtx.create())
+
+    @property
+    def displayname(self) -> str:
+        return self.get_displayname_nothrow(BindCtx.create()).value
 
     def parse_displayname_nothrow(
         self,
@@ -428,7 +443,7 @@ class Moniker:
 
     @staticmethod
     def create_objref(wrapper: IUnknownWrapper) -> "Moniker":
-        return Moniker.create_file_nothrow(wrapper).value
+        return Moniker.create_objref_nothrow(wrapper).value
 
     @staticmethod
     def create_pointer_nothrow(wrapper: IUnknownWrapper) -> "ComResult[Moniker]":
@@ -440,13 +455,13 @@ class Moniker:
         return Moniker.create_pointer_nothrow(wrapper).value
 
     @staticmethod
-    def create_file_nothrow(wrapper: IUnknownWrapper) -> "ComResult[Moniker]":
+    def create_file_nothrow(pathname: str) -> "ComResult[Moniker]":
         x = POINTER(IMoniker)()
-        return cr(_CreateFileMoniker(wrapper.wrapped_obj, byref(x)), Moniker(x))
+        return cr(_CreateFileMoniker(pathname, byref(x)), Moniker(x))
 
     @staticmethod
-    def create_file(wrapper: IUnknownWrapper) -> "Moniker":
-        return Moniker.create_file_nothrow(wrapper).value
+    def create_file(pathname: str) -> "Moniker":
+        return Moniker.create_file_nothrow(pathname).value
 
     @staticmethod
     def create_item_nothrow(delimiter: str, item: str) -> "ComResult[Moniker]":
@@ -638,6 +653,15 @@ class BindCtx:
     def wrapped_obj(self) -> c_void_p:
         return self.__o
 
+    @staticmethod
+    def create_nothrow() -> ComResult["BindCtx"]:
+        x = POINTER(IBindCtx)()
+        return cr(_CreateBindCtx(0, byref(x)), BindCtx(x))
+
+    @staticmethod
+    def create() -> "BindCtx":
+        return BindCtx.create_nothrow().value
+
     def register_objectbound_nothrow(self, obj: IUnknownWrapper) -> ComResult[None]:
         return cr(self.__o.RegisterObjectBound(obj.wrapped_obj), None)
 
@@ -749,3 +773,7 @@ class BindCtx:
 
     def revoke_objectparam(self, key: str) -> None:
         return self.revoke_objectparam_nothrow(key).value
+
+
+_CreateBindCtx = _ole32.CreateBindCtx
+_CreateBindCtx.argtypes = (c_uint32, POINTER(POINTER(IBindCtx)))

@@ -1,3 +1,5 @@
+# メモリストリームを作成して読み書き、サイズ変更を確認します。
+
 from powc.stream import ComStream
 
 stream = ComStream.create_on_mem(bytes((0, 0, 0, 0, 6)))
