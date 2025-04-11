@@ -16,8 +16,7 @@ from enum import IntEnum, IntFlag
 from typing import TYPE_CHECKING, Any, Iterator
 
 from comtypes import GUID, STDMETHOD, IUnknown
-
-from powc.core import ComResult, check_hresult, cr, queryinterface
+from powc.core import ComResult, check_hresult, cr, query_interface
 from powc.stream import IStream
 
 from .. import _ole32
@@ -159,7 +158,7 @@ class FormatEtcEnumerator:
     __slots__ = ("__o",)
 
     def __init__(self, o: Any) -> None:
-        self.__o = queryinterface(o, IEnumFORMATETC)
+        self.__o = query_interface(o, IEnumFORMATETC)
 
     @property
     def wrapped_obj(self) -> c_void_p:
@@ -209,7 +208,7 @@ class DataObject:
     __slots__ = ("__o",)
 
     def __init__(self, o: Any) -> None:
-        self.__o = queryinterface(o, IDataObject)
+        self.__o = query_interface(o, IDataObject)
 
     @property
     def wrapped_obj(self) -> c_void_p:

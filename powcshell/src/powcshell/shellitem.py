@@ -5,8 +5,7 @@ from enum import IntEnum, IntFlag
 from typing import TYPE_CHECKING, Any, Iterator
 
 from comtypes import GUID, STDMETHOD, IUnknown
-
-from powc.core import ComResult, cotaskmem, cr, queryinterface
+from powc.core import ComResult, cotaskmem, cr, query_interface
 from powc.stream import ComStream, IStream
 
 from . import _shell32
@@ -124,7 +123,7 @@ class ShellItem:
         Args:
             o (Any): IShellItemインターフェイスに変換可能なIUnknown派生インターフェイスのインスタンス。
         """
-        self.__o = queryinterface(o, IShellItem)
+        self.__o = query_interface(o, IShellItem)
 
     @property
     def wrapped_obj(self) -> c_void_p:

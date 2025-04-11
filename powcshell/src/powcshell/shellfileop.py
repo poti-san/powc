@@ -6,8 +6,7 @@ from enum import IntFlag
 from typing import Any
 
 from comtypes import GUID, STDMETHOD, CoCreateInstance, COMObject, IUnknown, hresult
-
-from powc.core import ComResult, cr, queryinterface
+from powc.core import ComResult, cr, query_interface
 from powcpropsys.propchange import PropertyChangeArray
 from powcshell.shellitemarray import ShellItemArray, ShellItemAttributeFlag
 from powcshell.shellitemenum import EnumShellItems
@@ -399,7 +398,7 @@ class ShellFileOperation:
     __slots__ = ("__o",)
 
     def __init__(self, o: Any) -> None:
-        self.__o = queryinterface(o, IFileOperation)
+        self.__o = query_interface(o, IFileOperation)
 
     @property
     def wrapped_obj(self) -> c_void_p:

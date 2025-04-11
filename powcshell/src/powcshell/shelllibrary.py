@@ -3,8 +3,7 @@ from enum import IntEnum, IntFlag
 from typing import Any
 
 from comtypes import GUID, STDMETHOD, CoCreateInstance, IUnknown
-
-from powc.core import ComResult, cotaskmem, cr, queryinterface
+from powc.core import ComResult, cotaskmem, cr, query_interface
 from powc.stream import StorageMode
 
 from .knownfolderid import KnownFolderID
@@ -82,7 +81,7 @@ class ShellLibrary:
         Args:
             o (Any): IShellLibraryインターフェイスに変換可能なIUnknown派生インターフェイスのインスタンス。
         """
-        self.__o = queryinterface(o, IShellLibrary)
+        self.__o = query_interface(o, IShellLibrary)
 
     @property
     def wrapped_obj(self) -> c_void_p:

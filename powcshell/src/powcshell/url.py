@@ -14,8 +14,7 @@ from enum import IntFlag
 from typing import Any
 
 from comtypes import GUID, STDMETHOD, CoCreateInstance, IUnknown
-
-from powc.core import ComResult, cotaskmem, cr, guid_from_define, queryinterface
+from powc.core import ComResult, cotaskmem, cr, guid_from_define, query_interface
 from powc.persist import PersistFile, PersistStream
 from powc.stream import ComStream, StorageMode
 
@@ -84,7 +83,7 @@ class UniformResourceLocator:
     __slots__ = ("__o", "__perfile", "__perstream")
 
     def __init__(self, o: Any):
-        self.__o = queryinterface(o, IUniformResourceLocatorW)
+        self.__o = query_interface(o, IUniformResourceLocatorW)
         self.__perfile = PersistFile(o)
         self.__perstream = PersistStream(o)
 

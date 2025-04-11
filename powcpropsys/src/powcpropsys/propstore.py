@@ -5,8 +5,7 @@ from enum import IntFlag
 from typing import Any, Iterable, Iterator, OrderedDict
 
 from comtypes import GUID, STDMETHOD, IUnknown
-
-from powc.core import ComResult, cr, queryinterface
+from powc.core import ComResult, cr, query_interface
 
 from . import _propsys
 from .propkey import PropertyKey
@@ -55,7 +54,7 @@ class PropertyStore:
     __slots__ = ("__o",)
 
     def __init__(self, o: Any):
-        self.__o = queryinterface(o, IPropertyStore)
+        self.__o = query_interface(o, IPropertyStore)
 
     @property
     def wrapped_obj(self) -> c_void_p:
@@ -119,25 +118,23 @@ class PropertyStore:
     def __exit__(self, ex_type, ex_value, trace):
         self.commit()
 
-    @property
-    def keys_iter(self) -> Iterator[PropertyKey]:
+    def iter_keys(self) -> Iterator[PropertyKey]:
         return (self.get_key_at(i) for i in range(self.count))
 
     @property
     def keys(self) -> tuple[PropertyKey, ...]:
-        return tuple(self.keys_iter)
+        return tuple(self.iter_keys())
 
-    @property
-    def items_iter(self) -> Iterator[tuple[PropertyKey, PropVariant]]:
-        return ((key, self.get_value(key)) for key in self.keys_iter)
+    def iter_items(self) -> Iterator[tuple[PropertyKey, PropVariant]]:
+        return ((key, self.get_value(key)) for key in self.iter_keys())
 
     @property
     def items(self) -> tuple[tuple[PropertyKey, PropVariant], ...]:
-        return tuple(self.items_iter)
+        return tuple(self.iter_items())
 
     @property
     def itemdict(self) -> OrderedDict[PropertyKey, PropVariant]:
-        return OrderedDict(self.items_iter)
+        return OrderedDict(self.iter_items())
 
     def iter_keys_in_propsystem(self, propsys: PropertySystem | None = None) -> Iterator[PropertyKey]:
         """

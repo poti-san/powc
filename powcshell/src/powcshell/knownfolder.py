@@ -15,8 +15,7 @@ from enum import IntEnum, IntFlag
 from typing import Any, Sequence
 
 from comtypes import GUID, STDMETHOD, CoCreateInstance, IUnknown
-
-from powc.core import ComResult, cotaskmem, cotaskmemfree, cr, queryinterface
+from powc.core import ComResult, cotaskmem, cotaskmem_free, cr, query_interface
 
 from .itemidlist import ItemIDList
 from .shellitem import IShellItem, ShellItem
@@ -134,7 +133,7 @@ class KnownFolderDefinition:
     security: str | None
     attributes: int
     flags: KnownFolderDefinitionFlag
-    foldertype_id: GUID
+    foldertypeid: GUID
     """`FolderTypeID`クラスのGUID定数。"""
 
     @staticmethod
@@ -180,7 +179,7 @@ class KnownFolder:
     __slots__ = ("__o",)
 
     def __init__(self, o: Any) -> None:
-        self.__o = queryinterface(o, IKnownFolder)
+        self.__o = query_interface(o, IKnownFolder)
 
     @property
     def wrapped_obj(self) -> c_void_p:
@@ -287,14 +286,14 @@ class KnownFolder:
                 ),
             )
         finally:
-            cotaskmemfree(x.pszName)
-            cotaskmemfree(x.pszDescription)
-            cotaskmemfree(x.pszRelativePath)
-            cotaskmemfree(x.pszParsingName)
-            cotaskmemfree(x.pszTooltip)
-            cotaskmemfree(x.pszLocalizedName)
-            cotaskmemfree(x.pszIcon)
-            cotaskmemfree(x.pszSecurity)
+            cotaskmem_free(x.pszName)
+            cotaskmem_free(x.pszDescription)
+            cotaskmem_free(x.pszRelativePath)
+            cotaskmem_free(x.pszParsingName)
+            cotaskmem_free(x.pszTooltip)
+            cotaskmem_free(x.pszLocalizedName)
+            cotaskmem_free(x.pszIcon)
+            cotaskmem_free(x.pszSecurity)
 
     @property
     def folder_definition(self) -> KnownFolderDefinition:
@@ -336,7 +335,7 @@ class KnownFolderManager:
     __slots__ = ("__o",)
 
     def __init__(self, o: Any) -> None:
-        self.__o = queryinterface(o, IKnownFolderManager)
+        self.__o = query_interface(o, IKnownFolderManager)
 
     @property
     def wrapped_obj(self) -> c_void_p:
@@ -402,7 +401,7 @@ class KnownFolderManager:
         kf.pszSecurity = definition.security
         kf.dwAttributes = int(definition.attributes)
         kf.kfdFlags = int(definition.flags)
-        kf.ftidType = definition.foldertype_id.value
+        kf.ftidType = definition.foldertypeid.value
         return cr(self.__o.RegisterFolder(byref(folderid), byref(kf)), None)
 
     def register_folder(self, folderid: GUID, definition: KnownFolderDefinition) -> None:

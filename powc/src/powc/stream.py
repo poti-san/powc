@@ -26,7 +26,7 @@ from comtypes import GUID, STDMETHOD, IUnknown
 from comtypes.hresult import E_FAIL, S_OK
 
 from . import _shlwapi
-from .core import ComResult, cotaskmem, cr, queryinterface
+from .core import ComResult, cotaskmem, cr, query_interface
 from .datetime import filetimeint64_to_datetime
 
 
@@ -174,7 +174,7 @@ class ComStream:
     __slots__ = ("__o",)
 
     def __init__(self, o: Any) -> None:
-        self.__o = queryinterface(o, IStream)
+        self.__o = query_interface(o, IStream)
 
     @property
     def wrapped_obj(self) -> c_void_p:

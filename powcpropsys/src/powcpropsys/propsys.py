@@ -4,8 +4,7 @@ from ctypes import POINTER, byref, c_int32, c_uint32, c_void_p, c_wchar_p
 from typing import Any
 
 from comtypes import GUID, STDMETHOD, IUnknown
-
-from powc.core import ComResult, cotaskmem, cr, queryinterface
+from powc.core import ComResult, cotaskmem, cr, query_interface
 
 from . import _propsys
 from .propdesc import (
@@ -56,7 +55,7 @@ class PropertySystem:
     __slots__ = ("__o",)
 
     def __init__(self, o: Any) -> None:
-        self.__o = queryinterface(o, IPropertySystem)
+        self.__o = query_interface(o, IPropertySystem)
 
     @property
     def wrapped_obj(self) -> c_void_p:

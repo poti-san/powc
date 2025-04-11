@@ -1,7 +1,6 @@
 """ファイルを作成して属性の変更"""
 
 from pathlib import Path
-from pprint import pformat
 
 from powcpropsys.propchange import (
     PropertyChange,
@@ -19,9 +18,7 @@ testfile_path = scriptdir_path / "2x2.jpg"
 testfile_item = ShellItem2.create_parsingname(str(testfile_path))
 
 
-sink = ShellFileOperationProgressSinkForCall(
-    lambda funcname, args: print(f"{funcname}:\n{pformat(args, sort_dicts=False)}")
-)
+sink = ShellFileOperationProgressSinkForCall.for_pprint()
 op = ShellFileOperation.create()
 op.advise(sink)
 op.copy_item(testfile_item, testfile_item.parent, "test.jpg")
@@ -32,4 +29,7 @@ pkey = PropertyKey.from_canonicalname("System.Comment")
 pcarray.append(PropertyChange.create(PropertyChangeAction.SET, pkey, PropVariant.init_wstr("TEST TEXT")))
 op.set_props(pcarray)
 
-op.perform_operations()
+try:
+    op.perform_operations()
+except Exception as ex:
+    print(f"test.jpgが実行前に存在した可能性があります。\n\n{ex}")

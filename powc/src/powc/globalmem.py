@@ -41,7 +41,7 @@ def globalmem[T](p: T) -> Iterator[T]:
         _GlobalFree(p)
 
 
-def globalmemalloc(size: int) -> c_void_p:
+def globalmem_alloc(size: int) -> c_void_p:
     """グローバルメモリを確保します。
 
     Args:
@@ -53,7 +53,7 @@ def globalmemalloc(size: int) -> c_void_p:
     return _GlobalAlloc(size)
 
 
-def globalmemfree(p: int | c_void_p | Any) -> None:
+def globalmem_free(p: int | c_void_p | Any) -> None:
     """グローバルメモリを解放します。
 
     Args:

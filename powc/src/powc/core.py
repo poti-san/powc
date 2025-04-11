@@ -4,7 +4,7 @@
 
 from contextlib import contextmanager
 from ctypes import POINTER, WinError, _Pointer, c_size_t, c_void_p, memmove
-from typing import TYPE_CHECKING, Any, Iterator, NoReturn
+from typing import TYPE_CHECKING, Any, Iterator, NoReturn, Protocol
 
 from comtypes import GUID, IUnknown
 
@@ -94,7 +94,7 @@ def cotaskmem[T](p: T) -> Iterator[T]:
         _CoTaskMemFree(p)
 
 
-def cotaskmemalloc(size: int) -> c_void_p:
+def cotaskmem_alloc(size: int) -> c_void_p:
     """COMメモリを確保します。
     Examples:
         >>> with cotaskmem(cotaskmemalloc(10)) as p:
@@ -104,7 +104,7 @@ def cotaskmemalloc(size: int) -> c_void_p:
     return _CoTaskMemAlloc(size)
 
 
-def cotaskmemfree(p: Any) -> None:
+def cotaskmem_free(p: Any) -> None:
     """COMメモリを解放します。
     Examples:
         >>> p = cotaskmemalloc(10)
@@ -130,7 +130,7 @@ class CoTaskMem(c_void_p):
         return p
 
     def __del__(self) -> None:
-        cotaskmemfree(self)
+        cotaskmem_free(self)
 
     def detatch(self) -> int:
         x = self.value
@@ -170,7 +170,9 @@ def check_hresult(hr: int) -> None:
 
 if TYPE_CHECKING:
 
-    def queryinterface[TIUnknown: IUnknown](o: Any, interface_type: type[TIUnknown]) -> _Pointer[TIUnknown]:
+    IUnknownPointer = _Pointer[IUnknown]
+
+    def query_interface[TIUnknown: IUnknown](o: Any, interface_type: type[TIUnknown]) -> _Pointer[TIUnknown]:
         """comtypes.IUnknown派生インターフェイスを変換して返します。
         Raises:
             TypeError: oがPOINTER(comtypes.IUnknown)またはPOINTER(comtypes.IUnknown派生クラス)ではない
@@ -181,7 +183,9 @@ if TYPE_CHECKING:
 
 else:
 
-    def queryinterface[TIUnknown: IUnknown](o: Any, interface_type: type[TIUnknown]):
+    IUnknownPointer = POINTER(IUnknown)
+
+    def query_interface[TIUnknown: IUnknown](o: Any, interface_type: type[TIUnknown]) -> IUnknownPointer:
         """comtypes.IUnknown派生インターフェイスを変換して返します。
         Raises:
             TypeError: oがPOINTER(comtypes.IUnknown)またはPOINTER(comtypes.IUnknown派生クラス)ではない
@@ -205,3 +209,10 @@ def guid_from_define(a: int, b: int, c: int, d: int, e: int, f: int, g: int, h: 
     guid.Data3 = c
     guid.Data4 = (d, e, f, g, h, i, j, k)
     return guid
+
+
+class IUnknownWrapper(Protocol):
+    def __init__(self, o: Any) -> None: ...
+
+    @property
+    def wrapped_obj(self) -> c_void_p: ...

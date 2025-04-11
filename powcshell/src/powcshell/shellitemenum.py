@@ -4,8 +4,7 @@ from ctypes import POINTER, _Pointer, byref, c_int32, c_uint32, c_void_p
 from typing import TYPE_CHECKING, Any
 
 from comtypes import GUID, STDMETHOD, IUnknown
-
-from powc.core import ComResult, check_hresult, cr, queryinterface
+from powc.core import ComResult, check_hresult, cr, query_interface
 
 from .shellitem import IShellItem
 
@@ -39,7 +38,7 @@ class EnumShellItems:
     __slots__ = ("__o",)
 
     def __init__(self, o: Any) -> None:
-        self.__o = queryinterface(o, IEnumShellItems)
+        self.__o = query_interface(o, IEnumShellItems)
 
     @property
     def wrapped_obj(self) -> c_void_p:

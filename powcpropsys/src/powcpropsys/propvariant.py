@@ -25,7 +25,7 @@ from ctypes import (
 )
 from datetime import datetime
 
-from powc.core import ComResult, CoTaskMem, check_hresult, cotaskmem, cotaskmemfree, cr
+from powc.core import ComResult, CoTaskMem, check_hresult, cotaskmem, cotaskmem_free, cr
 from powc.datetime import FILETIME
 from powc.variant import VARENUM
 
@@ -379,8 +379,8 @@ class PropVariant(Union):
             return tuple(cast(parray[i], c_wchar_p).value or "" for i in range(len.value))
         finally:
             for i in range(len.value):
-                cotaskmemfree(parray[i])
-            cotaskmemfree(pp)
+                cotaskmem_free(parray[i])
+            cotaskmem_free(pp)
 
 
 _PropVariantClear = _ole32.PropVariantClear

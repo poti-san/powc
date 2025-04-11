@@ -8,8 +8,7 @@ from enum import IntEnum, IntFlag
 from typing import Any, Iterator, overload
 
 from comtypes import GUID, STDMETHOD, IUnknown
-
-from powc.core import ComResult, check_hresult, cotaskmem, cr, queryinterface
+from powc.core import ComResult, check_hresult, cotaskmem, cr, query_interface
 from powc.variant import VARENUM
 
 from .propkey import PropertyKey
@@ -232,7 +231,7 @@ class PropertyEnumType:
     __slots__ = ("__o",)
 
     def __init__(self, o: Any) -> None:
-        self.__o = queryinterface(o, IPropertyEnumType)
+        self.__o = query_interface(o, IPropertyEnumType)
 
     @property
     def wrapped_obj(self) -> c_void_p:
@@ -304,7 +303,7 @@ class PropertyEnumTypeList:
     __slots__ = ("__o",)
 
     def __init__(self, o: Any) -> None:
-        self.__o = queryinterface(o, IPropertyEnumTypeList)
+        self.__o = query_interface(o, IPropertyEnumTypeList)
 
     @property
     def wrapped_obj(self) -> c_void_p:
@@ -416,7 +415,7 @@ class PropertyDescription:
     __slots__ = ("__o",)
 
     def __init__(self, o: Any) -> None:
-        self.__o = queryinterface(o, IPropertyDescription)
+        self.__o = query_interface(o, IPropertyDescription)
 
     @property
     def wrapped_obj(self) -> c_void_p:
@@ -649,7 +648,7 @@ class PropertyDescriptionList:
     __slots__ = ("__o",)
 
     def __init__(self, o: Any) -> None:
-        self.__o = queryinterface(o, IPropertyDescriptionList)
+        self.__o = query_interface(o, IPropertyDescriptionList)
 
     @property
     def wrapped_obj(self) -> c_void_p:

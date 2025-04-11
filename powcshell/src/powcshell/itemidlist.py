@@ -4,8 +4,7 @@ from ctypes import POINTER, byref, c_int32, c_void_p
 from typing import Any
 
 from comtypes import IUnknown
-
-from powc.core import check_hresult, cotaskmemfree
+from powc.core import check_hresult, cotaskmem_free
 
 from . import _shell32
 
@@ -16,7 +15,7 @@ class ItemIDList(c_void_p):
     __slots__ = ()
 
     def __del__(self):
-        cotaskmemfree(self)
+        cotaskmem_free(self)
 
     @staticmethod
     def from_object(o: Any) -> "ItemIDList":

@@ -5,8 +5,7 @@ from enum import IntEnum, IntFlag
 from typing import Any, Iterator
 
 from comtypes import GUID, STDMETHOD, CoCreateInstanceEx, IUnknown
-
-from powc.core import ComResult, cotaskmem, cr, queryinterface
+from powc.core import ComResult, cotaskmem, cr, query_interface
 
 from .shellitemarray import IShellItemArray, ShellItemArray
 
@@ -85,7 +84,7 @@ class DesktopWallpaper:
     __slots__ = ("__o",)
 
     def __init__(self, o: Any) -> None:
-        self.__o = queryinterface(o, IDesktopWallpaper)
+        self.__o = query_interface(o, IDesktopWallpaper)
 
     @property
     def wrapped_obj(self) -> c_void_p:

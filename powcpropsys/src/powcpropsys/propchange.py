@@ -3,8 +3,7 @@ from enum import IntFlag
 from typing import Any
 
 from comtypes import GUID, STDMETHOD, IUnknown
-
-from powc.core import ComResult, cr, queryinterface
+from powc.core import ComResult, cr, query_interface
 
 from . import _propsys
 from .propkey import PropertyKey
@@ -42,7 +41,7 @@ class PropertyChange:
     __slots__ = ("__o",)
 
     def __init__(self, o: Any) -> None:
-        self.__o = queryinterface(o, IPropertyChange)
+        self.__o = query_interface(o, IPropertyChange)
 
     @property
     def wrapped_obj(self) -> c_void_p:
@@ -107,7 +106,7 @@ class PropertyChangeArray:
     __slots__ = ("__o",)
 
     def __init__(self, o: Any) -> None:
-        self.__o = queryinterface(o, IPropertyChangeArray)
+        self.__o = query_interface(o, IPropertyChangeArray)
 
     @staticmethod
     def create_nothrow() -> "ComResult[PropertyChangeArray]":

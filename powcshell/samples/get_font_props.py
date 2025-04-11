@@ -7,5 +7,5 @@ from powcshell.shellitem2 import ShellItem2
 font_item = ShellItem2.create_knownfolder_item(KnownFolderID.FONTS, "MS UI Gothic Regular")
 propstore = font_item.propstore
 
-for key, value in propstore.items_iter:
+for key, value in propstore.iter_items():
     print(f"{key}: {value}")

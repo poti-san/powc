@@ -1,6 +1,4 @@
-"""
-Windowsの日時型とPythonの日時型を変換します。
-"""
+"""Windowsの日時型とPythonの日時型を変換します。"""
 
 import datetime as _datetime
 from ctypes import c_uint32

@@ -1,8 +1,8 @@
 """シェル項目ファイル操作の便利機能。"""
 
 from inspect import signature as inspect_sig
-from pprint import pp
-from typing import IO, Any, Callable, OrderedDict, TextIO, override
+from pprint import pformat
+from typing import Any, Callable, OrderedDict, TextIO, override
 
 from comtypes import hresult
 
@@ -190,6 +190,8 @@ class ShellFileOperationProgressSinkForCall(ShellFileOperationProgressSinkBase):
         return ShellFileOperationProgressSinkForCall(lambda s, dict: print(f"{s}({dict})", file=f))
 
     @staticmethod
-    def for_pprint(stream: IO[str] | None = None) -> "ShellFileOperationProgressSinkForCall":
-        """メソッドの呼び出しをすべてpprint.ppで報告するインスタンスを作成します。"""
-        return ShellFileOperationProgressSinkForCall(lambda s, dict: pp(f"{s}({dict})", stream=stream))
+    def for_pprint(f: TextIO | None = None) -> "ShellFileOperationProgressSinkForCall":
+        """メソッドの呼び出しをすべてprintとpformatの組み合わせで報告するインスタンスを作成します。"""
+        return ShellFileOperationProgressSinkForCall(
+            lambda s, dict: print(f"{s}:\n{pformat(dict, sort_dicts=False)}", file=f)
+        )

@@ -5,8 +5,7 @@ from enum import IntFlag
 from typing import TYPE_CHECKING, Any, Iterator, Sequence, overload
 
 from comtypes import GUID, STDMETHOD, IUnknown
-
-from powc.core import ComResult, check_hresult, cr, queryinterface
+from powc.core import ComResult, check_hresult, cr, query_interface
 from powcpropsys.propdesc import IPropertyDescriptionList, PropertyDescriptionList
 from powcpropsys.propkey import PropertyKey
 from powcpropsys.propstore import GetPropertyStoreFlag, IPropertyStore, PropertyStore
@@ -57,7 +56,7 @@ class ShellItemArray:
     __slots__ = ("__o",)
 
     def __init__(self, o: Any) -> None:
-        self.__o = queryinterface(o, IShellItemArray)
+        self.__o = query_interface(o, IShellItemArray)
 
     @property
     def wrapped_obj(self) -> c_void_p:

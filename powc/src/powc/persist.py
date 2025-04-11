@@ -7,7 +7,7 @@ from typing import Any
 
 from comtypes import GUID, STDMETHOD, IUnknown
 
-from .core import ComResult, cotaskmem, cr, queryinterface
+from .core import ComResult, cotaskmem, cr, query_interface
 from .stream import ComStream, IStream, StorageMode
 
 
@@ -56,7 +56,7 @@ class Persist:
     __slots__ = ("__o",)
 
     def __init__(self, o: Any) -> None:
-        self.__o = queryinterface(o, IPersist)
+        self.__o = query_interface(o, IPersist)
 
     @property
     def wrapped_obj(self) -> c_void_p:
@@ -81,7 +81,7 @@ class PersistFile(Persist):
 
     def __init__(self, o: Any) -> None:
         super().__init__(o)
-        self.__o = queryinterface(o, IPersistFile)
+        self.__o = query_interface(o, IPersistFile)
 
     @property
     def wrapped_obj(self) -> c_void_p:
@@ -110,12 +110,12 @@ class PersistFile(Persist):
     def save(self, path: str, remembers: bool) -> bool:
         return self.save_nothrow(path, remembers).value
 
-    def savecompleted_nothrow(self, path: str) -> ComResult[bool]:
+    def save_completed_nothrow(self, path: str) -> ComResult[bool]:
         hr = self.__o.SaveCompleted(path)
         return cr(hr, hr == 0)
 
     def savecompleted(self, path: str) -> bool:
-        return self.savecompleted_nothrow(path).value
+        return self.save_completed_nothrow(path).value
 
     @property
     def curfile_nothrow(self) -> ComResult[str]:
@@ -136,20 +136,20 @@ class PersistStream(Persist):
 
     def __init__(self, o: Any) -> None:
         super().__init__(o)
-        self.__o = queryinterface(o, IPersistStream)
+        self.__o = query_interface(o, IPersistStream)
 
     @property
     def wrapped_obj(self) -> c_void_p:
         return self.__o
 
     @property
-    def isdirty_nothrow(self) -> ComResult[bool]:
+    def is_dirty_nothrow(self) -> ComResult[bool]:
         hr = self.__o.IsDirty()
         return cr(hr, hr == 0)
 
     @property
-    def isdirty(self) -> bool:
-        return self.isdirty_nothrow.value
+    def is_dirty(self) -> bool:
+        return self.is_dirty_nothrow.value
 
     def load_nothrow(self, stream: ComStream) -> ComResult[None]:
         return cr(self.__o.Load(stream.wrapped_obj), None)
