@@ -1,0 +1,762 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>powcshell.shellitemutil package &mdash; powc  ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c033477b"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=4755f45a"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="prev" title="powcshell package" href="powcshell.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            powc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="powc.html">powc package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powcpropsys.html">powcpropsys package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="powcshell.html">powcshell package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="powcshell.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">powcshell.shellitemutil package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-powcshell.shellitemutil.computerfolderinfo">powcshell.shellitemutil.computerfolderinfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-powcshell.shellitemutil.fontiteminfo">powcshell.shellitemutil.fontiteminfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-powcshell.shellitemutil.recyclebiniteminfo">powcshell.shellitemutil.recyclebiniteminfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-powcshell.shellitemutil.volumeinfo">powcshell.shellitemutil.volumeinfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-powcshell.shellitemutil">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcshell.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcshell.html#module-powcshell.desktopwallpaper">powcshell.desktopwallpaper module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcshell.html#module-powcshell.foldertypeid">powcshell.foldertypeid module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcshell.html#module-powcshell.itemidlist">powcshell.itemidlist module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcshell.html#module-powcshell.knownfolder">powcshell.knownfolder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcshell.html#module-powcshell.knownfolderid">powcshell.knownfolderid module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcshell.html#module-powcshell.shellexec">powcshell.shellexec module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcshell.html#module-powcshell.shellfileop">powcshell.shellfileop module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcshell.html#module-powcshell.shellfileoputil">powcshell.shellfileoputil module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcshell.html#module-powcshell.shellitem">powcshell.shellitem module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcshell.html#module-powcshell.shellitem2">powcshell.shellitem2 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcshell.html#module-powcshell.shellitemarray">powcshell.shellitemarray module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcshell.html#module-powcshell.shellitemenum">powcshell.shellitemenum module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcshell.html#module-powcshell.shelllibrary">powcshell.shelllibrary module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcshell.html#module-powcshell.shelllink">powcshell.shelllink module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcshell.html#module-powcshell.url">powcshell.url module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcshell.html#module-powcshell">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../py-modindex.html">モジュール索引</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">powc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="powcshell.html">powcshell package</a></li>
+      <li class="breadcrumb-item active">powcshell.shellitemutil package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/apiref/powcshell.shellitemutil.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="powcshell-shellitemutil-package">
+<h1>powcshell.shellitemutil package<a class="headerlink" href="#powcshell-shellitemutil-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-powcshell.shellitemutil.computerfolderinfo">
+<span id="powcshell-shellitemutil-computerfolderinfo-module"></span><h2>powcshell.shellitemutil.computerfolderinfo module<a class="headerlink" href="#module-powcshell.shellitemutil.computerfolderinfo" title="Link to this heading"></a></h2>
+<p>コンピューターのシェルアイテム情報を取得するユーティリティーを提供します。</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.shellitemutil.computerfolderinfo.</span></span><span class="sig-name descname"><span class="pre">ShellComputerFolderInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcshell.html#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>コンピューターを表すShellItem2の特殊システムプロパティ情報を取得します。</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.create">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo" title="powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo"><span class="pre">ShellComputerFolderInfo</span></a></span></span><a class="headerlink" href="#powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.create" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.item">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">item</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcshell.html#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.item" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.memory">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">memory</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.memory" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.memory_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">memory_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.memory_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.memory_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">memory_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.memory_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.processor">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">processor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.processor" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.processor_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">processor_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.processor_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.processor_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">processor_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.processor_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.simplename">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">simplename</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.simplename" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.simplename_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">simplename_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.simplename_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.simplename_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">simplename_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.simplename_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.workgroup">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">workgroup</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.workgroup" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.workgroup_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">workgroup_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.workgroup_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.workgroup_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">workgroup_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderInfo.workgroup_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderPropertyKey">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.shellitemutil.computerfolderinfo.</span></span><span class="sig-name descname"><span class="pre">ShellComputerFolderPropertyKey</span></span><a class="headerlink" href="#powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderPropertyKey" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>コンピューターのシステムプロパティキー</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderPropertyKey.MEMORY">
+<span class="sig-name descname"><span class="pre">MEMORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({FD9D9FC7-38EC-436D-8FC6-EC39BAD301E6}</span> <span class="pre">101,</span> <span class="pre">&quot;System.Computer.Memory&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderPropertyKey.MEMORY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderPropertyKey.PROCESSOR">
+<span class="sig-name descname"><span class="pre">PROCESSOR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({FD9D9FC7-38EC-436D-8FC6-EC39BAD301E6}</span> <span class="pre">100,</span> <span class="pre">&quot;System.Computer.Processor&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderPropertyKey.PROCESSOR" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderPropertyKey.SIMPLENAME">
+<span class="sig-name descname"><span class="pre">SIMPLENAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({28636AA6-953D-11D2-B5D6-00C04FD918D0}</span> <span class="pre">10,</span> <span class="pre">&quot;System.Computer.SimpleName&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderPropertyKey.SIMPLENAME" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderPropertyKey.WORKGROUP">
+<span class="sig-name descname"><span class="pre">WORKGROUP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({5CDE9F0E-1DE4-4453-96A9-56E8832EFA3D}</span> <span class="pre">2,</span> <span class="pre">&quot;System.Computer.Workgroup&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.computerfolderinfo.ShellComputerFolderPropertyKey.WORKGROUP" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-powcshell.shellitemutil.fontiteminfo">
+<span id="powcshell-shellitemutil-fontiteminfo-module"></span><h2>powcshell.shellitemutil.fontiteminfo module<a class="headerlink" href="#module-powcshell.shellitemutil.fontiteminfo" title="Link to this heading"></a></h2>
+<p>シェルアイテムのフォント情報を取得するユーティリティーを提供します。</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.shellitemutil.fontiteminfo.</span></span><span class="sig-name descname"><span class="pre">ShellFontItemInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcshell.html#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>フォントを表すShellItem2のフォントシステムプロパティ情報を取得します。</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.activestatus">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">activestatus</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.activestatus" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.activestatus_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">activestatus_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.activestatus_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.activestatus_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">activestatus_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.activestatus_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.category">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">category</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.category" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.category_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">category_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.category_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.category_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">category_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.category_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.collectionname">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">collectionname</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.collectionname" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.collectionnname_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">collectionnname_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.collectionnname_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.collectionnname_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">collectionnname_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.collectionnname_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.description">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.description" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.description_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">description_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.description_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.description_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">description_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.description_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.designedfor">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">designedfor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.designedfor" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.designedfor_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">designedfor_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.designedfor_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.designedfor_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">designedfor_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.designedfor_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.embeddability">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">embeddability</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.embeddability" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.embeddability_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">embeddability_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.embeddability_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.embeddability_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">embeddability_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.embeddability_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.familyname">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">familyname</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.familyname" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.familyname_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">familyname_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.familyname_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.familyname_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">familyname_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.familyname_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.filenames">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">filenames</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.filenames" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.filenames_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">filenames_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.filenames_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.filenames_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">filenames_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.filenames_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.item">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">item</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcshell.html#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.item" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.iter">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">iter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo" title="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo"><span class="pre">ShellFontItemInfo</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.iter" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.styles">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">styles</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.styles" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.styles_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">styles_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.styles_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.styles_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">styles_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.styles_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.type">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.type" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.type_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">type_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.type_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.type_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">type_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.type_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.vendors">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vendors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.vendors" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.vendors_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vendors_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.vendors_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.vendors_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vendors_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.vendors_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.version">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">version</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.version" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.version_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">version_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.version_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.version_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">version_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontItemInfo.version_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.shellitemutil.fontiteminfo.</span></span><span class="sig-name descname"><span class="pre">ShellFontPropertyKey</span></span><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>フォントのシステムプロパティキー</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.ACTIVESTATUS">
+<span class="sig-name descname"><span class="pre">ACTIVESTATUS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({D6CF9145-D365-471B-BCB8-F0B4A96B891C}</span> <span class="pre">100,</span> <span class="pre">&quot;System.Fonts.ActiveStatus&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.ACTIVESTATUS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.CATEGORY">
+<span class="sig-name descname"><span class="pre">CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({4B486401-5468-4381-9B5A-42DF4CB49F53}</span> <span class="pre">100,</span> <span class="pre">&quot;System.Fonts.Category&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.CATEGORY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.COLLECTIONNAME">
+<span class="sig-name descname"><span class="pre">COLLECTIONNAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({F3AECAC4-5B8D-436A-AD0C-64AB194FDAF3}</span> <span class="pre">100,</span> <span class="pre">&quot;System.Fonts.CollectionName&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.COLLECTIONNAME" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.DESCRIPTION">
+<span class="sig-name descname"><span class="pre">DESCRIPTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({3D658D4D-BC38-464A-B555-418D554A8DF8}</span> <span class="pre">100,</span> <span class="pre">&quot;System.Fonts.Description&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.DESCRIPTION" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.DESIGNEDFOR">
+<span class="sig-name descname"><span class="pre">DESIGNEDFOR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({5741CF9C-56FE-485B-8901-4786449E188D}</span> <span class="pre">100,</span> <span class="pre">&quot;System.Fonts.DesignedFor&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.DESIGNEDFOR" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.FAMILYNAME">
+<span class="sig-name descname"><span class="pre">FAMILYNAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({DE9E220B-41D4-4690-8B6B-3D89E231EEF1}</span> <span class="pre">100,</span> <span class="pre">&quot;System.Fonts.FamilyName&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.FAMILYNAME" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.FILENAMES">
+<span class="sig-name descname"><span class="pre">FILENAMES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({4530D076-B598-4A81-8813-9B11286EF6EA}</span> <span class="pre">7,</span> <span class="pre">&quot;System.Fonts.FileNames&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.FILENAMES" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.FONT_EMBEDDABILITY">
+<span class="sig-name descname"><span class="pre">FONT_EMBEDDABILITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({4530D076-B598-4A81-8813-9B11286EF6EA}</span> <span class="pre">2,</span> <span class="pre">&quot;System.Fonts.FontEmbeddability&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.FONT_EMBEDDABILITY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.STYLES">
+<span class="sig-name descname"><span class="pre">STYLES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({596FD41B-AF9B-4BA8-9B49-33B16F16678C}</span> <span class="pre">100,</span> <span class="pre">&quot;System.Fonts.Styles&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.STYLES" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.TYPE">
+<span class="sig-name descname"><span class="pre">TYPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({4530D076-B598-4A81-8813-9B11286EF6EA}</span> <span class="pre">5,</span> <span class="pre">&quot;System.Fonts.Type&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.TYPE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.VENDORS">
+<span class="sig-name descname"><span class="pre">VENDORS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({49753869-849C-4323-A41F-26D73F28B53B}</span> <span class="pre">100,</span> <span class="pre">&quot;System.Fonts.Vendors&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.VENDORS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.VERSION">
+<span class="sig-name descname"><span class="pre">VERSION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({FEC7952B-4BF0-4C03-B6E1-2796818B7CA9}</span> <span class="pre">100,</span> <span class="pre">&quot;System.Fonts.Version&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.fontiteminfo.ShellFontPropertyKey.VERSION" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-powcshell.shellitemutil.recyclebiniteminfo">
+<span id="powcshell-shellitemutil-recyclebiniteminfo-module"></span><h2>powcshell.shellitemutil.recyclebiniteminfo module<a class="headerlink" href="#module-powcshell.shellitemutil.recyclebiniteminfo" title="Link to this heading"></a></h2>
+<p>ごみ箱内のシェルアイテム情報を取得するユーティリティーを提供します。</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemInfo">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.shellitemutil.recyclebiniteminfo.</span></span><span class="sig-name descname"><span class="pre">ShellRecycleBinItemInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcshell.html#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemInfo" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>ごみ箱内項目を表すShellItem2の特殊システムプロパティ情報を取得します。</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemInfo.create">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemInfo" title="powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemInfo"><span class="pre">ShellRecycleBinItemInfo</span></a></span></span><a class="headerlink" href="#powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemInfo.create" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemInfo.date_deleted">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">date_deleted</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemInfo.date_deleted" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemInfo.date_deleted_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">date_deleted_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemInfo.date_deleted_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemInfo.date_deleted_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">date_deleted_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemInfo.date_deleted_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemInfo.deletedfrom">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">deletedfrom</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemInfo.deletedfrom" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemInfo.deletedfrom_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">deletedfrom_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemInfo.deletedfrom_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemInfo.deletedfrom_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">deletedfrom_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemInfo.deletedfrom_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemInfo.item">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">item</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcshell.html#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemInfo.item" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemPropertyKey">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.shellitemutil.recyclebiniteminfo.</span></span><span class="sig-name descname"><span class="pre">ShellRecycleBinItemPropertyKey</span></span><a class="headerlink" href="#powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemPropertyKey" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>ごみ箱内項目のシステムプロパティキー</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemPropertyKey.DATE_DELETED">
+<span class="sig-name descname"><span class="pre">DATE_DELETED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({9B174B33-40FF-11D2-A27E-00C04FC30871}</span> <span class="pre">3,</span> <span class="pre">&quot;System.Recycle.DateDeleted&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemPropertyKey.DATE_DELETED" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemPropertyKey.DELETEDFROM">
+<span class="sig-name descname"><span class="pre">DELETEDFROM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({9B174B33-40FF-11D2-A27E-00C04FC30871}</span> <span class="pre">2,</span> <span class="pre">&quot;System.Recycle.DeletedFrom&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.recyclebiniteminfo.ShellRecycleBinItemPropertyKey.DELETEDFROM" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-powcshell.shellitemutil.volumeinfo">
+<span id="powcshell-shellitemutil-volumeinfo-module"></span><h2>powcshell.shellitemutil.volumeinfo module<a class="headerlink" href="#module-powcshell.shellitemutil.volumeinfo" title="Link to this heading"></a></h2>
+<p>ボリュームのシェルアイテム情報を取得するユーティリティーを提供します。</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.shellitemutil.volumeinfo.</span></span><span class="sig-name descname"><span class="pre">ShellVolumeInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcshell.html#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>ボリュームを表すShellItem2の特殊システムプロパティ情報を取得します。</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.bitlocker_canchange_passphrage_byproxy">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bitlocker_canchange_passphrage_byproxy</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.bitlocker_canchange_passphrage_byproxy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.bitlocker_canchange_passphrage_byproxy_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bitlocker_canchange_passphrage_byproxy_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.bitlocker_canchange_passphrage_byproxy_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.bitlocker_canchange_passphrage_byproxy_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bitlocker_canchange_passphrage_byproxy_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.bitlocker_canchange_passphrage_byproxy_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.bitlocker_canchange_pin">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bitlocker_canchange_pin</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.bitlocker_canchange_pin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.bitlocker_canchange_pin_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bitlocker_canchange_pin_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.bitlocker_canchange_pin_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.bitlocker_canchange_pin_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bitlocker_canchange_pin_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.bitlocker_canchange_pin_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.bitlocker_requires_admin">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bitlocker_requires_admin</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.bitlocker_requires_admin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.bitlocker_requires_admin_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bitlocker_requires_admin_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.bitlocker_requires_admin_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.bitlocker_requires_admin_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bitlocker_requires_admin_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.bitlocker_requires_admin_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.capacity">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">capacity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.capacity" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.capacity_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">capacity_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.capacity_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.capacity_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">capacity_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.capacity_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.filesystem">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">filesystem</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.filesystem" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.filesystem_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">filesystem_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.filesystem_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.filesystem_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">filesystem_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.filesystem_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.is_mapped_drive">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_mapped_drive</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.is_mapped_drive" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.is_mapped_drive_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_mapped_drive_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.is_mapped_drive_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.is_mapped_drive_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_mapped_drive_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.is_mapped_drive_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.is_root">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_root</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.is_root" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.is_root_raw">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_root_raw</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.is_root_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.is_root_raw_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_root_raw_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.is_root_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.item">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">item</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcshell.html#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.item" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.iter">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">iter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo" title="powcshell.shellitemutil.volumeinfo.ShellVolumeInfo"><span class="pre">ShellVolumeInfo</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumeInfo.iter" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumePropertyKey">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.shellitemutil.volumeinfo.</span></span><span class="sig-name descname"><span class="pre">ShellVolumePropertyKey</span></span><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumePropertyKey" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>ボリュームのシステムプロパティキー</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumePropertyKey.BITLOCKER_CANCHANGE_PASSPHRAGE_BYPROXY">
+<span class="sig-name descname"><span class="pre">BITLOCKER_CANCHANGE_PASSPHRAGE_BYPROXY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({A63B464F-2ACE-4D83-87AE-ABAF011CC6AC}</span> <span class="pre">1720,</span> <span class="pre">&quot;System.Volume.BitLockerCanChangePassphraseByProxy&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumePropertyKey.BITLOCKER_CANCHANGE_PASSPHRAGE_BYPROXY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumePropertyKey.BITLOCKER_CANCHANGE_PIN">
+<span class="sig-name descname"><span class="pre">BITLOCKER_CANCHANGE_PIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({C53E42A9-DB3C-4BC7-B0F3-83A524ADF0EC}</span> <span class="pre">1719,</span> <span class="pre">&quot;System.Volume.BitLockerCanChangePin&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumePropertyKey.BITLOCKER_CANCHANGE_PIN" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumePropertyKey.BITLOCKER_REQUIRES_ADMIN">
+<span class="sig-name descname"><span class="pre">BITLOCKER_REQUIRES_ADMIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({EE31306C-FB9B-4D62-8621-3575D972A9F9}</span> <span class="pre">1718,</span> <span class="pre">&quot;System.Volume.BitLockerRequiresAdmin&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumePropertyKey.BITLOCKER_REQUIRES_ADMIN" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumePropertyKey.CAPACITY">
+<span class="sig-name descname"><span class="pre">CAPACITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({9B174B35-40FF-11D2-A27E-00C04FC30871}</span> <span class="pre">3,</span> <span class="pre">&quot;System.Capacity&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumePropertyKey.CAPACITY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumePropertyKey.FILESYSTEM">
+<span class="sig-name descname"><span class="pre">FILESYSTEM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({9B174B35-40FF-11D2-A27E-00C04FC30871}</span> <span class="pre">4,</span> <span class="pre">&quot;System.Volume.FileSystem&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumePropertyKey.FILESYSTEM" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumePropertyKey.IS_MAPPED_DRIVE">
+<span class="sig-name descname"><span class="pre">IS_MAPPED_DRIVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({149C0B69-2C2D-48FC-808F-D318D78C4636}</span> <span class="pre">2,</span> <span class="pre">&quot;System.Volume.IsMappedDrive&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumePropertyKey.IS_MAPPED_DRIVE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitemutil.volumeinfo.ShellVolumePropertyKey.IS_ROOT">
+<span class="sig-name descname"><span class="pre">IS_ROOT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PropertyKey({9B174B35-40FF-11D2-A27E-00C04FC30871}</span> <span class="pre">10,</span> <span class="pre">&quot;System.Volume.IsRoot&quot;)</span></em><a class="headerlink" href="#powcshell.shellitemutil.volumeinfo.ShellVolumePropertyKey.IS_ROOT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-powcshell.shellitemutil">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-powcshell.shellitemutil" title="Link to this heading"></a></h2>
+<p>ShellItem2と組み合わせて使用するユーティリティクラスを提供します。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="powcshell.html" class="btn btn-neutral float-left" title="powcshell package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, poti-san.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

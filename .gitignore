@@ -1,8 +1,8 @@
 *.lnk
 *.txt
-docs/build
 /.vscode/
 *.code-workspace
+docs/build
 
 # Local History for Visual Studio Code
 .history/
