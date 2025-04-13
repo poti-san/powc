@@ -5,9 +5,7 @@
 
 import os
 import sys
-sys.path.insert(0, os.path.abspath("../src/powc"))
-sys.path.insert(1, os.path.abspath("../src/powcpropsys"))
-sys.path.insert(2, os.path.abspath("../src/powcshell"))
+sys.path.insert(0, os.path.abspath("../src"))
 print(sys.path)
 
 # -- Project information -----------------------------------------------------
