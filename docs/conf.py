@@ -37,6 +37,9 @@ source_suffix = {
 import os
 import sys
 sys.path.insert(0, os.path.abspath("../src"))
+sys.path.insert(1, os.path.abspath("../src/powc"))
+sys.path.insert(2, os.path.abspath("../src/powcpropsys"))
+sys.path.insert(3, os.path.abspath("../src/powcshell"))
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
