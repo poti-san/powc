@@ -57,6 +57,9 @@ for desc in ps.propdescs_all:
 |doc.ps1|パッケージ集のドキュメントを開きます。|
 |src/|ソースコードディレクトリ。|
 |samples/|サンプルコードディレクトリ。|
+|sphnix/|Sphnix用のデータディレクトリ。|
+|docs|Sphnixで作成したhtmlデータの複製。Windows環境でctypesを使用しているため、作成してアップロードします。|
+
 
 ## 謝辞
 
