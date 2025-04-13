@@ -76,12 +76,89 @@
              
   <section id="powc">
 <h1>powcパッケージ集ドキュメント<a class="headerlink" href="#powc" title="Link to this heading"></a></h1>
-<p>PythonからWindowsのCOMを使いやすくするためのパッケージ集です。COMの基本機能、プロパティシステム機能、シェルアイテム機能を含みます。</p>
 <div class="toctree-wrapper compound">
 </div>
+<p>PythonからWindowsのCOMを使いやすくするためのパッケージ集です。COMの基本機能、プロパティシステム機能、シェルアイテム機能を含みます。
+基本的にcomtypesパッケージのみに依存する設計です。</p>
+<p>次のようなコードを記述できます。</p>
+<p><strong>デスクトップのシェル項目の表示名と解析名列挙</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">powcshell.knownfolderid</span><span class="w"> </span><span class="kn">import</span> <span class="n">KnownFolderID</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">powcshell.shellitem2</span><span class="w"> </span><span class="kn">import</span> <span class="n">ShellItem2</span>
+
+<span class="n">item</span> <span class="o">=</span> <span class="n">ShellItem2</span><span class="o">.</span><span class="n">create_knownfolder</span><span class="p">(</span><span class="n">KnownFolderID</span><span class="o">.</span><span class="n">DESKTOP</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">items</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="o">.</span><span class="n">name_normaldisplay</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">item</span><span class="o">.</span><span class="n">name_desktopabsediting</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>特殊フォルダを関連付けで開く</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">powcshell.knownfolderid</span><span class="w"> </span><span class="kn">import</span> <span class="n">KnownFolderID</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">powcshell.shellitem2</span><span class="w"> </span><span class="kn">import</span> <span class="n">ShellItem2</span>
+
+<span class="c1"># フォント</span>
+<span class="n">ShellItem2</span><span class="o">.</span><span class="n">create_knownfolder</span><span class="p">(</span><span class="n">KnownFolderID</span><span class="o">.</span><span class="n">FONTS</span><span class="p">)</span><span class="o">.</span><span class="n">execute_fs</span><span class="p">(</span><span class="s2">&quot;open&quot;</span><span class="p">)</span>
+
+<span class="c1"># プログラムのアンインストールまたは変更</span>
+<span class="n">ShellItem2</span><span class="o">.</span><span class="n">create_knownfolder</span><span class="p">(</span><span class="n">KnownFolderID</span><span class="o">.</span><span class="n">CHANGE_REMOVE_PROGRAMS</span><span class="p">)</span><span class="o">.</span><span class="n">execute_fs</span><span class="p">(</span><span class="s2">&quot;open&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>システムプロパティの列挙</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">powcpropsys.propsys</span><span class="w"> </span><span class="kn">import</span> <span class="n">PropertySystem</span>
+
+<span class="n">ps</span> <span class="o">=</span> <span class="n">PropertySystem</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">desc</span> <span class="ow">in</span> <span class="n">ps</span><span class="o">.</span><span class="n">propdescs_all</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">desc</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">desc</span><span class="o">.</span><span class="n">propkey</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <section id="id1">
-<h2>謝辞<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
-<p>comtypesパッケージの作成者とコントリビューターの方々の多大な努力に感謝します。</p>
+<h2>インストール<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>ローカルパッケージとしての利用を前提としています。使用時はダウンロードして<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">e.ps1</span></code>を実行してください。</p>
+</section>
+<section id="id2">
+<h2>ファイル構成<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>ファイル名</p></th>
+<th class="head text-left"><p>説明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>readme.md</p></td>
+<td class="text-left"><p>このファイル。</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>パッケージコーディング方針.md</p></td>
+<td class="text-left"><p>パッケージのコーディング方針。</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>pip install e.ps1</p></td>
+<td class="text-left"><p>各パッケージを開発モードで登録します。</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>sphnix apidoc.ps1</p></td>
+<td class="text-left"><p>sphnix-apidocで各パッケージのrstファイルを作成します。</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>sphnix make html.ps1</p></td>
+<td class="text-left"><p>sphnixで各パッケージのドキュメントを作成します。</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>doc.ps1</p></td>
+<td class="text-left"><p>パッケージ集のドキュメントを開きます。</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>src/</p></td>
+<td class="text-left"><p>ソースコードディレクトリ。</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>samples/</p></td>
+<td class="text-left"><p>サンプルコードディレクトリ。</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>sphnix/</p></td>
+<td class="text-left"><p>Sphnix用のデータディレクトリ。</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>docs/</p></td>
+<td class="text-left"><p>Sphnixで作成したhtmlデータの複製。</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id3">
+<h2>謝辞<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>このパッケージ集はcomtypesパッケージに依存しています。comtypesパッケージの作成者や貢献者の方々の多大な努力に感謝します。</p>
 </section>
 </section>
 
