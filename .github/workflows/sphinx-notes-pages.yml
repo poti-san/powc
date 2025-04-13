@@ -30,7 +30,7 @@ jobs:
       - name: Generate Sphinx documentation
         run: |
           sphinx-apidoc -f -o ./docs/apiref src
-          sphinx-build -M html ./src ./docs/build --fail-on-warning
+          sphinx-build -M html ./docs ./docs/build --fail-on-warning
 
       - name: List uploaded artifacts
         run: ls -al ./docs/build/html
