@@ -33,6 +33,8 @@ exclude_patterns = []
 
 language = "ja"
 
+napoleon_google_docstring = True
+
 source_suffix = {
     ".rst": "restructuredtext",
     ".md": "markdown",
