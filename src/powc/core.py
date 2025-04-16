@@ -3,8 +3,8 @@
 """
 
 from contextlib import contextmanager
-from ctypes import POINTER, WinError, _Pointer, c_size_t, c_void_p, memmove
-from typing import TYPE_CHECKING, Any, Iterator, NoReturn, Protocol
+from ctypes import POINTER, WinError, _Pointer, c_int32, c_size_t, c_void_p, memmove
+from typing import TYPE_CHECKING, Any, Iterator, NoReturn, Protocol, runtime_checkable
 
 from comtypes import GUID, IUnknown
 
@@ -138,6 +138,16 @@ class CoTaskMem(c_void_p):
         return x or 0
 
 
+def hr(code: int) -> int:
+    """Pythonのint型をWindowsのHRESULTに変換します。
+    Windows用のHRESULT定数をそのまま貼り付ける場合に使用します。
+
+    Examples:
+        >>> print(f"{hr(0x887A0002):X}")  # -7785FFFE
+    """
+    return c_int32(code).value
+
+
 def raise_hresult(hr: int) -> NoReturn:
     """COMエラーに対応する例外を発生します。
     Args:
@@ -211,6 +221,7 @@ def guid_from_define(a: int, b: int, c: int, d: int, e: int, f: int, g: int, h: 
     return guid
 
 
+@runtime_checkable
 class IUnknownWrapper(Protocol):
     def __init__(self, o: Any) -> None: ...
 

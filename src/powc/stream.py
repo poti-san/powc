@@ -190,6 +190,14 @@ class ComStream:
         return ComStream.create_on_file_nothrow(path, mode, creates).value
 
     @staticmethod
+    def openread_on_file_nothrow(path: str) -> ComResult["ComStream"]:
+        return ComStream.create_on_file_nothrow(path, StorageMode.READ, False)
+
+    @staticmethod
+    def openread_on_file(path: str) -> "ComStream":
+        return ComStream.create_on_file(path, StorageMode.READ, False)
+
+    @staticmethod
     def create_on_mem_nothrow(buffer: Buffer) -> "ComResult[ComStream]":
         if buffer is None:
             p = _SHCreateMemStream(None, 0)
