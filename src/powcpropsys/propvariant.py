@@ -25,6 +25,7 @@ from ctypes import (
 )
 from datetime import datetime
 
+from comtypes import GUID
 from powc.core import ComResult, CoTaskMem, check_hresult, cotaskmem, cotaskmem_free, cr
 from powc.datetime import FILETIME
 from powc.variant import VARENUM
@@ -233,6 +234,13 @@ class PropVariant(Union):
         v = PropVariant()
         v.vt = VARENUM.VT_FILETIME
         FILETIME.from_buffer(v.data_memview).datetime = x
+        return v
+
+    @staticmethod
+    def init_clsid(x: GUID):
+        v = PropVariant()
+        v.vt = VARENUM.VT_CLSID
+        (c_byte * 16).from_buffer(v.data_memview).value = bytes(x)
         return v
 
     # getters
