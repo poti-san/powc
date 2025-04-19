@@ -1,0 +1,1159 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>powc.comobj module &mdash; powc  ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c033477b"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=4755f45a"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="powc.core module" href="powc.core.html" />
+    <link rel="prev" title="powc.comcat module" href="powc.comcat.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            powc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="powc.html">powc package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="powc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="powc.comcat.html">powc.comcat module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">powc.comobj module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#powc.comobj.BindCtx"><code class="docutils literal notranslate"><span class="pre">BindCtx</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.comobj.BindFlag"><code class="docutils literal notranslate"><span class="pre">BindFlag</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.comobj.BindOptions"><code class="docutils literal notranslate"><span class="pre">BindOptions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.comobj.BindOptions2"><code class="docutils literal notranslate"><span class="pre">BindOptions2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.comobj.BindOptions3"><code class="docutils literal notranslate"><span class="pre">BindOptions3</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.comobj.ComStringEnumerator"><code class="docutils literal notranslate"><span class="pre">ComStringEnumerator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.comobj.IBindCtx"><code class="docutils literal notranslate"><span class="pre">IBindCtx</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.comobj.IEnumMoniker"><code class="docutils literal notranslate"><span class="pre">IEnumMoniker</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.comobj.IEnumString"><code class="docutils literal notranslate"><span class="pre">IEnumString</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.comobj.IEnumUnknown"><code class="docutils literal notranslate"><span class="pre">IEnumUnknown</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.comobj.IMoniker"><code class="docutils literal notranslate"><span class="pre">IMoniker</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.comobj.IRunningObjectTable"><code class="docutils literal notranslate"><span class="pre">IRunningObjectTable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.comobj.IUnknownEnumerator"><code class="docutils literal notranslate"><span class="pre">IUnknownEnumerator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.comobj.Moniker"><code class="docutils literal notranslate"><span class="pre">Moniker</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.comobj.MonikerEnumerator"><code class="docutils literal notranslate"><span class="pre">MonikerEnumerator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.comobj.MonikerReduce"><code class="docutils literal notranslate"><span class="pre">MonikerReduce</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.comobj.MonikerSystem"><code class="docutils literal notranslate"><span class="pre">MonikerSystem</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.comobj.RunningObjectTable"><code class="docutils literal notranslate"><span class="pre">RunningObjectTable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.comobj.RunningObjectTableFlag"><code class="docutils literal notranslate"><span class="pre">RunningObjectTableFlag</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="powc.core.html">powc.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.dataobj.html">powc.dataobj module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.datetime.html">powc.datetime module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.errlog.html">powc.errlog module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.globalmem.html">powc.globalmem module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.persist.html">powc.persist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.propbag.html">powc.propbag module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.safearray.html">powc.safearray module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.stream.html">powc.stream module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.variant.html">powc.variant module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="powcpropsys.html">powcpropsys package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powcshell.html">powcshell package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../py-modindex.html">モジュール索引</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">powc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="powc.html">powc package</a></li>
+      <li class="breadcrumb-item active">powc.comobj module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/apiref/powc.comobj.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-powc.comobj">
+<span id="powc-comobj-module"></span><h1>powc.comobj module<a class="headerlink" href="#module-powc.comobj" title="Link to this heading"></a></h1>
+<p>COMオブジェクトの基本操作クラス。</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.comobj.</span></span><span class="sig-name descname"><span class="pre">BindCtx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.comobj.BindCtx" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>IBindCtxインターフェイスのラッパーです。</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.bindoptions">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bindoptions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powc.comobj.BindOptions3" title="powc.comobj.BindOptions3"><span class="pre">BindOptions3</span></a></em><a class="headerlink" href="#powc.comobj.BindCtx.bindoptions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.bindoptions1">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bindoptions1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powc.comobj.BindOptions" title="powc.comobj.BindOptions"><span class="pre">BindOptions</span></a></em><a class="headerlink" href="#powc.comobj.BindCtx.bindoptions1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.bindoptions1_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bindoptions1_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.BindOptions" title="powc.comobj.BindOptions"><span class="pre">BindOptions</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.comobj.BindCtx.bindoptions1_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.bindoptions2">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bindoptions2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powc.comobj.BindOptions2" title="powc.comobj.BindOptions2"><span class="pre">BindOptions2</span></a></em><a class="headerlink" href="#powc.comobj.BindCtx.bindoptions2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.bindoptions2_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bindoptions2_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.BindOptions2" title="powc.comobj.BindOptions2"><span class="pre">BindOptions2</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.comobj.BindCtx.bindoptions2_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.bindoptions3">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bindoptions3</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powc.comobj.BindOptions3" title="powc.comobj.BindOptions3"><span class="pre">BindOptions3</span></a></em><a class="headerlink" href="#powc.comobj.BindCtx.bindoptions3" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.bindoptions3_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bindoptions3_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.BindOptions3" title="powc.comobj.BindOptions3"><span class="pre">BindOptions3</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.comobj.BindCtx.bindoptions3_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.bindoptions_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bindoptions_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.BindOptions3" title="powc.comobj.BindOptions3"><span class="pre">BindOptions3</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.comobj.BindCtx.bindoptions_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.create">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.comobj.BindCtx" title="powc.comobj.BindCtx"><span class="pre">BindCtx</span></a></span></span><a class="headerlink" href="#powc.comobj.BindCtx.create" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.create_nothrow">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_nothrow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.BindCtx" title="powc.comobj.BindCtx"><span class="pre">BindCtx</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.BindCtx.create_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.get_enumobjectparams">
+<span class="sig-name descname"><span class="pre">get_enumobjectparams</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.comobj.ComStringEnumerator" title="powc.comobj.ComStringEnumerator"><span class="pre">ComStringEnumerator</span></a></span></span><a class="headerlink" href="#powc.comobj.BindCtx.get_enumobjectparams" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.get_enumobjectparams_nothrow">
+<span class="sig-name descname"><span class="pre">get_enumobjectparams_nothrow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.ComStringEnumerator" title="powc.comobj.ComStringEnumerator"><span class="pre">ComStringEnumerator</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.BindCtx.get_enumobjectparams_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.get_objectparam">
+<span class="sig-name descname"><span class="pre">get_objectparam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">type</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">T</span></span></span><a class="headerlink" href="#powc.comobj.BindCtx.get_objectparam" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.get_objectparam_nothrow">
+<span class="sig-name descname"><span class="pre">get_objectparam_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">type</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a></span></span><a class="headerlink" href="#powc.comobj.BindCtx.get_objectparam_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.register_objectbound">
+<span class="sig-name descname"><span class="pre">register_objectbound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powc.core.html#powc.core.IUnknownWrapper" title="powc.core.IUnknownWrapper"><span class="pre">IUnknownWrapper</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powc.comobj.BindCtx.register_objectbound" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.register_objectbound_nothrow">
+<span class="sig-name descname"><span class="pre">register_objectbound_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powc.core.html#powc.core.IUnknownWrapper" title="powc.core.IUnknownWrapper"><span class="pre">IUnknownWrapper</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.BindCtx.register_objectbound_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.register_objectparam">
+<span class="sig-name descname"><span class="pre">register_objectparam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powc.core.html#powc.core.IUnknownWrapper" title="powc.core.IUnknownWrapper"><span class="pre">IUnknownWrapper</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powc.comobj.BindCtx.register_objectparam" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.register_objectparam_nothrow">
+<span class="sig-name descname"><span class="pre">register_objectparam_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powc.core.html#powc.core.IUnknownWrapper" title="powc.core.IUnknownWrapper"><span class="pre">IUnknownWrapper</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.BindCtx.register_objectparam_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.release_boundobjects">
+<span class="sig-name descname"><span class="pre">release_boundobjects</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powc.comobj.BindCtx.release_boundobjects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.release_boundobjects_nothrow">
+<span class="sig-name descname"><span class="pre">release_boundobjects_nothrow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.BindCtx.release_boundobjects_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.revoke_objectbound">
+<span class="sig-name descname"><span class="pre">revoke_objectbound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powc.core.html#powc.core.IUnknownWrapper" title="powc.core.IUnknownWrapper"><span class="pre">IUnknownWrapper</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powc.comobj.BindCtx.revoke_objectbound" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.revoke_objectbound_nothrow">
+<span class="sig-name descname"><span class="pre">revoke_objectbound_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powc.core.html#powc.core.IUnknownWrapper" title="powc.core.IUnknownWrapper"><span class="pre">IUnknownWrapper</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.BindCtx.revoke_objectbound_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.revoke_objectparam">
+<span class="sig-name descname"><span class="pre">revoke_objectparam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powc.comobj.BindCtx.revoke_objectparam" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.revoke_objectparam_nothrow">
+<span class="sig-name descname"><span class="pre">revoke_objectparam_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.BindCtx.revoke_objectparam_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.rot">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rot</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powc.comobj.RunningObjectTable" title="powc.comobj.RunningObjectTable"><span class="pre">RunningObjectTable</span></a></em><a class="headerlink" href="#powc.comobj.BindCtx.rot" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.rot_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rot_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.RunningObjectTable" title="powc.comobj.RunningObjectTable"><span class="pre">RunningObjectTable</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.comobj.BindCtx.rot_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.set_bindoptions1_nothrow">
+<span class="sig-name descname"><span class="pre">set_bindoptions1_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.BindOptions" title="powc.comobj.BindOptions"><span class="pre">BindOptions</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.BindCtx.set_bindoptions1_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.set_bindoptions2_nothrow">
+<span class="sig-name descname"><span class="pre">set_bindoptions2_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.BindOptions2" title="powc.comobj.BindOptions2"><span class="pre">BindOptions2</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.BindCtx.set_bindoptions2_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.set_bindoptions3_nothrow">
+<span class="sig-name descname"><span class="pre">set_bindoptions3_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.BindOptions3" title="powc.comobj.BindOptions3"><span class="pre">BindOptions3</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.BindCtx.set_bindoptions3_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.BindCtx.wrapped_obj">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wrapped_obj</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">c_void_p</span></em><a class="headerlink" href="#powc.comobj.BindCtx.wrapped_obj" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.comobj.BindFlag">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.comobj.</span></span><span class="sig-name descname"><span class="pre">BindFlag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.comobj.BindFlag" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntFlag</span></code></p>
+<p>BIND_FLAGS</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.BindFlag.JUST_TEST_EXISTENCE">
+<span class="sig-name descname"><span class="pre">JUST_TEST_EXISTENCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#powc.comobj.BindFlag.JUST_TEST_EXISTENCE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.BindFlag.MAY_BOTHER_USER">
+<span class="sig-name descname"><span class="pre">MAY_BOTHER_USER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powc.comobj.BindFlag.MAY_BOTHER_USER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.comobj.BindOptions">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.comobj.</span></span><span class="sig-name descname"><span class="pre">BindOptions</span></span><a class="headerlink" href="#powc.comobj.BindOptions" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>BIND_OPTS構造体のラッパー。</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.BindOptions.cb_struct">
+<span class="sig-name descname"><span class="pre">cb_struct</span></span><a class="headerlink" href="#powc.comobj.BindOptions.cb_struct" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.BindOptions.flags">
+<span class="sig-name descname"><span class="pre">flags</span></span><a class="headerlink" href="#powc.comobj.BindOptions.flags" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.BindOptions.mode">
+<span class="sig-name descname"><span class="pre">mode</span></span><a class="headerlink" href="#powc.comobj.BindOptions.mode" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.BindOptions.tickcount_deadline">
+<span class="sig-name descname"><span class="pre">tickcount_deadline</span></span><a class="headerlink" href="#powc.comobj.BindOptions.tickcount_deadline" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.comobj.BindOptions2">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.comobj.</span></span><span class="sig-name descname"><span class="pre">BindOptions2</span></span><a class="headerlink" href="#powc.comobj.BindOptions2" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <a class="reference internal" href="#powc.comobj.BindOptions" title="powc.comobj.BindOptions"><code class="xref py py-class docutils literal notranslate"><span class="pre">BindOptions</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.BindOptions2.class_context">
+<span class="sig-name descname"><span class="pre">class_context</span></span><a class="headerlink" href="#powc.comobj.BindOptions2.class_context" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.BindOptions2.locale">
+<span class="sig-name descname"><span class="pre">locale</span></span><a class="headerlink" href="#powc.comobj.BindOptions2.locale" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.BindOptions2.server_info">
+<span class="sig-name descname"><span class="pre">server_info</span></span><a class="headerlink" href="#powc.comobj.BindOptions2.server_info" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.BindOptions2.track_flags">
+<span class="sig-name descname"><span class="pre">track_flags</span></span><a class="headerlink" href="#powc.comobj.BindOptions2.track_flags" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.comobj.BindOptions3">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.comobj.</span></span><span class="sig-name descname"><span class="pre">BindOptions3</span></span><a class="headerlink" href="#powc.comobj.BindOptions3" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <a class="reference internal" href="#powc.comobj.BindOptions2" title="powc.comobj.BindOptions2"><code class="xref py py-class docutils literal notranslate"><span class="pre">BindOptions2</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.BindOptions3.window_handle">
+<span class="sig-name descname"><span class="pre">window_handle</span></span><a class="headerlink" href="#powc.comobj.BindOptions3.window_handle" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.comobj.ComStringEnumerator">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.comobj.</span></span><span class="sig-name descname"><span class="pre">ComStringEnumerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.comobj.ComStringEnumerator" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>IEnumStringインターフェイスのラッパーです。</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.ComStringEnumerator.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.comobj.ComStringEnumerator" title="powc.comobj.ComStringEnumerator"><span class="pre">ComStringEnumerator</span></a></span></span><a class="headerlink" href="#powc.comobj.ComStringEnumerator.clone" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.ComStringEnumerator.clone_nothrow">
+<span class="sig-name descname"><span class="pre">clone_nothrow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.ComStringEnumerator" title="powc.comobj.ComStringEnumerator"><span class="pre">ComStringEnumerator</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.ComStringEnumerator.clone_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.ComStringEnumerator.wrapped_obj">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wrapped_obj</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">c_void_p</span></em><a class="headerlink" href="#powc.comobj.ComStringEnumerator.wrapped_obj" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.comobj.IBindCtx">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.comobj.</span></span><span class="sig-name descname"><span class="pre">IBindCtx</span></span><a class="headerlink" href="#powc.comobj.IBindCtx" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IUnknown</span></code></p>
+<p>IBindCtxインターフェイスのラッパー。</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IBindCtx.EnumObjectParam">
+<span class="sig-name descname"><span class="pre">EnumObjectParam</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">11:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IBindCtx.EnumObjectParam" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IBindCtx.GetBindOptions">
+<span class="sig-name descname"><span class="pre">GetBindOptions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">7:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IBindCtx.GetBindOptions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IBindCtx.GetObjectParam">
+<span class="sig-name descname"><span class="pre">GetObjectParam</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">10:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IBindCtx.GetObjectParam" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IBindCtx.GetRunningObjectTable">
+<span class="sig-name descname"><span class="pre">GetRunningObjectTable</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">8:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IBindCtx.GetRunningObjectTable" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IBindCtx.RegisterObjectBound">
+<span class="sig-name descname"><span class="pre">RegisterObjectBound</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">3:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IBindCtx.RegisterObjectBound" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IBindCtx.RegisterObjectParam">
+<span class="sig-name descname"><span class="pre">RegisterObjectParam</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">9:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IBindCtx.RegisterObjectParam" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IBindCtx.ReleaseBoundObjects">
+<span class="sig-name descname"><span class="pre">ReleaseBoundObjects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">5:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IBindCtx.ReleaseBoundObjects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IBindCtx.RevokeObjectBound">
+<span class="sig-name descname"><span class="pre">RevokeObjectBound</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">4:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IBindCtx.RevokeObjectBound" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IBindCtx.RevokeObjectParam">
+<span class="sig-name descname"><span class="pre">RevokeObjectParam</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">12:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IBindCtx.RevokeObjectParam" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IBindCtx.SetBindOptions">
+<span class="sig-name descname"><span class="pre">SetBindOptions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">6:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IBindCtx.SetBindOptions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.comobj.IEnumMoniker">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.comobj.</span></span><span class="sig-name descname"><span class="pre">IEnumMoniker</span></span><a class="headerlink" href="#powc.comobj.IEnumMoniker" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IUnknown</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IEnumMoniker.Clone">
+<span class="sig-name descname"><span class="pre">Clone</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">6:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IEnumMoniker.Clone" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IEnumMoniker.Next">
+<span class="sig-name descname"><span class="pre">Next</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">3:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IEnumMoniker.Next" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IEnumMoniker.Reset">
+<span class="sig-name descname"><span class="pre">Reset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">5:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IEnumMoniker.Reset" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IEnumMoniker.Skip">
+<span class="sig-name descname"><span class="pre">Skip</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">4:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IEnumMoniker.Skip" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.comobj.IEnumString">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.comobj.</span></span><span class="sig-name descname"><span class="pre">IEnumString</span></span><a class="headerlink" href="#powc.comobj.IEnumString" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IUnknown</span></code></p>
+<p>IEnumStringインターフェイス。</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IEnumString.Clone">
+<span class="sig-name descname"><span class="pre">Clone</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">6:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IEnumString.Clone" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IEnumString.Next">
+<span class="sig-name descname"><span class="pre">Next</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">3:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IEnumString.Next" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IEnumString.Reset">
+<span class="sig-name descname"><span class="pre">Reset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">5:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IEnumString.Reset" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IEnumString.Skip">
+<span class="sig-name descname"><span class="pre">Skip</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">4:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IEnumString.Skip" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.comobj.IEnumUnknown">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.comobj.</span></span><span class="sig-name descname"><span class="pre">IEnumUnknown</span></span><a class="headerlink" href="#powc.comobj.IEnumUnknown" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IUnknown</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IEnumUnknown.Clone">
+<span class="sig-name descname"><span class="pre">Clone</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">6:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IEnumUnknown.Clone" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IEnumUnknown.Next">
+<span class="sig-name descname"><span class="pre">Next</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">3:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IEnumUnknown.Next" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IEnumUnknown.Reset">
+<span class="sig-name descname"><span class="pre">Reset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">5:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IEnumUnknown.Reset" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IEnumUnknown.Skip">
+<span class="sig-name descname"><span class="pre">Skip</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">4:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IEnumUnknown.Skip" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.comobj.IMoniker">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.comobj.</span></span><span class="sig-name descname"><span class="pre">IMoniker</span></span><a class="headerlink" href="#powc.comobj.IMoniker" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <a class="reference internal" href="powc.persist.html#powc.persist.IPersistStream" title="powc.persist.IPersistStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">IPersistStream</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IMoniker.BindToObject">
+<span class="sig-name descname"><span class="pre">BindToObject</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">8:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IMoniker.BindToObject" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IMoniker.BindToStorage">
+<span class="sig-name descname"><span class="pre">BindToStorage</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">9:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IMoniker.BindToStorage" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IMoniker.CommonPrefixWith">
+<span class="sig-name descname"><span class="pre">CommonPrefixWith</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">18:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IMoniker.CommonPrefixWith" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IMoniker.ComposeWith">
+<span class="sig-name descname"><span class="pre">ComposeWith</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">11:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IMoniker.ComposeWith" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IMoniker.Enum">
+<span class="sig-name descname"><span class="pre">Enum</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">12:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IMoniker.Enum" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IMoniker.GetDisplayName">
+<span class="sig-name descname"><span class="pre">GetDisplayName</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">20:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IMoniker.GetDisplayName" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IMoniker.GetTimeOfLastChange">
+<span class="sig-name descname"><span class="pre">GetTimeOfLastChange</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">16:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IMoniker.GetTimeOfLastChange" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IMoniker.Hash">
+<span class="sig-name descname"><span class="pre">Hash</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">14:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IMoniker.Hash" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IMoniker.Inverse">
+<span class="sig-name descname"><span class="pre">Inverse</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">17:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IMoniker.Inverse" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IMoniker.IsEqual">
+<span class="sig-name descname"><span class="pre">IsEqual</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">13:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IMoniker.IsEqual" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IMoniker.IsRunning">
+<span class="sig-name descname"><span class="pre">IsRunning</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">15:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IMoniker.IsRunning" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IMoniker.IsSystemMoniker">
+<span class="sig-name descname"><span class="pre">IsSystemMoniker</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">22:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IMoniker.IsSystemMoniker" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IMoniker.ParseDisplayName">
+<span class="sig-name descname"><span class="pre">ParseDisplayName</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">21:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IMoniker.ParseDisplayName" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IMoniker.Reduce">
+<span class="sig-name descname"><span class="pre">Reduce</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">10:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IMoniker.Reduce" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IMoniker.RelativePathTo">
+<span class="sig-name descname"><span class="pre">RelativePathTo</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">19:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IMoniker.RelativePathTo" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.comobj.IRunningObjectTable">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.comobj.</span></span><span class="sig-name descname"><span class="pre">IRunningObjectTable</span></span><a class="headerlink" href="#powc.comobj.IRunningObjectTable" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IUnknown</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IRunningObjectTable.EnumRunning">
+<span class="sig-name descname"><span class="pre">EnumRunning</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">9:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IRunningObjectTable.EnumRunning" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IRunningObjectTable.GetObject">
+<span class="sig-name descname"><span class="pre">GetObject</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">6:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IRunningObjectTable.GetObject" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IRunningObjectTable.GetTimeOfLastChange">
+<span class="sig-name descname"><span class="pre">GetTimeOfLastChange</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">8:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IRunningObjectTable.GetTimeOfLastChange" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IRunningObjectTable.IsRunning">
+<span class="sig-name descname"><span class="pre">IsRunning</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">5:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IRunningObjectTable.IsRunning" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IRunningObjectTable.NoteChangeTime">
+<span class="sig-name descname"><span class="pre">NoteChangeTime</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">7:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IRunningObjectTable.NoteChangeTime" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IRunningObjectTable.Register">
+<span class="sig-name descname"><span class="pre">Register</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">3:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IRunningObjectTable.Register" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.IRunningObjectTable.Revoke">
+<span class="sig-name descname"><span class="pre">Revoke</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">4:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.comobj.IRunningObjectTable.Revoke" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.comobj.IUnknownEnumerator">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.comobj.</span></span><span class="sig-name descname"><span class="pre">IUnknownEnumerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.comobj.IUnknownEnumerator" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>IEnumUnknownインターフェイスのラッパーです。</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.IUnknownEnumerator.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.comobj.IUnknownEnumerator" title="powc.comobj.IUnknownEnumerator"><span class="pre">IUnknownEnumerator</span></a></span></span><a class="headerlink" href="#powc.comobj.IUnknownEnumerator.clone" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.IUnknownEnumerator.clone_nothrow">
+<span class="sig-name descname"><span class="pre">clone_nothrow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.IUnknownEnumerator" title="powc.comobj.IUnknownEnumerator"><span class="pre">IUnknownEnumerator</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.IUnknownEnumerator.clone_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.IUnknownEnumerator.wrapped_obj">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wrapped_obj</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">c_void_p</span></em><a class="headerlink" href="#powc.comobj.IUnknownEnumerator.wrapped_obj" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.comobj.Moniker">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.comobj.</span></span><span class="sig-name descname"><span class="pre">Moniker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.comobj.Moniker" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>IMonikerインターフェイスのラッパーです。</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.clsid">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">clsid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">GUID</span></em><a class="headerlink" href="#powc.comobj.Moniker.clsid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.clsid_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">clsid_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">GUID</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.comobj.Moniker.clsid_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.create_classmoniker">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_classmoniker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clsid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></span><a class="headerlink" href="#powc.comobj.Moniker.create_classmoniker" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.create_classmoniker_nothrow">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_classmoniker_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clsid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.Moniker.create_classmoniker_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.create_file">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pathname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></span><a class="headerlink" href="#powc.comobj.Moniker.create_file" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.create_file_nothrow">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_file_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pathname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.Moniker.create_file_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.create_genericcomposite">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_genericcomposite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">first</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">rest</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></span><a class="headerlink" href="#powc.comobj.Moniker.create_genericcomposite" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.create_genericcomposite_nothrow">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_genericcomposite_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">first</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">rest</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.Moniker.create_genericcomposite_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.create_item">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></span><a class="headerlink" href="#powc.comobj.Moniker.create_item" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.create_item_nothrow">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_item_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.Moniker.create_item_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.create_objref">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_objref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wrapper</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powc.core.html#powc.core.IUnknownWrapper" title="powc.core.IUnknownWrapper"><span class="pre">IUnknownWrapper</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></span><a class="headerlink" href="#powc.comobj.Moniker.create_objref" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.create_objref_nothrow">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_objref_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wrapper</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powc.core.html#powc.core.IUnknownWrapper" title="powc.core.IUnknownWrapper"><span class="pre">IUnknownWrapper</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.Moniker.create_objref_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.create_pointer">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_pointer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wrapper</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powc.core.html#powc.core.IUnknownWrapper" title="powc.core.IUnknownWrapper"><span class="pre">IUnknownWrapper</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></span><a class="headerlink" href="#powc.comobj.Moniker.create_pointer" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.create_pointer_nothrow">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_pointer_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wrapper</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powc.core.html#powc.core.IUnknownWrapper" title="powc.core.IUnknownWrapper"><span class="pre">IUnknownWrapper</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.Moniker.create_pointer_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.displayname">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">displayname</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#powc.comobj.Moniker.displayname" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.displayname_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">displayname_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.comobj.Moniker.displayname_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.enum_backward">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enum_backward</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powc.comobj.MonikerEnumerator" title="powc.comobj.MonikerEnumerator"><span class="pre">MonikerEnumerator</span></a></em><a class="headerlink" href="#powc.comobj.Moniker.enum_backward" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.enum_backward_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enum_backward_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.MonikerEnumerator" title="powc.comobj.MonikerEnumerator"><span class="pre">MonikerEnumerator</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.comobj.Moniker.enum_backward_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.enum_forward">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enum_forward</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powc.comobj.MonikerEnumerator" title="powc.comobj.MonikerEnumerator"><span class="pre">MonikerEnumerator</span></a></em><a class="headerlink" href="#powc.comobj.Moniker.enum_forward" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.enum_forward_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enum_forward_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.MonikerEnumerator" title="powc.comobj.MonikerEnumerator"><span class="pre">MonikerEnumerator</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.comobj.Moniker.enum_forward_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.get_common_prefix_with">
+<span class="sig-name descname"><span class="pre">get_common_prefix_with</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></span><a class="headerlink" href="#powc.comobj.Moniker.get_common_prefix_with" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.get_common_prefix_with_nothrow">
+<span class="sig-name descname"><span class="pre">get_common_prefix_with_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.Moniker.get_common_prefix_with_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.get_displayname">
+<span class="sig-name descname"><span class="pre">get_displayname</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.BindCtx" title="powc.comobj.BindCtx"><span class="pre">BindCtx</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">left</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#powc.comobj.Moniker.get_displayname" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.get_displayname_nothrow">
+<span class="sig-name descname"><span class="pre">get_displayname_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.BindCtx" title="powc.comobj.BindCtx"><span class="pre">BindCtx</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">left</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.Moniker.get_displayname_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.get_relpath_to">
+<span class="sig-name descname"><span class="pre">get_relpath_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></span><a class="headerlink" href="#powc.comobj.Moniker.get_relpath_to" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.get_relpath_to_nothrow">
+<span class="sig-name descname"><span class="pre">get_relpath_to_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.Moniker.get_relpath_to_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.hash">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hash</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.comobj.Moniker.hash" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.hash_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hash_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.comobj.Moniker.hash_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.inversed">
+<span class="sig-name descname"><span class="pre">inversed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></span><a class="headerlink" href="#powc.comobj.Moniker.inversed" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.inversed_nothrow">
+<span class="sig-name descname"><span class="pre">inversed_nothrow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.Moniker.inversed_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.is_dirty">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_dirty</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#powc.comobj.Moniker.is_dirty" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.is_dirty_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_dirty_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.comobj.Moniker.is_dirty_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.is_equal">
+<span class="sig-name descname"><span class="pre">is_equal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#powc.comobj.Moniker.is_equal" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.is_equal_nothrow">
+<span class="sig-name descname"><span class="pre">is_equal_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.Moniker.is_equal_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.is_sysmoniker">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_sysmoniker</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powc.comobj.MonikerSystem" title="powc.comobj.MonikerSystem"><span class="pre">MonikerSystem</span></a></em><a class="headerlink" href="#powc.comobj.Moniker.is_sysmoniker" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.is_sysmoniker_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_sysmoniker_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.MonikerSystem" title="powc.comobj.MonikerSystem"><span class="pre">MonikerSystem</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.comobj.Moniker.is_sysmoniker_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powc.stream.html#powc.stream.ComStream" title="powc.stream.ComStream"><span class="pre">ComStream</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powc.comobj.Moniker.load" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.load_nothrow">
+<span class="sig-name descname"><span class="pre">load_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powc.stream.html#powc.stream.ComStream" title="powc.stream.ComStream"><span class="pre">ComStream</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.Moniker.load_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.parse_displayname">
+<span class="sig-name descname"><span class="pre">parse_displayname</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">displayname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.BindCtx" title="powc.comobj.BindCtx"><span class="pre">BindCtx</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></span><a class="headerlink" href="#powc.comobj.Moniker.parse_displayname" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.parse_displayname_nothrow">
+<span class="sig-name descname"><span class="pre">parse_displayname_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">displayname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.BindCtx" title="powc.comobj.BindCtx"><span class="pre">BindCtx</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.Moniker.parse_displayname_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powc.stream.html#powc.stream.ComStream" title="powc.stream.ComStream"><span class="pre">ComStream</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">clears_dirty</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powc.comobj.Moniker.save" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.save_nothrow">
+<span class="sig-name descname"><span class="pre">save_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powc.stream.html#powc.stream.ComStream" title="powc.stream.ComStream"><span class="pre">ComStream</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">clears_dirty</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.Moniker.save_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.sizemax">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sizemax</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.comobj.Moniker.sizemax" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.sizemax_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sizemax_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.comobj.Moniker.sizemax_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.Moniker.wrapped_obj">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wrapped_obj</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">c_void_p</span></em><a class="headerlink" href="#powc.comobj.Moniker.wrapped_obj" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.comobj.MonikerEnumerator">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.comobj.</span></span><span class="sig-name descname"><span class="pre">MonikerEnumerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.comobj.MonikerEnumerator" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>IEnumMonikerインターフェイスのラッパーです。</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.MonikerEnumerator.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.comobj.MonikerEnumerator" title="powc.comobj.MonikerEnumerator"><span class="pre">MonikerEnumerator</span></a></span></span><a class="headerlink" href="#powc.comobj.MonikerEnumerator.clone" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.MonikerEnumerator.clone_nothrow">
+<span class="sig-name descname"><span class="pre">clone_nothrow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.MonikerEnumerator" title="powc.comobj.MonikerEnumerator"><span class="pre">MonikerEnumerator</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.MonikerEnumerator.clone_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.MonikerEnumerator.wrapped_obj">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wrapped_obj</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">c_void_p</span></em><a class="headerlink" href="#powc.comobj.MonikerEnumerator.wrapped_obj" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.comobj.MonikerReduce">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.comobj.</span></span><span class="sig-name descname"><span class="pre">MonikerReduce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.comobj.MonikerReduce" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntFlag</span></code></p>
+<p>MKREDUCE</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.MonikerReduce.ALL">
+<span class="sig-name descname"><span class="pre">ALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#powc.comobj.MonikerReduce.ALL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.MonikerReduce.ONE">
+<span class="sig-name descname"><span class="pre">ONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">196608</span></em><a class="headerlink" href="#powc.comobj.MonikerReduce.ONE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.MonikerReduce.THROUGHUSER">
+<span class="sig-name descname"><span class="pre">THROUGHUSER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">65536</span></em><a class="headerlink" href="#powc.comobj.MonikerReduce.THROUGHUSER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.MonikerReduce.TOUSER">
+<span class="sig-name descname"><span class="pre">TOUSER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">131072</span></em><a class="headerlink" href="#powc.comobj.MonikerReduce.TOUSER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.comobj.MonikerSystem">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.comobj.</span></span><span class="sig-name descname"><span class="pre">MonikerSystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.comobj.MonikerSystem" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<p>MKSYS</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.MonikerSystem.ANTI_MONIKER">
+<span class="sig-name descname"><span class="pre">ANTI_MONIKER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#powc.comobj.MonikerSystem.ANTI_MONIKER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.MonikerSystem.CLASS_MONIKER">
+<span class="sig-name descname"><span class="pre">CLASS_MONIKER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#powc.comobj.MonikerSystem.CLASS_MONIKER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.MonikerSystem.FILE_MONIKER">
+<span class="sig-name descname"><span class="pre">FILE_MONIKER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#powc.comobj.MonikerSystem.FILE_MONIKER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.MonikerSystem.GENERIC_COMPOSITE">
+<span class="sig-name descname"><span class="pre">GENERIC_COMPOSITE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powc.comobj.MonikerSystem.GENERIC_COMPOSITE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.MonikerSystem.ITEM_MONIKER">
+<span class="sig-name descname"><span class="pre">ITEM_MONIKER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#powc.comobj.MonikerSystem.ITEM_MONIKER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.MonikerSystem.LUA_MONIKER">
+<span class="sig-name descname"><span class="pre">LUA_MONIKER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#powc.comobj.MonikerSystem.LUA_MONIKER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.MonikerSystem.NONE">
+<span class="sig-name descname"><span class="pre">NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#powc.comobj.MonikerSystem.NONE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.MonikerSystem.OBJREF_MONIKER">
+<span class="sig-name descname"><span class="pre">OBJREF_MONIKER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#powc.comobj.MonikerSystem.OBJREF_MONIKER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.MonikerSystem.POINTER_MONIKER">
+<span class="sig-name descname"><span class="pre">POINTER_MONIKER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#powc.comobj.MonikerSystem.POINTER_MONIKER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.MonikerSystem.SESSION_MONIKER">
+<span class="sig-name descname"><span class="pre">SESSION_MONIKER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#powc.comobj.MonikerSystem.SESSION_MONIKER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTable">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.comobj.</span></span><span class="sig-name descname"><span class="pre">RunningObjectTable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.comobj.RunningObjectTable" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>IRunningObjectTableインターフェイスのラッパーです。</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTable.create">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.comobj.RunningObjectTable" title="powc.comobj.RunningObjectTable"><span class="pre">RunningObjectTable</span></a></span></span><a class="headerlink" href="#powc.comobj.RunningObjectTable.create" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTable.create_nothrow">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_nothrow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.RunningObjectTable" title="powc.comobj.RunningObjectTable"><span class="pre">RunningObjectTable</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.RunningObjectTable.create_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTable.enumrunning">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enumrunning</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powc.comobj.MonikerEnumerator" title="powc.comobj.MonikerEnumerator"><span class="pre">MonikerEnumerator</span></a></em><a class="headerlink" href="#powc.comobj.RunningObjectTable.enumrunning" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTable.enumrunning_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enumrunning_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.MonikerEnumerator" title="powc.comobj.MonikerEnumerator"><span class="pre">MonikerEnumerator</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.comobj.RunningObjectTable.enumrunning_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTable.get_object_raw">
+<span class="sig-name descname"><span class="pre">get_object_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objectname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.comobj.RunningObjectTable.get_object_raw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTable.get_object_raw_nothrow">
+<span class="sig-name descname"><span class="pre">get_object_raw_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objectname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">POINTER</span><span class="p"><span class="pre">(</span></span><span class="pre">IUnknown</span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.RunningObjectTable.get_object_raw_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTable.get_time_of_lastchange">
+<span class="sig-name descname"><span class="pre">get_time_of_lastchange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objectname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.datetime.html#powc.datetime.FILETIME" title="powc.datetime.FILETIME"><span class="pre">FILETIME</span></a></span></span><a class="headerlink" href="#powc.comobj.RunningObjectTable.get_time_of_lastchange" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTable.get_time_of_lastchange_nothrow">
+<span class="sig-name descname"><span class="pre">get_time_of_lastchange_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objectname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powc.datetime.html#powc.datetime.FILETIME" title="powc.datetime.FILETIME"><span class="pre">FILETIME</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.RunningObjectTable.get_time_of_lastchange_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTable.is_running">
+<span class="sig-name descname"><span class="pre">is_running</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objectname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#powc.comobj.RunningObjectTable.is_running" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTable.is_running_nothrow">
+<span class="sig-name descname"><span class="pre">is_running_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objectname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.RunningObjectTable.is_running_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTable.moniker_items">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">moniker_items</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.comobj.RunningObjectTable.moniker_items" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTable.moniker_iter">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">moniker_iter</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.comobj.RunningObjectTable.moniker_iter" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTable.note_changetime">
+<span class="sig-name descname"><span class="pre">note_changetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">register</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">c_ulong</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powc.datetime.html#powc.datetime.FILETIME" title="powc.datetime.FILETIME"><span class="pre">FILETIME</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powc.comobj.RunningObjectTable.note_changetime" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTable.note_changetime_nothrow">
+<span class="sig-name descname"><span class="pre">note_changetime_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">register</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">c_ulong</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powc.datetime.html#powc.datetime.FILETIME" title="powc.datetime.FILETIME"><span class="pre">FILETIME</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.RunningObjectTable.note_changetime_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTable.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.RunningObjectTableFlag" title="powc.comobj.RunningObjectTableFlag"><span class="pre">RunningObjectTableFlag</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">object</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">POINTER</span><span class="p"><span class="pre">(</span></span><span class="pre">IUnknown</span><span class="p"><span class="pre">)</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">objectname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#powc.comobj.RunningObjectTable.register" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTable.register_nothrow">
+<span class="sig-name descname"><span class="pre">register_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.RunningObjectTableFlag" title="powc.comobj.RunningObjectTableFlag"><span class="pre">RunningObjectTableFlag</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">object</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">POINTER</span><span class="p"><span class="pre">(</span></span><span class="pre">IUnknown</span><span class="p"><span class="pre">)</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">objectname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.comobj.Moniker" title="powc.comobj.Moniker"><span class="pre">Moniker</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.RunningObjectTable.register_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTable.revoke">
+<span class="sig-name descname"><span class="pre">revoke</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">register</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powc.comobj.RunningObjectTable.revoke" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTable.revoke_nothrow">
+<span class="sig-name descname"><span class="pre">revoke_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">register</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.comobj.RunningObjectTable.revoke_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTable.wrapped_obj">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wrapped_obj</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">c_void_p</span></em><a class="headerlink" href="#powc.comobj.RunningObjectTable.wrapped_obj" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTableFlag">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.comobj.</span></span><span class="sig-name descname"><span class="pre">RunningObjectTableFlag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.comobj.RunningObjectTableFlag" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntFlag</span></code></p>
+<p>ROTFLAGS_*定数</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTableFlag.ALLOW_ANY_CLIENT">
+<span class="sig-name descname"><span class="pre">ALLOW_ANY_CLIENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#powc.comobj.RunningObjectTableFlag.ALLOW_ANY_CLIENT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.comobj.RunningObjectTableFlag.REGISTRATION_KEEPS_ALIVE">
+<span class="sig-name descname"><span class="pre">REGISTRATION_KEEPS_ALIVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powc.comobj.RunningObjectTableFlag.REGISTRATION_KEEPS_ALIVE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="powc.comcat.html" class="btn btn-neutral float-left" title="powc.comcat module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="powc.core.html" class="btn btn-neutral float-right" title="powc.core module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, poti-san.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

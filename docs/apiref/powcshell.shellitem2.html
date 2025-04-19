@@ -1,0 +1,468 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>powcshell.shellitem2 module &mdash; powc  ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c033477b"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=4755f45a"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="powcshell.shellitemarray module" href="powcshell.shellitemarray.html" />
+    <link rel="prev" title="powcshell.shellitem module" href="powcshell.shellitem.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            powc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="powc.html">powc package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powcpropsys.html">powcpropsys package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="powcshell.html">powcshell package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="powcshell.html#subpackages">Subpackages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="powcshell.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="powcshell.desktopwallpaper.html">powcshell.desktopwallpaper module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.foldertypeid.html">powcshell.foldertypeid module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.itemidlist.html">powcshell.itemidlist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfolder.html">powcshell.knownfolder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfolderid.html">powcshell.knownfolderid module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellexec.html">powcshell.shellexec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellfileop.html">powcshell.shellfileop module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellfileoputil.html">powcshell.shellfileoputil module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitem.html">powcshell.shellitem module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">powcshell.shellitem2 module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#powcshell.shellitem2.IShellItem2"><code class="docutils literal notranslate"><span class="pre">IShellItem2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powcshell.shellitem2.ShellItem2"><code class="docutils literal notranslate"><span class="pre">ShellItem2</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitemarray.html">powcshell.shellitemarray module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitemenum.html">powcshell.shellitemenum module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shelllibrary.html">powcshell.shelllibrary module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shelllink.html">powcshell.shelllink module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.url.html">powcshell.url module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../py-modindex.html">モジュール索引</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">powc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="powcshell.html">powcshell package</a></li>
+      <li class="breadcrumb-item active">powcshell.shellitem2 module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/apiref/powcshell.shellitem2.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-powcshell.shellitem2">
+<span id="powcshell-shellitem2-module"></span><h1>powcshell.shellitem2 module<a class="headerlink" href="#module-powcshell.shellitem2" title="Link to this heading"></a></h1>
+<p>プロパティにアクセスしやすいシェル項目。</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.shellitem2.IShellItem2">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.shellitem2.</span></span><span class="sig-name descname"><span class="pre">IShellItem2</span></span><a class="headerlink" href="#powcshell.shellitem2.IShellItem2" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <a class="reference internal" href="powcshell.shellitem.html#powcshell.shellitem.IShellItem" title="powcshell.shellitem.IShellItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">IShellItem</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitem2.IShellItem2.GetBool">
+<span class="sig-name descname"><span class="pre">GetBool</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">20:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.shellitem2.IShellItem2.GetBool" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitem2.IShellItem2.GetCLSID">
+<span class="sig-name descname"><span class="pre">GetCLSID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">14:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.shellitem2.IShellItem2.GetCLSID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitem2.IShellItem2.GetFileTime">
+<span class="sig-name descname"><span class="pre">GetFileTime</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">15:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.shellitem2.IShellItem2.GetFileTime" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitem2.IShellItem2.GetInt32">
+<span class="sig-name descname"><span class="pre">GetInt32</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">16:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.shellitem2.IShellItem2.GetInt32" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitem2.IShellItem2.GetProperty">
+<span class="sig-name descname"><span class="pre">GetProperty</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">13:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.shellitem2.IShellItem2.GetProperty" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitem2.IShellItem2.GetPropertyDescriptionList">
+<span class="sig-name descname"><span class="pre">GetPropertyDescriptionList</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">11:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.shellitem2.IShellItem2.GetPropertyDescriptionList" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitem2.IShellItem2.GetPropertyStore">
+<span class="sig-name descname"><span class="pre">GetPropertyStore</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">8:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.shellitem2.IShellItem2.GetPropertyStore" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitem2.IShellItem2.GetPropertyStoreForKeys">
+<span class="sig-name descname"><span class="pre">GetPropertyStoreForKeys</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">10:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.shellitem2.IShellItem2.GetPropertyStoreForKeys" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitem2.IShellItem2.GetPropertyStoreWithCreateObject">
+<span class="sig-name descname"><span class="pre">GetPropertyStoreWithCreateObject</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">9:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.shellitem2.IShellItem2.GetPropertyStoreWithCreateObject" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitem2.IShellItem2.GetString">
+<span class="sig-name descname"><span class="pre">GetString</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">17:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.shellitem2.IShellItem2.GetString" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitem2.IShellItem2.GetUInt32">
+<span class="sig-name descname"><span class="pre">GetUInt32</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">18:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.shellitem2.IShellItem2.GetUInt32" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitem2.IShellItem2.GetUInt64">
+<span class="sig-name descname"><span class="pre">GetUInt64</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">19:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.shellitem2.IShellItem2.GetUInt64" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.shellitem2.IShellItem2.Update">
+<span class="sig-name descname"><span class="pre">Update</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">12:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.shellitem2.IShellItem2.Update" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.shellitem2.</span></span><span class="sig-name descname"><span class="pre">ShellItem2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <a class="reference internal" href="powcshell.shellitem.html#powcshell.shellitem.ShellItem" title="powcshell.shellitem.ShellItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShellItem</span></code></a></p>
+<p>シェル項目。IShellItem2インターフェイスのラッパーです。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>__iter__、parent等でIShellItemが必要な場合は以下のコードでShellItemを作成してください。</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">powc.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">queryinterface</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">item</span> <span class="o">=</span> <span class="n">ShellItem</span><span class="p">(</span><span class="n">queryinterface</span><span class="p">(</span><span class="n">item2</span><span class="o">.</span><span class="n">wrapped_obj</span><span class="p">,</span> <span class="n">IShellItem</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.create_from_idlist">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_from_idlist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pidl</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.create_from_idlist" title="Link to this definition"></a></dt>
+<dd><p>アイテムIDリストからシェルアイテムを作成します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.create_from_idlist_nothrow">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_from_idlist_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pidl</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.create_from_idlist_nothrow" title="Link to this definition"></a></dt>
+<dd><p>アイテムIDリストからシェルアイテムを作成します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.create_knownfolder">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_knownfolder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.create_knownfolder" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.create_knownfolder_item">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_knownfolder_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">itemname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.create_knownfolder_item" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.create_knownfolder_item_nothrow">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_knownfolder_item_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">itemname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.create_knownfolder_item_nothrow" title="Link to this definition"></a></dt>
+<dd><p>既知フォルダ内のシェル項目を作成します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>folder_id</strong> (<em>GUID</em>) -- KnownFolderID定数。</p></li>
+<li><p><strong>itemname</strong> (<em>str</em>) -- 項目の名前。</p></li>
+<li><p><strong>flags</strong> (<em>int</em><em>, </em><em>optional</em>) -- フラグ。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.create_knownfolder_nothrow">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_knownfolder_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.create_knownfolder_nothrow" title="Link to this definition"></a></dt>
+<dd><p>既知フォルダのシェルアイテムを作成します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>folder_id</strong> (<em>GUID</em>) -- KnownFolderID定数。</p></li>
+<li><p><strong>flags</strong> (<em>int</em><em>, </em><em>optional</em>) -- フラグ. Defaults to 0.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.create_parsingname">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_parsingname</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.create_parsingname" title="Link to this definition"></a></dt>
+<dd><p>解析名からシェルアイテムを作成します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.create_parsingname_nothrow">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_parsingname_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.create_parsingname_nothrow" title="Link to this definition"></a></dt>
+<dd><p>解析名からシェルアイテムを作成します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.get_bool">
+<span class="sig-name descname"><span class="pre">get_bool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.get_bool" title="Link to this definition"></a></dt>
+<dd><p>キーに対応する真偽値を取得します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.get_bool_nothrow">
+<span class="sig-name descname"><span class="pre">get_bool_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.get_bool_nothrow" title="Link to this definition"></a></dt>
+<dd><p>キーに対応する真偽値を取得します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.get_clsid">
+<span class="sig-name descname"><span class="pre">get_clsid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">GUID</span></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.get_clsid" title="Link to this definition"></a></dt>
+<dd><p>キーに対応するCLSIDを取得します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.get_clsid_nothrow">
+<span class="sig-name descname"><span class="pre">get_clsid_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">GUID</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.get_clsid_nothrow" title="Link to this definition"></a></dt>
+<dd><p>キーに対応するCLSIDを取得します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.get_filetime">
+<span class="sig-name descname"><span class="pre">get_filetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.datetime.html#powc.datetime.FILETIME" title="powc.datetime.FILETIME"><span class="pre">FILETIME</span></a></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.get_filetime" title="Link to this definition"></a></dt>
+<dd><p>キーに対応するFILETIMEを取得します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.get_filetime_nothrow">
+<span class="sig-name descname"><span class="pre">get_filetime_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powc.datetime.html#powc.datetime.FILETIME" title="powc.datetime.FILETIME"><span class="pre">FILETIME</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.get_filetime_nothrow" title="Link to this definition"></a></dt>
+<dd><p>キーに対応するFILETIMEを取得します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.get_int32">
+<span class="sig-name descname"><span class="pre">get_int32</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.get_int32" title="Link to this definition"></a></dt>
+<dd><p>キーに対応する32ビット符号付き整数を取得します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.get_int32_nothrow">
+<span class="sig-name descname"><span class="pre">get_int32_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.get_int32_nothrow" title="Link to this definition"></a></dt>
+<dd><p>キーに対応する32ビット符号付き整数を取得します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.get_prop">
+<span class="sig-name descname"><span class="pre">get_prop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.get_prop" title="Link to this definition"></a></dt>
+<dd><p>キーに対応するプロパティを取得します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.get_prop_nothrow">
+<span class="sig-name descname"><span class="pre">get_prop_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.get_prop_nothrow" title="Link to this definition"></a></dt>
+<dd><p>キーに対応するプロパティを取得します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.get_propdescs">
+<span class="sig-name descname"><span class="pre">get_propdescs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescriptionList" title="powcpropsys.propdesc.PropertyDescriptionList"><span class="pre">PropertyDescriptionList</span></a></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.get_propdescs" title="Link to this definition"></a></dt>
+<dd><p>プロパティの説明を取得します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.get_propdescs_nothrow">
+<span class="sig-name descname"><span class="pre">get_propdescs_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescriptionList" title="powcpropsys.propdesc.PropertyDescriptionList"><span class="pre">PropertyDescriptionList</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.get_propdescs_nothrow" title="Link to this definition"></a></dt>
+<dd><p>プロパティの説明を取得します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.get_propstore">
+<span class="sig-name descname"><span class="pre">get_propstore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.GetPropertyStoreFlag" title="powcpropsys.propstore.GetPropertyStoreFlag"><span class="pre">GetPropertyStoreFlag</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore" title="powcpropsys.propstore.PropertyStore"><span class="pre">PropertyStore</span></a></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.get_propstore" title="Link to this definition"></a></dt>
+<dd><p>プロパティストアを取得します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.get_propstore_nothrow">
+<span class="sig-name descname"><span class="pre">get_propstore_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.GetPropertyStoreFlag" title="powcpropsys.propstore.GetPropertyStoreFlag"><span class="pre">GetPropertyStoreFlag</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore" title="powcpropsys.propstore.PropertyStore"><span class="pre">PropertyStore</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.get_propstore_nothrow" title="Link to this definition"></a></dt>
+<dd><p>プロパティストアを取得します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.get_str">
+<span class="sig-name descname"><span class="pre">get_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.get_str" title="Link to this definition"></a></dt>
+<dd><p>キーに対応する文字列を取得します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.get_str_nothrow">
+<span class="sig-name descname"><span class="pre">get_str_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.get_str_nothrow" title="Link to this definition"></a></dt>
+<dd><p>キーに対応する文字列を取得します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.get_uint32">
+<span class="sig-name descname"><span class="pre">get_uint32</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.get_uint32" title="Link to this definition"></a></dt>
+<dd><p>キーに対応する32ビット符号無し整数を取得します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.get_uint32_nothrow">
+<span class="sig-name descname"><span class="pre">get_uint32_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.get_uint32_nothrow" title="Link to this definition"></a></dt>
+<dd><p>キーに対応する32ビット符号無し整数を取得します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.get_uint64">
+<span class="sig-name descname"><span class="pre">get_uint64</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.get_uint64" title="Link to this definition"></a></dt>
+<dd><p>キーに対応する64ビット符号無し整数を取得します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.get_uint64_nothrow">
+<span class="sig-name descname"><span class="pre">get_uint64_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.get_uint64_nothrow" title="Link to this definition"></a></dt>
+<dd><p>キーに対応する64ビット符号無し整数を取得します。</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.items">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">items</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.items" title="Link to this definition"></a></dt>
+<dd><p>フォルダ内の項目を列挙します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.iter_items">
+<span class="sig-name descname"><span class="pre">iter_items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.iter_items" title="Link to this definition"></a></dt>
+<dd><p>フォルダ内の項目を列挙します。</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.linktarget">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">linktarget</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a></em><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.linktarget" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.linktarget_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">linktarget_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.linktarget_nothrow" title="Link to this definition"></a></dt>
+<dd><p>項目がシェルリンクの場合にリンク先項目を取得します。</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.parent">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a></em><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.parent" title="Link to this definition"></a></dt>
+<dd><p>親フォルダを取得します。</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.parent_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parent_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.parent_nothrow" title="Link to this definition"></a></dt>
+<dd><p>親フォルダを取得します。</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.propstore">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">propstore</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore" title="powcpropsys.propstore.PropertyStore"><span class="pre">PropertyStore</span></a></em><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.propstore" title="Link to this definition"></a></dt>
+<dd><p>既定のプロパティストアを取得します。</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.propstore_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">propstore_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore" title="powcpropsys.propstore.PropertyStore"><span class="pre">PropertyStore</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.propstore_nothrow" title="Link to this definition"></a></dt>
+<dd><p>既定のプロパティストアを取得します。</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.propstore_with_slowitem">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">propstore_with_slowitem</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore" title="powcpropsys.propstore.PropertyStore"><span class="pre">PropertyStore</span></a></em><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.propstore_with_slowitem" title="Link to this definition"></a></dt>
+<dd><p>遅い項目を含むプロパティストアを取得します。</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.shellitem2.ShellItem2.propstore_with_slowitem_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">propstore_with_slowitem_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore" title="powcpropsys.propstore.PropertyStore"><span class="pre">PropertyStore</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.shellitem2.ShellItem2.propstore_with_slowitem_nothrow" title="Link to this definition"></a></dt>
+<dd><p>遅い項目を含むプロパティストアを取得します。</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="powcshell.shellitem.html" class="btn btn-neutral float-left" title="powcshell.shellitem module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="powcshell.shellitemarray.html" class="btn btn-neutral float-right" title="powcshell.shellitemarray module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, poti-san.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,368 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>powcpropsys.propstore module &mdash; powc  ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c033477b"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=4755f45a"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="powcpropsys.propsys module" href="powcpropsys.propsys.html" />
+    <link rel="prev" title="powcpropsys.propkey module" href="powcpropsys.propkey.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            powc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="powc.html">powc package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="powcpropsys.html">powcpropsys package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="powcpropsys.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html">powcpropsys.propchange module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html">powcpropsys.propdesc module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propkey.html">powcpropsys.propkey module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">powcpropsys.propstore module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#powcpropsys.propstore.GetPropertyStoreFlag"><code class="docutils literal notranslate"><span class="pre">GetPropertyStoreFlag</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powcpropsys.propstore.IPropertyStore"><code class="docutils literal notranslate"><span class="pre">IPropertyStore</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powcpropsys.propstore.PropertyStore"><code class="docutils literal notranslate"><span class="pre">PropertyStore</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html">powcpropsys.propsys module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html">powcpropsys.propvariant module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="powcshell.html">powcshell package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../py-modindex.html">モジュール索引</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">powc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="powcpropsys.html">powcpropsys package</a></li>
+      <li class="breadcrumb-item active">powcpropsys.propstore module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/apiref/powcpropsys.propstore.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-powcpropsys.propstore">
+<span id="powcpropsys-propstore-module"></span><h1>powcpropsys.propstore module<a class="headerlink" href="#module-powcpropsys.propstore" title="Link to this heading"></a></h1>
+<p>プロパティストア。</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powcpropsys.propstore.GetPropertyStoreFlag">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcpropsys.propstore.</span></span><span class="sig-name descname"><span class="pre">GetPropertyStoreFlag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcpropsys.propstore.GetPropertyStoreFlag" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntFlag</span></code></p>
+<p>GETPROPERTYSTOREFLAGS</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcpropsys.propstore.GetPropertyStoreFlag.BEST_EFFORT">
+<span class="sig-name descname"><span class="pre">BEST_EFFORT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">64</span></em><a class="headerlink" href="#powcpropsys.propstore.GetPropertyStoreFlag.BEST_EFFORT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcpropsys.propstore.GetPropertyStoreFlag.DEFAULT">
+<span class="sig-name descname"><span class="pre">DEFAULT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#powcpropsys.propstore.GetPropertyStoreFlag.DEFAULT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcpropsys.propstore.GetPropertyStoreFlag.DELAY_CREATION">
+<span class="sig-name descname"><span class="pre">DELAY_CREATION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#powcpropsys.propstore.GetPropertyStoreFlag.DELAY_CREATION" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcpropsys.propstore.GetPropertyStoreFlag.EXTRINSIC_PROPERTIES">
+<span class="sig-name descname"><span class="pre">EXTRINSIC_PROPERTIES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">512</span></em><a class="headerlink" href="#powcpropsys.propstore.GetPropertyStoreFlag.EXTRINSIC_PROPERTIES" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcpropsys.propstore.GetPropertyStoreFlag.EXTRINSIC_PROPERTIES_ONLY">
+<span class="sig-name descname"><span class="pre">EXTRINSIC_PROPERTIES_ONLY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1024</span></em><a class="headerlink" href="#powcpropsys.propstore.GetPropertyStoreFlag.EXTRINSIC_PROPERTIES_ONLY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcpropsys.propstore.GetPropertyStoreFlag.FAST_PROPERTIES_ONLY">
+<span class="sig-name descname"><span class="pre">FAST_PROPERTIES_ONLY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#powcpropsys.propstore.GetPropertyStoreFlag.FAST_PROPERTIES_ONLY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcpropsys.propstore.GetPropertyStoreFlag.HANDLER_PROPERTIES_ONLY">
+<span class="sig-name descname"><span class="pre">HANDLER_PROPERTIES_ONLY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powcpropsys.propstore.GetPropertyStoreFlag.HANDLER_PROPERTIES_ONLY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcpropsys.propstore.GetPropertyStoreFlag.NO_OPLOCK">
+<span class="sig-name descname"><span class="pre">NO_OPLOCK</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">128</span></em><a class="headerlink" href="#powcpropsys.propstore.GetPropertyStoreFlag.NO_OPLOCK" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcpropsys.propstore.GetPropertyStoreFlag.OPEN_SLOW_ITEM">
+<span class="sig-name descname"><span class="pre">OPEN_SLOW_ITEM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em><a class="headerlink" href="#powcpropsys.propstore.GetPropertyStoreFlag.OPEN_SLOW_ITEM" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcpropsys.propstore.GetPropertyStoreFlag.PREFER_QUERY_PROPERTIES">
+<span class="sig-name descname"><span class="pre">PREFER_QUERY_PROPERTIES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">256</span></em><a class="headerlink" href="#powcpropsys.propstore.GetPropertyStoreFlag.PREFER_QUERY_PROPERTIES" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcpropsys.propstore.GetPropertyStoreFlag.READ_WRITE">
+<span class="sig-name descname"><span class="pre">READ_WRITE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#powcpropsys.propstore.GetPropertyStoreFlag.READ_WRITE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcpropsys.propstore.GetPropertyStoreFlag.TEMPORARY">
+<span class="sig-name descname"><span class="pre">TEMPORARY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#powcpropsys.propstore.GetPropertyStoreFlag.TEMPORARY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcpropsys.propstore.GetPropertyStoreFlag.VOLATILE_PROPERTIES">
+<span class="sig-name descname"><span class="pre">VOLATILE_PROPERTIES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2048</span></em><a class="headerlink" href="#powcpropsys.propstore.GetPropertyStoreFlag.VOLATILE_PROPERTIES" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcpropsys.propstore.GetPropertyStoreFlag.VOLATILE_PROPERTIES_ONLY">
+<span class="sig-name descname"><span class="pre">VOLATILE_PROPERTIES_ONLY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4096</span></em><a class="headerlink" href="#powcpropsys.propstore.GetPropertyStoreFlag.VOLATILE_PROPERTIES_ONLY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcpropsys.propstore.IPropertyStore">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcpropsys.propstore.</span></span><span class="sig-name descname"><span class="pre">IPropertyStore</span></span><a class="headerlink" href="#powcpropsys.propstore.IPropertyStore" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IUnknown</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcpropsys.propstore.IPropertyStore.Commit">
+<span class="sig-name descname"><span class="pre">Commit</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">7:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcpropsys.propstore.IPropertyStore.Commit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcpropsys.propstore.IPropertyStore.GetAt">
+<span class="sig-name descname"><span class="pre">GetAt</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">4:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcpropsys.propstore.IPropertyStore.GetAt" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcpropsys.propstore.IPropertyStore.GetCount">
+<span class="sig-name descname"><span class="pre">GetCount</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">3:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcpropsys.propstore.IPropertyStore.GetCount" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcpropsys.propstore.IPropertyStore.GetValue">
+<span class="sig-name descname"><span class="pre">GetValue</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">5:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcpropsys.propstore.IPropertyStore.GetValue" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcpropsys.propstore.IPropertyStore.SetValue">
+<span class="sig-name descname"><span class="pre">SetValue</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">6:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcpropsys.propstore.IPropertyStore.SetValue" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcpropsys.propstore.</span></span><span class="sig-name descname"><span class="pre">PropertyStore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcpropsys.propstore.PropertyStore" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>プロパティストア。IPropertyStoreインターフェイスのラッパーです。</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.commit">
+<span class="sig-name descname"><span class="pre">commit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.commit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.commit_nothrow">
+<span class="sig-name descname"><span class="pre">commit_nothrow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.commit_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.count">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.count" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.count_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">count_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.count_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.createonmem">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">createonmem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powcpropsys.propstore.PropertyStore" title="powcpropsys.propstore.PropertyStore"><span class="pre">PropertyStore</span></a></span></span><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.createonmem" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.createonmem_nothrow">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">createonmem_nothrow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcpropsys.propstore.PropertyStore" title="powcpropsys.propstore.PropertyStore"><span class="pre">PropertyStore</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.createonmem_nothrow" title="Link to this definition"></a></dt>
+<dd><p>メモリ内プロパティストアを作成します。</p>
+<p>このプロパティストアは以下のインターフェイスを実装しています。
+IPropertyStore、INamedPropertyStore、IPropertyStoreCache、
+IPersistStream、IPropertyBag、IPersistSerializedPropStorage</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.get_key_at">
+<span class="sig-name descname"><span class="pre">get_key_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></span><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.get_key_at" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.get_key_at_nothrow">
+<span class="sig-name descname"><span class="pre">get_key_at_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.get_key_at_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.get_value">
+<span class="sig-name descname"><span class="pre">get_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></span></span><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.get_value" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.get_value_nothrow">
+<span class="sig-name descname"><span class="pre">get_value_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.get_value_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.itemdict">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">itemdict</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">OrderedDict</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.itemdict" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.items">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">items</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.items" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.iter_items">
+<span class="sig-name descname"><span class="pre">iter_items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.iter_items" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.iter_items_in_keys">
+<span class="sig-name descname"><span class="pre">iter_items_in_keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.iter_items_in_keys" title="Link to this definition"></a></dt>
+<dd><p>キーに対応する項目のイテレーターを返します。
+返される項目にはプロパティストア自体に含まれるキーでは取得できない項目も含まれます。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.iter_items_in_propsystem">
+<span class="sig-name descname"><span class="pre">iter_items_in_propsystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">propsys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem" title="powcpropsys.propsys.PropertySystem"><span class="pre">PropertySystem</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.iter_items_in_propsystem" title="Link to this definition"></a></dt>
+<dd><p>プロパティシステムに登録されたキーに対応する項目のイテレーターを返します。
+返される項目にはプロパティストア自体に含まれるキーでは取得できない項目も含まれます。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.iter_keys">
+<span class="sig-name descname"><span class="pre">iter_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.iter_keys" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.iter_keys_in_keys">
+<span class="sig-name descname"><span class="pre">iter_keys_in_keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.iter_keys_in_keys" title="Link to this definition"></a></dt>
+<dd><p>キーに対応するキーのイテレーターを返します。
+返されるキーにはプロパティストア自体からは列挙できないキーも含まれます。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.iter_keys_in_propsystem">
+<span class="sig-name descname"><span class="pre">iter_keys_in_propsystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">propsys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem" title="powcpropsys.propsys.PropertySystem"><span class="pre">PropertySystem</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.iter_keys_in_propsystem" title="Link to this definition"></a></dt>
+<dd><p>プロパティシステムに登録されたキーでプロパティストアでも有効なキーのイテレーターを返します。
+返されるキーにはプロパティストア自体からは列挙できないキーも含まれます。</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.keys">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">keys</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.keys" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.set_value">
+<span class="sig-name descname"><span class="pre">set_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.set_value" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.set_value_nothrow">
+<span class="sig-name descname"><span class="pre">set_value_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey" title="powcpropsys.propkey.PropertyKey"><span class="pre">PropertyKey</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant" title="powcpropsys.propvariant.PropVariant"><span class="pre">PropVariant</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.set_value_nothrow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcpropsys.propstore.PropertyStore.wrapped_obj">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wrapped_obj</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">c_void_p</span></em><a class="headerlink" href="#powcpropsys.propstore.PropertyStore.wrapped_obj" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="powcpropsys.propkey.html" class="btn btn-neutral float-left" title="powcpropsys.propkey module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="powcpropsys.propsys.html" class="btn btn-neutral float-right" title="powcpropsys.propsys module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, poti-san.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

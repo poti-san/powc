@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>powc.core module &mdash; powc  ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c033477b"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=4755f45a"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="powc.dataobj module" href="powc.dataobj.html" />
+    <link rel="prev" title="powc.comobj module" href="powc.comobj.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            powc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="powc.html">powc package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="powc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="powc.comcat.html">powc.comcat module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.comobj.html">powc.comobj module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">powc.core module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#powc.core.CoTaskMem"><code class="docutils literal notranslate"><span class="pre">CoTaskMem</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.core.ComResult"><code class="docutils literal notranslate"><span class="pre">ComResult</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.core.IUnknownWrapper"><code class="docutils literal notranslate"><span class="pre">IUnknownWrapper</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.core.check_hresult"><code class="docutils literal notranslate"><span class="pre">check_hresult()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.core.cotaskmem"><code class="docutils literal notranslate"><span class="pre">cotaskmem()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.core.cotaskmem_alloc"><code class="docutils literal notranslate"><span class="pre">cotaskmem_alloc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.core.cotaskmem_free"><code class="docutils literal notranslate"><span class="pre">cotaskmem_free()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.core.cr"><code class="docutils literal notranslate"><span class="pre">cr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.core.guid_from_define"><code class="docutils literal notranslate"><span class="pre">guid_from_define()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.core.hr"><code class="docutils literal notranslate"><span class="pre">hr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.core.query_interface"><code class="docutils literal notranslate"><span class="pre">query_interface()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powc.core.raise_hresult"><code class="docutils literal notranslate"><span class="pre">raise_hresult()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="powc.dataobj.html">powc.dataobj module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.datetime.html">powc.datetime module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.errlog.html">powc.errlog module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.globalmem.html">powc.globalmem module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.persist.html">powc.persist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.propbag.html">powc.propbag module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.safearray.html">powc.safearray module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.stream.html">powc.stream module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.variant.html">powc.variant module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="powcpropsys.html">powcpropsys package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powcshell.html">powcshell package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../py-modindex.html">モジュール索引</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">powc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="powc.html">powc package</a></li>
+      <li class="breadcrumb-item active">powc.core module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/apiref/powc.core.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-powc.core">
+<span id="powc-core-module"></span><h1>powc.core module<a class="headerlink" href="#module-powc.core" title="Link to this heading"></a></h1>
+<p>基本的なCOM機能。</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.core.CoTaskMem">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.core.</span></span><span class="sig-name descname"><span class="pre">CoTaskMem</span></span><a class="headerlink" href="#powc.core.CoTaskMem" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">c_void_p</span></code></p>
+<p>COMメモリのラッパーです。</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.core.CoTaskMem.alloc_bytes">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">alloc_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bytes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.core.CoTaskMem" title="powc.core.CoTaskMem"><span class="pre">CoTaskMem</span></a></span></span><a class="headerlink" href="#powc.core.CoTaskMem.alloc_bytes" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.core.CoTaskMem.alloc_unistr">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">alloc_unistr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.core.CoTaskMem" title="powc.core.CoTaskMem"><span class="pre">CoTaskMem</span></a></span></span><a class="headerlink" href="#powc.core.CoTaskMem.alloc_unistr" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.core.CoTaskMem.detatch">
+<span class="sig-name descname"><span class="pre">detatch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#powc.core.CoTaskMem.detatch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.core.ComResult">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.core.</span></span><span class="sig-name descname"><span class="pre">ComResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.core.ComResult" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code></p>
+<p>COMメソッドまたは関数の結果を値とエラーコードとして保持します。最低限の機能のみ実装します。</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.core.ComResult.hr">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hr</span></span><a class="headerlink" href="#powc.core.ComResult.hr" title="Link to this definition"></a></dt>
+<dd><p>エラーコード。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.core.ComResult.raise_always">
+<span class="sig-name descname"><span class="pre">raise_always</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#powc.core.ComResult.raise_always" title="Link to this definition"></a></dt>
+<dd><p>成否に関わらず例外を発生します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.core.ComResult.raise_if_error">
+<span class="sig-name descname"><span class="pre">raise_if_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powc.core.ComResult.raise_if_error" title="Link to this definition"></a></dt>
+<dd><p>失敗時のみ例外を発生します。</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.core.ComResult.success">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">success</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#powc.core.ComResult.success" title="Link to this definition"></a></dt>
+<dd><p>成功時は真。</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.core.ComResult.value">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#powc.core.ComResult.value" title="Link to this definition"></a></dt>
+<dd><p>成否を判定して値を返します。失敗時は例外を発生します。
+successや__bool__で有無を確認した場合はvalue_uncheckedの方が高速です。</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.core.ComResult.value_or_none">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value_or_none</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">T</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powc.core.ComResult.value_or_none" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.core.ComResult.value_unchecked">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value_unchecked</span></span><a class="headerlink" href="#powc.core.ComResult.value_unchecked" title="Link to this definition"></a></dt>
+<dd><p>成否を判定せず値を返します。</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.core.IUnknownWrapper">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.core.</span></span><span class="sig-name descname"><span class="pre">IUnknownWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.core.IUnknownWrapper" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Protocol</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.core.IUnknownWrapper.wrapped_obj">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wrapped_obj</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">c_void_p</span></em><a class="headerlink" href="#powc.core.IUnknownWrapper.wrapped_obj" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="powc.core.check_hresult">
+<span class="sig-prename descclassname"><span class="pre">powc.core.</span></span><span class="sig-name descname"><span class="pre">check_hresult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powc.core.check_hresult" title="Link to this definition"></a></dt>
+<dd><p>COMエラーコードがエラーの場合に例外を発生します。
+:param hr: COMエラーコード。0x80000000が含まれる場合はエラーです。
+:type hr: int</p>
+<dl class="field-list simple">
+<dt class="field-odd">例外<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>WinError</strong> -- COMエラー。</p>
+</dd>
+</dl>
+<p class="rubric">サンプル</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">comtypes</span><span class="w"> </span><span class="kn">import</span> <span class="n">hresult</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">check_hresult</span><span class="p">(</span><span class="n">hresult</span><span class="o">.</span><span class="n">S_OK</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">check_hresult</span><span class="p">(</span><span class="n">hresult</span><span class="o">.</span><span class="n">S_FALSE</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">check_hresult</span><span class="p">(</span><span class="n">hresult</span><span class="o">.</span><span class="n">E_FAIL</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="powc.core.cotaskmem">
+<span class="sig-prename descclassname"><span class="pre">powc.core.</span></span><span class="sig-name descname"><span class="pre">cotaskmem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span></span></span><a class="headerlink" href="#powc.core.cotaskmem" title="Link to this definition"></a></dt>
+<dd><p>comtypes.c_void_p型等のCOMタスクメモリをスコープ脱出時に解放します。
+.. rubric:: サンプル</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ctypes</span><span class="w"> </span><span class="kn">import</span> <span class="n">c_void_p</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">cotaskmem</span><span class="p">(</span><span class="n">c_void_p</span><span class="p">())</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="c1"># pのcomtypes.byrefによる確保・使用</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">pass</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="powc.core.cotaskmem_alloc">
+<span class="sig-prename descclassname"><span class="pre">powc.core.</span></span><span class="sig-name descname"><span class="pre">cotaskmem_alloc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">c_void_p</span></span></span><a class="headerlink" href="#powc.core.cotaskmem_alloc" title="Link to this definition"></a></dt>
+<dd><p>COMメモリを確保します。
+.. rubric:: サンプル</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">cotaskmem</span><span class="p">(</span><span class="n">cotaskmemalloc</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="c1"># pの使用</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">pass</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="powc.core.cotaskmem_free">
+<span class="sig-prename descclassname"><span class="pre">powc.core.</span></span><span class="sig-name descname"><span class="pre">cotaskmem_free</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powc.core.cotaskmem_free" title="Link to this definition"></a></dt>
+<dd><p>COMメモリを解放します。
+.. rubric:: サンプル</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">cotaskmemalloc</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cotaskmemfree</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="powc.core.cr">
+<span class="sig-prename descclassname"><span class="pre">powc.core.</span></span><span class="sig-name descname"><span class="pre">cr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a></span></span><a class="headerlink" href="#powc.core.cr" title="Link to this definition"></a></dt>
+<dd><p>ComResultクラスを作成する関数。記述の短縮に使用します。</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="powc.core.guid_from_define">
+<span class="sig-prename descclassname"><span class="pre">powc.core.</span></span><span class="sig-name descname"><span class="pre">guid_from_define</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">GUID</span></span></span><a class="headerlink" href="#powc.core.guid_from_define" title="Link to this definition"></a></dt>
+<dd><p>C++のGUID構造体形式でGUIDを作成します。</p>
+<p class="rubric">サンプル</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">guid_from_define</span><span class="p">(</span><span class="mh">0xFBF23B40</span><span class="p">,</span> <span class="mh">0xE3F0</span><span class="p">,</span> <span class="mh">0x101B</span><span class="p">,</span> <span class="mh">0x84</span><span class="p">,</span> <span class="mh">0x88</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0xAA</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x3E</span><span class="p">,</span> <span class="mh">0x56</span><span class="p">,</span> <span class="mh">0xF8</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="powc.core.hr">
+<span class="sig-prename descclassname"><span class="pre">powc.core.</span></span><span class="sig-name descname"><span class="pre">hr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#powc.core.hr" title="Link to this definition"></a></dt>
+<dd><p>Pythonのint型をWindowsのHRESULTに変換します。
+Windows用のHRESULT定数をそのまま貼り付ける場合に使用します。</p>
+<p class="rubric">サンプル</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">hr</span><span class="p">(</span><span class="mh">0x887A0002</span><span class="p">)</span><span class="si">:</span><span class="s2">X</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># -7785FFFE</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="powc.core.query_interface">
+<span class="sig-prename descclassname"><span class="pre">powc.core.</span></span><span class="sig-name descname"><span class="pre">query_interface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interface_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">type</span><span class="p"><span class="pre">[</span></span><span class="pre">TIUnknown</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.core.query_interface" title="Link to this definition"></a></dt>
+<dd><p>comtypes.IUnknown派生インターフェイスを変換して返します。
+:raises TypeError: oがPOINTER(comtypes.IUnknown)またはPOINTER(comtypes.IUnknown派生クラス)ではない</p>
+<dl class="field-list simple">
+<dt class="field-odd">戻り値<span class="colon">:</span></dt>
+<dd class="field-odd"><p>変換後のIUnknown派生インターフェイスインスタンス。</p>
+</dd>
+<dt class="field-even">戻り値の型<span class="colon">:</span></dt>
+<dd class="field-even"><p>_type_</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="powc.core.raise_hresult">
+<span class="sig-prename descclassname"><span class="pre">powc.core.</span></span><span class="sig-name descname"><span class="pre">raise_hresult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#powc.core.raise_hresult" title="Link to this definition"></a></dt>
+<dd><p>COMエラーに対応する例外を発生します。
+:param hr: COMエラーコード
+:type hr: int</p>
+<dl class="field-list simple">
+<dt class="field-odd">例外<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>WinError</strong> -- COMエラー。</p>
+</dd>
+</dl>
+<p class="rubric">サンプル</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">comtypes</span><span class="w"> </span><span class="kn">import</span> <span class="n">hresult</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">raise_hresult</span><span class="p">(</span><span class="n">hresult</span><span class="o">.</span><span class="n">S_OK</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="powc.comobj.html" class="btn btn-neutral float-left" title="powc.comobj module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="powc.dataobj.html" class="btn btn-neutral float-right" title="powc.dataobj module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, poti-san.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
