@@ -271,12 +271,12 @@ class PropVariant(Union):
         return c_wchar_p.from_buffer(self.data_memview).value or ""
 
     def get_float(self):
-        if self.vartype != VARENUM.VT_I4:
+        if self.vartype != VARENUM.VT_R4:
             raise TypeError
         return c_float.from_buffer(self.data_memview).value
 
     def get_double(self):
-        if self.vartype != VARENUM.VT_I4:
+        if self.vartype != VARENUM.VT_R8:
             raise TypeError
         return c_double.from_buffer(self.data_memview).value
 
@@ -289,7 +289,7 @@ class PropVariant(Union):
     # VT_DATE = 7
 
     def get_bstr(self) -> str:
-        if self.vartype != VARENUM.VT_I4:
+        if self.vartype != VARENUM.VT_BSTR:
             raise TypeError
         return c_wchar_p.from_buffer(self.data_memview).value or ""
 

@@ -13,7 +13,7 @@ from ctypes import (
     c_uint32,
     c_void_p,
 )
-from typing import Callable, Iterator, Sequence
+from typing import Iterator, Sequence
 
 from comtypes import BSTR
 
@@ -88,13 +88,29 @@ class SafeArrayPtr(c_void_p):
                 self.unlock()
 
     @contextmanager
-    def access_data(self) -> Iterator[memoryview]:
+    def access_data(self) -> Iterator[Array[c_byte]]:
         needs_unaccess = False
         try:
             x = c_void_p()
             check_hresult(_SafeArrayAccessData(self, byref(x)))
             needs_unaccess = True
-            yield memoryview((c_byte * self.totalsize).from_address(x.value))
+            if x.value is None:
+                raise ValueError
+            yield (c_byte * self.totalsize).from_address(x.value)
+        finally:
+            if needs_unaccess:
+                check_hresult(_SafeArrayUnaccessData(self))
+
+    @contextmanager
+    def access_data_mv(self) -> Iterator[memoryview]:
+        needs_unaccess = False
+        try:
+            x = c_void_p()
+            check_hresult(_SafeArrayAccessData(self, byref(x)))
+            needs_unaccess = True
+            if x.value is None:
+                raise ValueError
+            yield memoryview((c_byte * self.totalsize).from_address(x.value)).cast("B")
         finally:
             if needs_unaccess:
                 check_hresult(_SafeArrayUnaccessData(self))
@@ -111,7 +127,7 @@ class SafeArrayPtr(c_void_p):
         return _SafeArrayGetDim(self)
 
     @property
-    def indices(self) -> tuple[int]:
+    def indices(self) -> tuple[int, ...]:
         return tuple(1 + i for i in range(self.dim))
 
     @property
@@ -167,8 +183,15 @@ class SafeArrayPtr(c_void_p):
 
     def to_bstrarray(self) -> tuple[str, ...]:
         with self.access_data() as data:
-            pp = data.cast("N")
-            return tuple(BSTR.from_address(p) for p in pp)
+            return tuple((BSTR * self.totallen).from_buffer(data))
+
+    def to_int32array(self) -> tuple[int, ...]:
+        with self.access_data() as data:
+            return tuple((c_int32 * self.totallen).from_buffer(data))
+
+    def to_uint32array(self) -> tuple[int, ...]:
+        with self.access_data() as data:
+            return tuple((c_uint32 * self.totallen).from_buffer(data))
 
 
 _SafeArrayCreate = _oleaut32.SafeArrayCreate

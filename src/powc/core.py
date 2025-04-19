@@ -64,6 +64,10 @@ class ComResult[T]:
         if not self.success:
             self.raise_always()
 
+    @property
+    def value_or_none(self) -> T | None:
+        return self.__value if self.success else None
+
 
 def cr[T](hr: int, value: T) -> ComResult[T]:
     """ComResultクラスを作成する関数。記述の短縮に使用します。"""
