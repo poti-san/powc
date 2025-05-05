@@ -1,0 +1,652 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>powcwmi.comtypes module &mdash; powc  ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c033477b"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=4755f45a"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="powcwmi.wbemflags module" href="powcwmi.wbemflags.html" />
+    <link rel="prev" title="powcwmi package" href="powcwmi.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            powc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../powcwmi.html">powcwmi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../powccoreaudio.html">powccoreaudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../powcd2d.html">powcd2d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powc.html">powc package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powcpropsys.html">powcpropsys package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powcshell.html">powcshell package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="powcwmi.html">powcwmi package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="powcwmi.html#powcwmi.CimType"><code class="docutils literal notranslate"><span class="pre">CimType</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcwmi.html#powcwmi.WBEMClassObject"><code class="docutils literal notranslate"><span class="pre">WBEMClassObject</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcwmi.html#powcwmi.WBEMClassObjectEnumerator"><code class="docutils literal notranslate"><span class="pre">WBEMClassObjectEnumerator</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcwmi.html#powcwmi.WBEMClassObjectGetMethodException"><code class="docutils literal notranslate"><span class="pre">WBEMClassObjectGetMethodException</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcwmi.html#powcwmi.WBEMExtraReturnCode"><code class="docutils literal notranslate"><span class="pre">WBEMExtraReturnCode</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcwmi.html#powcwmi.WBEMFlavor"><code class="docutils literal notranslate"><span class="pre">WBEMFlavor</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcwmi.html#powcwmi.WBEMGenus"><code class="docutils literal notranslate"><span class="pre">WBEMGenus</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcwmi.html#powcwmi.WBEMLimits"><code class="docutils literal notranslate"><span class="pre">WBEMLimits</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcwmi.html#powcwmi.WBEMLocator"><code class="docutils literal notranslate"><span class="pre">WBEMLocator</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcwmi.html#powcwmi.WBEMQualifierSet"><code class="docutils literal notranslate"><span class="pre">WBEMQualifierSet</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcwmi.html#powcwmi.WBEMServices"><code class="docutils literal notranslate"><span class="pre">WBEMServices</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcwmi.html#powcwmi.WBEMStatus"><code class="docutils literal notranslate"><span class="pre">WBEMStatus</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcwmi.html#powcwmi.WBEMStatusFormat"><code class="docutils literal notranslate"><span class="pre">WBEMStatusFormat</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcwmi.html#powcwmi.WBEMTimeout"><code class="docutils literal notranslate"><span class="pre">WBEMTimeout</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcwmi.html#powcwmi.WMIObjectText"><code class="docutils literal notranslate"><span class="pre">WMIObjectText</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="powcwmi.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">powcwmi.comtypes module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#powcwmi.comtypes.IEnumWbemClassObject"><code class="docutils literal notranslate"><span class="pre">IEnumWbemClassObject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powcwmi.comtypes.IWbemCallResult"><code class="docutils literal notranslate"><span class="pre">IWbemCallResult</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powcwmi.comtypes.IWbemClassObject"><code class="docutils literal notranslate"><span class="pre">IWbemClassObject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powcwmi.comtypes.IWbemContext"><code class="docutils literal notranslate"><span class="pre">IWbemContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powcwmi.comtypes.IWbemLocator"><code class="docutils literal notranslate"><span class="pre">IWbemLocator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powcwmi.comtypes.IWbemObjectAccess"><code class="docutils literal notranslate"><span class="pre">IWbemObjectAccess</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powcwmi.comtypes.IWbemObjectSink"><code class="docutils literal notranslate"><span class="pre">IWbemObjectSink</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powcwmi.comtypes.IWbemQualifierSet"><code class="docutils literal notranslate"><span class="pre">IWbemQualifierSet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powcwmi.comtypes.IWbemServices"><code class="docutils literal notranslate"><span class="pre">IWbemServices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powcwmi.comtypes.WbemCompileStatusInfo"><code class="docutils literal notranslate"><span class="pre">WbemCompileStatusInfo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.wbemflags.html">powcwmi.wbemflags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.wbemstatus.html">powcwmi.wbemstatus module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="powccoreaudio.html">powccoreaudio package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powcd2d.html">powcd2d package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../py-modindex.html">モジュール索引</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">powc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="powcwmi.html">powcwmi package</a></li>
+      <li class="breadcrumb-item active">powcwmi.comtypes module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/apiref/powcwmi.comtypes.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-powcwmi.comtypes">
+<span id="powcwmi-comtypes-module"></span><h1>powcwmi.comtypes module<a class="headerlink" href="#module-powcwmi.comtypes" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IEnumWbemClassObject">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcwmi.comtypes.</span></span><span class="sig-name descname"><span class="pre">IEnumWbemClassObject</span></span><a class="headerlink" href="#powcwmi.comtypes.IEnumWbemClassObject" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IUnknown</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IEnumWbemClassObject.Clone">
+<span class="sig-name descname"><span class="pre">Clone</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">6:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IEnumWbemClassObject.Clone" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IEnumWbemClassObject.Next">
+<span class="sig-name descname"><span class="pre">Next</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">4:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IEnumWbemClassObject.Next" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IEnumWbemClassObject.NextAsync">
+<span class="sig-name descname"><span class="pre">NextAsync</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">5:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IEnumWbemClassObject.NextAsync" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IEnumWbemClassObject.Reset">
+<span class="sig-name descname"><span class="pre">Reset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">3:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IEnumWbemClassObject.Reset" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IEnumWbemClassObject.Skip">
+<span class="sig-name descname"><span class="pre">Skip</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">7:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IEnumWbemClassObject.Skip" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemCallResult">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcwmi.comtypes.</span></span><span class="sig-name descname"><span class="pre">IWbemCallResult</span></span><a class="headerlink" href="#powcwmi.comtypes.IWbemCallResult" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IUnknown</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcwmi.comtypes.</span></span><span class="sig-name descname"><span class="pre">IWbemClassObject</span></span><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IUnknown</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.BeginEnumeration">
+<span class="sig-name descname"><span class="pre">BeginEnumeration</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">8:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.BeginEnumeration" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.BeginMethodEnumeration">
+<span class="sig-name descname"><span class="pre">BeginMethodEnumeration</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">22:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.BeginMethodEnumeration" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.Clone">
+<span class="sig-name descname"><span class="pre">Clone</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">12:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.Clone" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.CompareTo">
+<span class="sig-name descname"><span class="pre">CompareTo</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">16:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.CompareTo" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.Delete">
+<span class="sig-name descname"><span class="pre">Delete</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">6:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.Delete" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.DeleteMethod">
+<span class="sig-name descname"><span class="pre">DeleteMethod</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">21:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.DeleteMethod" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.EndEnumeration">
+<span class="sig-name descname"><span class="pre">EndEnumeration</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">10:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.EndEnumeration" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.EndMethodEnumeration">
+<span class="sig-name descname"><span class="pre">EndMethodEnumeration</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">24:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.EndMethodEnumeration" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.Get">
+<span class="sig-name descname"><span class="pre">Get</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">4:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.Get" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.GetMethod">
+<span class="sig-name descname"><span class="pre">GetMethod</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">19:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.GetMethod" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.GetMethodOrigin">
+<span class="sig-name descname"><span class="pre">GetMethodOrigin</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">26:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.GetMethodOrigin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.GetMethodQualifierSet">
+<span class="sig-name descname"><span class="pre">GetMethodQualifierSet</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">25:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.GetMethodQualifierSet" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.GetNames">
+<span class="sig-name descname"><span class="pre">GetNames</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">7:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.GetNames" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.GetObjectText">
+<span class="sig-name descname"><span class="pre">GetObjectText</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">13:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.GetObjectText" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.GetPropertyOrigin">
+<span class="sig-name descname"><span class="pre">GetPropertyOrigin</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">17:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.GetPropertyOrigin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.GetPropertyQualifierSet">
+<span class="sig-name descname"><span class="pre">GetPropertyQualifierSet</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">11:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.GetPropertyQualifierSet" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.GetQualifierSet">
+<span class="sig-name descname"><span class="pre">GetQualifierSet</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">3:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.GetQualifierSet" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.InheritsFrom">
+<span class="sig-name descname"><span class="pre">InheritsFrom</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">18:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.InheritsFrom" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.Next">
+<span class="sig-name descname"><span class="pre">Next</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">9:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.Next" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.NextMethod">
+<span class="sig-name descname"><span class="pre">NextMethod</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">23:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.NextMethod" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.Put">
+<span class="sig-name descname"><span class="pre">Put</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">5:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.Put" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.PutMethod">
+<span class="sig-name descname"><span class="pre">PutMethod</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">20:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.PutMethod" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.SpawnDerivedClass">
+<span class="sig-name descname"><span class="pre">SpawnDerivedClass</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">14:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.SpawnDerivedClass" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemClassObject.SpawnInstance">
+<span class="sig-name descname"><span class="pre">SpawnInstance</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">15:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemClassObject.SpawnInstance" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemContext">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcwmi.comtypes.</span></span><span class="sig-name descname"><span class="pre">IWbemContext</span></span><a class="headerlink" href="#powcwmi.comtypes.IWbemContext" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IUnknown</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemContext.BeginEnumeration">
+<span class="sig-name descname"><span class="pre">BeginEnumeration</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">5:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemContext.BeginEnumeration" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemContext.Clone">
+<span class="sig-name descname"><span class="pre">Clone</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">3:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemContext.Clone" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemContext.DeleteValue">
+<span class="sig-name descname"><span class="pre">DeleteValue</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">10:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemContext.DeleteValue" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemContext.EndEnumeration">
+<span class="sig-name descname"><span class="pre">EndEnumeration</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">7:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemContext.EndEnumeration" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemContext.GetNames">
+<span class="sig-name descname"><span class="pre">GetNames</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">4:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemContext.GetNames" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemContext.GetValue">
+<span class="sig-name descname"><span class="pre">GetValue</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">9:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemContext.GetValue" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemContext.Next">
+<span class="sig-name descname"><span class="pre">Next</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">6:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemContext.Next" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemContext.SetValue">
+<span class="sig-name descname"><span class="pre">SetValue</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">8:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemContext.SetValue" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemLocator">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcwmi.comtypes.</span></span><span class="sig-name descname"><span class="pre">IWbemLocator</span></span><a class="headerlink" href="#powcwmi.comtypes.IWbemLocator" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IUnknown</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemLocator.ConnectServer">
+<span class="sig-name descname"><span class="pre">ConnectServer</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">3:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemLocator.ConnectServer" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemObjectAccess">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcwmi.comtypes.</span></span><span class="sig-name descname"><span class="pre">IWbemObjectAccess</span></span><a class="headerlink" href="#powcwmi.comtypes.IWbemObjectAccess" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IUnknown</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemObjectAccess.GetPropertyHandle">
+<span class="sig-name descname"><span class="pre">GetPropertyHandle</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">3:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemObjectAccess.GetPropertyHandle" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemObjectAccess.GetPropertyInfoByHandle">
+<span class="sig-name descname"><span class="pre">GetPropertyInfoByHandle</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">10:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemObjectAccess.GetPropertyInfoByHandle" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemObjectAccess.Lock">
+<span class="sig-name descname"><span class="pre">Lock</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">11:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemObjectAccess.Lock" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemObjectAccess.ReadDWORD">
+<span class="sig-name descname"><span class="pre">ReadDWORD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">6:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemObjectAccess.ReadDWORD" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemObjectAccess.ReadPropertyValue">
+<span class="sig-name descname"><span class="pre">ReadPropertyValue</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">5:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemObjectAccess.ReadPropertyValue" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemObjectAccess.ReadQWORD">
+<span class="sig-name descname"><span class="pre">ReadQWORD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">8:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemObjectAccess.ReadQWORD" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemObjectAccess.Unlock">
+<span class="sig-name descname"><span class="pre">Unlock</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">12:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemObjectAccess.Unlock" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemObjectAccess.WriteDWORD">
+<span class="sig-name descname"><span class="pre">WriteDWORD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">7:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemObjectAccess.WriteDWORD" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemObjectAccess.WritePropertyValue">
+<span class="sig-name descname"><span class="pre">WritePropertyValue</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">4:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemObjectAccess.WritePropertyValue" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemObjectAccess.WriteQWORD">
+<span class="sig-name descname"><span class="pre">WriteQWORD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">9:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemObjectAccess.WriteQWORD" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemObjectSink">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcwmi.comtypes.</span></span><span class="sig-name descname"><span class="pre">IWbemObjectSink</span></span><a class="headerlink" href="#powcwmi.comtypes.IWbemObjectSink" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IUnknown</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemObjectSink.Indicate">
+<span class="sig-name descname"><span class="pre">Indicate</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">3:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemObjectSink.Indicate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemObjectSink.SetStatus">
+<span class="sig-name descname"><span class="pre">SetStatus</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">4:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemObjectSink.SetStatus" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemQualifierSet">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcwmi.comtypes.</span></span><span class="sig-name descname"><span class="pre">IWbemQualifierSet</span></span><a class="headerlink" href="#powcwmi.comtypes.IWbemQualifierSet" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IUnknown</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemQualifierSet.BeginEnumeration">
+<span class="sig-name descname"><span class="pre">BeginEnumeration</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">7:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemQualifierSet.BeginEnumeration" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemQualifierSet.Delete">
+<span class="sig-name descname"><span class="pre">Delete</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">5:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemQualifierSet.Delete" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemQualifierSet.EndEnumeration">
+<span class="sig-name descname"><span class="pre">EndEnumeration</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">9:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemQualifierSet.EndEnumeration" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemQualifierSet.Get">
+<span class="sig-name descname"><span class="pre">Get</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">3:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemQualifierSet.Get" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemQualifierSet.GetNames">
+<span class="sig-name descname"><span class="pre">GetNames</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">6:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemQualifierSet.GetNames" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemQualifierSet.Next">
+<span class="sig-name descname"><span class="pre">Next</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">8:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemQualifierSet.Next" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemQualifierSet.Put">
+<span class="sig-name descname"><span class="pre">Put</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">4:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemQualifierSet.Put" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcwmi.comtypes.</span></span><span class="sig-name descname"><span class="pre">IWbemServices</span></span><a class="headerlink" href="#powcwmi.comtypes.IWbemServices" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IUnknown</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.CancelAsyncCall">
+<span class="sig-name descname"><span class="pre">CancelAsyncCall</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">4:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.CancelAsyncCall" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.CreateClassEnum">
+<span class="sig-name descname"><span class="pre">CreateClassEnum</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">12:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.CreateClassEnum" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.CreateClassEnumAsync">
+<span class="sig-name descname"><span class="pre">CreateClassEnumAsync</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">13:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.CreateClassEnumAsync" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.CreateInstanceEnum">
+<span class="sig-name descname"><span class="pre">CreateInstanceEnum</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">18:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.CreateInstanceEnum" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.CreateInstanceEnumAsync">
+<span class="sig-name descname"><span class="pre">CreateInstanceEnumAsync</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">19:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.CreateInstanceEnumAsync" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.DeleteClass">
+<span class="sig-name descname"><span class="pre">DeleteClass</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">10:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.DeleteClass" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.DeleteClassAsync">
+<span class="sig-name descname"><span class="pre">DeleteClassAsync</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">11:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.DeleteClassAsync" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.DeleteInstance">
+<span class="sig-name descname"><span class="pre">DeleteInstance</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">16:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.DeleteInstance" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.DeleteInstanceAsync">
+<span class="sig-name descname"><span class="pre">DeleteInstanceAsync</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">17:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.DeleteInstanceAsync" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.ExecMethod">
+<span class="sig-name descname"><span class="pre">ExecMethod</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">24:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.ExecMethod" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.ExecMethodAsync">
+<span class="sig-name descname"><span class="pre">ExecMethodAsync</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">25:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.ExecMethodAsync" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.ExecNotificationQuery">
+<span class="sig-name descname"><span class="pre">ExecNotificationQuery</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">22:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.ExecNotificationQuery" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.ExecNotificationQueryAsync">
+<span class="sig-name descname"><span class="pre">ExecNotificationQueryAsync</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">23:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.ExecNotificationQueryAsync" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.ExecQuery">
+<span class="sig-name descname"><span class="pre">ExecQuery</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">20:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.ExecQuery" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.ExecQueryAsync">
+<span class="sig-name descname"><span class="pre">ExecQueryAsync</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">21:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.ExecQueryAsync" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.GetObject">
+<span class="sig-name descname"><span class="pre">GetObject</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">6:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.GetObject" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.GetObjectAsync">
+<span class="sig-name descname"><span class="pre">GetObjectAsync</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">7:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.GetObjectAsync" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.OpenNamespace">
+<span class="sig-name descname"><span class="pre">OpenNamespace</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">3:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.OpenNamespace" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.PutClass">
+<span class="sig-name descname"><span class="pre">PutClass</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">8:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.PutClass" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.PutClassAsync">
+<span class="sig-name descname"><span class="pre">PutClassAsync</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">9:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.PutClassAsync" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.PutInstance">
+<span class="sig-name descname"><span class="pre">PutInstance</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">14:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.PutInstance" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.PutInstanceAsync">
+<span class="sig-name descname"><span class="pre">PutInstanceAsync</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">15:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.PutInstanceAsync" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.IWbemServices.QueryObjectSink">
+<span class="sig-name descname"><span class="pre">QueryObjectSink</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">5:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcwmi.comtypes.IWbemServices.QueryObjectSink" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcwmi.comtypes.WbemCompileStatusInfo">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcwmi.comtypes.</span></span><span class="sig-name descname"><span class="pre">WbemCompileStatusInfo</span></span><a class="headerlink" href="#powcwmi.comtypes.WbemCompileStatusInfo" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>WBEM_COMPILE_STATUS_INFO</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.WbemCompileStatusInfo.firstline">
+<span class="sig-name descname"><span class="pre">firstline</span></span><a class="headerlink" href="#powcwmi.comtypes.WbemCompileStatusInfo.firstline" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.WbemCompileStatusInfo.hres">
+<span class="sig-name descname"><span class="pre">hres</span></span><a class="headerlink" href="#powcwmi.comtypes.WbemCompileStatusInfo.hres" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.WbemCompileStatusInfo.lastline">
+<span class="sig-name descname"><span class="pre">lastline</span></span><a class="headerlink" href="#powcwmi.comtypes.WbemCompileStatusInfo.lastline" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.WbemCompileStatusInfo.objectnum">
+<span class="sig-name descname"><span class="pre">objectnum</span></span><a class="headerlink" href="#powcwmi.comtypes.WbemCompileStatusInfo.objectnum" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.WbemCompileStatusInfo.outflags">
+<span class="sig-name descname"><span class="pre">outflags</span></span><a class="headerlink" href="#powcwmi.comtypes.WbemCompileStatusInfo.outflags" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcwmi.comtypes.WbemCompileStatusInfo.phaseerror">
+<span class="sig-name descname"><span class="pre">phaseerror</span></span><a class="headerlink" href="#powcwmi.comtypes.WbemCompileStatusInfo.phaseerror" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="powcwmi.html" class="btn btn-neutral float-left" title="powcwmi package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="powcwmi.wbemflags.html" class="btn btn-neutral float-right" title="powcwmi.wbemflags module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, poti-san.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

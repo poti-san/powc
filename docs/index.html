@@ -20,7 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
-    <link rel="next" title="powc package" href="apiref/powc.html" /> 
+    <link rel="next" title="powcwmi" href="powcwmi.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,9 +43,15 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
+<li class="toctree-l1"><a class="reference internal" href="powcwmi.html">powcwmi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powccoreaudio.html">powccoreaudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powcd2d.html">powcd2d</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apiref/powc.html">powc package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apiref/powcpropsys.html">powcpropsys package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apiref/powcshell.html">powcshell package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apiref/powcwmi.html">powcwmi package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apiref/powccoreaudio.html">powccoreaudio package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apiref/powcd2d.html">powcd2d package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genindex.html">索引</a></li>
 <li class="toctree-l1"><a class="reference internal" href="py-modindex.html">モジュール索引</a></li>
 </ul>
@@ -78,8 +84,35 @@
 <h1>powcパッケージ集ドキュメント<a class="headerlink" href="#powc" title="Link to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<p>PythonからWindowsのCOMを使いやすくするためのパッケージ集です。COMの基本機能、プロパティシステム機能、シェルアイテム機能を含みます。
-基本的にcomtypesパッケージのみに依存する設計です。</p>
+<p>PythonからWindowsのCOMを使いやすくするためのパッケージ集です。基本的にcomtypesパッケージまたはパッケージ集内のパッケージのみに依存する設計です。</p>
+<p>インストールすると次のパッケージがまとめてインストールされます。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>パッケージ</p></th>
+<th class="head text-left"><p>概要</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>powc</p></td>
+<td class="text-left"><p>COM基本機能</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>powcpropsys</p></td>
+<td class="text-left"><p>プロパティシステム</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>powcshell</p></td>
+<td class="text-left"><p>シェル（特にシェルアイテム）</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>powcwmi</p></td>
+<td class="text-left"><p>WMI</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>powccoreaudio</p></td>
+<td class="text-left"><p>CoreAudio API</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>powcd2d</p></td>
+<td class="text-left"><p>Direct2D関係</p></td>
+</tr>
+</tbody>
+</table>
 <p>次のようなコードを記述できます。</p>
 <p><strong>デスクトップのシェル項目の表示名と解析名列挙</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">powcshell.knownfolderid</span><span class="w"> </span><span class="kn">import</span> <span class="n">KnownFolderID</span>
@@ -166,7 +199,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="apiref/powc.html" class="btn btn-neutral float-right" title="powc package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="powcwmi.html" class="btn btn-neutral float-right" title="powcwmi" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

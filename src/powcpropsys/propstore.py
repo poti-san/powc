@@ -5,6 +5,7 @@ from enum import IntFlag
 from typing import Any, Iterable, Iterator, OrderedDict
 
 from comtypes import GUID, STDMETHOD, IUnknown
+
 from powc.core import ComResult, cr, query_interface
 
 from . import _propsys
@@ -180,4 +181,5 @@ class PropertyStore:
 
 _PSCreateMemoryPropertyStore = _propsys.PSCreateMemoryPropertyStore
 _PSCreateMemoryPropertyStore.argtypes = (POINTER(GUID), POINTER(POINTER(IUnknown)))
+_PSCreateMemoryPropertyStore.restype = c_int32
 _PSCreateMemoryPropertyStore.restype = c_int32

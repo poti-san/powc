@@ -1,0 +1,627 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>powcd2d.dcommon.types module &mdash; powc  ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c033477b"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=4755f45a"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="powcd2d.dwrite package" href="powcd2d.dwrite.html" />
+    <link rel="prev" title="powcd2d.dcommon package" href="powcd2d.dcommon.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            powc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../powcwmi.html">powcwmi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../powccoreaudio.html">powccoreaudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../powcd2d.html">powcd2d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powc.html">powc package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powcpropsys.html">powcpropsys package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powcshell.html">powcshell package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powcwmi.html">powcwmi package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powccoreaudio.html">powccoreaudio package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="powcd2d.html">powcd2d package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="powcd2d.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.d2d.html">powcd2d.d2d package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="powcd2d.dcommon.html">powcd2d.dcommon package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="powcd2d.dcommon.html#submodules">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html">powcd2d.dwrite package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html">powcd2d.dxgi package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html">powcd2d.wic package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.html#submodules">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../py-modindex.html">モジュール索引</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">powc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="powcd2d.html">powcd2d package</a></li>
+          <li class="breadcrumb-item"><a href="powcd2d.dcommon.html">powcd2d.dcommon package</a></li>
+      <li class="breadcrumb-item active">powcd2d.dcommon.types module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/apiref/powcd2d.dcommon.types.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-powcd2d.dcommon.types">
+<span id="powcd2d-dcommon-types-module"></span><h1>powcd2d.dcommon.types module<a class="headerlink" href="#module-powcd2d.dcommon.types" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1AlphaMode">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1AlphaMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1AlphaMode" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<p>D2D1_ALPHA_MODE</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1AlphaMode.IGNORE">
+<span class="sig-name descname"><span class="pre">IGNORE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#powcd2d.dcommon.types.D2D1AlphaMode.IGNORE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1AlphaMode.PREMULTIPLIED">
+<span class="sig-name descname"><span class="pre">PREMULTIPLIED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powcd2d.dcommon.types.D2D1AlphaMode.PREMULTIPLIED" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1AlphaMode.STRAIGHT">
+<span class="sig-name descname"><span class="pre">STRAIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#powcd2d.dcommon.types.D2D1AlphaMode.STRAIGHT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1AlphaMode.UNKNOWN">
+<span class="sig-name descname"><span class="pre">UNKNOWN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#powcd2d.dcommon.types.D2D1AlphaMode.UNKNOWN" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1Matrix3X2F">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1Matrix3X2F</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1Matrix3X2F" title="Link to this definition"></a></dt>
+<dd><p>D2D1_MATRIX_3X2_F</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1PixelFormat">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1PixelFormat</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1PixelFormat" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>D2D1_PIXEL_FORMAT</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1PixelFormat.alphamode">
+<span class="sig-name descname"><span class="pre">alphamode</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1PixelFormat.alphamode" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1PixelFormat.format">
+<span class="sig-name descname"><span class="pre">format</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1PixelFormat.format" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1Point2F">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1Point2F</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1Point2F" title="Link to this definition"></a></dt>
+<dd><p>D2D1_POINT_2F</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1Point2L">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1Point2L</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1Point2L" title="Link to this definition"></a></dt>
+<dd><p>D2D1_POINT_2L</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1Point2U">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1Point2U</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1Point2U" title="Link to this definition"></a></dt>
+<dd><p>D2D1_POINT_2U</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1RectF">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1RectF</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1RectF" title="Link to this definition"></a></dt>
+<dd><p>D2D1_RECT_F</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1RectL">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1RectL</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1RectL" title="Link to this definition"></a></dt>
+<dd><p>D2D1_RECT_L</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1RectU">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1RectU</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1RectU" title="Link to this definition"></a></dt>
+<dd><p>D2D1_RECT_U</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1SizeF">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1SizeF</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1SizeF" title="Link to this definition"></a></dt>
+<dd><p>D2D1_SIZE_F</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1SizeU">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1SizeU</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1SizeU" title="Link to this definition"></a></dt>
+<dd><p>D2D1_SIZE_U</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix3X2F">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DMatrix3X2F</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix3X2F" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Union</span></code></p>
+<p>D2D_MATRIX_3X2_F</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DUMMYSTRUCTURE1</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.dx">
+<span class="sig-name descname"><span class="pre">dx</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.dx" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.dy">
+<span class="sig-name descname"><span class="pre">dy</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.dy" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.m11">
+<span class="sig-name descname"><span class="pre">m11</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.m11" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.m12">
+<span class="sig-name descname"><span class="pre">m12</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.m12" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.m21">
+<span class="sig-name descname"><span class="pre">m21</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.m21" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE2">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DUMMYSTRUCTURE2</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE2" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix4X3F">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DMatrix4X3F</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix4X3F" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Union</span></code></p>
+<p>D2D_MATRIX_4X3_F</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix4X3F.DUMMYSTRUCTURE">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DUMMYSTRUCTURE</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix4X3F.DUMMYSTRUCTURE" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix4X4F">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DMatrix4X4F</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix4X4F" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Union</span></code></p>
+<p>D2D_MATRIX_4X4_F</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix4X4F.DUMMYSTRUCTURE">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DUMMYSTRUCTURE</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix4X4F.DUMMYSTRUCTURE" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix5X4F">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DMatrix5X4F</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix5X4F" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Union</span></code></p>
+<p>D2D_MATRIX_5X4_F</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix5X4F.DUMMYSTRUCTURE">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DUMMYSTRUCTURE</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix5X4F.DUMMYSTRUCTURE" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DPoint2F">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DPoint2F</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DPoint2F" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>D2D_POINT_2F</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DPoint2F.x">
+<span class="sig-name descname"><span class="pre">x</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DPoint2F.x" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DPoint2F.y">
+<span class="sig-name descname"><span class="pre">y</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DPoint2F.y" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DPoint2L">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DPoint2L</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DPoint2L" title="Link to this definition"></a></dt>
+<dd><p>D2D_POINT_2L</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DPoint2U">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DPoint2U</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DPoint2U" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>D2D_POINT_2U</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DPoint2U.x">
+<span class="sig-name descname"><span class="pre">x</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DPoint2U.x" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DPoint2U.y">
+<span class="sig-name descname"><span class="pre">y</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DPoint2U.y" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectF">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DRectF</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectF" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>D2D_RECT_F</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectF.bottom">
+<span class="sig-name descname"><span class="pre">bottom</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectF.bottom" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectF.left">
+<span class="sig-name descname"><span class="pre">left</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectF.left" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectF.right">
+<span class="sig-name descname"><span class="pre">right</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectF.right" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectF.top">
+<span class="sig-name descname"><span class="pre">top</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectF.top" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectL">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DRectL</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectL" title="Link to this definition"></a></dt>
+<dd><p>D2D_RECT_L</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectU">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DRectU</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectU" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>D2D_RECT_U</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectU.bottom">
+<span class="sig-name descname"><span class="pre">bottom</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectU.bottom" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectU.left">
+<span class="sig-name descname"><span class="pre">left</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectU.left" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectU.right">
+<span class="sig-name descname"><span class="pre">right</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectU.right" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectU.top">
+<span class="sig-name descname"><span class="pre">top</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectU.top" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DSizeF">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DSizeF</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DSizeF" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>D2D_SIZE_F</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DSizeF.height">
+<span class="sig-name descname"><span class="pre">height</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DSizeF.height" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DSizeF.width">
+<span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DSizeF.width" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DSizeU">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DSizeU</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DSizeU" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>D2D_SIZE_U</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DSizeU.height">
+<span class="sig-name descname"><span class="pre">height</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DSizeU.height" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DSizeU.width">
+<span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DSizeU.width" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector2F">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DVector2F</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector2F" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>D2D_VECTOR_2F</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector2F.x">
+<span class="sig-name descname"><span class="pre">x</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector2F.x" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector2F.y">
+<span class="sig-name descname"><span class="pre">y</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector2F.y" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector3F">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DVector3F</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector3F" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>D2D_VECTOR_3F</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector3F.x">
+<span class="sig-name descname"><span class="pre">x</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector3F.x" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector3F.y">
+<span class="sig-name descname"><span class="pre">y</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector3F.y" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector3F.z">
+<span class="sig-name descname"><span class="pre">z</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector3F.z" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector4F">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DVector4F</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector4F" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>D2D_VECTOR_4F</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector4F.w">
+<span class="sig-name descname"><span class="pre">w</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector4F.w" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector4F.x">
+<span class="sig-name descname"><span class="pre">x</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector4F.x" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector4F.y">
+<span class="sig-name descname"><span class="pre">y</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector4F.y" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector4F.z">
+<span class="sig-name descname"><span class="pre">z</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector4F.z" title="Link to this definition"></a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">DWriteGlyphImageFormat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntFlag</span></code></p>
+<p>DWRITE_GLYPH_IMAGE_FORMATS</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat.CFF">
+<span class="sig-name descname"><span class="pre">CFF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.CFF" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat.COLR">
+<span class="sig-name descname"><span class="pre">COLR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.COLR" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat.COLR_PAINT_TREE">
+<span class="sig-name descname"><span class="pre">COLR_PAINT_TREE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">256</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.COLR_PAINT_TREE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat.JPEG">
+<span class="sig-name descname"><span class="pre">JPEG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.JPEG" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat.NONE">
+<span class="sig-name descname"><span class="pre">NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.NONE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat.PNG">
+<span class="sig-name descname"><span class="pre">PNG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.PNG" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat.PREMULTIPLIED_B8G8R8A8">
+<span class="sig-name descname"><span class="pre">PREMULTIPLIED_B8G8R8A8</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">128</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.PREMULTIPLIED_B8G8R8A8" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat.SVG">
+<span class="sig-name descname"><span class="pre">SVG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.SVG" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat.TIFF">
+<span class="sig-name descname"><span class="pre">TIFF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">64</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.TIFF" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat.TRUETYPE">
+<span class="sig-name descname"><span class="pre">TRUETYPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.TRUETYPE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteMeasuringMode">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">DWriteMeasuringMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcd2d.dcommon.types.DWriteMeasuringMode" title="Link to this definition"></a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<p>DWRITE_MEASURING_MODE</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteMeasuringMode.GDI_CLASSIC">
+<span class="sig-name descname"><span class="pre">GDI_CLASSIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteMeasuringMode.GDI_CLASSIC" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteMeasuringMode.GDI_NATURAL">
+<span class="sig-name descname"><span class="pre">GDI_NATURAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteMeasuringMode.GDI_NATURAL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteMeasuringMode.NATURAL">
+<span class="sig-name descname"><span class="pre">NATURAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteMeasuringMode.NATURAL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="powcd2d.dcommon.html" class="btn btn-neutral float-left" title="powcd2d.dcommon package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="powcd2d.dwrite.html" class="btn btn-neutral float-right" title="powcd2d.dwrite package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, poti-san.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

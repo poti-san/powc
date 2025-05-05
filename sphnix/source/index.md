@@ -4,15 +4,31 @@
 ---
 hidden:
 ---
+powcwmi
+powccoreaudio
+powcd2d
 apiref/powc
 apiref/powcpropsys
 apiref/powcshell
+apiref/powcwmi
+apiref/powccoreaudio
+apiref/powcd2d
 genindex
 modindex
 ```
 
-PythonからWindowsのCOMを使いやすくするためのパッケージ集です。COMの基本機能、プロパティシステム機能、シェルアイテム機能を含みます。
-基本的にcomtypesパッケージのみに依存する設計です。
+PythonからWindowsのCOMを使いやすくするためのパッケージ集です。基本的にcomtypesパッケージまたはパッケージ集内のパッケージのみに依存する設計です。
+
+インストールすると次のパッケージがまとめてインストールされます。
+
+|パッケージ|概要|
+|:--|:--|
+|powc|COM基本機能|
+|powcpropsys|プロパティシステム|
+|powcshell|シェル（特にシェルアイテム）|
+|powcwmi|WMI|
+|powccoreaudio|CoreAudio API|
+|powcd2d|Direct2D関係|
 
 次のようなコードを記述できます。
 
