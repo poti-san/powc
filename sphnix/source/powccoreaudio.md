@@ -1,6 +1,6 @@
 # powccoreaudio
 
-PythonからWindowsのCoreAudio COM機能を使いやすくするパッケージです。comtypesパッケージ、powcパッケージに依存します。 
+PythonからWindowsのCoreAudio COM機能を使いやすくするパッケージです。powcpropsysパッケージに依存します。 
 
 **マスター音量を10%に設定する**
 

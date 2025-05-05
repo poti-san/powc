@@ -1,6 +1,6 @@
 # powcd2d
 
-PythonからWindowsのDirect2D、DirectWrite、DIGI、WICを使いやすくするパッケージです。comtypesパッケージ、powcパッケージに依存します。 
+PythonからWindowsのDirect2D、DirectWrite、DIGI、WICを使いやすくするパッケージです。powcpropsysパッケージに依存します。 
 
 次のようなコードが書けます。
 
