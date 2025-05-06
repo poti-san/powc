@@ -1,10 +1,14 @@
-"""シェルアイテム配列。"""
+"""シェルアイテム配列。
+
+主なクラスは :class:`ShellItemArray` です。
+"""
 
 from ctypes import POINTER, _Pointer, byref, c_int32, c_uint32, c_void_p
 from enum import IntFlag
 from typing import TYPE_CHECKING, Any, Iterator, Sequence, overload
 
 from comtypes import GUID, STDMETHOD, IUnknown
+
 from powc.core import ComResult, check_hresult, cr, query_interface
 from powcpropsys.propdesc import IPropertyDescriptionList, PropertyDescriptionList
 from powcpropsys.propkey import PropertyKey
@@ -326,4 +330,5 @@ _SHCreateShellItemArrayFromShellItem.restype = c_int32
 
 _OleGetClipboard = _ole32.OleGetClipboard
 _OleGetClipboard.argtypes = (POINTER(POINTER(IUnknown)),)
+_OleGetClipboard.restype = c_int32
 _OleGetClipboard.restype = c_int32

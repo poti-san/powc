@@ -1,9 +1,13 @@
-"""シェルアイテムの列挙。"""
+"""シェルアイテムの列挙。
+
+主なクラスは :class:`EnumShellItems` です。 :class:`~.ShellItem` や :class:`~.ShellItem2` で使用されます。
+"""
 
 from ctypes import POINTER, _Pointer, byref, c_int32, c_uint32, c_void_p
 from typing import TYPE_CHECKING, Any
 
 from comtypes import GUID, STDMETHOD, IUnknown
+
 from powc.core import ComResult, check_hresult, cr, query_interface
 
 from .shellitem import IShellItem
@@ -60,4 +64,5 @@ class EnumShellItems:
         if hr == 1:
             raise StopIteration()
         check_hresult(hr)
+        return x
         return x

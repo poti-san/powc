@@ -1,3 +1,5 @@
+"""グローバルメモリの管理。"""
+
 from contextlib import contextmanager
 from ctypes import _SimpleCData, c_size_t, c_uint32, c_void_p
 from enum import IntFlag

@@ -1,6 +1,4 @@
-"""
-IStreamのラッパーです。
-"""
+"""IStreamラッパー。"""
 
 from collections.abc import Buffer
 from contextlib import contextmanager

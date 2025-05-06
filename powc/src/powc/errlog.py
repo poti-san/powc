@@ -1,3 +1,5 @@
+"""COMのエラーログ。"""
+
 from ctypes import POINTER, Structure, c_int32, c_uint16, c_uint32, c_void_p, c_wchar_p
 from typing import Any
 

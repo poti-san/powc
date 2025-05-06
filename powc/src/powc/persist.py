@@ -1,6 +1,4 @@
-"""
-IPersist、IPersistFile、IPersistStreamのラッパーです。
-"""
+"""永続化機能。IPersist、IPersistFile、IPersistStreamのラッパーです。"""
 
 from ctypes import POINTER, byref, c_int32, c_uint32, c_uint64, c_void_p, c_wchar_p
 from typing import Any

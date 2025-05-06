@@ -10,5 +10,3 @@ print(
     モニタデバイスパス:{tuple(wallpaper.monitor_device_paths)}
     """
 )
-
-pass

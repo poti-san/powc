@@ -1,9 +1,15 @@
+"""エンドポイントの音量。
+
+主なクラスは :class:`AudioEndpointVolume` です。:class:`MMDevice`から作成されます。
+"""
+
 from ctypes import POINTER, Structure, byref, c_float, c_int32, c_uint32, c_void_p
 from dataclasses import dataclass
 from enum import IntFlag
 from typing import Any
 
 from comtypes import GUID, STDMETHOD, IUnknown
+
 from powc.core import ComResult, cr, query_interface
 
 
@@ -252,7 +258,8 @@ class AudioEndpointVolume:
 class AudioMeterInformation:
     """聴覚メーター情報。IAudioMeterInformationインターフェイスのラッパーです。
 
-    作成にはMMDeviceを使用します。"""
+    作成には :class:`MMDevice` を使用します。
+    """
 
     __o: Any  # POINTER(IAudioMeterInformation)
 
@@ -302,4 +309,5 @@ class AudioMeterInformation:
 
     @property
     def hardwaresupport(self) -> ENDPOINT_HARDWARE_SUPPORT:
+        return self.hardwaresupport_nothrow.value
         return self.hardwaresupport_nothrow.value

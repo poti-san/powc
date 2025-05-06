@@ -1,3 +1,5 @@
+"""プロパティバッグ。"""
+
 from ctypes import (
     POINTER,
     Structure,

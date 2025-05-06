@@ -1,3 +1,8 @@
+"""デスクトップの壁紙。
+
+主なクラスは :class:`DesktopWallpaper` です。
+"""
+
 from ctypes import POINTER, byref, c_int32, c_uint32, c_void_p, c_wchar_p
 from ctypes.wintypes import RECT
 from dataclasses import dataclass
@@ -70,14 +75,18 @@ class DesktopWallpaper:
     """デスクトップ壁紙の設定。IDesktopWallpaperのラッパーです。
 
     Examples:
-        >>> from comtypes import CoInitialize
-        >>>
         >>> from powcshell.desktopwallpaper import DesktopWallpaper
         >>>
-        >>> # DesktopWallpaperはCOMの初期化が必須です。
-        >>> CoInitializeEx()
-        >>>
         >>> wallpaper = DesktopWallpaper.create()
+        >>>
+        >>> print(
+        >>>     f\"\"\"
+        >>>     壁紙:{wallpaper.get_wallpaper(0)}
+        >>>     表示位置:{wallpaper.position}
+        >>>     背景色:{wallpaper.bgcolor}
+        >>>     モニタデバイスパス:{tuple(wallpaper.monitor_device_paths)}
+        >>>     \"\"\"
+        >>> )
     """
 
     __slots__ = ("__o",)
@@ -261,4 +270,5 @@ class DesktopWallpaper:
         return cr(self.__o.Enable(byref(x), 1 if value else 0), None)
 
     def set_enable(self, value: bool) -> None:
+        return self.set_enable_nothrow(value).value
         return self.set_enable_nothrow(value).value

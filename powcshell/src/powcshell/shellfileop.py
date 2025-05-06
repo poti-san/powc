@@ -1,4 +1,7 @@
-"""シェル項目のファイル操作。"""
+"""シェル項目のファイル操作。
+
+主なクラスは :class:`ShellFileOperation` です。
+"""
 
 import typing
 from ctypes import POINTER, byref, c_int32, c_uint32, c_void_p, c_wchar_p

@@ -3,7 +3,7 @@
 from comtypes import GUID
 
 
-class FolderTypeID:
+class KnownFolderTypeID:
     """既知フォルダ種類ID定数。"""
 
     __slots__ = ()

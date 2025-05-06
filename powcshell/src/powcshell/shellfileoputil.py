@@ -1,4 +1,6 @@
-"""シェル項目ファイル操作の便利機能。"""
+"""シェル項目ファイル操作の便利機能。
+
+主なクラスは :class:`ShellFileOperationProgressSinkForCall` です。"""
 
 from inspect import signature as inspect_sig
 from pprint import pformat

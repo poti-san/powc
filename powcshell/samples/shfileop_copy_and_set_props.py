@@ -9,6 +9,7 @@ from powcpropsys.propchange import (
 )
 from powcpropsys.propkey import PropertyKey
 from powcpropsys.propvariant import PropVariant
+
 from powcshell.shellfileop import ShellFileOperation
 from powcshell.shellfileoputil import ShellFileOperationProgressSinkForCall
 from powcshell.shellitem2 import ShellItem2
@@ -32,4 +33,5 @@ op.set_props(pcarray)
 try:
     op.perform_operations()
 except Exception as ex:
+    print(f"test.jpgが実行前に存在した可能性があります。\n\n{ex}")
     print(f"test.jpgが実行前に存在した可能性があります。\n\n{ex}")

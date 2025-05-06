@@ -1,8 +1,14 @@
+"""シェルライブラリ。
+
+主なクラスは :class:`ShellLibrary` です。
+"""
+
 from ctypes import POINTER, byref, c_int32, c_uint32, c_void_p, c_wchar_p
 from enum import IntEnum, IntFlag
 from typing import Any
 
 from comtypes import GUID, STDMETHOD, CoCreateInstance, IUnknown
+
 from powc.core import ComResult, cotaskmem, cr, query_interface
 from powc.stream import StorageMode
 
@@ -368,4 +374,5 @@ class ShellLibrary:
         return item.value_unchecked.name_desktopabsparsing_nothrow
 
     def save_in_folder_path(self, path: str, lib_name: str, flags: LibrarySaveFlag) -> str:
+        return self.save_in_folder_path_nothrow(path, lib_name, flags).value
         return self.save_in_folder_path_nothrow(path, lib_name, flags).value

@@ -1,4 +1,7 @@
-"""既知フォルダ。"""
+"""デスクトップやマイドキュメントのような既知のフォルダ。
+
+主なクラスは :class:`KnownFolderManager` と :class:`KnownFolder` です。
+"""
 
 from ctypes import (
     POINTER,

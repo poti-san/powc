@@ -1,6 +1,4 @@
-"""
-VARIANT型関係の機能を提供します。
-"""
+"""VARIANT型関係機能。"""
 
 from ctypes import (
     POINTER,

@@ -1,3 +1,5 @@
+"""COMオブジェクトカテゴリ。"""
+
 from ctypes import (
     POINTER,
     Structure,

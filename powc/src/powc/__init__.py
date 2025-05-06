@@ -1,3 +1,5 @@
+"""COM基本機能。多くは他のライブラリの内部で使用されます。"""
+
 from ctypes import WinDLL
 
 _ole32 = WinDLL("ole32.dll")

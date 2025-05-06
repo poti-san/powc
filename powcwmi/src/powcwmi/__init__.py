@@ -1,3 +1,6 @@
+"""WMI。 :class:`WBEMLocator` 経由で :class:`WBEMServices` を取得した後、
+WMIクラスやインスタンスの情報を取得できます。"""
+
 from csv import Error
 from ctypes import POINTER, WinDLL, byref, c_int32, c_uint32, c_void_p
 from dataclasses import dataclass
@@ -5,6 +8,7 @@ from enum import IntEnum, IntFlag
 from typing import Any, Iterator, Literal, NamedTuple, OrderedDict
 
 from comtypes import BSTR, GUID, CoCreateInstance
+from powc.comsec import com_init_security, com_set_securityblanket
 from powc.core import ComResult, check_hresult, cr, query_interface
 from powc.safearray import SafeArrayPtr
 from powc.variant import Variant
@@ -125,7 +129,10 @@ class WMIObjectText(IntEnum):
 
 
 class WBEMLocator:
-    """WBEMロケーター。IWbemLocatorインターフェイスのラッパーです。"""
+    """WBEMロケーター。IWbemLocatorインターフェイスのラッパーです。
+
+    :func:`connect_server` で :class:`WBEMServices` を作成できます。
+    """
 
     __slots__ = ("__o",)
     __o: Any  # POINTER(IWbemLocator)
@@ -140,15 +147,7 @@ class WBEMLocator:
     @staticmethod
     def create() -> "WBEMLocator":
         """WBEMロケーターを作成します。同時にCOMセキュリティをWMI用に初期化します。"""
-        RPC_C_AUTHN_DEFAULT = 0
-        RPC_C_IMP_LEVEL_IMPERSONATE = 3
-        EOAC_NONE = 0
-
-        check_hresult(
-            _CoInitializeSecurity(
-                None, -1, None, None, RPC_C_AUTHN_DEFAULT, RPC_C_IMP_LEVEL_IMPERSONATE, None, EOAC_NONE, None
-            )
-        )
+        com_init_security()
         return WBEMLocator(CoCreateInstance(GUID("{4590f811-1d3a-11d0-891f-00aa004b2e24}"), IWbemLocator))
 
     @staticmethod
@@ -184,21 +183,6 @@ class WBEMLocator:
         return self.connect_server_nothrow(network_resource, user, password, locale, waits_max, authority).value
 
 
-_ole32 = WinDLL("ole32.dll")
-_CoInitializeSecurity = _ole32.CoInitializeSecurity
-_CoInitializeSecurity.argtypes = (
-    c_void_p,
-    c_uint32,
-    c_void_p,
-    c_void_p,
-    c_uint32,
-    c_uint32,
-    c_void_p,
-    c_uint32,
-    c_void_p,
-)
-
-
 # TODO: async系メソッドの追加
 class WBEMServices:
     """WBEMサービス。IWbemServicesインターフェイスのラッパーです。"""
@@ -208,6 +192,7 @@ class WBEMServices:
 
     def __init__(self, o: Any) -> None:
         self.__o = query_interface(o, IWbemServices)
+        com_set_securityblanket(self.wrapped_obj)
 
     @property
     def wrapped_obj(self) -> c_void_p:

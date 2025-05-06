@@ -1,3 +1,7 @@
+"""マルチメディアデバイス。
+
+主なクラスは :class:`MMDeviceEnumerator` 、 :class:`MMDevice` です。"""
+
 from abc import abstractmethod
 from ctypes import (
     POINTER,

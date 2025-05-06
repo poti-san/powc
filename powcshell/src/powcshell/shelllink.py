@@ -1,4 +1,6 @@
-"""ショートカット。"""
+"""ショートカット。
+
+主なクラスは :class:`ShellLink` です。"""
 
 from ctypes import (
     POINTER,

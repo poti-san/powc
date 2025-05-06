@@ -1,10 +1,14 @@
-"""シェル項目。"""
+"""シェル項目。
+
+主なクラスは :class:`ShellItem` です。
+"""
 
 from ctypes import POINTER, _Pointer, byref, c_int32, c_uint32, c_void_p, c_wchar_p
 from enum import IntEnum, IntFlag
 from typing import TYPE_CHECKING, Any, Iterator
 
 from comtypes import GUID, STDMETHOD, IUnknown
+
 from powc.core import ComResult, cotaskmem, cr, query_interface
 from powc.stream import ComStream, IStream
 
@@ -443,4 +447,5 @@ _SHCreateItemFromParsingName.restype = c_int32
 
 _SHCreateItemFromIDList = _shell32.SHCreateItemFromIDList
 _SHCreateItemFromIDList.argtypes = (c_void_p, POINTER(GUID), POINTER(POINTER(IUnknown)))
+_SHCreateItemFromIDList.restype = c_int32
 _SHCreateItemFromIDList.restype = c_int32

@@ -1,9 +1,13 @@
-"""プロパティにアクセスしやすいシェル項目。"""
+"""プロパティにアクセスしやすいシェル項目。
+
+主なクラスは :class:`ShellItem2` です。
+"""
 
 from ctypes import POINTER, byref, c_int32, c_int64, c_uint32, c_uint64, c_wchar_p
 from typing import Any, Iterator, override
 
 from comtypes import GUID, STDMETHOD, IUnknown
+
 from powc.core import ComResult, cotaskmem, cr, query_interface
 from powc.datetime import FILETIME
 from powcpropsys.propkey import PropertyKey
@@ -298,4 +302,5 @@ class ShellItem2(ShellItem):
     @property
     @override
     def linktarget(self) -> "ShellItem2":
+        return self.linktarget_nothrow.value
         return self.linktarget_nothrow.value

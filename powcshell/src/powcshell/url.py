@@ -1,4 +1,7 @@
-"""インターネットショートカット。"""
+"""インターネットショートカット。
+
+主なクラスは :class:`UniformResourceLocator` です。
+"""
 
 from ctypes import (
     POINTER,
@@ -14,6 +17,7 @@ from enum import IntFlag
 from typing import Any
 
 from comtypes import GUID, STDMETHOD, CoCreateInstance, IUnknown
+
 from powc.core import ComResult, cotaskmem, cr, guid_from_define, query_interface
 from powc.persist import PersistFile, PersistStream
 from powc.stream import ComStream, StorageMode
@@ -158,4 +162,5 @@ class UniformResourceLocator:
         return cr(self.__o.InvokeCommand(), None)
 
     def invoke_default(self, flags: IUrlInvokeCommandFlag, window_handle: int) -> None:
+        return self.invoke_default_nothrow(flags, window_handle).value
         return self.invoke_default_nothrow(flags, window_handle).value

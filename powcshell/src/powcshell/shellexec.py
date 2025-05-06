@@ -1,4 +1,6 @@
-"""パスまたはアイテムIDリストのシェル操作。"""
+"""パスまたはアイテムIDリストのシェル操作。
+
+主なクラスは :class:`ShellExecute` です。"""
 
 from ctypes import (
     POINTER,
