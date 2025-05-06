@@ -2,7 +2,7 @@
 
 Pythonからプロパティシステムを使いやすくするパッケージです。powcパッケージに依存します。
 
-**システムプロパティの列挙**
+## システムプロパティの列挙
 
 ```python
 from powcpropsys.propsys import PropertySystem

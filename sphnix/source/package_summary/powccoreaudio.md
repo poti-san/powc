@@ -1,8 +1,8 @@
 # powccoreaudio
 
-PythonからWindowsのCoreAudio COM機能を使いやすくするパッケージです。powcpropsysパッケージに依存します。 
+PythonからWindowsのCoreAudio COM機能を使いやすくするパッケージです。powcpropsysパッケージに依存します。
 
-**マスター音量を10%に設定する**
+## マスター音量を10%に設定する
 
 ```python
 from powccoreaudio.mmdevice import MMDeviceEnumerator
@@ -19,7 +19,7 @@ props = DevicePropertiesReadOnlyInPropertyStore(audio_device.propstore_read)
 print(f"{props.friendlyname}: {audio.master_volume_level_scalar * 100:.2f}%")
 ```
 
-**全スピーカーのミュート**
+## 全スピーカーのミュート
 
 ```python
 from powccoreaudio.mmdevice import MMDeviceEnumerator

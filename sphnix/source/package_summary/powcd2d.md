@@ -1,10 +1,8 @@
 # powcd2d
 
-PythonからWindowsのDirect2D、DirectWrite、DIGI、WICを使いやすくするパッケージです。powcpropsysパッケージに依存します。 
+PythonからWindowsのDirect2D、DirectWrite、DIGI、WICを使いやすくするパッケージです。powcpropsysパッケージに依存します。
 
-次のようなコードが書けます。
-
-**WICコンポーネントの列挙**
+## WICコンポーネントの列挙
 
 ```py
 from powcd2d.wic import WICImagingFactory
