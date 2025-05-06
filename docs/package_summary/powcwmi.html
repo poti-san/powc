@@ -193,10 +193,10 @@
 </ul>
 </details></li>
 <li class="toctree-l3"><a class="reference internal" href="../apiref/powcshell.desktopwallpaper.html">powcshell.desktopwallpaper module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../apiref/powcshell.foldertypeid.html">powcshell.foldertypeid module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../apiref/powcshell.itemidlist.html">powcshell.itemidlist module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../apiref/powcshell.knownfolder.html">powcshell.knownfolder module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../apiref/powcshell.knownfolderid.html">powcshell.knownfolderid module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apiref/powcshell.knownfoldertypeid.html">powcshell.knownfoldertypeid module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../apiref/powcshell.shellexec.html">powcshell.shellexec module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../apiref/powcshell.shellfileop.html">powcshell.shellfileop module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../apiref/powcshell.shellfileoputil.html">powcshell.shellfileoputil module</a></li>
@@ -332,7 +332,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -348,6 +350,17 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> 目次 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#root-cimv2wmi">ROOT/CIMV2名前空間のWMIクラスを列挙する。</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#win32-computersystem">Win32_ComputerSystemのメソッド名を取得する。</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#win32-computersystemsystemfamily">Win32_ComputerSystemのSystemFamilyプロパティを取得する。</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#root">ROOT名前空間直下の名前空間名を取得する。</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -361,6 +374,61 @@ document.write(`
 <h1>powcwmi<a class="headerlink" href="#powcwmi" title="Link to this heading">#</a></h1>
 <p>PythonからWindowsのWMIを使いやすくするパッケージです。powcパッケージに依存します。</p>
 <p>このパッケージは一部の関数をテストしていません。特にWMIインスタンスのメソッド呼び出しは注意してください。</p>
+<section id="root-cimv2wmi">
+<h2>ROOT/CIMV2名前空間のWMIクラスを列挙する。<a class="headerlink" href="#root-cimv2wmi" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">attrgetter</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">powcwmi</span><span class="w"> </span><span class="kn">import</span> <span class="n">WBEMLocator</span>
+
+<span class="n">locator</span> <span class="o">=</span> <span class="n">WBEMLocator</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">server</span> <span class="o">=</span> <span class="n">locator</span><span class="o">.</span><span class="n">connect_server</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;root\cimv2&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">server</span><span class="o">.</span><span class="n">create_classenum</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">shallow</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="n">attrgetter</span><span class="p">(</span><span class="s2">&quot;classname&quot;</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">classname</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="win32-computersystem">
+<h2>Win32_ComputerSystemのメソッド名を取得する。<a class="headerlink" href="#win32-computersystem" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pp</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">powcwmi</span><span class="w"> </span><span class="kn">import</span> <span class="n">WBEMLocator</span>
+
+<span class="n">locator</span> <span class="o">=</span> <span class="n">WBEMLocator</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">service</span> <span class="o">=</span> <span class="n">locator</span><span class="o">.</span><span class="n">connect_server</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;root\cimv2&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">service</span><span class="o">.</span><span class="n">create_instanceenum</span><span class="p">(</span><span class="s2">&quot;Win32_ComputerSystem&quot;</span><span class="p">,</span> <span class="n">shallow</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="bp">cls</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">classname</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">pp</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">methodnames_all</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="win32-computersystemsystemfamily">
+<h2>Win32_ComputerSystemのSystemFamilyプロパティを取得する。<a class="headerlink" href="#win32-computersystemsystemfamily" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pp</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">powcwmi</span><span class="w"> </span><span class="kn">import</span> <span class="n">WBEMLocator</span>
+
+<span class="n">locator</span> <span class="o">=</span> <span class="n">WBEMLocator</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">service</span> <span class="o">=</span> <span class="n">locator</span><span class="o">.</span><span class="n">connect_server</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;root\cimv2&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">service</span><span class="o">.</span><span class="n">create_instanceenum</span><span class="p">(</span><span class="s2">&quot;Win32_ComputerSystem&quot;</span><span class="p">):</span>
+    <span class="n">pp</span><span class="p">((</span><span class="n">instance</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;SystemFamily&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">to_str</span><span class="p">(),</span> <span class="n">instance</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;SystemSKUNumber&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">to_str</span><span class="p">()))</span>
+</pre></div>
+</div>
+</section>
+<section id="root">
+<h2>ROOT名前空間直下の名前空間名を取得する。<a class="headerlink" href="#root" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">powcwmi</span><span class="w"> </span><span class="kn">import</span> <span class="n">WBEMLocator</span>
+
+<span class="n">locator</span> <span class="o">=</span> <span class="n">WBEMLocator</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">server</span> <span class="o">=</span> <span class="n">locator</span><span class="o">.</span><span class="n">connect_server</span><span class="p">(</span><span class="s2">&quot;root&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">server</span><span class="o">.</span><span class="n">create_instanceenum</span><span class="p">(</span><span class="s2">&quot;__Namespace&quot;</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="bp">cls</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -398,6 +466,24 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目次
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#root-cimv2wmi">ROOT/CIMV2名前空間のWMIクラスを列挙する。</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#win32-computersystem">Win32_ComputerSystemのメソッド名を取得する。</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#win32-computersystemsystemfamily">Win32_ComputerSystemのSystemFamilyプロパティを取得する。</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#root">ROOT名前空間直下の名前空間名を取得する。</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
