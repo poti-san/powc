@@ -22,10 +22,12 @@ from ctypes import (
     c_void_p,
     c_wchar_p,
     cast,
+    sizeof,
 )
 from datetime import datetime
 
 from comtypes import GUID
+
 from powc.core import ComResult, CoTaskMem, check_hresult, cotaskmem, cotaskmem_free, cr
 from powc.datetime import FILETIME
 from powc.variant import VARENUM
@@ -40,9 +42,7 @@ class PropVariant(Union):
     # PROPVAR_PAD1 wReserved1;
     # PROPVAR_PAD2 wReserved2;
     # PROPVAR_PAD3 wReserved3;
-    # u
-    # DECIMAL decVal;
-    _fields_ = (("vt", c_uint16), ("data", c_byte * 24))
+    _fields_ = (("vt", c_uint16), ("data", c_byte * (24 if sizeof(c_void_p) == 8 else 16)))
 
     __slots__ = ()
 
@@ -96,7 +96,7 @@ class PropVariant(Union):
 
     @property
     def data_memview(self) -> memoryview:
-        return memoryview(self.data)[8:]
+        return memoryview(self.data)[PropVariant.data.offset :]
 
     def change_type_nothrow(self, vt: VARENUM) -> "ComResult[PropVariant]":
         global PropVariantChangeType
@@ -421,4 +421,5 @@ _InitPropVariantFromPropVariantVectorElem.restype = c_int32
 
 _PropVariantToStringVectorAlloc = _propsys.PropVariantToStringVectorAlloc
 _PropVariantToStringVectorAlloc.argtypes = (POINTER(PropVariant), POINTER(c_void_p), POINTER(c_uint32))
+_PropVariantToStringVectorAlloc.restype = c_int32
 _PropVariantToStringVectorAlloc.restype = c_int32

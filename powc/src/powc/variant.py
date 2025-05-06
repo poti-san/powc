@@ -22,6 +22,7 @@ from ctypes import (
     c_void_p,
     c_wchar_p,
     cast,
+    sizeof,
 )
 from datetime import datetime
 from enum import IntFlag
@@ -97,7 +98,7 @@ class Variant(Union):
     # PROPVAR_PAD3 wReserved3;
     # u
     # DECIMAL decVal;
-    _fields_ = (("vt", c_int16), ("data", c_byte * 24))
+    _fields_ = (("vt", c_uint16), ("data", c_byte * (24 if sizeof(c_void_p) == 8 else 16)))
 
     __slots__ = ()
 
@@ -151,7 +152,7 @@ class Variant(Union):
 
     @property
     def data_memview(self) -> memoryview:
-        return memoryview(self.data)[8:]
+        return memoryview(self.data)[Variant.data.offset :]
 
     def change_type_nothrow(self, vt: VARENUM) -> "ComResult[Variant]":
         v = Variant()
