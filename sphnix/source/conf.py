@@ -46,8 +46,7 @@ source_suffix = {
 
 html_theme = "sphinx_rtd_theme"
 html_theme_options = {
-    "collapse_navigation": True,
-    "navigation_depth": 4,
+    "use_download_button": False,
 }
 html_show_sourcelink = False
 html_static_path = ["_static"]
