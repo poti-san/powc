@@ -1,0 +1,1271 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>powc.stream module &#8212; powc  ドキュメント</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=1cf7f4d9"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=4755f45a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'apiref/powc.stream';</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="powc.variant module" href="powc.variant.html" />
+    <link rel="prev" title="powc.safearray module" href="powc.safearray.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">powc  ドキュメント</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">検索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../package_summary/index.html">パッケージの概要</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powc.html">powc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcpropsys.html">powcpropsys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcshell.html">powcshell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcwmi.html">powcwmi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powccoreaudio.html">powccoreaudio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcd2d.html">powcd2d</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../apiref.html">APIドキュメント</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="powc.html">powc package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="powc.comcat.html">powc.comcat module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.comobj.html">powc.comobj module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.comsec.html">powc.comsec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.core.html">powc.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.dataobj.html">powc.dataobj module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.datetime.html">powc.datetime module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.errlog.html">powc.errlog module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.globalmem.html">powc.globalmem module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.persist.html">powc.persist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.propbag.html">powc.propbag module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.safearray.html">powc.safearray module</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">powc.stream module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.variant.html">powc.variant module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcpropsys.html">powcpropsys package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html">powcpropsys.propchange module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html">powcpropsys.propdesc module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propkey.html">powcpropsys.propkey module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html">powcpropsys.propstore module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html">powcpropsys.propsys module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html">powcpropsys.propvariant module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcshell.html">powcshell package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcshell.shellitemutil.html">powcshell.shellitemutil package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.computerfolderinfo.html">powcshell.shellitemutil.computerfolderinfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.fontiteminfo.html">powcshell.shellitemutil.fontiteminfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.recyclebiniteminfo.html">powcshell.shellitemutil.recyclebiniteminfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.volumeinfo.html">powcshell.shellitemutil.volumeinfo module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.desktopwallpaper.html">powcshell.desktopwallpaper module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.itemidlist.html">powcshell.itemidlist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfolder.html">powcshell.knownfolder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfolderid.html">powcshell.knownfolderid module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfoldertypeid.html">powcshell.knownfoldertypeid module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellexec.html">powcshell.shellexec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellfileop.html">powcshell.shellfileop module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellfileoputil.html">powcshell.shellfileoputil module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitem.html">powcshell.shellitem module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitem2.html">powcshell.shellitem2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitemarray.html">powcshell.shellitemarray module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitemenum.html">powcshell.shellitemenum module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shelllibrary.html">powcshell.shelllibrary module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shelllink.html">powcshell.shelllink module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.url.html">powcshell.url module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcwmi.html">powcwmi package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.comtypes.html">powcwmi.comtypes module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.wbemflags.html">powcwmi.wbemflags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.wbemstatus.html">powcwmi.wbemstatus module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powccoreaudio.html">powccoreaudio package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devicepropsinstore.html">powccoreaudio.devicepropsinstore module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html">powccoreaudio.devprop module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html">powccoreaudio.endpointvolume module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html">powccoreaudio.mmdevice module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcd2d.html">powcd2d package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.d2d.html">powcd2d.d2d package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.interfacebody.html">powcd2d.d2d.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html">powcd2d.d2d.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dcommon.html">powcd2d.dcommon package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html">powcd2d.dcommon.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dwrite.html">powcd2d.dwrite package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.interfacebody.html">powcd2d.dwrite.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html">powcd2d.dwrite.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dxgi.html">powcd2d.dxgi package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.interfacebody.html">powcd2d.dxgi.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html">powcd2d.dxgi.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.wic.html">powcd2d.wic package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html">powcd2d.wic.constant module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.interfacebody.html">powcd2d.wic.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html">powcd2d.wic.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.d3dmisc.html">powcd2d.d3dmisc module</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../py-modindex.html">モジュール索引</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全画面モード"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>powc.stream module</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目次 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat"><code class="docutils literal notranslate"><span class="pre">ComStorageStat</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.atime"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.atime</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.clsid"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.clsid</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.ctime"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.ctime</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.locks_supported"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.locks_supported</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.mode"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.mode</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.mtime"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.mtime</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.name"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.reserved"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.reserved</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.size"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.size</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.statebits"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.statebits</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.type"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.type</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream"><code class="docutils literal notranslate"><span class="pre">ComStream</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.BytesAndSize"><code class="docutils literal notranslate"><span class="pre">ComStream.BytesAndSize</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.BytesAndSize.array"><code class="docutils literal notranslate"><span class="pre">ComStream.BytesAndSize.array</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.BytesAndSize.size"><code class="docutils literal notranslate"><span class="pre">ComStream.BytesAndSize.size</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.clone"><code class="docutils literal notranslate"><span class="pre">ComStream.clone()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.clone_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.clone_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.commit"><code class="docutils literal notranslate"><span class="pre">ComStream.commit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.commit_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.commit_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.create_on_file"><code class="docutils literal notranslate"><span class="pre">ComStream.create_on_file()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.create_on_file_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.create_on_file_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.create_on_mem"><code class="docutils literal notranslate"><span class="pre">ComStream.create_on_mem()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.create_on_mem_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.create_on_mem_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.get_stat"><code class="docutils literal notranslate"><span class="pre">ComStream.get_stat()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.get_stat_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.get_stat_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.keep_pos"><code class="docutils literal notranslate"><span class="pre">ComStream.keep_pos()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.lock_region"><code class="docutils literal notranslate"><span class="pre">ComStream.lock_region()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.lock_region_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.lock_region_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.openread_on_file"><code class="docutils literal notranslate"><span class="pre">ComStream.openread_on_file()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.openread_on_file_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.openread_on_file_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.pos"><code class="docutils literal notranslate"><span class="pre">ComStream.pos</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.pos_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.pos_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.read_bytes"><code class="docutils literal notranslate"><span class="pre">ComStream.read_bytes()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.read_bytes_all"><code class="docutils literal notranslate"><span class="pre">ComStream.read_bytes_all()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.read_bytes_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.read_bytes_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.revert"><code class="docutils literal notranslate"><span class="pre">ComStream.revert()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.revert_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.revert_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.seek"><code class="docutils literal notranslate"><span class="pre">ComStream.seek()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.seek_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.seek_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.set_pos_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.set_pos_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.set_size_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.set_size_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.size"><code class="docutils literal notranslate"><span class="pre">ComStream.size</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.size_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.size_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.stat"><code class="docutils literal notranslate"><span class="pre">ComStream.stat</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.stat_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.stat_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.unlock_region"><code class="docutils literal notranslate"><span class="pre">ComStream.unlock_region()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.unlock_region_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.unlock_region_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">ComStream.wrapped_obj</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.write_bytes"><code class="docutils literal notranslate"><span class="pre">ComStream.write_bytes()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.write_bytes_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.write_bytes_nothrow()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ISequentialStream"><code class="docutils literal notranslate"><span class="pre">ISequentialStream</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ISequentialStream.Read"><code class="docutils literal notranslate"><span class="pre">ISequentialStream.Read</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ISequentialStream.Write"><code class="docutils literal notranslate"><span class="pre">ISequentialStream.Write</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.IStream"><code class="docutils literal notranslate"><span class="pre">IStream</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.IStream.Clone"><code class="docutils literal notranslate"><span class="pre">IStream.Clone</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.IStream.Commit"><code class="docutils literal notranslate"><span class="pre">IStream.Commit</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.IStream.CopyTo"><code class="docutils literal notranslate"><span class="pre">IStream.CopyTo</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.IStream.LockRegion"><code class="docutils literal notranslate"><span class="pre">IStream.LockRegion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.IStream.Revert"><code class="docutils literal notranslate"><span class="pre">IStream.Revert</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.IStream.Seek"><code class="docutils literal notranslate"><span class="pre">IStream.Seek</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.IStream.SetSize"><code class="docutils literal notranslate"><span class="pre">IStream.SetSize</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.IStream.Stat"><code class="docutils literal notranslate"><span class="pre">IStream.Stat</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.IStream.UnlockRegion"><code class="docutils literal notranslate"><span class="pre">IStream.UnlockRegion</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.LockType"><code class="docutils literal notranslate"><span class="pre">LockType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.LockType.LOCK_EXCLUSIVE"><code class="docutils literal notranslate"><span class="pre">LockType.LOCK_EXCLUSIVE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.LockType.LOCK_ONLYONCE"><code class="docutils literal notranslate"><span class="pre">LockType.LOCK_ONLYONCE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.LockType.LOCK_WRITE"><code class="docutils literal notranslate"><span class="pre">LockType.LOCK_WRITE</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StatFlag"><code class="docutils literal notranslate"><span class="pre">StatFlag</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StatFlag.DEFAULT"><code class="docutils literal notranslate"><span class="pre">StatFlag.DEFAULT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StatFlag.NONAME"><code class="docutils literal notranslate"><span class="pre">StatFlag.NONAME</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageCommit"><code class="docutils literal notranslate"><span class="pre">StorageCommit</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageCommit.CONSOLIDATE"><code class="docutils literal notranslate"><span class="pre">StorageCommit.CONSOLIDATE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageCommit.DANGEROUSLYCOMMITMERELYTODISKCACHE"><code class="docutils literal notranslate"><span class="pre">StorageCommit.DANGEROUSLYCOMMITMERELYTODISKCACHE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageCommit.DEFAULT"><code class="docutils literal notranslate"><span class="pre">StorageCommit.DEFAULT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageCommit.ONLYIFCURRENT"><code class="docutils literal notranslate"><span class="pre">StorageCommit.ONLYIFCURRENT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageCommit.OVERWRITE"><code class="docutils literal notranslate"><span class="pre">StorageCommit.OVERWRITE</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode"><code class="docutils literal notranslate"><span class="pre">StorageMode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.CONVERT"><code class="docutils literal notranslate"><span class="pre">StorageMode.CONVERT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.CREATE"><code class="docutils literal notranslate"><span class="pre">StorageMode.CREATE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.DELETEONRELEASE"><code class="docutils literal notranslate"><span class="pre">StorageMode.DELETEONRELEASE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.DIRECT"><code class="docutils literal notranslate"><span class="pre">StorageMode.DIRECT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.DIRECT_SWMR"><code class="docutils literal notranslate"><span class="pre">StorageMode.DIRECT_SWMR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.FAILIFTHERE"><code class="docutils literal notranslate"><span class="pre">StorageMode.FAILIFTHERE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.NOSCRATCH"><code class="docutils literal notranslate"><span class="pre">StorageMode.NOSCRATCH</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.NOSNAPSHOT"><code class="docutils literal notranslate"><span class="pre">StorageMode.NOSNAPSHOT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.PRIORITY"><code class="docutils literal notranslate"><span class="pre">StorageMode.PRIORITY</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.READ"><code class="docutils literal notranslate"><span class="pre">StorageMode.READ</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.READWRITE"><code class="docutils literal notranslate"><span class="pre">StorageMode.READWRITE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.SHARE_DENY_NONE"><code class="docutils literal notranslate"><span class="pre">StorageMode.SHARE_DENY_NONE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.SHARE_DENY_READ"><code class="docutils literal notranslate"><span class="pre">StorageMode.SHARE_DENY_READ</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.SHARE_DENY_WRITE"><code class="docutils literal notranslate"><span class="pre">StorageMode.SHARE_DENY_WRITE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.SHARE_EXCLUSIVE"><code class="docutils literal notranslate"><span class="pre">StorageMode.SHARE_EXCLUSIVE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.SIMPLE"><code class="docutils literal notranslate"><span class="pre">StorageMode.SIMPLE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.TRANSACTED"><code class="docutils literal notranslate"><span class="pre">StorageMode.TRANSACTED</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.WRITE"><code class="docutils literal notranslate"><span class="pre">StorageMode.WRITE</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageType"><code class="docutils literal notranslate"><span class="pre">StorageType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageType.LOCKBYTES"><code class="docutils literal notranslate"><span class="pre">StorageType.LOCKBYTES</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageType.PROPERTY"><code class="docutils literal notranslate"><span class="pre">StorageType.PROPERTY</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageType.STORAGE"><code class="docutils literal notranslate"><span class="pre">StorageType.STORAGE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageType.STREAM"><code class="docutils literal notranslate"><span class="pre">StorageType.STREAM</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StreamSeek"><code class="docutils literal notranslate"><span class="pre">StreamSeek</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StreamSeek.CUR"><code class="docutils literal notranslate"><span class="pre">StreamSeek.CUR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StreamSeek.END"><code class="docutils literal notranslate"><span class="pre">StreamSeek.END</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StreamSeek.SET"><code class="docutils literal notranslate"><span class="pre">StreamSeek.SET</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-powc.stream">
+<span id="powc-stream-module"></span><h1>powc.stream module<a class="headerlink" href="#module-powc.stream" title="Link to this heading">#</a></h1>
+<p>IStreamラッパー。</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.stream.ComStorageStat">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.stream.</span></span><span class="sig-name descname"><span class="pre">ComStorageStat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mtime</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime.datetime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctime</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime.datetime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atime</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime.datetime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locks_supported</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clsid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">comtypes.GUID.GUID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statebits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reserved</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.stream.ComStorageStat" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.ComStorageStat.atime">
+<span class="sig-name descname"><span class="pre">atime</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span></em><a class="headerlink" href="#powc.stream.ComStorageStat.atime" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.ComStorageStat.clsid">
+<span class="sig-name descname"><span class="pre">clsid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">GUID</span></em><a class="headerlink" href="#powc.stream.ComStorageStat.clsid" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.ComStorageStat.ctime">
+<span class="sig-name descname"><span class="pre">ctime</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span></em><a class="headerlink" href="#powc.stream.ComStorageStat.ctime" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.ComStorageStat.locks_supported">
+<span class="sig-name descname"><span class="pre">locks_supported</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.stream.ComStorageStat.locks_supported" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.ComStorageStat.mode">
+<span class="sig-name descname"><span class="pre">mode</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.stream.ComStorageStat.mode" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.ComStorageStat.mtime">
+<span class="sig-name descname"><span class="pre">mtime</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">datetime</span></em><a class="headerlink" href="#powc.stream.ComStorageStat.mtime" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.ComStorageStat.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powc.stream.ComStorageStat.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.ComStorageStat.reserved">
+<span class="sig-name descname"><span class="pre">reserved</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.stream.ComStorageStat.reserved" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.ComStorageStat.size">
+<span class="sig-name descname"><span class="pre">size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.stream.ComStorageStat.size" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.ComStorageStat.statebits">
+<span class="sig-name descname"><span class="pre">statebits</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.stream.ComStorageStat.statebits" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.ComStorageStat.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.stream.ComStorageStat.type" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.stream.ComStream">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.stream.</span></span><span class="sig-name descname"><span class="pre">ComStream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.stream.ComStream" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>COMストリーム。IStreamインターフェイスのラッパーです。</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.stream.ComStream.BytesAndSize">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BytesAndSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.stream.ComStream.BytesAndSize" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.ComStream.BytesAndSize.array">
+<span class="sig-name descname"><span class="pre">array</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bytes</span></em><a class="headerlink" href="#powc.stream.ComStream.BytesAndSize.array" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.ComStream.BytesAndSize.size">
+<span class="sig-name descname"><span class="pre">size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.stream.ComStream.BytesAndSize.size" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.stream.ComStream" title="powc.stream.ComStream"><span class="pre">ComStream</span></a></span></span><a class="headerlink" href="#powc.stream.ComStream.clone" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.clone_nothrow">
+<span class="sig-name descname"><span class="pre">clone_nothrow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.stream.ComStream" title="powc.stream.ComStream"><span class="pre">ComStream</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.stream.ComStream.clone_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.commit">
+<span class="sig-name descname"><span class="pre">commit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.stream.StorageCommit" title="powc.stream.StorageCommit"><span class="pre">StorageCommit</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powc.stream.ComStream.commit" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.commit_nothrow">
+<span class="sig-name descname"><span class="pre">commit_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.stream.StorageCommit" title="powc.stream.StorageCommit"><span class="pre">StorageCommit</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.stream.ComStream.commit_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.create_on_file">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_on_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.stream.StorageMode" title="powc.stream.StorageMode"><span class="pre">StorageMode</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">creates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.stream.ComStream" title="powc.stream.ComStream"><span class="pre">ComStream</span></a></span></span><a class="headerlink" href="#powc.stream.ComStream.create_on_file" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.create_on_file_nothrow">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_on_file_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.stream.StorageMode" title="powc.stream.StorageMode"><span class="pre">StorageMode</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">creates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.stream.ComStream" title="powc.stream.ComStream"><span class="pre">ComStream</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.stream.ComStream.create_on_file_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.create_on_mem">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_on_mem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buffer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Buffer</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.stream.ComStream" title="powc.stream.ComStream"><span class="pre">ComStream</span></a></span></span><a class="headerlink" href="#powc.stream.ComStream.create_on_mem" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.create_on_mem_nothrow">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_on_mem_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buffer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Buffer</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.stream.ComStream" title="powc.stream.ComStream"><span class="pre">ComStream</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.stream.ComStream.create_on_mem_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.get_stat">
+<span class="sig-name descname"><span class="pre">get_stat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.stream.StatFlag" title="powc.stream.StatFlag"><span class="pre">StatFlag</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.stream.ComStorageStat" title="powc.stream.ComStorageStat"><span class="pre">ComStorageStat</span></a></span></span><a class="headerlink" href="#powc.stream.ComStream.get_stat" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.get_stat_nothrow">
+<span class="sig-name descname"><span class="pre">get_stat_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.stream.StatFlag" title="powc.stream.StatFlag"><span class="pre">StatFlag</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.stream.ComStorageStat" title="powc.stream.ComStorageStat"><span class="pre">ComStorageStat</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.stream.ComStream.get_stat_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.keep_pos">
+<span class="sig-name descname"><span class="pre">keep_pos</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.stream.ComStream.keep_pos" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.lock_region">
+<span class="sig-name descname"><span class="pre">lock_region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locktype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.stream.LockType" title="powc.stream.LockType"><span class="pre">LockType</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powc.stream.ComStream.lock_region" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.lock_region_nothrow">
+<span class="sig-name descname"><span class="pre">lock_region_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locktype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.stream.LockType" title="powc.stream.LockType"><span class="pre">LockType</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.stream.ComStream.lock_region_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.openread_on_file">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">openread_on_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.stream.ComStream" title="powc.stream.ComStream"><span class="pre">ComStream</span></a></span></span><a class="headerlink" href="#powc.stream.ComStream.openread_on_file" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.openread_on_file_nothrow">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">openread_on_file_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.stream.ComStream" title="powc.stream.ComStream"><span class="pre">ComStream</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.stream.ComStream.openread_on_file_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.stream.ComStream.pos">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pos</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.stream.ComStream.pos" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.stream.ComStream.pos_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pos_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.stream.ComStream.pos_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.read_bytes">
+<span class="sig-name descname"><span class="pre">read_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.stream.ComStream.BytesAndSize" title="powc.stream.ComStream.BytesAndSize"><span class="pre">BytesAndSize</span></a></span></span><a class="headerlink" href="#powc.stream.ComStream.read_bytes" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.read_bytes_all">
+<span class="sig-name descname"><span class="pre">read_bytes_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#powc.stream.ComStream.read_bytes_all" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.read_bytes_nothrow">
+<span class="sig-name descname"><span class="pre">read_bytes_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.stream.ComStream.BytesAndSize" title="powc.stream.ComStream.BytesAndSize"><span class="pre">BytesAndSize</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.stream.ComStream.read_bytes_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.revert">
+<span class="sig-name descname"><span class="pre">revert</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powc.stream.ComStream.revert" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.revert_nothrow">
+<span class="sig-name descname"><span class="pre">revert_nothrow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.stream.ComStream.revert_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.seek">
+<span class="sig-name descname"><span class="pre">seek</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">move</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.stream.StreamSeek" title="powc.stream.StreamSeek"><span class="pre">StreamSeek</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#powc.stream.ComStream.seek" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.seek_nothrow">
+<span class="sig-name descname"><span class="pre">seek_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">move</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.stream.StreamSeek" title="powc.stream.StreamSeek"><span class="pre">StreamSeek</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.stream.ComStream.seek_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.set_pos_nothrow">
+<span class="sig-name descname"><span class="pre">set_pos_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.stream.ComStream.set_pos_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.set_size_nothrow">
+<span class="sig-name descname"><span class="pre">set_size_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.stream.ComStream.set_size_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.stream.ComStream.size">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.stream.ComStream.size" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.stream.ComStream.size_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">size_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.stream.ComStream.size_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.stream.ComStream.stat">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stat</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powc.stream.ComStorageStat" title="powc.stream.ComStorageStat"><span class="pre">ComStorageStat</span></a></em><a class="headerlink" href="#powc.stream.ComStream.stat" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.stream.ComStream.stat_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stat_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.stream.ComStorageStat" title="powc.stream.ComStorageStat"><span class="pre">ComStorageStat</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.stream.ComStream.stat_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.unlock_region">
+<span class="sig-name descname"><span class="pre">unlock_region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locktype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.stream.LockType" title="powc.stream.LockType"><span class="pre">LockType</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powc.stream.ComStream.unlock_region" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.unlock_region_nothrow">
+<span class="sig-name descname"><span class="pre">unlock_region_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locktype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.stream.LockType" title="powc.stream.LockType"><span class="pre">LockType</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.stream.ComStream.unlock_region_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.stream.ComStream.wrapped_obj">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wrapped_obj</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">c_void_p</span></em><a class="headerlink" href="#powc.stream.ComStream.wrapped_obj" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.write_bytes">
+<span class="sig-name descname"><span class="pre">write_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#powc.stream.ComStream.write_bytes" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.stream.ComStream.write_bytes_nothrow">
+<span class="sig-name descname"><span class="pre">write_bytes_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Buffer</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.stream.ComStream.write_bytes_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.stream.ISequentialStream">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.stream.</span></span><span class="sig-name descname"><span class="pre">ISequentialStream</span></span><a class="headerlink" href="#powc.stream.ISequentialStream" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IUnknown</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.ISequentialStream.Read">
+<span class="sig-name descname"><span class="pre">Read</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">3:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.stream.ISequentialStream.Read" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.ISequentialStream.Write">
+<span class="sig-name descname"><span class="pre">Write</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">4:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.stream.ISequentialStream.Write" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.stream.IStream">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.stream.</span></span><span class="sig-name descname"><span class="pre">IStream</span></span><a class="headerlink" href="#powc.stream.IStream" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <a class="reference internal" href="#powc.stream.ISequentialStream" title="powc.stream.ISequentialStream"><code class="xref py py-class docutils literal notranslate"><span class="pre">ISequentialStream</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.IStream.Clone">
+<span class="sig-name descname"><span class="pre">Clone</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">13:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.stream.IStream.Clone" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.IStream.Commit">
+<span class="sig-name descname"><span class="pre">Commit</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">8:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.stream.IStream.Commit" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.IStream.CopyTo">
+<span class="sig-name descname"><span class="pre">CopyTo</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">7:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.stream.IStream.CopyTo" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.IStream.LockRegion">
+<span class="sig-name descname"><span class="pre">LockRegion</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">10:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.stream.IStream.LockRegion" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.IStream.Revert">
+<span class="sig-name descname"><span class="pre">Revert</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">9:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.stream.IStream.Revert" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.IStream.Seek">
+<span class="sig-name descname"><span class="pre">Seek</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">5:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.stream.IStream.Seek" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.IStream.SetSize">
+<span class="sig-name descname"><span class="pre">SetSize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">6:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.stream.IStream.SetSize" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.IStream.Stat">
+<span class="sig-name descname"><span class="pre">Stat</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">12:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.stream.IStream.Stat" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.IStream.UnlockRegion">
+<span class="sig-name descname"><span class="pre">UnlockRegion</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">11:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.stream.IStream.UnlockRegion" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.stream.LockType">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.stream.</span></span><span class="sig-name descname"><span class="pre">LockType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.stream.LockType" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntFlag</span></code></p>
+<p>LOCKTYPE</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.LockType.LOCK_EXCLUSIVE">
+<span class="sig-name descname"><span class="pre">LOCK_EXCLUSIVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#powc.stream.LockType.LOCK_EXCLUSIVE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.LockType.LOCK_ONLYONCE">
+<span class="sig-name descname"><span class="pre">LOCK_ONLYONCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#powc.stream.LockType.LOCK_ONLYONCE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.LockType.LOCK_WRITE">
+<span class="sig-name descname"><span class="pre">LOCK_WRITE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powc.stream.LockType.LOCK_WRITE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.stream.StatFlag">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.stream.</span></span><span class="sig-name descname"><span class="pre">StatFlag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.stream.StatFlag" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<p>STATFLAG</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StatFlag.DEFAULT">
+<span class="sig-name descname"><span class="pre">DEFAULT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#powc.stream.StatFlag.DEFAULT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StatFlag.NONAME">
+<span class="sig-name descname"><span class="pre">NONAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powc.stream.StatFlag.NONAME" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.stream.StorageCommit">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.stream.</span></span><span class="sig-name descname"><span class="pre">StorageCommit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.stream.StorageCommit" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntFlag</span></code></p>
+<p>STGC</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageCommit.CONSOLIDATE">
+<span class="sig-name descname"><span class="pre">CONSOLIDATE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#powc.stream.StorageCommit.CONSOLIDATE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageCommit.DANGEROUSLYCOMMITMERELYTODISKCACHE">
+<span class="sig-name descname"><span class="pre">DANGEROUSLYCOMMITMERELYTODISKCACHE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#powc.stream.StorageCommit.DANGEROUSLYCOMMITMERELYTODISKCACHE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageCommit.DEFAULT">
+<span class="sig-name descname"><span class="pre">DEFAULT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#powc.stream.StorageCommit.DEFAULT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageCommit.ONLYIFCURRENT">
+<span class="sig-name descname"><span class="pre">ONLYIFCURRENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#powc.stream.StorageCommit.ONLYIFCURRENT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageCommit.OVERWRITE">
+<span class="sig-name descname"><span class="pre">OVERWRITE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powc.stream.StorageCommit.OVERWRITE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.stream.StorageMode">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.stream.</span></span><span class="sig-name descname"><span class="pre">StorageMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.stream.StorageMode" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntFlag</span></code></p>
+<p>STGM</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageMode.CONVERT">
+<span class="sig-name descname"><span class="pre">CONVERT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">131072</span></em><a class="headerlink" href="#powc.stream.StorageMode.CONVERT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageMode.CREATE">
+<span class="sig-name descname"><span class="pre">CREATE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4096</span></em><a class="headerlink" href="#powc.stream.StorageMode.CREATE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageMode.DELETEONRELEASE">
+<span class="sig-name descname"><span class="pre">DELETEONRELEASE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">67108864</span></em><a class="headerlink" href="#powc.stream.StorageMode.DELETEONRELEASE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageMode.DIRECT">
+<span class="sig-name descname"><span class="pre">DIRECT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#powc.stream.StorageMode.DIRECT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageMode.DIRECT_SWMR">
+<span class="sig-name descname"><span class="pre">DIRECT_SWMR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4194304</span></em><a class="headerlink" href="#powc.stream.StorageMode.DIRECT_SWMR" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageMode.FAILIFTHERE">
+<span class="sig-name descname"><span class="pre">FAILIFTHERE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#powc.stream.StorageMode.FAILIFTHERE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageMode.NOSCRATCH">
+<span class="sig-name descname"><span class="pre">NOSCRATCH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1048576</span></em><a class="headerlink" href="#powc.stream.StorageMode.NOSCRATCH" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageMode.NOSNAPSHOT">
+<span class="sig-name descname"><span class="pre">NOSNAPSHOT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2097152</span></em><a class="headerlink" href="#powc.stream.StorageMode.NOSNAPSHOT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageMode.PRIORITY">
+<span class="sig-name descname"><span class="pre">PRIORITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">262144</span></em><a class="headerlink" href="#powc.stream.StorageMode.PRIORITY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageMode.READ">
+<span class="sig-name descname"><span class="pre">READ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#powc.stream.StorageMode.READ" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageMode.READWRITE">
+<span class="sig-name descname"><span class="pre">READWRITE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#powc.stream.StorageMode.READWRITE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageMode.SHARE_DENY_NONE">
+<span class="sig-name descname"><span class="pre">SHARE_DENY_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">64</span></em><a class="headerlink" href="#powc.stream.StorageMode.SHARE_DENY_NONE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageMode.SHARE_DENY_READ">
+<span class="sig-name descname"><span class="pre">SHARE_DENY_READ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">48</span></em><a class="headerlink" href="#powc.stream.StorageMode.SHARE_DENY_READ" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageMode.SHARE_DENY_WRITE">
+<span class="sig-name descname"><span class="pre">SHARE_DENY_WRITE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#powc.stream.StorageMode.SHARE_DENY_WRITE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageMode.SHARE_EXCLUSIVE">
+<span class="sig-name descname"><span class="pre">SHARE_EXCLUSIVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em><a class="headerlink" href="#powc.stream.StorageMode.SHARE_EXCLUSIVE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageMode.SIMPLE">
+<span class="sig-name descname"><span class="pre">SIMPLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">134217728</span></em><a class="headerlink" href="#powc.stream.StorageMode.SIMPLE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageMode.TRANSACTED">
+<span class="sig-name descname"><span class="pre">TRANSACTED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">65536</span></em><a class="headerlink" href="#powc.stream.StorageMode.TRANSACTED" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageMode.WRITE">
+<span class="sig-name descname"><span class="pre">WRITE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powc.stream.StorageMode.WRITE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.stream.StorageType">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.stream.</span></span><span class="sig-name descname"><span class="pre">StorageType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.stream.StorageType" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<p>STGTY</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageType.LOCKBYTES">
+<span class="sig-name descname"><span class="pre">LOCKBYTES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#powc.stream.StorageType.LOCKBYTES" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageType.PROPERTY">
+<span class="sig-name descname"><span class="pre">PROPERTY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#powc.stream.StorageType.PROPERTY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageType.STORAGE">
+<span class="sig-name descname"><span class="pre">STORAGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powc.stream.StorageType.STORAGE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StorageType.STREAM">
+<span class="sig-name descname"><span class="pre">STREAM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#powc.stream.StorageType.STREAM" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.stream.StreamSeek">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.stream.</span></span><span class="sig-name descname"><span class="pre">StreamSeek</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.stream.StreamSeek" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<p>STREAM_SEEK</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StreamSeek.CUR">
+<span class="sig-name descname"><span class="pre">CUR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powc.stream.StreamSeek.CUR" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StreamSeek.END">
+<span class="sig-name descname"><span class="pre">END</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#powc.stream.StreamSeek.END" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.stream.StreamSeek.SET">
+<span class="sig-name descname"><span class="pre">SET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#powc.stream.StreamSeek.SET" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="powc.safearray.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">powc.safearray module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="powc.variant.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">powc.variant module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目次
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat"><code class="docutils literal notranslate"><span class="pre">ComStorageStat</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.atime"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.atime</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.clsid"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.clsid</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.ctime"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.ctime</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.locks_supported"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.locks_supported</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.mode"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.mode</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.mtime"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.mtime</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.name"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.reserved"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.reserved</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.size"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.size</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.statebits"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.statebits</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStorageStat.type"><code class="docutils literal notranslate"><span class="pre">ComStorageStat.type</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream"><code class="docutils literal notranslate"><span class="pre">ComStream</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.BytesAndSize"><code class="docutils literal notranslate"><span class="pre">ComStream.BytesAndSize</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.BytesAndSize.array"><code class="docutils literal notranslate"><span class="pre">ComStream.BytesAndSize.array</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.BytesAndSize.size"><code class="docutils literal notranslate"><span class="pre">ComStream.BytesAndSize.size</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.clone"><code class="docutils literal notranslate"><span class="pre">ComStream.clone()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.clone_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.clone_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.commit"><code class="docutils literal notranslate"><span class="pre">ComStream.commit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.commit_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.commit_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.create_on_file"><code class="docutils literal notranslate"><span class="pre">ComStream.create_on_file()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.create_on_file_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.create_on_file_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.create_on_mem"><code class="docutils literal notranslate"><span class="pre">ComStream.create_on_mem()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.create_on_mem_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.create_on_mem_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.get_stat"><code class="docutils literal notranslate"><span class="pre">ComStream.get_stat()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.get_stat_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.get_stat_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.keep_pos"><code class="docutils literal notranslate"><span class="pre">ComStream.keep_pos()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.lock_region"><code class="docutils literal notranslate"><span class="pre">ComStream.lock_region()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.lock_region_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.lock_region_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.openread_on_file"><code class="docutils literal notranslate"><span class="pre">ComStream.openread_on_file()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.openread_on_file_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.openread_on_file_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.pos"><code class="docutils literal notranslate"><span class="pre">ComStream.pos</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.pos_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.pos_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.read_bytes"><code class="docutils literal notranslate"><span class="pre">ComStream.read_bytes()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.read_bytes_all"><code class="docutils literal notranslate"><span class="pre">ComStream.read_bytes_all()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.read_bytes_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.read_bytes_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.revert"><code class="docutils literal notranslate"><span class="pre">ComStream.revert()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.revert_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.revert_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.seek"><code class="docutils literal notranslate"><span class="pre">ComStream.seek()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.seek_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.seek_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.set_pos_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.set_pos_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.set_size_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.set_size_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.size"><code class="docutils literal notranslate"><span class="pre">ComStream.size</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.size_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.size_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.stat"><code class="docutils literal notranslate"><span class="pre">ComStream.stat</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.stat_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.stat_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.unlock_region"><code class="docutils literal notranslate"><span class="pre">ComStream.unlock_region()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.unlock_region_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.unlock_region_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">ComStream.wrapped_obj</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.write_bytes"><code class="docutils literal notranslate"><span class="pre">ComStream.write_bytes()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ComStream.write_bytes_nothrow"><code class="docutils literal notranslate"><span class="pre">ComStream.write_bytes_nothrow()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ISequentialStream"><code class="docutils literal notranslate"><span class="pre">ISequentialStream</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ISequentialStream.Read"><code class="docutils literal notranslate"><span class="pre">ISequentialStream.Read</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.ISequentialStream.Write"><code class="docutils literal notranslate"><span class="pre">ISequentialStream.Write</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.IStream"><code class="docutils literal notranslate"><span class="pre">IStream</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.IStream.Clone"><code class="docutils literal notranslate"><span class="pre">IStream.Clone</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.IStream.Commit"><code class="docutils literal notranslate"><span class="pre">IStream.Commit</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.IStream.CopyTo"><code class="docutils literal notranslate"><span class="pre">IStream.CopyTo</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.IStream.LockRegion"><code class="docutils literal notranslate"><span class="pre">IStream.LockRegion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.IStream.Revert"><code class="docutils literal notranslate"><span class="pre">IStream.Revert</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.IStream.Seek"><code class="docutils literal notranslate"><span class="pre">IStream.Seek</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.IStream.SetSize"><code class="docutils literal notranslate"><span class="pre">IStream.SetSize</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.IStream.Stat"><code class="docutils literal notranslate"><span class="pre">IStream.Stat</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.IStream.UnlockRegion"><code class="docutils literal notranslate"><span class="pre">IStream.UnlockRegion</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.LockType"><code class="docutils literal notranslate"><span class="pre">LockType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.LockType.LOCK_EXCLUSIVE"><code class="docutils literal notranslate"><span class="pre">LockType.LOCK_EXCLUSIVE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.LockType.LOCK_ONLYONCE"><code class="docutils literal notranslate"><span class="pre">LockType.LOCK_ONLYONCE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.LockType.LOCK_WRITE"><code class="docutils literal notranslate"><span class="pre">LockType.LOCK_WRITE</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StatFlag"><code class="docutils literal notranslate"><span class="pre">StatFlag</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StatFlag.DEFAULT"><code class="docutils literal notranslate"><span class="pre">StatFlag.DEFAULT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StatFlag.NONAME"><code class="docutils literal notranslate"><span class="pre">StatFlag.NONAME</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageCommit"><code class="docutils literal notranslate"><span class="pre">StorageCommit</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageCommit.CONSOLIDATE"><code class="docutils literal notranslate"><span class="pre">StorageCommit.CONSOLIDATE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageCommit.DANGEROUSLYCOMMITMERELYTODISKCACHE"><code class="docutils literal notranslate"><span class="pre">StorageCommit.DANGEROUSLYCOMMITMERELYTODISKCACHE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageCommit.DEFAULT"><code class="docutils literal notranslate"><span class="pre">StorageCommit.DEFAULT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageCommit.ONLYIFCURRENT"><code class="docutils literal notranslate"><span class="pre">StorageCommit.ONLYIFCURRENT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageCommit.OVERWRITE"><code class="docutils literal notranslate"><span class="pre">StorageCommit.OVERWRITE</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode"><code class="docutils literal notranslate"><span class="pre">StorageMode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.CONVERT"><code class="docutils literal notranslate"><span class="pre">StorageMode.CONVERT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.CREATE"><code class="docutils literal notranslate"><span class="pre">StorageMode.CREATE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.DELETEONRELEASE"><code class="docutils literal notranslate"><span class="pre">StorageMode.DELETEONRELEASE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.DIRECT"><code class="docutils literal notranslate"><span class="pre">StorageMode.DIRECT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.DIRECT_SWMR"><code class="docutils literal notranslate"><span class="pre">StorageMode.DIRECT_SWMR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.FAILIFTHERE"><code class="docutils literal notranslate"><span class="pre">StorageMode.FAILIFTHERE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.NOSCRATCH"><code class="docutils literal notranslate"><span class="pre">StorageMode.NOSCRATCH</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.NOSNAPSHOT"><code class="docutils literal notranslate"><span class="pre">StorageMode.NOSNAPSHOT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.PRIORITY"><code class="docutils literal notranslate"><span class="pre">StorageMode.PRIORITY</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.READ"><code class="docutils literal notranslate"><span class="pre">StorageMode.READ</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.READWRITE"><code class="docutils literal notranslate"><span class="pre">StorageMode.READWRITE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.SHARE_DENY_NONE"><code class="docutils literal notranslate"><span class="pre">StorageMode.SHARE_DENY_NONE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.SHARE_DENY_READ"><code class="docutils literal notranslate"><span class="pre">StorageMode.SHARE_DENY_READ</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.SHARE_DENY_WRITE"><code class="docutils literal notranslate"><span class="pre">StorageMode.SHARE_DENY_WRITE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.SHARE_EXCLUSIVE"><code class="docutils literal notranslate"><span class="pre">StorageMode.SHARE_EXCLUSIVE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.SIMPLE"><code class="docutils literal notranslate"><span class="pre">StorageMode.SIMPLE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.TRANSACTED"><code class="docutils literal notranslate"><span class="pre">StorageMode.TRANSACTED</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageMode.WRITE"><code class="docutils literal notranslate"><span class="pre">StorageMode.WRITE</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageType"><code class="docutils literal notranslate"><span class="pre">StorageType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageType.LOCKBYTES"><code class="docutils literal notranslate"><span class="pre">StorageType.LOCKBYTES</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageType.PROPERTY"><code class="docutils literal notranslate"><span class="pre">StorageType.PROPERTY</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageType.STORAGE"><code class="docutils literal notranslate"><span class="pre">StorageType.STORAGE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StorageType.STREAM"><code class="docutils literal notranslate"><span class="pre">StorageType.STREAM</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StreamSeek"><code class="docutils literal notranslate"><span class="pre">StreamSeek</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StreamSeek.CUR"><code class="docutils literal notranslate"><span class="pre">StreamSeek.CUR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StreamSeek.END"><code class="docutils literal notranslate"><span class="pre">StreamSeek.END</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.stream.StreamSeek.SET"><code class="docutils literal notranslate"><span class="pre">StreamSeek.SET</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+著者 poti-san
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, poti-san.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1017 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>powcpropsys package &#8212; powc  ドキュメント</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=1cf7f4d9"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=4755f45a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'apiref/powcpropsys';</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="powcpropsys.propchange module" href="powcpropsys.propchange.html" />
+    <link rel="prev" title="powc.variant module" href="powc.variant.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">powc  ドキュメント</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">検索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../package_summary/index.html">パッケージの概要</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powc.html">powc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcpropsys.html">powcpropsys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcshell.html">powcshell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcwmi.html">powcwmi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powccoreaudio.html">powccoreaudio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcd2d.html">powcd2d</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../apiref.html">APIドキュメント</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="powc.html">powc package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powc.comcat.html">powc.comcat module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.comobj.html">powc.comobj module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.comsec.html">powc.comsec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.core.html">powc.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.dataobj.html">powc.dataobj module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.datetime.html">powc.datetime module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.errlog.html">powc.errlog module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.globalmem.html">powc.globalmem module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.persist.html">powc.persist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.propbag.html">powc.propbag module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.safearray.html">powc.safearray module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.stream.html">powc.stream module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.variant.html">powc.variant module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">powcpropsys package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html">powcpropsys.propchange module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html">powcpropsys.propdesc module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propkey.html">powcpropsys.propkey module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html">powcpropsys.propstore module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html">powcpropsys.propsys module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html">powcpropsys.propvariant module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcshell.html">powcshell package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcshell.shellitemutil.html">powcshell.shellitemutil package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.computerfolderinfo.html">powcshell.shellitemutil.computerfolderinfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.fontiteminfo.html">powcshell.shellitemutil.fontiteminfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.recyclebiniteminfo.html">powcshell.shellitemutil.recyclebiniteminfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.volumeinfo.html">powcshell.shellitemutil.volumeinfo module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.desktopwallpaper.html">powcshell.desktopwallpaper module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.itemidlist.html">powcshell.itemidlist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfolder.html">powcshell.knownfolder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfolderid.html">powcshell.knownfolderid module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfoldertypeid.html">powcshell.knownfoldertypeid module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellexec.html">powcshell.shellexec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellfileop.html">powcshell.shellfileop module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellfileoputil.html">powcshell.shellfileoputil module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitem.html">powcshell.shellitem module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitem2.html">powcshell.shellitem2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitemarray.html">powcshell.shellitemarray module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitemenum.html">powcshell.shellitemenum module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shelllibrary.html">powcshell.shelllibrary module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shelllink.html">powcshell.shelllink module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.url.html">powcshell.url module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcwmi.html">powcwmi package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.comtypes.html">powcwmi.comtypes module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.wbemflags.html">powcwmi.wbemflags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.wbemstatus.html">powcwmi.wbemstatus module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powccoreaudio.html">powccoreaudio package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devicepropsinstore.html">powccoreaudio.devicepropsinstore module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html">powccoreaudio.devprop module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html">powccoreaudio.endpointvolume module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html">powccoreaudio.mmdevice module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcd2d.html">powcd2d package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.d2d.html">powcd2d.d2d package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.interfacebody.html">powcd2d.d2d.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html">powcd2d.d2d.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dcommon.html">powcd2d.dcommon package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html">powcd2d.dcommon.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dwrite.html">powcd2d.dwrite package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.interfacebody.html">powcd2d.dwrite.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html">powcd2d.dwrite.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dxgi.html">powcd2d.dxgi package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.interfacebody.html">powcd2d.dxgi.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html">powcd2d.dxgi.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.wic.html">powcd2d.wic package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html">powcd2d.wic.constant module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.interfacebody.html">powcd2d.wic.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html">powcd2d.wic.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.d3dmisc.html">powcd2d.d3dmisc module</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../py-modindex.html">モジュール索引</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全画面モード"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>powcpropsys package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目次 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-powcpropsys">
+<span id="powcpropsys-package"></span><h1>powcpropsys package<a class="headerlink" href="#module-powcpropsys" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="powcpropsys.propchange.html">powcpropsys.propchange module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.IObjectWithPropertyKey"><code class="docutils literal notranslate"><span class="pre">IObjectWithPropertyKey</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.IObjectWithPropertyKey.GetPropertyKey"><code class="docutils literal notranslate"><span class="pre">IObjectWithPropertyKey.GetPropertyKey</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.IObjectWithPropertyKey.SetPropertyKey"><code class="docutils literal notranslate"><span class="pre">IObjectWithPropertyKey.SetPropertyKey</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.IPropertyChange"><code class="docutils literal notranslate"><span class="pre">IPropertyChange</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.IPropertyChange.ApplyToPropVariant"><code class="docutils literal notranslate"><span class="pre">IPropertyChange.ApplyToPropVariant</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.IPropertyChangeArray"><code class="docutils literal notranslate"><span class="pre">IPropertyChangeArray</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.IPropertyChangeArray.Append"><code class="docutils literal notranslate"><span class="pre">IPropertyChangeArray.Append</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.IPropertyChangeArray.AppendOrReplace"><code class="docutils literal notranslate"><span class="pre">IPropertyChangeArray.AppendOrReplace</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.IPropertyChangeArray.GetAt"><code class="docutils literal notranslate"><span class="pre">IPropertyChangeArray.GetAt</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.IPropertyChangeArray.GetCount"><code class="docutils literal notranslate"><span class="pre">IPropertyChangeArray.GetCount</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.IPropertyChangeArray.InsertAt"><code class="docutils literal notranslate"><span class="pre">IPropertyChangeArray.InsertAt</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.IPropertyChangeArray.IsKeyInArray"><code class="docutils literal notranslate"><span class="pre">IPropertyChangeArray.IsKeyInArray</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.IPropertyChangeArray.RemoveAt"><code class="docutils literal notranslate"><span class="pre">IPropertyChangeArray.RemoveAt</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChange"><code class="docutils literal notranslate"><span class="pre">PropertyChange</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChange.apply_to_propvariant"><code class="docutils literal notranslate"><span class="pre">PropertyChange.apply_to_propvariant()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChange.apply_to_propvariant_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyChange.apply_to_propvariant_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChange.create"><code class="docutils literal notranslate"><span class="pre">PropertyChange.create()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChange.create_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyChange.create_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChange.propkey"><code class="docutils literal notranslate"><span class="pre">PropertyChange.propkey</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChange.propkey_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyChange.propkey_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChange.set_propkey_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyChange.set_propkey_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChange.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">PropertyChange.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeAction"><code class="docutils literal notranslate"><span class="pre">PropertyChangeAction</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeAction.APPEND"><code class="docutils literal notranslate"><span class="pre">PropertyChangeAction.APPEND</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeAction.DELETE"><code class="docutils literal notranslate"><span class="pre">PropertyChangeAction.DELETE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeAction.SET"><code class="docutils literal notranslate"><span class="pre">PropertyChangeAction.SET</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeArray"><code class="docutils literal notranslate"><span class="pre">PropertyChangeArray</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeArray.append"><code class="docutils literal notranslate"><span class="pre">PropertyChangeArray.append()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeArray.append_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyChangeArray.append_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeArray.append_or_replace_at"><code class="docutils literal notranslate"><span class="pre">PropertyChangeArray.append_or_replace_at()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeArray.append_or_replace_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyChangeArray.append_or_replace_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeArray.count"><code class="docutils literal notranslate"><span class="pre">PropertyChangeArray.count</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeArray.count_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyChangeArray.count_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeArray.create"><code class="docutils literal notranslate"><span class="pre">PropertyChangeArray.create()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeArray.create_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyChangeArray.create_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeArray.get_at"><code class="docutils literal notranslate"><span class="pre">PropertyChangeArray.get_at()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeArray.get_at_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyChangeArray.get_at_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeArray.insert_at"><code class="docutils literal notranslate"><span class="pre">PropertyChangeArray.insert_at()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeArray.insert_at_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyChangeArray.insert_at_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeArray.is_key_in_array"><code class="docutils literal notranslate"><span class="pre">PropertyChangeArray.is_key_in_array()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeArray.is_key_in_array_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyChangeArray.is_key_in_array_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeArray.remove_at"><code class="docutils literal notranslate"><span class="pre">PropertyChangeArray.remove_at()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeArray.remove_at_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyChangeArray.remove_at_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html#powcpropsys.propchange.PropertyChangeArray.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">PropertyChangeArray.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="powcpropsys.propdesc.html">powcpropsys.propdesc module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ConditionOperation"><code class="docutils literal notranslate"><span class="pre">ConditionOperation</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ConditionOperation.APPLICATION_SPECIFIC"><code class="docutils literal notranslate"><span class="pre">ConditionOperation.APPLICATION_SPECIFIC</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ConditionOperation.DOSWILDCARDS"><code class="docutils literal notranslate"><span class="pre">ConditionOperation.DOSWILDCARDS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ConditionOperation.EQUAL"><code class="docutils literal notranslate"><span class="pre">ConditionOperation.EQUAL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ConditionOperation.GREATERTHAN"><code class="docutils literal notranslate"><span class="pre">ConditionOperation.GREATERTHAN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ConditionOperation.GREATERTHANOREQUAL"><code class="docutils literal notranslate"><span class="pre">ConditionOperation.GREATERTHANOREQUAL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ConditionOperation.IMPLICIT"><code class="docutils literal notranslate"><span class="pre">ConditionOperation.IMPLICIT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ConditionOperation.LESSTHAN"><code class="docutils literal notranslate"><span class="pre">ConditionOperation.LESSTHAN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ConditionOperation.LESSTHANOREQUAL"><code class="docutils literal notranslate"><span class="pre">ConditionOperation.LESSTHANOREQUAL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ConditionOperation.NOTEQUAL"><code class="docutils literal notranslate"><span class="pre">ConditionOperation.NOTEQUAL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ConditionOperation.VALUE_CONTAINS"><code class="docutils literal notranslate"><span class="pre">ConditionOperation.VALUE_CONTAINS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ConditionOperation.VALUE_ENDSWITH"><code class="docutils literal notranslate"><span class="pre">ConditionOperation.VALUE_ENDSWITH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ConditionOperation.VALUE_NOTCONTAINS"><code class="docutils literal notranslate"><span class="pre">ConditionOperation.VALUE_NOTCONTAINS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ConditionOperation.VALUE_STARTSWITH"><code class="docutils literal notranslate"><span class="pre">ConditionOperation.VALUE_STARTSWITH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ConditionOperation.WORD_EQUAL"><code class="docutils literal notranslate"><span class="pre">ConditionOperation.WORD_EQUAL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ConditionOperation.WORD_STARTSWITH"><code class="docutils literal notranslate"><span class="pre">ConditionOperation.WORD_STARTSWITH</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription.CoerceToCanonicalValue"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription.CoerceToCanonicalValue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription.FormatForDisplay"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription.FormatForDisplay</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription.GetAggregationType"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription.GetAggregationType</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription.GetCanonicalName"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription.GetCanonicalName</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription.GetColumnState"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription.GetColumnState</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription.GetConditionType"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription.GetConditionType</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription.GetDefaultColumnWidth"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription.GetDefaultColumnWidth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription.GetDisplayName"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription.GetDisplayName</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription.GetDisplayType"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription.GetDisplayType</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription.GetEditInvitation"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription.GetEditInvitation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription.GetEnumTypeList"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription.GetEnumTypeList</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription.GetGroupingRange"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription.GetGroupingRange</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription.GetPropertyKey"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription.GetPropertyKey</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription.GetPropertyType"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription.GetPropertyType</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription.GetRelativeDescription"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription.GetRelativeDescription</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription.GetRelativeDescriptionType"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription.GetRelativeDescriptionType</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription.GetSortDescription"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription.GetSortDescription</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription.GetSortDescriptionLabel"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription.GetSortDescriptionLabel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription.GetTypeFlags"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription.GetTypeFlags</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription.GetViewFlags"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription.GetViewFlags</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescription.IsValueCanonical"><code class="docutils literal notranslate"><span class="pre">IPropertyDescription.IsValueCanonical</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescriptionList"><code class="docutils literal notranslate"><span class="pre">IPropertyDescriptionList</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescriptionList.GetAt"><code class="docutils literal notranslate"><span class="pre">IPropertyDescriptionList.GetAt</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyDescriptionList.GetCount"><code class="docutils literal notranslate"><span class="pre">IPropertyDescriptionList.GetCount</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyEnumType"><code class="docutils literal notranslate"><span class="pre">IPropertyEnumType</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyEnumType.GetDisplayText"><code class="docutils literal notranslate"><span class="pre">IPropertyEnumType.GetDisplayText</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyEnumType.GetEnumType"><code class="docutils literal notranslate"><span class="pre">IPropertyEnumType.GetEnumType</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyEnumType.GetRangeMinValue"><code class="docutils literal notranslate"><span class="pre">IPropertyEnumType.GetRangeMinValue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyEnumType.GetRangeSetValue"><code class="docutils literal notranslate"><span class="pre">IPropertyEnumType.GetRangeSetValue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyEnumType.GetValue"><code class="docutils literal notranslate"><span class="pre">IPropertyEnumType.GetValue</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyEnumTypeList"><code class="docutils literal notranslate"><span class="pre">IPropertyEnumTypeList</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyEnumTypeList.FindMatchingIndex"><code class="docutils literal notranslate"><span class="pre">IPropertyEnumTypeList.FindMatchingIndex</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyEnumTypeList.GetAt"><code class="docutils literal notranslate"><span class="pre">IPropertyEnumTypeList.GetAt</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyEnumTypeList.GetCount"><code class="docutils literal notranslate"><span class="pre">IPropertyEnumTypeList.GetCount</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.IPropertyEnumTypeList.GetconditionAt"><code class="docutils literal notranslate"><span class="pre">IPropertyEnumTypeList.GetconditionAt</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescAggregationType"><code class="docutils literal notranslate"><span class="pre">PropDescAggregationType</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescAggregationType.AVERAGE"><code class="docutils literal notranslate"><span class="pre">PropDescAggregationType.AVERAGE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescAggregationType.DATERANGE"><code class="docutils literal notranslate"><span class="pre">PropDescAggregationType.DATERANGE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescAggregationType.DEFAULT"><code class="docutils literal notranslate"><span class="pre">PropDescAggregationType.DEFAULT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescAggregationType.FIRST"><code class="docutils literal notranslate"><span class="pre">PropDescAggregationType.FIRST</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescAggregationType.MAX"><code class="docutils literal notranslate"><span class="pre">PropDescAggregationType.MAX</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescAggregationType.MIN"><code class="docutils literal notranslate"><span class="pre">PropDescAggregationType.MIN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescAggregationType.SUM"><code class="docutils literal notranslate"><span class="pre">PropDescAggregationType.SUM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescAggregationType.UNION"><code class="docutils literal notranslate"><span class="pre">PropDescAggregationType.UNION</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescConditionType"><code class="docutils literal notranslate"><span class="pre">PropDescConditionType</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescConditionType.BOOLEAN"><code class="docutils literal notranslate"><span class="pre">PropDescConditionType.BOOLEAN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescConditionType.DATETIME"><code class="docutils literal notranslate"><span class="pre">PropDescConditionType.DATETIME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescConditionType.NONE"><code class="docutils literal notranslate"><span class="pre">PropDescConditionType.NONE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescConditionType.NUMBER"><code class="docutils literal notranslate"><span class="pre">PropDescConditionType.NUMBER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescConditionType.SIZE"><code class="docutils literal notranslate"><span class="pre">PropDescConditionType.SIZE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescConditionType.STRING"><code class="docutils literal notranslate"><span class="pre">PropDescConditionType.STRING</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescDisplayType"><code class="docutils literal notranslate"><span class="pre">PropDescDisplayType</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescDisplayType.BOOLEAN"><code class="docutils literal notranslate"><span class="pre">PropDescDisplayType.BOOLEAN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescDisplayType.DATETIME"><code class="docutils literal notranslate"><span class="pre">PropDescDisplayType.DATETIME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescDisplayType.ENUMERATED"><code class="docutils literal notranslate"><span class="pre">PropDescDisplayType.ENUMERATED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescDisplayType.NUMBER"><code class="docutils literal notranslate"><span class="pre">PropDescDisplayType.NUMBER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescDisplayType.STRING"><code class="docutils literal notranslate"><span class="pre">PropDescDisplayType.STRING</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescEnumFilter"><code class="docutils literal notranslate"><span class="pre">PropDescEnumFilter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescEnumFilter.ALL"><code class="docutils literal notranslate"><span class="pre">PropDescEnumFilter.ALL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescEnumFilter.COLUMN"><code class="docutils literal notranslate"><span class="pre">PropDescEnumFilter.COLUMN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescEnumFilter.INFULLTEXTQUERY"><code class="docutils literal notranslate"><span class="pre">PropDescEnumFilter.INFULLTEXTQUERY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescEnumFilter.NONSYSTEM"><code class="docutils literal notranslate"><span class="pre">PropDescEnumFilter.NONSYSTEM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescEnumFilter.QUERYABLE"><code class="docutils literal notranslate"><span class="pre">PropDescEnumFilter.QUERYABLE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescEnumFilter.SYSTEM"><code class="docutils literal notranslate"><span class="pre">PropDescEnumFilter.SYSTEM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescEnumFilter.VIEWABLE"><code class="docutils literal notranslate"><span class="pre">PropDescEnumFilter.VIEWABLE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescFormatFlags"><code class="docutils literal notranslate"><span class="pre">PropDescFormatFlags</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescFormatFlags.ALWAYSKB"><code class="docutils literal notranslate"><span class="pre">PropDescFormatFlags.ALWAYSKB</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescFormatFlags.DEFAULT"><code class="docutils literal notranslate"><span class="pre">PropDescFormatFlags.DEFAULT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescFormatFlags.FILENAME"><code class="docutils literal notranslate"><span class="pre">PropDescFormatFlags.FILENAME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescFormatFlags.HIDEDATE"><code class="docutils literal notranslate"><span class="pre">PropDescFormatFlags.HIDEDATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescFormatFlags.HIDETIME"><code class="docutils literal notranslate"><span class="pre">PropDescFormatFlags.HIDETIME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescFormatFlags.LONGDATE"><code class="docutils literal notranslate"><span class="pre">PropDescFormatFlags.LONGDATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescFormatFlags.LONGTIME"><code class="docutils literal notranslate"><span class="pre">PropDescFormatFlags.LONGTIME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescFormatFlags.NOAUTOREADINGORDER"><code class="docutils literal notranslate"><span class="pre">PropDescFormatFlags.NOAUTOREADINGORDER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescFormatFlags.PREFIXNAME"><code class="docutils literal notranslate"><span class="pre">PropDescFormatFlags.PREFIXNAME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescFormatFlags.READONLY"><code class="docutils literal notranslate"><span class="pre">PropDescFormatFlags.READONLY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescFormatFlags.RELATIVEDATE"><code class="docutils literal notranslate"><span class="pre">PropDescFormatFlags.RELATIVEDATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescFormatFlags.RESERVED_RIGHTTOLEFT"><code class="docutils literal notranslate"><span class="pre">PropDescFormatFlags.RESERVED_RIGHTTOLEFT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescFormatFlags.SHORTDATE"><code class="docutils literal notranslate"><span class="pre">PropDescFormatFlags.SHORTDATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescFormatFlags.SHORTTIME"><code class="docutils literal notranslate"><span class="pre">PropDescFormatFlags.SHORTTIME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescFormatFlags.USEEDITINVITATION"><code class="docutils literal notranslate"><span class="pre">PropDescFormatFlags.USEEDITINVITATION</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescGroupingRange"><code class="docutils literal notranslate"><span class="pre">PropDescGroupingRange</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescGroupingRange.ALPHANUMERIC"><code class="docutils literal notranslate"><span class="pre">PropDescGroupingRange.ALPHANUMERIC</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescGroupingRange.DATE"><code class="docutils literal notranslate"><span class="pre">PropDescGroupingRange.DATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescGroupingRange.DISCRETE"><code class="docutils literal notranslate"><span class="pre">PropDescGroupingRange.DISCRETE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescGroupingRange.DYNAMIC"><code class="docutils literal notranslate"><span class="pre">PropDescGroupingRange.DYNAMIC</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescGroupingRange.ENUMERATED"><code class="docutils literal notranslate"><span class="pre">PropDescGroupingRange.ENUMERATED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescGroupingRange.PERCENT"><code class="docutils literal notranslate"><span class="pre">PropDescGroupingRange.PERCENT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescGroupingRange.SIZE"><code class="docutils literal notranslate"><span class="pre">PropDescGroupingRange.SIZE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescRelativeDescriptionType"><code class="docutils literal notranslate"><span class="pre">PropDescRelativeDescriptionType</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescRelativeDescriptionType.COUNT"><code class="docutils literal notranslate"><span class="pre">PropDescRelativeDescriptionType.COUNT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescRelativeDescriptionType.DATE"><code class="docutils literal notranslate"><span class="pre">PropDescRelativeDescriptionType.DATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescRelativeDescriptionType.DURATION"><code class="docutils literal notranslate"><span class="pre">PropDescRelativeDescriptionType.DURATION</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescRelativeDescriptionType.GENERAL"><code class="docutils literal notranslate"><span class="pre">PropDescRelativeDescriptionType.GENERAL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescRelativeDescriptionType.LENGTH"><code class="docutils literal notranslate"><span class="pre">PropDescRelativeDescriptionType.LENGTH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescRelativeDescriptionType.PRIORITY"><code class="docutils literal notranslate"><span class="pre">PropDescRelativeDescriptionType.PRIORITY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescRelativeDescriptionType.RATE"><code class="docutils literal notranslate"><span class="pre">PropDescRelativeDescriptionType.RATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescRelativeDescriptionType.RATING"><code class="docutils literal notranslate"><span class="pre">PropDescRelativeDescriptionType.RATING</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescRelativeDescriptionType.REVISION"><code class="docutils literal notranslate"><span class="pre">PropDescRelativeDescriptionType.REVISION</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescRelativeDescriptionType.SIZE"><code class="docutils literal notranslate"><span class="pre">PropDescRelativeDescriptionType.SIZE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescRelativeDescriptionType.SPEED"><code class="docutils literal notranslate"><span class="pre">PropDescRelativeDescriptionType.SPEED</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescSortDescription"><code class="docutils literal notranslate"><span class="pre">PropDescSortDescription</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescSortDescription.A_Z"><code class="docutils literal notranslate"><span class="pre">PropDescSortDescription.A_Z</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescSortDescription.GENERAL"><code class="docutils literal notranslate"><span class="pre">PropDescSortDescription.GENERAL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescSortDescription.LOWEST_HIGHEST"><code class="docutils literal notranslate"><span class="pre">PropDescSortDescription.LOWEST_HIGHEST</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescSortDescription.OLDEST_NEWEST"><code class="docutils literal notranslate"><span class="pre">PropDescSortDescription.OLDEST_NEWEST</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescSortDescription.SMALLEST_BIGGEST"><code class="docutils literal notranslate"><span class="pre">PropDescSortDescription.SMALLEST_BIGGEST</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescTypeFlags"><code class="docutils literal notranslate"><span class="pre">PropDescTypeFlags</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescTypeFlags.ALWAYS_INSUPPLEMENTAL_STORE"><code class="docutils literal notranslate"><span class="pre">PropDescTypeFlags.ALWAYS_INSUPPLEMENTAL_STORE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescTypeFlags.CANBE_PURGED"><code class="docutils literal notranslate"><span class="pre">PropDescTypeFlags.CANBE_PURGED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescTypeFlags.CAN_GROUPBY"><code class="docutils literal notranslate"><span class="pre">PropDescTypeFlags.CAN_GROUPBY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescTypeFlags.CAN_STACKBY"><code class="docutils literal notranslate"><span class="pre">PropDescTypeFlags.CAN_STACKBY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescTypeFlags.DEFAULT"><code class="docutils literal notranslate"><span class="pre">PropDescTypeFlags.DEFAULT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescTypeFlags.DONT_COERCE_EMPTYSTRINGS"><code class="docutils literal notranslate"><span class="pre">PropDescTypeFlags.DONT_COERCE_EMPTYSTRINGS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescTypeFlags.INCLUDE_INFULLTEXTQUERY"><code class="docutils literal notranslate"><span class="pre">PropDescTypeFlags.INCLUDE_INFULLTEXTQUERY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescTypeFlags.IS_GROUP"><code class="docutils literal notranslate"><span class="pre">PropDescTypeFlags.IS_GROUP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescTypeFlags.IS_INNATE"><code class="docutils literal notranslate"><span class="pre">PropDescTypeFlags.IS_INNATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescTypeFlags.IS_QUERYABLE"><code class="docutils literal notranslate"><span class="pre">PropDescTypeFlags.IS_QUERYABLE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescTypeFlags.IS_SYSTEM_PROPERTY"><code class="docutils literal notranslate"><span class="pre">PropDescTypeFlags.IS_SYSTEM_PROPERTY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescTypeFlags.IS_TREEPROPERTY"><code class="docutils literal notranslate"><span class="pre">PropDescTypeFlags.IS_TREEPROPERTY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescTypeFlags.IS_VIEWABLE"><code class="docutils literal notranslate"><span class="pre">PropDescTypeFlags.IS_VIEWABLE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescTypeFlags.MASK_ALL"><code class="docutils literal notranslate"><span class="pre">PropDescTypeFlags.MASK_ALL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescTypeFlags.MULTIPLEVALUES"><code class="docutils literal notranslate"><span class="pre">PropDescTypeFlags.MULTIPLEVALUES</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescTypeFlags.SEARCH_RAWVALUE"><code class="docutils literal notranslate"><span class="pre">PropDescTypeFlags.SEARCH_RAWVALUE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescViewFlags"><code class="docutils literal notranslate"><span class="pre">PropDescViewFlags</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescViewFlags.BEGIN_NEWGROUP"><code class="docutils literal notranslate"><span class="pre">PropDescViewFlags.BEGIN_NEWGROUP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescViewFlags.CANWRAP"><code class="docutils literal notranslate"><span class="pre">PropDescViewFlags.CANWRAP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescViewFlags.CENTER_ALIGN"><code class="docutils literal notranslate"><span class="pre">PropDescViewFlags.CENTER_ALIGN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescViewFlags.DEFAULT"><code class="docutils literal notranslate"><span class="pre">PropDescViewFlags.DEFAULT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescViewFlags.FILL_AREA"><code class="docutils literal notranslate"><span class="pre">PropDescViewFlags.FILL_AREA</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescViewFlags.HIDDEN"><code class="docutils literal notranslate"><span class="pre">PropDescViewFlags.HIDDEN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescViewFlags.HIDE_LABEL"><code class="docutils literal notranslate"><span class="pre">PropDescViewFlags.HIDE_LABEL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescViewFlags.MASK_ALL"><code class="docutils literal notranslate"><span class="pre">PropDescViewFlags.MASK_ALL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescViewFlags.RIGHT_ALIGN"><code class="docutils literal notranslate"><span class="pre">PropDescViewFlags.RIGHT_ALIGN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescViewFlags.SHOW_BYDEFAULT"><code class="docutils literal notranslate"><span class="pre">PropDescViewFlags.SHOW_BYDEFAULT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescViewFlags.SHOW_INPRIMARYLIST"><code class="docutils literal notranslate"><span class="pre">PropDescViewFlags.SHOW_INPRIMARYLIST</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescViewFlags.SHOW_INSECONDARYLIST"><code class="docutils literal notranslate"><span class="pre">PropDescViewFlags.SHOW_INSECONDARYLIST</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescViewFlags.SHOW_ONLYIFPRESENT"><code class="docutils literal notranslate"><span class="pre">PropDescViewFlags.SHOW_ONLYIFPRESENT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropDescViewFlags.SORT_DESCENDING"><code class="docutils literal notranslate"><span class="pre">PropDescViewFlags.SORT_DESCENDING</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropEnumType"><code class="docutils literal notranslate"><span class="pre">PropEnumType</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropEnumType.DEFAULTVALUE"><code class="docutils literal notranslate"><span class="pre">PropEnumType.DEFAULTVALUE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropEnumType.DISCRETEVALUE"><code class="docutils literal notranslate"><span class="pre">PropEnumType.DISCRETEVALUE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropEnumType.ENDRANGE"><code class="docutils literal notranslate"><span class="pre">PropEnumType.ENDRANGE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropEnumType.RANGEDVALUE"><code class="docutils literal notranslate"><span class="pre">PropEnumType.RANGEDVALUE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription"><code class="docutils literal notranslate"><span class="pre">PropertyDescription</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.ConditionType"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.ConditionType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.ConditionType.conditiontype"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.ConditionType.conditiontype</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.ConditionType.default_operation"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.ConditionType.default_operation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.RelativeDescription"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.RelativeDescription</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.RelativeDescription.desc1"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.RelativeDescription.desc1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.RelativeDescription.desc2"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.RelativeDescription.desc2</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.aggregationtype"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.aggregationtype</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.aggregationtype_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.aggregationtype_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.canonicalname"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.canonicalname</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.canonicalname_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.canonicalname_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.columnstate"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.columnstate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.columnstate_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.columnstate_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.conditiontype"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.conditiontype</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.conditiontype_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.conditiontype_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.corece_to_canonicalvalue"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.corece_to_canonicalvalue()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.corece_to_canonicalvalue_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.corece_to_canonicalvalue_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.default_columnwidth"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.default_columnwidth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.default_columnwidth_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.default_columnwidth_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.displayname"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.displayname</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.displayname_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.displayname_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.displaytype"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.displaytype</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.displaytype_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.displaytype_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.edit_invitation"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.edit_invitation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.edit_invitation_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.edit_invitation_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.enumtypelist"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.enumtypelist</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.enumtypelist_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.enumtypelist_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.format_for_display"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.format_for_display()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.format_for_display_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.format_for_display_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.get_relativedesc"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.get_relativedesc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.get_relativedesc_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.get_relativedesc_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.get_sortdesclabel"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.get_sortdesclabel()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.get_sortdesclabel_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.get_sortdesclabel_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.groupingrange"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.groupingrange</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.groupingrange_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.groupingrange_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.is_value_canonical"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.is_value_canonical()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.is_value_canonical_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.is_value_canonical_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.propkey"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.propkey</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.propkey_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.propkey_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.proptype"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.proptype</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.proptype_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.proptype_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.reldesctype"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.reldesctype</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.reldesctype_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.reldesctype_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.sortdesc"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.sortdesc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.sortdesc_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.sortdesc_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.sortdesclabel_ascending"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.sortdesclabel_ascending</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.sortdesclabel_ascending_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.sortdesclabel_ascending_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.sortdesclabel_descending"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.sortdesclabel_descending</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.sortdesclabel_descending_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.sortdesclabel_descending_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.typeflags"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.typeflags</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.typeflags_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.typeflags_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.viewflags"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.viewflags</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.viewflags_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.viewflags_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescription.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">PropertyDescription.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescriptionList"><code class="docutils literal notranslate"><span class="pre">PropertyDescriptionList</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescriptionList.getat"><code class="docutils literal notranslate"><span class="pre">PropertyDescriptionList.getat()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescriptionList.items"><code class="docutils literal notranslate"><span class="pre">PropertyDescriptionList.items</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyDescriptionList.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">PropertyDescriptionList.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyEnumType"><code class="docutils literal notranslate"><span class="pre">PropertyEnumType</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyEnumType.displaytext"><code class="docutils literal notranslate"><span class="pre">PropertyEnumType.displaytext</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyEnumType.displaytext_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyEnumType.displaytext_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyEnumType.enumtype"><code class="docutils literal notranslate"><span class="pre">PropertyEnumType.enumtype</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyEnumType.enumtype_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyEnumType.enumtype_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyEnumType.range_min"><code class="docutils literal notranslate"><span class="pre">PropertyEnumType.range_min</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyEnumType.range_min_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyEnumType.range_min_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyEnumType.range_set"><code class="docutils literal notranslate"><span class="pre">PropertyEnumType.range_set</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyEnumType.range_set_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyEnumType.range_set_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyEnumType.value"><code class="docutils literal notranslate"><span class="pre">PropertyEnumType.value</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyEnumType.value_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyEnumType.value_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyEnumType.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">PropertyEnumType.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyEnumTypeList"><code class="docutils literal notranslate"><span class="pre">PropertyEnumTypeList</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyEnumTypeList.find_matching_index"><code class="docutils literal notranslate"><span class="pre">PropertyEnumTypeList.find_matching_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyEnumTypeList.find_matching_index_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyEnumTypeList.find_matching_index_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyEnumTypeList.getat"><code class="docutils literal notranslate"><span class="pre">PropertyEnumTypeList.getat()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyEnumTypeList.items"><code class="docutils literal notranslate"><span class="pre">PropertyEnumTypeList.items</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.PropertyEnumTypeList.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">PropertyEnumTypeList.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ShellColumnState"><code class="docutils literal notranslate"><span class="pre">ShellColumnState</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ShellColumnState.BATCHREAD"><code class="docutils literal notranslate"><span class="pre">ShellColumnState.BATCHREAD</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ShellColumnState.DEFAULT"><code class="docutils literal notranslate"><span class="pre">ShellColumnState.DEFAULT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ShellColumnState.DISPLAYMASK"><code class="docutils literal notranslate"><span class="pre">ShellColumnState.DISPLAYMASK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ShellColumnState.EXTENDED"><code class="docutils literal notranslate"><span class="pre">ShellColumnState.EXTENDED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ShellColumnState.FIXED_RATIO"><code class="docutils literal notranslate"><span class="pre">ShellColumnState.FIXED_RATIO</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ShellColumnState.FIXED_WIDTH"><code class="docutils literal notranslate"><span class="pre">ShellColumnState.FIXED_WIDTH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ShellColumnState.HIDDEN"><code class="docutils literal notranslate"><span class="pre">ShellColumnState.HIDDEN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ShellColumnState.NODPISCALE"><code class="docutils literal notranslate"><span class="pre">ShellColumnState.NODPISCALE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ShellColumnState.NOSORTBYFOLDERNESS"><code class="docutils literal notranslate"><span class="pre">ShellColumnState.NOSORTBYFOLDERNESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ShellColumnState.NO_GROUPBY"><code class="docutils literal notranslate"><span class="pre">ShellColumnState.NO_GROUPBY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ShellColumnState.ONBYDEFAULT"><code class="docutils literal notranslate"><span class="pre">ShellColumnState.ONBYDEFAULT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ShellColumnState.PREFER_FMTCMP"><code class="docutils literal notranslate"><span class="pre">ShellColumnState.PREFER_FMTCMP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ShellColumnState.PREFER_VARCMP"><code class="docutils literal notranslate"><span class="pre">ShellColumnState.PREFER_VARCMP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ShellColumnState.SECONDARYUI"><code class="docutils literal notranslate"><span class="pre">ShellColumnState.SECONDARYUI</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ShellColumnState.SLOW"><code class="docutils literal notranslate"><span class="pre">ShellColumnState.SLOW</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ShellColumnState.TYPEMASK"><code class="docutils literal notranslate"><span class="pre">ShellColumnState.TYPEMASK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ShellColumnState.TYPE_DATE"><code class="docutils literal notranslate"><span class="pre">ShellColumnState.TYPE_DATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ShellColumnState.TYPE_INT"><code class="docutils literal notranslate"><span class="pre">ShellColumnState.TYPE_INT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ShellColumnState.TYPE_STR"><code class="docutils literal notranslate"><span class="pre">ShellColumnState.TYPE_STR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html#powcpropsys.propdesc.ShellColumnState.VIEWONLY"><code class="docutils literal notranslate"><span class="pre">ShellColumnState.VIEWONLY</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="powcpropsys.propkey.html">powcpropsys.propkey module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey"><code class="docutils literal notranslate"><span class="pre">PropertyKey</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey.canonicalname"><code class="docutils literal notranslate"><span class="pre">PropertyKey.canonicalname</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey.canonicalname_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyKey.canonicalname_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey.fmtid"><code class="docutils literal notranslate"><span class="pre">PropertyKey.fmtid</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey.from_canonicalname"><code class="docutils literal notranslate"><span class="pre">PropertyKey.from_canonicalname()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey.from_canonicalname_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyKey.from_canonicalname_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey.from_define"><code class="docutils literal notranslate"><span class="pre">PropertyKey.from_define()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propkey.html#powcpropsys.propkey.PropertyKey.pid"><code class="docutils literal notranslate"><span class="pre">PropertyKey.pid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="powcpropsys.propstore.html">powcpropsys.propstore module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.GetPropertyStoreFlag"><code class="docutils literal notranslate"><span class="pre">GetPropertyStoreFlag</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.GetPropertyStoreFlag.BEST_EFFORT"><code class="docutils literal notranslate"><span class="pre">GetPropertyStoreFlag.BEST_EFFORT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.GetPropertyStoreFlag.DEFAULT"><code class="docutils literal notranslate"><span class="pre">GetPropertyStoreFlag.DEFAULT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.GetPropertyStoreFlag.DELAY_CREATION"><code class="docutils literal notranslate"><span class="pre">GetPropertyStoreFlag.DELAY_CREATION</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.GetPropertyStoreFlag.EXTRINSIC_PROPERTIES"><code class="docutils literal notranslate"><span class="pre">GetPropertyStoreFlag.EXTRINSIC_PROPERTIES</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.GetPropertyStoreFlag.EXTRINSIC_PROPERTIES_ONLY"><code class="docutils literal notranslate"><span class="pre">GetPropertyStoreFlag.EXTRINSIC_PROPERTIES_ONLY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.GetPropertyStoreFlag.FAST_PROPERTIES_ONLY"><code class="docutils literal notranslate"><span class="pre">GetPropertyStoreFlag.FAST_PROPERTIES_ONLY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.GetPropertyStoreFlag.HANDLER_PROPERTIES_ONLY"><code class="docutils literal notranslate"><span class="pre">GetPropertyStoreFlag.HANDLER_PROPERTIES_ONLY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.GetPropertyStoreFlag.NO_OPLOCK"><code class="docutils literal notranslate"><span class="pre">GetPropertyStoreFlag.NO_OPLOCK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.GetPropertyStoreFlag.OPEN_SLOW_ITEM"><code class="docutils literal notranslate"><span class="pre">GetPropertyStoreFlag.OPEN_SLOW_ITEM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.GetPropertyStoreFlag.PREFER_QUERY_PROPERTIES"><code class="docutils literal notranslate"><span class="pre">GetPropertyStoreFlag.PREFER_QUERY_PROPERTIES</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.GetPropertyStoreFlag.READ_WRITE"><code class="docutils literal notranslate"><span class="pre">GetPropertyStoreFlag.READ_WRITE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.GetPropertyStoreFlag.TEMPORARY"><code class="docutils literal notranslate"><span class="pre">GetPropertyStoreFlag.TEMPORARY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.GetPropertyStoreFlag.VOLATILE_PROPERTIES"><code class="docutils literal notranslate"><span class="pre">GetPropertyStoreFlag.VOLATILE_PROPERTIES</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.GetPropertyStoreFlag.VOLATILE_PROPERTIES_ONLY"><code class="docutils literal notranslate"><span class="pre">GetPropertyStoreFlag.VOLATILE_PROPERTIES_ONLY</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.IPropertyStore"><code class="docutils literal notranslate"><span class="pre">IPropertyStore</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.IPropertyStore.Commit"><code class="docutils literal notranslate"><span class="pre">IPropertyStore.Commit</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.IPropertyStore.GetAt"><code class="docutils literal notranslate"><span class="pre">IPropertyStore.GetAt</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.IPropertyStore.GetCount"><code class="docutils literal notranslate"><span class="pre">IPropertyStore.GetCount</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.IPropertyStore.GetValue"><code class="docutils literal notranslate"><span class="pre">IPropertyStore.GetValue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.IPropertyStore.SetValue"><code class="docutils literal notranslate"><span class="pre">IPropertyStore.SetValue</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore"><code class="docutils literal notranslate"><span class="pre">PropertyStore</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.commit"><code class="docutils literal notranslate"><span class="pre">PropertyStore.commit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.commit_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyStore.commit_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.count"><code class="docutils literal notranslate"><span class="pre">PropertyStore.count</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.count_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyStore.count_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.createonmem"><code class="docutils literal notranslate"><span class="pre">PropertyStore.createonmem()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.createonmem_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyStore.createonmem_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.get_key_at"><code class="docutils literal notranslate"><span class="pre">PropertyStore.get_key_at()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.get_key_at_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyStore.get_key_at_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.get_value"><code class="docutils literal notranslate"><span class="pre">PropertyStore.get_value()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.get_value_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyStore.get_value_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.itemdict"><code class="docutils literal notranslate"><span class="pre">PropertyStore.itemdict</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.items"><code class="docutils literal notranslate"><span class="pre">PropertyStore.items</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.iter_items"><code class="docutils literal notranslate"><span class="pre">PropertyStore.iter_items()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.iter_items_in_keys"><code class="docutils literal notranslate"><span class="pre">PropertyStore.iter_items_in_keys()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.iter_items_in_propsystem"><code class="docutils literal notranslate"><span class="pre">PropertyStore.iter_items_in_propsystem()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.iter_keys"><code class="docutils literal notranslate"><span class="pre">PropertyStore.iter_keys()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.iter_keys_in_keys"><code class="docutils literal notranslate"><span class="pre">PropertyStore.iter_keys_in_keys()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.iter_keys_in_propsystem"><code class="docutils literal notranslate"><span class="pre">PropertyStore.iter_keys_in_propsystem()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.keys"><code class="docutils literal notranslate"><span class="pre">PropertyStore.keys</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.set_value"><code class="docutils literal notranslate"><span class="pre">PropertyStore.set_value()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.set_value_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertyStore.set_value_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html#powcpropsys.propstore.PropertyStore.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">PropertyStore.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="powcpropsys.propsys.html">powcpropsys.propsys module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.IPropertySystem"><code class="docutils literal notranslate"><span class="pre">IPropertySystem</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.IPropertySystem.EnumeratePropertyDescriptions"><code class="docutils literal notranslate"><span class="pre">IPropertySystem.EnumeratePropertyDescriptions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.IPropertySystem.FormatForDisplay"><code class="docutils literal notranslate"><span class="pre">IPropertySystem.FormatForDisplay</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.IPropertySystem.FormatForDisplayAlloc"><code class="docutils literal notranslate"><span class="pre">IPropertySystem.FormatForDisplayAlloc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.IPropertySystem.GetPropertyDescription"><code class="docutils literal notranslate"><span class="pre">IPropertySystem.GetPropertyDescription</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.IPropertySystem.GetPropertyDescriptionByName"><code class="docutils literal notranslate"><span class="pre">IPropertySystem.GetPropertyDescriptionByName</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.IPropertySystem.GetPropertyDescriptionListFromString"><code class="docutils literal notranslate"><span class="pre">IPropertySystem.GetPropertyDescriptionListFromString</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.IPropertySystem.RefreshPropertySchema"><code class="docutils literal notranslate"><span class="pre">IPropertySystem.RefreshPropertySchema</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.IPropertySystem.RegisterPropertySchema"><code class="docutils literal notranslate"><span class="pre">IPropertySystem.RegisterPropertySchema</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.IPropertySystem.UnregisterPropertySchema"><code class="docutils literal notranslate"><span class="pre">IPropertySystem.UnregisterPropertySchema</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem"><code class="docutils literal notranslate"><span class="pre">PropertySystem</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.create"><code class="docutils literal notranslate"><span class="pre">PropertySystem.create()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.create_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertySystem.create_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.formatfordisplay"><code class="docutils literal notranslate"><span class="pre">PropertySystem.formatfordisplay()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.formatfordisplay_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertySystem.formatfordisplay_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.get_propdesc"><code class="docutils literal notranslate"><span class="pre">PropertySystem.get_propdesc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.get_propdesc_by_name"><code class="docutils literal notranslate"><span class="pre">PropertySystem.get_propdesc_by_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.get_propdesc_by_name_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertySystem.get_propdesc_by_name_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.get_propdesc_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertySystem.get_propdesc_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.get_propdescs"><code class="docutils literal notranslate"><span class="pre">PropertySystem.get_propdescs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.get_propdescs_from_string"><code class="docutils literal notranslate"><span class="pre">PropertySystem.get_propdescs_from_string()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.get_propdescs_from_string_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertySystem.get_propdescs_from_string_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.get_propdescs_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertySystem.get_propdescs_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.get_propkeys_all"><code class="docutils literal notranslate"><span class="pre">PropertySystem.get_propkeys_all()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.get_propkeys_system"><code class="docutils literal notranslate"><span class="pre">PropertySystem.get_propkeys_system()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.propdescs_all"><code class="docutils literal notranslate"><span class="pre">PropertySystem.propdescs_all</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.propdescs_all_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertySystem.propdescs_all_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.propdescs_system"><code class="docutils literal notranslate"><span class="pre">PropertySystem.propdescs_system</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.propdescs_system_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertySystem.propdescs_system_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.refresh_propscheme"><code class="docutils literal notranslate"><span class="pre">PropertySystem.refresh_propscheme()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.refresh_propscheme_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertySystem.refresh_propscheme_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.register_propscheme"><code class="docutils literal notranslate"><span class="pre">PropertySystem.register_propscheme()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.register_propscheme_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertySystem.register_propscheme_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.unregister_propscheme"><code class="docutils literal notranslate"><span class="pre">PropertySystem.unregister_propscheme()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.unregister_propscheme_nothrow"><code class="docutils literal notranslate"><span class="pre">PropertySystem.unregister_propscheme_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html#powcpropsys.propsys.PropertySystem.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">PropertySystem.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="powcpropsys.propvariant.html">powcpropsys.propvariant module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant"><code class="docutils literal notranslate"><span class="pre">PropVariant</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.change_type"><code class="docutils literal notranslate"><span class="pre">PropVariant.change_type()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.change_type_nothrow"><code class="docutils literal notranslate"><span class="pre">PropVariant.change_type_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.clear"><code class="docutils literal notranslate"><span class="pre">PropVariant.clear()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.clone"><code class="docutils literal notranslate"><span class="pre">PropVariant.clone()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.data"><code class="docutils literal notranslate"><span class="pre">PropVariant.data</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.data_memview"><code class="docutils literal notranslate"><span class="pre">PropVariant.data_memview</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.elemcount"><code class="docutils literal notranslate"><span class="pre">PropVariant.elemcount</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.get_bool"><code class="docutils literal notranslate"><span class="pre">PropVariant.get_bool()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.get_bstr"><code class="docutils literal notranslate"><span class="pre">PropVariant.get_bstr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.get_double"><code class="docutils literal notranslate"><span class="pre">PropVariant.get_double()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.get_elem"><code class="docutils literal notranslate"><span class="pre">PropVariant.get_elem()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.get_filetime"><code class="docutils literal notranslate"><span class="pre">PropVariant.get_filetime()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.get_float"><code class="docutils literal notranslate"><span class="pre">PropVariant.get_float()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.get_int"><code class="docutils literal notranslate"><span class="pre">PropVariant.get_int()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.get_int16"><code class="docutils literal notranslate"><span class="pre">PropVariant.get_int16()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.get_int32"><code class="docutils literal notranslate"><span class="pre">PropVariant.get_int32()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.get_int64"><code class="docutils literal notranslate"><span class="pre">PropVariant.get_int64()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.get_int8"><code class="docutils literal notranslate"><span class="pre">PropVariant.get_int8()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.get_intptr"><code class="docutils literal notranslate"><span class="pre">PropVariant.get_intptr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.get_uint"><code class="docutils literal notranslate"><span class="pre">PropVariant.get_uint()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.get_uint16"><code class="docutils literal notranslate"><span class="pre">PropVariant.get_uint16()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.get_uint32"><code class="docutils literal notranslate"><span class="pre">PropVariant.get_uint32()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.get_uint64"><code class="docutils literal notranslate"><span class="pre">PropVariant.get_uint64()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.get_uint8"><code class="docutils literal notranslate"><span class="pre">PropVariant.get_uint8()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.get_uintptr"><code class="docutils literal notranslate"><span class="pre">PropVariant.get_uintptr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.get_wstr"><code class="docutils literal notranslate"><span class="pre">PropVariant.get_wstr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.init_bool"><code class="docutils literal notranslate"><span class="pre">PropVariant.init_bool()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.init_clsid"><code class="docutils literal notranslate"><span class="pre">PropVariant.init_clsid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.init_double"><code class="docutils literal notranslate"><span class="pre">PropVariant.init_double()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.init_filetime"><code class="docutils literal notranslate"><span class="pre">PropVariant.init_filetime()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.init_float"><code class="docutils literal notranslate"><span class="pre">PropVariant.init_float()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.init_int"><code class="docutils literal notranslate"><span class="pre">PropVariant.init_int()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.init_int16"><code class="docutils literal notranslate"><span class="pre">PropVariant.init_int16()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.init_int32"><code class="docutils literal notranslate"><span class="pre">PropVariant.init_int32()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.init_int64"><code class="docutils literal notranslate"><span class="pre">PropVariant.init_int64()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.init_int8"><code class="docutils literal notranslate"><span class="pre">PropVariant.init_int8()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.init_intptr"><code class="docutils literal notranslate"><span class="pre">PropVariant.init_intptr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.init_uint"><code class="docutils literal notranslate"><span class="pre">PropVariant.init_uint()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.init_uint16"><code class="docutils literal notranslate"><span class="pre">PropVariant.init_uint16()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.init_uint32"><code class="docutils literal notranslate"><span class="pre">PropVariant.init_uint32()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.init_uint64"><code class="docutils literal notranslate"><span class="pre">PropVariant.init_uint64()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.init_uint8"><code class="docutils literal notranslate"><span class="pre">PropVariant.init_uint8()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.init_uintptr"><code class="docutils literal notranslate"><span class="pre">PropVariant.init_uintptr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.init_wstr"><code class="docutils literal notranslate"><span class="pre">PropVariant.init_wstr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.is_array"><code class="docutils literal notranslate"><span class="pre">PropVariant.is_array</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.is_empty"><code class="docutils literal notranslate"><span class="pre">PropVariant.is_empty</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.is_null"><code class="docutils literal notranslate"><span class="pre">PropVariant.is_null</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.is_vector"><code class="docutils literal notranslate"><span class="pre">PropVariant.is_vector</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.to_str"><code class="docutils literal notranslate"><span class="pre">PropVariant.to_str()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.to_str_nothrow"><code class="docutils literal notranslate"><span class="pre">PropVariant.to_str_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.to_strings"><code class="docutils literal notranslate"><span class="pre">PropVariant.to_strings()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.vartype"><code class="docutils literal notranslate"><span class="pre">PropVariant.vartype</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.vartype_elem"><code class="docutils literal notranslate"><span class="pre">PropVariant.vartype_elem</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html#powcpropsys.propvariant.PropVariant.vt"><code class="docutils literal notranslate"><span class="pre">PropVariant.vt</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="powc.variant.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">powc.variant module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="powcpropsys.propchange.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">powcpropsys.propchange module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目次
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+著者 poti-san
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, poti-san.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

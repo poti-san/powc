@@ -1,0 +1,1327 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>powcd2d.dxgi package &#8212; powc  ドキュメント</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=1cf7f4d9"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=4755f45a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'apiref/powcd2d.dxgi';</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="powcd2d.dxgi.interfacebody module" href="powcd2d.dxgi.interfacebody.html" />
+    <link rel="prev" title="powcd2d.dwrite.types module" href="powcd2d.dwrite.types.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">powc  ドキュメント</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">検索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../package_summary/index.html">パッケージの概要</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powc.html">powc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcpropsys.html">powcpropsys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcshell.html">powcshell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcwmi.html">powcwmi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powccoreaudio.html">powccoreaudio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcd2d.html">powcd2d</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../apiref.html">APIドキュメント</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="powc.html">powc package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powc.comcat.html">powc.comcat module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.comobj.html">powc.comobj module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.comsec.html">powc.comsec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.core.html">powc.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.dataobj.html">powc.dataobj module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.datetime.html">powc.datetime module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.errlog.html">powc.errlog module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.globalmem.html">powc.globalmem module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.persist.html">powc.persist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.propbag.html">powc.propbag module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.safearray.html">powc.safearray module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.stream.html">powc.stream module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.variant.html">powc.variant module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcpropsys.html">powcpropsys package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html">powcpropsys.propchange module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html">powcpropsys.propdesc module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propkey.html">powcpropsys.propkey module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html">powcpropsys.propstore module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html">powcpropsys.propsys module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html">powcpropsys.propvariant module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcshell.html">powcshell package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcshell.shellitemutil.html">powcshell.shellitemutil package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.computerfolderinfo.html">powcshell.shellitemutil.computerfolderinfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.fontiteminfo.html">powcshell.shellitemutil.fontiteminfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.recyclebiniteminfo.html">powcshell.shellitemutil.recyclebiniteminfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.volumeinfo.html">powcshell.shellitemutil.volumeinfo module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.desktopwallpaper.html">powcshell.desktopwallpaper module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.itemidlist.html">powcshell.itemidlist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfolder.html">powcshell.knownfolder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfolderid.html">powcshell.knownfolderid module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfoldertypeid.html">powcshell.knownfoldertypeid module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellexec.html">powcshell.shellexec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellfileop.html">powcshell.shellfileop module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellfileoputil.html">powcshell.shellfileoputil module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitem.html">powcshell.shellitem module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitem2.html">powcshell.shellitem2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitemarray.html">powcshell.shellitemarray module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitemenum.html">powcshell.shellitemenum module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shelllibrary.html">powcshell.shelllibrary module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shelllink.html">powcshell.shelllink module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.url.html">powcshell.url module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcwmi.html">powcwmi package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.comtypes.html">powcwmi.comtypes module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.wbemflags.html">powcwmi.wbemflags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.wbemstatus.html">powcwmi.wbemstatus module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powccoreaudio.html">powccoreaudio package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devicepropsinstore.html">powccoreaudio.devicepropsinstore module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html">powccoreaudio.devprop module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html">powccoreaudio.endpointvolume module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html">powccoreaudio.mmdevice module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="powcd2d.html">powcd2d package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.d2d.html">powcd2d.d2d package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.interfacebody.html">powcd2d.d2d.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html">powcd2d.d2d.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dcommon.html">powcd2d.dcommon package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html">powcd2d.dcommon.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dwrite.html">powcd2d.dwrite package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.interfacebody.html">powcd2d.dwrite.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html">powcd2d.dwrite.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 current active has-children"><a class="current reference internal" href="#">powcd2d.dxgi package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.interfacebody.html">powcd2d.dxgi.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html">powcd2d.dxgi.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.wic.html">powcd2d.wic package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html">powcd2d.wic.constant module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.interfacebody.html">powcd2d.wic.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html">powcd2d.wic.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.d3dmisc.html">powcd2d.d3dmisc module</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../py-modindex.html">モジュール索引</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全画面モード"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>powcd2d.dxgi package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目次 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIAdapter"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIAdapter.check_interfacesupport"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.check_interfacesupport()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIAdapter.check_interfacesupport_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.check_interfacesupport_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIAdapter.desc"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.desc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIAdapter.desc_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.desc_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIAdapter.get_output"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.get_output()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIAdapter.get_output_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.get_output_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIAdapter.output_iter"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.output_iter</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIAdapter.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIDevice"><code class="docutils literal notranslate"><span class="pre">DXGIDevice</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIDevice.adapter"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.adapter</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIDevice.adapter_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.adapter_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIDevice.gputhreadpriority"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.gputhreadpriority</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIDevice.gputhreadpriority_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.gputhreadpriority_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIDevice.query_resourceresidency"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.query_resourceresidency()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIDevice.query_resourceresidency_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.query_resourceresidency_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIDevice.set_gputhreadpriority_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.set_gputhreadpriority_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIDevice.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIFactory"><code class="docutils literal notranslate"><span class="pre">DXGIFactory</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIFactory.adapter_iter"><code class="docutils literal notranslate"><span class="pre">DXGIFactory.adapter_iter</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIFactory.create"><code class="docutils literal notranslate"><span class="pre">DXGIFactory.create()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIFactory.create_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIFactory.create_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIFactory.get_adapter"><code class="docutils literal notranslate"><span class="pre">DXGIFactory.get_adapter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIFactory.get_adapter_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIFactory.get_adapter_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIFactory.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">DXGIFactory.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIObject"><code class="docutils literal notranslate"><span class="pre">DXGIObject</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIObject.get_privatedata"><code class="docutils literal notranslate"><span class="pre">DXGIObject.get_privatedata()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIObject.get_privatedata_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIObject.get_privatedata_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIObject.get_privatedatalen"><code class="docutils literal notranslate"><span class="pre">DXGIObject.get_privatedatalen()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIObject.get_privatedatalen_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIObject.get_privatedatalen_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIObject.parent"><code class="docutils literal notranslate"><span class="pre">DXGIObject.parent</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIObject.parent_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIObject.parent_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIObject.set_privatedata"><code class="docutils literal notranslate"><span class="pre">DXGIObject.set_privatedata()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIObject.set_privatedata_interface"><code class="docutils literal notranslate"><span class="pre">DXGIObject.set_privatedata_interface()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIObject.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">DXGIObject.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-powcd2d.dxgi">
+<span id="powcd2d-dxgi-package"></span><h1>powcd2d.dxgi package<a class="headerlink" href="#module-powcd2d.dxgi" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIAdapter">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dxgi.</span></span><span class="sig-name descname"><span class="pre">DXGIAdapter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcd2d.dxgi.DXGIAdapter" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <a class="reference internal" href="#powcd2d.dxgi.DXGIObject" title="powcd2d.dxgi.DXGIObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">DXGIObject</span></code></a></p>
+<p>DXGIアダプタ。IDXGIAdapterインターフェイスのラッパーです。</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIAdapter.check_interfacesupport">
+<span class="sig-name descname"><span class="pre">check_interfacesupport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#powcd2d.dxgi.DXGIAdapter.check_interfacesupport" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIAdapter.check_interfacesupport_nothrow">
+<span class="sig-name descname"><span class="pre">check_interfacesupport_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcd2d.dxgi.DXGIAdapter.check_interfacesupport_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIAdapter.desc">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">desc</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc" title="powcd2d.dxgi.types.DXGIAdapterDesc"><span class="pre">DXGIAdapterDesc</span></a></em><a class="headerlink" href="#powcd2d.dxgi.DXGIAdapter.desc" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIAdapter.desc_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">desc_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc" title="powcd2d.dxgi.types.DXGIAdapterDesc"><span class="pre">DXGIAdapterDesc</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcd2d.dxgi.DXGIAdapter.desc_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIAdapter.get_output">
+<span class="sig-name descname"><span class="pre">get_output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powcd2d.dxgi.DXGIObject" title="powcd2d.dxgi.DXGIObject"><span class="pre">DXGIObject</span></a></span></span><a class="headerlink" href="#powcd2d.dxgi.DXGIAdapter.get_output" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIAdapter.get_output_nothrow">
+<span class="sig-name descname"><span class="pre">get_output_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcd2d.dxgi.DXGIObject" title="powcd2d.dxgi.DXGIObject"><span class="pre">DXGIObject</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcd2d.dxgi.DXGIAdapter.get_output_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIAdapter.output_iter">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">output_iter</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcd2d.dxgi.DXGIObject" title="powcd2d.dxgi.DXGIObject"><span class="pre">DXGIObject</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcd2d.dxgi.DXGIAdapter.output_iter" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIAdapter.wrapped_obj">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wrapped_obj</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">c_void_p</span></em><a class="headerlink" href="#powcd2d.dxgi.DXGIAdapter.wrapped_obj" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIDevice">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dxgi.</span></span><span class="sig-name descname"><span class="pre">DXGIDevice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcd2d.dxgi.DXGIDevice" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <a class="reference internal" href="#powcd2d.dxgi.DXGIObject" title="powcd2d.dxgi.DXGIObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">DXGIObject</span></code></a></p>
+<p>DXGIデバイス。IDXGIDeviceインターフェイスのラッパーです。</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIDevice.adapter">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">adapter</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powcd2d.dxgi.DXGIAdapter" title="powcd2d.dxgi.DXGIAdapter"><span class="pre">DXGIAdapter</span></a></em><a class="headerlink" href="#powcd2d.dxgi.DXGIDevice.adapter" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIDevice.adapter_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">adapter_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcd2d.dxgi.DXGIAdapter" title="powcd2d.dxgi.DXGIAdapter"><span class="pre">DXGIAdapter</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcd2d.dxgi.DXGIDevice.adapter_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIDevice.gputhreadpriority">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">gputhreadpriority</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIResourcePriority" title="powcd2d.dxgi.types.DXGIResourcePriority"><span class="pre">DXGIResourcePriority</span></a></em><a class="headerlink" href="#powcd2d.dxgi.DXGIDevice.gputhreadpriority" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIDevice.gputhreadpriority_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">gputhreadpriority_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIResourcePriority" title="powcd2d.dxgi.types.DXGIResourcePriority"><span class="pre">DXGIResourcePriority</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcd2d.dxgi.DXGIDevice.gputhreadpriority_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIDevice.query_resourceresidency">
+<span class="sig-name descname"><span class="pre">query_resourceresidency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resources</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powc.core.html#powc.core.IUnknownWrapper" title="powc.core.IUnknownWrapper"><span class="pre">IUnknownWrapper</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIResidency" title="powcd2d.dxgi.types.DXGIResidency"><span class="pre">DXGIResidency</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcd2d.dxgi.DXGIDevice.query_resourceresidency" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIDevice.query_resourceresidency_nothrow">
+<span class="sig-name descname"><span class="pre">query_resourceresidency_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resources</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powc.core.html#powc.core.IUnknownWrapper" title="powc.core.IUnknownWrapper"><span class="pre">IUnknownWrapper</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIResidency" title="powcd2d.dxgi.types.DXGIResidency"><span class="pre">DXGIResidency</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcd2d.dxgi.DXGIDevice.query_resourceresidency_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIDevice.set_gputhreadpriority_nothrow">
+<span class="sig-name descname"><span class="pre">set_gputhreadpriority_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIResourcePriority" title="powcd2d.dxgi.types.DXGIResourcePriority"><span class="pre">DXGIResourcePriority</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcd2d.dxgi.DXGIDevice.set_gputhreadpriority_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIDevice.wrapped_obj">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wrapped_obj</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">c_void_p</span></em><a class="headerlink" href="#powcd2d.dxgi.DXGIDevice.wrapped_obj" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIFactory">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dxgi.</span></span><span class="sig-name descname"><span class="pre">DXGIFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcd2d.dxgi.DXGIFactory" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <a class="reference internal" href="#powcd2d.dxgi.DXGIObject" title="powcd2d.dxgi.DXGIObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">DXGIObject</span></code></a></p>
+<p>DXGIファクトリークラス。IDXGIFactoryインターフェイスのラッパーです。</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIFactory.adapter_iter">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">adapter_iter</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcd2d.dxgi.DXGIAdapter" title="powcd2d.dxgi.DXGIAdapter"><span class="pre">DXGIAdapter</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcd2d.dxgi.DXGIFactory.adapter_iter" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIFactory.create">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powcd2d.dxgi.DXGIFactory" title="powcd2d.dxgi.DXGIFactory"><span class="pre">DXGIFactory</span></a></span></span><a class="headerlink" href="#powcd2d.dxgi.DXGIFactory.create" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIFactory.create_nothrow">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_nothrow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcd2d.dxgi.DXGIFactory" title="powcd2d.dxgi.DXGIFactory"><span class="pre">DXGIFactory</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcd2d.dxgi.DXGIFactory.create_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIFactory.get_adapter">
+<span class="sig-name descname"><span class="pre">get_adapter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powcd2d.dxgi.DXGIAdapter" title="powcd2d.dxgi.DXGIAdapter"><span class="pre">DXGIAdapter</span></a></span></span><a class="headerlink" href="#powcd2d.dxgi.DXGIFactory.get_adapter" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIFactory.get_adapter_nothrow">
+<span class="sig-name descname"><span class="pre">get_adapter_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcd2d.dxgi.DXGIAdapter" title="powcd2d.dxgi.DXGIAdapter"><span class="pre">DXGIAdapter</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcd2d.dxgi.DXGIFactory.get_adapter_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIFactory.wrapped_obj">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wrapped_obj</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">c_void_p</span></em><a class="headerlink" href="#powcd2d.dxgi.DXGIFactory.wrapped_obj" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIObject">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dxgi.</span></span><span class="sig-name descname"><span class="pre">DXGIObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcd2d.dxgi.DXGIObject" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>DXGIオブジェクト。IDXGIObjectインターフェイスのラッパーです。</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIObject.get_privatedata">
+<span class="sig-name descname"><span class="pre">get_privatedata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#powcd2d.dxgi.DXGIObject.get_privatedata" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIObject.get_privatedata_nothrow">
+<span class="sig-name descname"><span class="pre">get_privatedata_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">bytes</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcd2d.dxgi.DXGIObject.get_privatedata_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIObject.get_privatedatalen">
+<span class="sig-name descname"><span class="pre">get_privatedatalen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#powcd2d.dxgi.DXGIObject.get_privatedatalen" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIObject.get_privatedatalen_nothrow">
+<span class="sig-name descname"><span class="pre">get_privatedatalen_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcd2d.dxgi.DXGIObject.get_privatedatalen_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIObject.parent">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powcd2d.dxgi.DXGIObject" title="powcd2d.dxgi.DXGIObject"><span class="pre">DXGIObject</span></a></em><a class="headerlink" href="#powcd2d.dxgi.DXGIObject.parent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIObject.parent_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parent_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcd2d.dxgi.DXGIObject" title="powcd2d.dxgi.DXGIObject"><span class="pre">DXGIObject</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcd2d.dxgi.DXGIObject.parent_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIObject.set_privatedata">
+<span class="sig-name descname"><span class="pre">set_privatedata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Buffer</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcd2d.dxgi.DXGIObject.set_privatedata" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIObject.set_privatedata_interface">
+<span class="sig-name descname"><span class="pre">set_privatedata_interface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powc.core.html#powc.core.IUnknownWrapper" title="powc.core.IUnknownWrapper"><span class="pre">IUnknownWrapper</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">POINTER</span><span class="p"><span class="pre">(</span></span><span class="pre">IUnknown</span><span class="p"><span class="pre">)</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcd2d.dxgi.DXGIObject.set_privatedata_interface" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcd2d.dxgi.DXGIObject.wrapped_obj">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wrapped_obj</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">c_void_p</span></em><a class="headerlink" href="#powcd2d.dxgi.DXGIObject.wrapped_obj" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="powcd2d.dxgi.interfacebody.html">powcd2d.dxgi.interfacebody module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powcd2d.dxgi.types.html">powcd2d.dxgi.types module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.D2DColorF"><code class="docutils literal notranslate"><span class="pre">D2DColorF</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.D3DColorValue"><code class="docutils literal notranslate"><span class="pre">D3DColorValue</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.D3DColorValue.a"><code class="docutils literal notranslate"><span class="pre">D3DColorValue.a</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.D3DColorValue.b"><code class="docutils literal notranslate"><span class="pre">D3DColorValue.b</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.D3DColorValue.g"><code class="docutils literal notranslate"><span class="pre">D3DColorValue.g</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.D3DColorValue.r"><code class="docutils literal notranslate"><span class="pre">D3DColorValue.r</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterDesc</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc.adapter_luid"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterDesc.adapter_luid</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc.dedicated_system_memory"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterDesc.dedicated_system_memory</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc.dedicated_video_memory"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterDesc.dedicated_video_memory</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc.description"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterDesc.description</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc.revision"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterDesc.revision</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc.shared_system_memory"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterDesc.shared_system_memory</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc.subsystem_id"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterDesc.subsystem_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc.vendor_id"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterDesc.vendor_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc1"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterDesc1</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc1.adapter_luid"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterDesc1.adapter_luid</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc1.dedicated_system_memory"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterDesc1.dedicated_system_memory</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc1.dedicated_video_memory"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterDesc1.dedicated_video_memory</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc1.description"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterDesc1.description</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc1.flags"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterDesc1.flags</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc1.revision"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterDesc1.revision</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc1.shared_system_memory"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterDesc1.shared_system_memory</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc1.subsystem_id"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterDesc1.subsystem_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc1.vendor_id"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterDesc1.vendor_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterFlag"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterFlag</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterFlag.NONE"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterFlag.NONE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterFlag.REMOTE"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterFlag.REMOTE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterFlag.SOFTWARE"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterFlag.SOFTWARE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.CUSTOM"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.CUSTOM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.RESERVED"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.RESERVED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.RGB_FULL_G10_NONE_P709"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.RGB_FULL_G10_NONE_P709</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.RGB_FULL_G2084_NONE_P2020"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.RGB_FULL_G2084_NONE_P2020</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.RGB_FULL_G22_NONE_P2020"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.RGB_FULL_G22_NONE_P2020</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.RGB_FULL_G22_NONE_P709"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.RGB_FULL_G22_NONE_P709</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.RGB_STUDIO_G2084_NONE_P2020"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.RGB_STUDIO_G2084_NONE_P2020</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.RGB_STUDIO_G22_NONE_P2020"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.RGB_STUDIO_G22_NONE_P2020</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.RGB_STUDIO_G22_NONE_P709"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.RGB_STUDIO_G22_NONE_P709</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.RGB_STUDIO_G24_NONE_P2020"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.RGB_STUDIO_G24_NONE_P2020</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.RGB_STUDIO_G24_NONE_P709"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.RGB_STUDIO_G24_NONE_P709</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.YCBCR_FULL_G22_LEFT_P2020"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.YCBCR_FULL_G22_LEFT_P2020</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.YCBCR_FULL_G22_LEFT_P601"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.YCBCR_FULL_G22_LEFT_P601</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.YCBCR_FULL_G22_LEFT_P709"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.YCBCR_FULL_G22_LEFT_P709</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.YCBCR_FULL_G22_NONE_P709_X601"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.YCBCR_FULL_G22_NONE_P709_X601</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.YCBCR_FULL_GHLG_TOPLEFT_P2020"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.YCBCR_FULL_GHLG_TOPLEFT_P2020</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.YCBCR_STUDIO_G2084_LEFT_P2020"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.YCBCR_STUDIO_G2084_LEFT_P2020</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.YCBCR_STUDIO_G2084_TOPLEFT_P2020"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.YCBCR_STUDIO_G2084_TOPLEFT_P2020</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.YCBCR_STUDIO_G22_LEFT_P2020"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.YCBCR_STUDIO_G22_LEFT_P2020</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.YCBCR_STUDIO_G22_LEFT_P601"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.YCBCR_STUDIO_G22_LEFT_P601</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.YCBCR_STUDIO_G22_LEFT_P709"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.YCBCR_STUDIO_G22_LEFT_P709</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.YCBCR_STUDIO_G22_TOPLEFT_P2020"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.YCBCR_STUDIO_G22_TOPLEFT_P2020</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.YCBCR_STUDIO_G24_LEFT_P2020"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.YCBCR_STUDIO_G24_LEFT_P2020</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.YCBCR_STUDIO_G24_LEFT_P709"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.YCBCR_STUDIO_G24_LEFT_P709</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.YCBCR_STUDIO_G24_TOPLEFT_P2020"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.YCBCR_STUDIO_G24_TOPLEFT_P2020</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType.YCBCR_STUDIO_GHLG_TOPLEFT_P2020"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType.YCBCR_STUDIO_GHLG_TOPLEFT_P2020</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGICpuAccess"><code class="docutils literal notranslate"><span class="pre">DXGICpuAccess</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGICpuAccess.DYNAMIC"><code class="docutils literal notranslate"><span class="pre">DXGICpuAccess.DYNAMIC</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGICpuAccess.FIELD"><code class="docutils literal notranslate"><span class="pre">DXGICpuAccess.FIELD</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGICpuAccess.NONE"><code class="docutils literal notranslate"><span class="pre">DXGICpuAccess.NONE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGICpuAccess.READ_WRITE"><code class="docutils literal notranslate"><span class="pre">DXGICpuAccess.READ_WRITE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGICpuAccess.SCRATCH"><code class="docutils literal notranslate"><span class="pre">DXGICpuAccess.SCRATCH</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIDisplayColorSpace"><code class="docutils literal notranslate"><span class="pre">DXGIDisplayColorSpace</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIDisplayColorSpace.primary_coordinates"><code class="docutils literal notranslate"><span class="pre">DXGIDisplayColorSpace.primary_coordinates</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIDisplayColorSpace.white_points"><code class="docutils literal notranslate"><span class="pre">DXGIDisplayColorSpace.white_points</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIEnumMode"><code class="docutils literal notranslate"><span class="pre">DXGIEnumMode</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIEnumMode.DXGI_ENUM_MODES_SCALING"><code class="docutils literal notranslate"><span class="pre">DXGIEnumMode.DXGI_ENUM_MODES_SCALING</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIEnumMode.INTERLACED"><code class="docutils literal notranslate"><span class="pre">DXGIEnumMode.INTERLACED</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat"><code class="docutils literal notranslate"><span class="pre">DXGIFormat</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.A4B4G4R4_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.A4B4G4R4_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.A8P8"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.A8P8</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.A8_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.A8_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.AI44"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.AI44</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.AYUV"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.AYUV</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.B4G4R4A4_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.B4G4R4A4_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.B5G5R5A1_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.B5G5R5A1_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.B5G6R5_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.B5G6R5_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.B8G8R8A8_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.B8G8R8A8_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.B8G8R8A8_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.B8G8R8A8_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.B8G8R8A8_UNORM_SRGB"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.B8G8R8A8_UNORM_SRGB</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.B8G8R8X8_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.B8G8R8X8_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.B8G8R8X8_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.B8G8R8X8_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.B8G8R8X8_UNORM_SRGB"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.B8G8R8X8_UNORM_SRGB</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.BC1_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.BC1_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.BC1_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.BC1_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.BC1_UNORM_SRGB"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.BC1_UNORM_SRGB</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.BC2_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.BC2_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.BC2_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.BC2_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.BC2_UNORM_SRGB"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.BC2_UNORM_SRGB</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.BC3_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.BC3_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.BC3_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.BC3_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.BC3_UNORM_SRGB"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.BC3_UNORM_SRGB</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.BC4_SNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.BC4_SNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.BC4_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.BC4_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.BC4_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.BC4_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.BC5_SNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.BC5_SNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.BC5_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.BC5_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.BC5_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.BC5_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.BC6H_SF16"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.BC6H_SF16</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.BC6H_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.BC6H_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.BC6H_UF16"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.BC6H_UF16</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.BC7_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.BC7_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.BC7_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.BC7_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.BC7_UNORM_SRGB"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.BC7_UNORM_SRGB</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.D16_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.D16_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.D24_UNORM_S8_UINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.D24_UNORM_S8_UINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.D32_FLOAT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.D32_FLOAT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.D32_FLOAT_S8X24_UINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.D32_FLOAT_S8X24_UINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.G8R8_G8B8_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.G8R8_G8B8_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.IA44"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.IA44</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.NV11"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.NV11</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.NV12"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.NV12</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.P010"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.P010</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.P016"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.P016</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.P208"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.P208</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.P8"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.P8</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R10G10B10A2_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R10G10B10A2_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R10G10B10A2_UINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R10G10B10A2_UINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R10G10B10A2_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R10G10B10A2_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R10G10B10_XR_BIAS_A2_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R10G10B10_XR_BIAS_A2_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R11G11B10_FLOAT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R11G11B10_FLOAT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R16G16B16A16_FLOAT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R16G16B16A16_FLOAT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R16G16B16A16_SINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R16G16B16A16_SINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R16G16B16A16_SNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R16G16B16A16_SNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R16G16B16A16_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R16G16B16A16_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R16G16B16A16_UINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R16G16B16A16_UINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R16G16B16A16_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R16G16B16A16_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R16G16_FLOAT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R16G16_FLOAT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R16G16_SINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R16G16_SINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R16G16_SNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R16G16_SNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R16G16_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R16G16_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R16G16_UINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R16G16_UINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R16G16_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R16G16_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R16_FLOAT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R16_FLOAT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R16_SINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R16_SINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R16_SNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R16_SNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R16_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R16_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R16_UINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R16_UINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R16_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R16_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R1_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R1_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R24G8_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R24G8_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R24_UNORM_X8_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R24_UNORM_X8_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R32G32B32A32_FLOAT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R32G32B32A32_FLOAT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R32G32B32A32_SINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R32G32B32A32_SINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R32G32B32A32_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R32G32B32A32_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R32G32B32A32_UINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R32G32B32A32_UINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R32G32B32_FLOAT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R32G32B32_FLOAT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R32G32B32_SINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R32G32B32_SINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R32G32B32_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R32G32B32_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R32G32B32_UINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R32G32B32_UINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R32G32_FLOAT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R32G32_FLOAT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R32G32_SINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R32G32_SINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R32G32_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R32G32_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R32G32_UINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R32G32_UINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R32G8X24_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R32G8X24_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R32_FLOAT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R32_FLOAT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R32_FLOAT_X8X24_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R32_FLOAT_X8X24_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R32_SINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R32_SINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R32_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R32_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R32_UINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R32_UINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R8G8B8A8_SINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R8G8B8A8_SINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R8G8B8A8_SNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R8G8B8A8_SNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R8G8B8A8_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R8G8B8A8_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R8G8B8A8_UINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R8G8B8A8_UINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R8G8B8A8_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R8G8B8A8_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R8G8B8A8_UNORM_SRGB"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R8G8B8A8_UNORM_SRGB</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R8G8_B8G8_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R8G8_B8G8_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R8G8_SINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R8G8_SINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R8G8_SNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R8G8_SNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R8G8_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R8G8_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R8G8_UINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R8G8_UINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R8G8_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R8G8_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R8_SINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R8_SINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R8_SNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R8_SNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R8_TYPELESS"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R8_TYPELESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R8_UINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R8_UINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R8_UNORM"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R8_UNORM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.R9G9B9E5_SHAREDEXP"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.R9G9B9E5_SHAREDEXP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.SAMPLER_FEEDBACK_MIN_MIP_OPAQUE"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.SAMPLER_FEEDBACK_MIN_MIP_OPAQUE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.SAMPLER_FEEDBACK_MIP_REGION_USED_OPAQUE"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.SAMPLER_FEEDBACK_MIP_REGION_USED_OPAQUE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.UNKNOWN"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.UNKNOWN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.V208"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.V208</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.V408"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.V408</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.X24_TYPELESS_G8_UINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.X24_TYPELESS_G8_UINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.X32_TYPELESS_G8X24_UINT"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.X32_TYPELESS_G8X24_UINT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.Y210"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.Y210</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.Y216"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.Y216</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.Y410"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.Y410</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.Y416"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.Y416</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat.YUY2"><code class="docutils literal notranslate"><span class="pre">DXGIFormat.YUY2</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFrameStats"><code class="docutils literal notranslate"><span class="pre">DXGIFrameStats</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFrameStats.present_count"><code class="docutils literal notranslate"><span class="pre">DXGIFrameStats.present_count</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFrameStats.present_refresh_count"><code class="docutils literal notranslate"><span class="pre">DXGIFrameStats.present_refresh_count</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFrameStats.sync_gpu_time"><code class="docutils literal notranslate"><span class="pre">DXGIFrameStats.sync_gpu_time</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFrameStats.sync_qpc_time"><code class="docutils literal notranslate"><span class="pre">DXGIFrameStats.sync_qpc_time</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFrameStats.sync_refresh_count"><code class="docutils literal notranslate"><span class="pre">DXGIFrameStats.sync_refresh_count</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIGammaControl"><code class="docutils literal notranslate"><span class="pre">DXGIGammaControl</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIGammaControl.gammacurve"><code class="docutils literal notranslate"><span class="pre">DXGIGammaControl.gammacurve</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIGammaControl.offset"><code class="docutils literal notranslate"><span class="pre">DXGIGammaControl.offset</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIGammaControl.scale"><code class="docutils literal notranslate"><span class="pre">DXGIGammaControl.scale</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIGammaControlCaps"><code class="docutils literal notranslate"><span class="pre">DXGIGammaControlCaps</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIGammaControlCaps.control_point_positions"><code class="docutils literal notranslate"><span class="pre">DXGIGammaControlCaps.control_point_positions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIGammaControlCaps.max_converted_value"><code class="docutils literal notranslate"><span class="pre">DXGIGammaControlCaps.max_converted_value</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIGammaControlCaps.min_converted_value"><code class="docutils literal notranslate"><span class="pre">DXGIGammaControlCaps.min_converted_value</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIGammaControlCaps.num_gamma_control_points"><code class="docutils literal notranslate"><span class="pre">DXGIGammaControlCaps.num_gamma_control_points</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIGammaControlCaps.scale_and_offset_supported"><code class="docutils literal notranslate"><span class="pre">DXGIGammaControlCaps.scale_and_offset_supported</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIJpegACHuffmanTable"><code class="docutils literal notranslate"><span class="pre">DXGIJpegACHuffmanTable</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIJpegACHuffmanTable.code_counts"><code class="docutils literal notranslate"><span class="pre">DXGIJpegACHuffmanTable.code_counts</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIJpegACHuffmanTable.code_values"><code class="docutils literal notranslate"><span class="pre">DXGIJpegACHuffmanTable.code_values</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIJpegDCHuffmanTable"><code class="docutils literal notranslate"><span class="pre">DXGIJpegDCHuffmanTable</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIJpegDCHuffmanTable.code_counts"><code class="docutils literal notranslate"><span class="pre">DXGIJpegDCHuffmanTable.code_counts</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIJpegDCHuffmanTable.code_values"><code class="docutils literal notranslate"><span class="pre">DXGIJpegDCHuffmanTable.code_values</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIJpegQuantizationTable"><code class="docutils literal notranslate"><span class="pre">DXGIJpegQuantizationTable</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIJpegQuantizationTable.elements"><code class="docutils literal notranslate"><span class="pre">DXGIJpegQuantizationTable.elements</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIMap"><code class="docutils literal notranslate"><span class="pre">DXGIMap</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIMap.DISCARD"><code class="docutils literal notranslate"><span class="pre">DXGIMap.DISCARD</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIMap.READ"><code class="docutils literal notranslate"><span class="pre">DXGIMap.READ</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIMap.WRITE"><code class="docutils literal notranslate"><span class="pre">DXGIMap.WRITE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIMappedRect"><code class="docutils literal notranslate"><span class="pre">DXGIMappedRect</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIMappedRect.bits"><code class="docutils literal notranslate"><span class="pre">DXGIMappedRect.bits</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIMappedRect.pitch"><code class="docutils literal notranslate"><span class="pre">DXGIMappedRect.pitch</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeDesc"><code class="docutils literal notranslate"><span class="pre">DXGIModeDesc</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeDesc.format"><code class="docutils literal notranslate"><span class="pre">DXGIModeDesc.format</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeDesc.height"><code class="docutils literal notranslate"><span class="pre">DXGIModeDesc.height</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeDesc.refresh_rate"><code class="docutils literal notranslate"><span class="pre">DXGIModeDesc.refresh_rate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeDesc.scaling"><code class="docutils literal notranslate"><span class="pre">DXGIModeDesc.scaling</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeDesc.scanline_ordering"><code class="docutils literal notranslate"><span class="pre">DXGIModeDesc.scanline_ordering</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeDesc.width"><code class="docutils literal notranslate"><span class="pre">DXGIModeDesc.width</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeRotation"><code class="docutils literal notranslate"><span class="pre">DXGIModeRotation</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeRotation.IDENTITY"><code class="docutils literal notranslate"><span class="pre">DXGIModeRotation.IDENTITY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeRotation.ROTATE180"><code class="docutils literal notranslate"><span class="pre">DXGIModeRotation.ROTATE180</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeRotation.ROTATE270"><code class="docutils literal notranslate"><span class="pre">DXGIModeRotation.ROTATE270</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeRotation.ROTATE90"><code class="docutils literal notranslate"><span class="pre">DXGIModeRotation.ROTATE90</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeRotation.UNSPECIFIED"><code class="docutils literal notranslate"><span class="pre">DXGIModeRotation.UNSPECIFIED</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeScaling"><code class="docutils literal notranslate"><span class="pre">DXGIModeScaling</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeScaling.CENTERED"><code class="docutils literal notranslate"><span class="pre">DXGIModeScaling.CENTERED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeScaling.STRETCHED"><code class="docutils literal notranslate"><span class="pre">DXGIModeScaling.STRETCHED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeScaling.UNSPECIFIED"><code class="docutils literal notranslate"><span class="pre">DXGIModeScaling.UNSPECIFIED</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeScanlineOrder"><code class="docutils literal notranslate"><span class="pre">DXGIModeScanlineOrder</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeScanlineOrder.LOWER_FIELD_FIRST"><code class="docutils literal notranslate"><span class="pre">DXGIModeScanlineOrder.LOWER_FIELD_FIRST</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeScanlineOrder.PROGRESSIVE"><code class="docutils literal notranslate"><span class="pre">DXGIModeScanlineOrder.PROGRESSIVE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeScanlineOrder.UNSPECIFIED"><code class="docutils literal notranslate"><span class="pre">DXGIModeScanlineOrder.UNSPECIFIED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeScanlineOrder.UPPER_FIELD_FIRST"><code class="docutils literal notranslate"><span class="pre">DXGIModeScanlineOrder.UPPER_FIELD_FIRST</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIOutputDesc"><code class="docutils literal notranslate"><span class="pre">DXGIOutputDesc</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIOutputDesc.attached_to_desktop"><code class="docutils literal notranslate"><span class="pre">DXGIOutputDesc.attached_to_desktop</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIOutputDesc.desktop_coordinates"><code class="docutils literal notranslate"><span class="pre">DXGIOutputDesc.desktop_coordinates</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIOutputDesc.device_name"><code class="docutils literal notranslate"><span class="pre">DXGIOutputDesc.device_name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIOutputDesc.monitor"><code class="docutils literal notranslate"><span class="pre">DXGIOutputDesc.monitor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIOutputDesc.rotation"><code class="docutils literal notranslate"><span class="pre">DXGIOutputDesc.rotation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIPresent"><code class="docutils literal notranslate"><span class="pre">DXGIPresent</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIPresent.ALLOW_TEARING"><code class="docutils literal notranslate"><span class="pre">DXGIPresent.ALLOW_TEARING</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIPresent.DO_NOT_SEQUENCE"><code class="docutils literal notranslate"><span class="pre">DXGIPresent.DO_NOT_SEQUENCE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIPresent.DO_NOT_WAIT"><code class="docutils literal notranslate"><span class="pre">DXGIPresent.DO_NOT_WAIT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIPresent.RESTART"><code class="docutils literal notranslate"><span class="pre">DXGIPresent.RESTART</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIPresent.RESTRICT_TO_OUTPUT"><code class="docutils literal notranslate"><span class="pre">DXGIPresent.RESTRICT_TO_OUTPUT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIPresent.STEREO_PREFER_RIGHT"><code class="docutils literal notranslate"><span class="pre">DXGIPresent.STEREO_PREFER_RIGHT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIPresent.STEREO_TEMPORARY_MONO"><code class="docutils literal notranslate"><span class="pre">DXGIPresent.STEREO_TEMPORARY_MONO</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIPresent.TEST"><code class="docutils literal notranslate"><span class="pre">DXGIPresent.TEST</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIPresent.USE_DURATION"><code class="docutils literal notranslate"><span class="pre">DXGIPresent.USE_DURATION</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIRGB"><code class="docutils literal notranslate"><span class="pre">DXGIRGB</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIRGB.blue"><code class="docutils literal notranslate"><span class="pre">DXGIRGB.blue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIRGB.green"><code class="docutils literal notranslate"><span class="pre">DXGIRGB.green</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIRGB.red"><code class="docutils literal notranslate"><span class="pre">DXGIRGB.red</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIRGBA"><code class="docutils literal notranslate"><span class="pre">DXGIRGBA</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIRational"><code class="docutils literal notranslate"><span class="pre">DXGIRational</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIRational.denominator"><code class="docutils literal notranslate"><span class="pre">DXGIRational.denominator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIRational.numerator"><code class="docutils literal notranslate"><span class="pre">DXGIRational.numerator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIResidency"><code class="docutils literal notranslate"><span class="pre">DXGIResidency</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIResidency.EVICTED_TO_DISK"><code class="docutils literal notranslate"><span class="pre">DXGIResidency.EVICTED_TO_DISK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIResidency.FULLY_RESIDENT"><code class="docutils literal notranslate"><span class="pre">DXGIResidency.FULLY_RESIDENT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIResidency.RESIDENT_IN_SHARED_MEMORY"><code class="docutils literal notranslate"><span class="pre">DXGIResidency.RESIDENT_IN_SHARED_MEMORY</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIResourcePriority"><code class="docutils literal notranslate"><span class="pre">DXGIResourcePriority</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIResourcePriority.HIGH"><code class="docutils literal notranslate"><span class="pre">DXGIResourcePriority.HIGH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIResourcePriority.LOW"><code class="docutils literal notranslate"><span class="pre">DXGIResourcePriority.LOW</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIResourcePriority.MAXIMUM"><code class="docutils literal notranslate"><span class="pre">DXGIResourcePriority.MAXIMUM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIResourcePriority.MINIMUM"><code class="docutils literal notranslate"><span class="pre">DXGIResourcePriority.MINIMUM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIResourcePriority.NORMAL"><code class="docutils literal notranslate"><span class="pre">DXGIResourcePriority.NORMAL</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISampleDesc"><code class="docutils literal notranslate"><span class="pre">DXGISampleDesc</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISampleDesc.count"><code class="docutils literal notranslate"><span class="pre">DXGISampleDesc.count</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISampleDesc.quality"><code class="docutils literal notranslate"><span class="pre">DXGISampleDesc.quality</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISampleDescQuality"><code class="docutils literal notranslate"><span class="pre">DXGISampleDescQuality</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISampleDescQuality.DXGI_CENTER_MULTISAMPLE_QUALITY_PATTERN"><code class="docutils literal notranslate"><span class="pre">DXGISampleDescQuality.DXGI_CENTER_MULTISAMPLE_QUALITY_PATTERN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISampleDescQuality.DXGI_STANDARD_MULTISAMPLE_QUALITY_PATTERN"><code class="docutils literal notranslate"><span class="pre">DXGISampleDescQuality.DXGI_STANDARD_MULTISAMPLE_QUALITY_PATTERN</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISharedResource"><code class="docutils literal notranslate"><span class="pre">DXGISharedResource</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISharedResource.handle"><code class="docutils literal notranslate"><span class="pre">DXGISharedResource.handle</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISurfaceDesc"><code class="docutils literal notranslate"><span class="pre">DXGISurfaceDesc</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISurfaceDesc.format"><code class="docutils literal notranslate"><span class="pre">DXGISurfaceDesc.format</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISurfaceDesc.height"><code class="docutils literal notranslate"><span class="pre">DXGISurfaceDesc.height</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISurfaceDesc.sample_desc"><code class="docutils literal notranslate"><span class="pre">DXGISurfaceDesc.sample_desc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISurfaceDesc.width"><code class="docutils literal notranslate"><span class="pre">DXGISurfaceDesc.width</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainDesc"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainDesc</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainDesc.buffer_count"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainDesc.buffer_count</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainDesc.buffer_desc"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainDesc.buffer_desc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainDesc.buffer_usage"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainDesc.buffer_usage</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainDesc.flags"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainDesc.flags</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainDesc.output_window"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainDesc.output_window</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainDesc.sample_desc"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainDesc.sample_desc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainDesc.swap_effect"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainDesc.swap_effect</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainDesc.windowed"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainDesc.windowed</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainFlag"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainFlag</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainFlag.ALLOW_MODE_SWITCH"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainFlag.ALLOW_MODE_SWITCH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainFlag.ALLOW_TEARING"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainFlag.ALLOW_TEARING</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainFlag.DISPLAY_ONLY"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainFlag.DISPLAY_ONLY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainFlag.FOREGROUND_LAYER"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainFlag.FOREGROUND_LAYER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainFlag.FRAME_LATENCY_WAITABLE_OBJECT"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainFlag.FRAME_LATENCY_WAITABLE_OBJECT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainFlag.FULLSCREEN_VIDEO"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainFlag.FULLSCREEN_VIDEO</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainFlag.GDI_COMPATIBLE"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainFlag.GDI_COMPATIBLE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainFlag.HW_PROTECTED"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainFlag.HW_PROTECTED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainFlag.NONPREROTATED"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainFlag.NONPREROTATED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainFlag.RESTRICTED_CONTENT"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainFlag.RESTRICTED_CONTENT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainFlag.RESTRICTED_TO_ALL_HOLOGRAPHIC_DISPLAYS"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainFlag.RESTRICTED_TO_ALL_HOLOGRAPHIC_DISPLAYS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainFlag.RESTRICT_SHARED_RESOURCE_DRIVER"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainFlag.RESTRICT_SHARED_RESOURCE_DRIVER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainFlag.YUV_VIDEO"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainFlag.YUV_VIDEO</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapEffect"><code class="docutils literal notranslate"><span class="pre">DXGISwapEffect</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapEffect.DISCARD"><code class="docutils literal notranslate"><span class="pre">DXGISwapEffect.DISCARD</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapEffect.FLIP_DISCARD"><code class="docutils literal notranslate"><span class="pre">DXGISwapEffect.FLIP_DISCARD</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapEffect.FLIP_SEQUENTIAL"><code class="docutils literal notranslate"><span class="pre">DXGISwapEffect.FLIP_SEQUENTIAL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapEffect.SEQUENTIAL"><code class="docutils literal notranslate"><span class="pre">DXGISwapEffect.SEQUENTIAL</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIUsage"><code class="docutils literal notranslate"><span class="pre">DXGIUsage</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIUsage.BACK_BUFFER"><code class="docutils literal notranslate"><span class="pre">DXGIUsage.BACK_BUFFER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIUsage.DISCARD_ON_PRESENT"><code class="docutils literal notranslate"><span class="pre">DXGIUsage.DISCARD_ON_PRESENT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIUsage.READ_ONLY"><code class="docutils literal notranslate"><span class="pre">DXGIUsage.READ_ONLY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIUsage.RENDER_TARGET_OUTPUT"><code class="docutils literal notranslate"><span class="pre">DXGIUsage.RENDER_TARGET_OUTPUT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIUsage.SHADER_INPUT"><code class="docutils literal notranslate"><span class="pre">DXGIUsage.SHADER_INPUT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIUsage.SHARED"><code class="docutils literal notranslate"><span class="pre">DXGIUsage.SHARED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIUsage.UNORDERED_ACCESS"><code class="docutils literal notranslate"><span class="pre">DXGIUsage.UNORDERED_ACCESS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIAdapter"><code class="docutils literal notranslate"><span class="pre">IDXGIAdapter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIAdapter.CheckInterfaceSupport"><code class="docutils literal notranslate"><span class="pre">IDXGIAdapter.CheckInterfaceSupport</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIAdapter.EnumOutputs"><code class="docutils literal notranslate"><span class="pre">IDXGIAdapter.EnumOutputs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIAdapter.GetDesc"><code class="docutils literal notranslate"><span class="pre">IDXGIAdapter.GetDesc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIAdapter.GetParent"><code class="docutils literal notranslate"><span class="pre">IDXGIAdapter.GetParent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIAdapter.GetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIAdapter.GetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIAdapter.SetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIAdapter.SetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIAdapter.SetPrivateDataInterface"><code class="docutils literal notranslate"><span class="pre">IDXGIAdapter.SetPrivateDataInterface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIAdapter1"><code class="docutils literal notranslate"><span class="pre">IDXGIAdapter1</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIAdapter1.CheckInterfaceSupport"><code class="docutils literal notranslate"><span class="pre">IDXGIAdapter1.CheckInterfaceSupport</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIAdapter1.EnumOutputs"><code class="docutils literal notranslate"><span class="pre">IDXGIAdapter1.EnumOutputs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIAdapter1.GetDesc"><code class="docutils literal notranslate"><span class="pre">IDXGIAdapter1.GetDesc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIAdapter1.GetDesc1"><code class="docutils literal notranslate"><span class="pre">IDXGIAdapter1.GetDesc1</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIAdapter1.GetParent"><code class="docutils literal notranslate"><span class="pre">IDXGIAdapter1.GetParent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIAdapter1.GetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIAdapter1.GetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIAdapter1.SetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIAdapter1.SetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIAdapter1.SetPrivateDataInterface"><code class="docutils literal notranslate"><span class="pre">IDXGIAdapter1.SetPrivateDataInterface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice.CreateSurface"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice.CreateSurface</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice.GetAdapter"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice.GetAdapter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice.GetGPUThreadPriority"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice.GetGPUThreadPriority</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice.GetParent"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice.GetParent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice.GetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice.GetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice.QueryResourceResidency"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice.QueryResourceResidency</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice.SetGPUThreadPriority"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice.SetGPUThreadPriority</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice.SetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice.SetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice.SetPrivateDataInterface"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice.SetPrivateDataInterface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice1"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice1</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice1.CreateSurface"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice1.CreateSurface</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice1.GetAdapter"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice1.GetAdapter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice1.GetGPUThreadPriority"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice1.GetGPUThreadPriority</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice1.GetMaximumFrameLatency"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice1.GetMaximumFrameLatency</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice1.GetParent"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice1.GetParent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice1.GetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice1.GetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice1.QueryResourceResidency"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice1.QueryResourceResidency</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice1.SetGPUThreadPriority"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice1.SetGPUThreadPriority</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice1.SetMaximumFrameLatency"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice1.SetMaximumFrameLatency</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice1.SetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice1.SetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice1.SetPrivateDataInterface"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice1.SetPrivateDataInterface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDeviceSubObject"><code class="docutils literal notranslate"><span class="pre">IDXGIDeviceSubObject</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDeviceSubObject.GetDevice"><code class="docutils literal notranslate"><span class="pre">IDXGIDeviceSubObject.GetDevice</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDeviceSubObject.GetParent"><code class="docutils literal notranslate"><span class="pre">IDXGIDeviceSubObject.GetParent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDeviceSubObject.GetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIDeviceSubObject.GetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDeviceSubObject.SetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIDeviceSubObject.SetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDeviceSubObject.SetPrivateDataInterface"><code class="docutils literal notranslate"><span class="pre">IDXGIDeviceSubObject.SetPrivateDataInterface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory.CreateSoftwareAdapter"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory.CreateSoftwareAdapter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory.CreateSwapChain"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory.CreateSwapChain</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory.EnumAdapters"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory.EnumAdapters</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory.GetParent"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory.GetParent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory.GetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory.GetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory.GetWindowAssociation"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory.GetWindowAssociation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory.MakeWindowAssociation"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory.MakeWindowAssociation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory.SetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory.SetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory.SetPrivateDataInterface"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory.SetPrivateDataInterface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory1"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory1</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory1.CreateSoftwareAdapter"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory1.CreateSoftwareAdapter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory1.CreateSwapChain"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory1.CreateSwapChain</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory1.EnumAdapters"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory1.EnumAdapters</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory1.EnumAdapters1"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory1.EnumAdapters1</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory1.GetParent"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory1.GetParent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory1.GetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory1.GetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory1.GetWindowAssociation"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory1.GetWindowAssociation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory1.IsCurrent"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory1.IsCurrent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory1.MakeWindowAssociation"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory1.MakeWindowAssociation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory1.SetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory1.SetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory1.SetPrivateDataInterface"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory1.SetPrivateDataInterface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIKeyedMutex"><code class="docutils literal notranslate"><span class="pre">IDXGIKeyedMutex</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIKeyedMutex.AcquireSync"><code class="docutils literal notranslate"><span class="pre">IDXGIKeyedMutex.AcquireSync</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIKeyedMutex.GetDevice"><code class="docutils literal notranslate"><span class="pre">IDXGIKeyedMutex.GetDevice</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIKeyedMutex.GetParent"><code class="docutils literal notranslate"><span class="pre">IDXGIKeyedMutex.GetParent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIKeyedMutex.GetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIKeyedMutex.GetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIKeyedMutex.ReleaseSync"><code class="docutils literal notranslate"><span class="pre">IDXGIKeyedMutex.ReleaseSync</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIKeyedMutex.SetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIKeyedMutex.SetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIKeyedMutex.SetPrivateDataInterface"><code class="docutils literal notranslate"><span class="pre">IDXGIKeyedMutex.SetPrivateDataInterface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIObject"><code class="docutils literal notranslate"><span class="pre">IDXGIObject</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIObject.GetParent"><code class="docutils literal notranslate"><span class="pre">IDXGIObject.GetParent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIObject.GetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIObject.GetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIObject.SetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIObject.SetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIObject.SetPrivateDataInterface"><code class="docutils literal notranslate"><span class="pre">IDXGIObject.SetPrivateDataInterface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIOutput"><code class="docutils literal notranslate"><span class="pre">IDXGIOutput</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIOutput.FindClosestMatchingMode"><code class="docutils literal notranslate"><span class="pre">IDXGIOutput.FindClosestMatchingMode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIOutput.GetDesc"><code class="docutils literal notranslate"><span class="pre">IDXGIOutput.GetDesc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIOutput.GetDisplayModeList"><code class="docutils literal notranslate"><span class="pre">IDXGIOutput.GetDisplayModeList</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIOutput.GetDisplaySurfaceData"><code class="docutils literal notranslate"><span class="pre">IDXGIOutput.GetDisplaySurfaceData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIOutput.GetFrameStatistics"><code class="docutils literal notranslate"><span class="pre">IDXGIOutput.GetFrameStatistics</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIOutput.GetGammaControl"><code class="docutils literal notranslate"><span class="pre">IDXGIOutput.GetGammaControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIOutput.GetGammaControlCapabilities"><code class="docutils literal notranslate"><span class="pre">IDXGIOutput.GetGammaControlCapabilities</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIOutput.GetParent"><code class="docutils literal notranslate"><span class="pre">IDXGIOutput.GetParent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIOutput.GetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIOutput.GetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIOutput.ReleaseOwnership"><code class="docutils literal notranslate"><span class="pre">IDXGIOutput.ReleaseOwnership</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIOutput.SetDisplaySurface"><code class="docutils literal notranslate"><span class="pre">IDXGIOutput.SetDisplaySurface</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIOutput.SetGammaControl"><code class="docutils literal notranslate"><span class="pre">IDXGIOutput.SetGammaControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIOutput.SetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIOutput.SetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIOutput.SetPrivateDataInterface"><code class="docutils literal notranslate"><span class="pre">IDXGIOutput.SetPrivateDataInterface</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIOutput.TakeOwnership"><code class="docutils literal notranslate"><span class="pre">IDXGIOutput.TakeOwnership</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIOutput.WaitForVBlank"><code class="docutils literal notranslate"><span class="pre">IDXGIOutput.WaitForVBlank</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIResource"><code class="docutils literal notranslate"><span class="pre">IDXGIResource</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIResource.GetDevice"><code class="docutils literal notranslate"><span class="pre">IDXGIResource.GetDevice</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIResource.GetEvictionPriority"><code class="docutils literal notranslate"><span class="pre">IDXGIResource.GetEvictionPriority</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIResource.GetParent"><code class="docutils literal notranslate"><span class="pre">IDXGIResource.GetParent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIResource.GetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIResource.GetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIResource.GetSharedHandle"><code class="docutils literal notranslate"><span class="pre">IDXGIResource.GetSharedHandle</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIResource.GetUsage"><code class="docutils literal notranslate"><span class="pre">IDXGIResource.GetUsage</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIResource.SetEvictionPriority"><code class="docutils literal notranslate"><span class="pre">IDXGIResource.SetEvictionPriority</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIResource.SetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGIResource.SetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIResource.SetPrivateDataInterface"><code class="docutils literal notranslate"><span class="pre">IDXGIResource.SetPrivateDataInterface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface"><code class="docutils literal notranslate"><span class="pre">IDXGISurface</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface.GetDesc"><code class="docutils literal notranslate"><span class="pre">IDXGISurface.GetDesc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface.GetDevice"><code class="docutils literal notranslate"><span class="pre">IDXGISurface.GetDevice</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface.GetParent"><code class="docutils literal notranslate"><span class="pre">IDXGISurface.GetParent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface.GetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGISurface.GetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface.Map"><code class="docutils literal notranslate"><span class="pre">IDXGISurface.Map</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface.SetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGISurface.SetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface.SetPrivateDataInterface"><code class="docutils literal notranslate"><span class="pre">IDXGISurface.SetPrivateDataInterface</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface.Unmap"><code class="docutils literal notranslate"><span class="pre">IDXGISurface.Unmap</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface1"><code class="docutils literal notranslate"><span class="pre">IDXGISurface1</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface1.GetDC"><code class="docutils literal notranslate"><span class="pre">IDXGISurface1.GetDC</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface1.GetDesc"><code class="docutils literal notranslate"><span class="pre">IDXGISurface1.GetDesc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface1.GetDevice"><code class="docutils literal notranslate"><span class="pre">IDXGISurface1.GetDevice</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface1.GetParent"><code class="docutils literal notranslate"><span class="pre">IDXGISurface1.GetParent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface1.GetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGISurface1.GetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface1.Map"><code class="docutils literal notranslate"><span class="pre">IDXGISurface1.Map</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface1.ReleaseDC"><code class="docutils literal notranslate"><span class="pre">IDXGISurface1.ReleaseDC</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface1.SetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGISurface1.SetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface1.SetPrivateDataInterface"><code class="docutils literal notranslate"><span class="pre">IDXGISurface1.SetPrivateDataInterface</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface1.Unmap"><code class="docutils literal notranslate"><span class="pre">IDXGISurface1.Unmap</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISwapChain"><code class="docutils literal notranslate"><span class="pre">IDXGISwapChain</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISwapChain.GetBuffer"><code class="docutils literal notranslate"><span class="pre">IDXGISwapChain.GetBuffer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISwapChain.GetContainingOutput"><code class="docutils literal notranslate"><span class="pre">IDXGISwapChain.GetContainingOutput</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISwapChain.GetDesc"><code class="docutils literal notranslate"><span class="pre">IDXGISwapChain.GetDesc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISwapChain.GetDevice"><code class="docutils literal notranslate"><span class="pre">IDXGISwapChain.GetDevice</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISwapChain.GetFrameStatistics"><code class="docutils literal notranslate"><span class="pre">IDXGISwapChain.GetFrameStatistics</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISwapChain.GetFullscreenState"><code class="docutils literal notranslate"><span class="pre">IDXGISwapChain.GetFullscreenState</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISwapChain.GetLastPresentCount"><code class="docutils literal notranslate"><span class="pre">IDXGISwapChain.GetLastPresentCount</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISwapChain.GetParent"><code class="docutils literal notranslate"><span class="pre">IDXGISwapChain.GetParent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISwapChain.GetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGISwapChain.GetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISwapChain.Present"><code class="docutils literal notranslate"><span class="pre">IDXGISwapChain.Present</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISwapChain.ResizeBuffers"><code class="docutils literal notranslate"><span class="pre">IDXGISwapChain.ResizeBuffers</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISwapChain.ResizeTarget"><code class="docutils literal notranslate"><span class="pre">IDXGISwapChain.ResizeTarget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISwapChain.SetFullscreenState"><code class="docutils literal notranslate"><span class="pre">IDXGISwapChain.SetFullscreenState</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISwapChain.SetPrivateData"><code class="docutils literal notranslate"><span class="pre">IDXGISwapChain.SetPrivateData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISwapChain.SetPrivateDataInterface"><code class="docutils literal notranslate"><span class="pre">IDXGISwapChain.SetPrivateDataInterface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.LUID"><code class="docutils literal notranslate"><span class="pre">LUID</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.LUID.high_part"><code class="docutils literal notranslate"><span class="pre">LUID.high_part</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.LUID.low_part"><code class="docutils literal notranslate"><span class="pre">LUID.low_part</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="powcd2d.dwrite.types.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">powcd2d.dwrite.types module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="powcd2d.dxgi.interfacebody.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">powcd2d.dxgi.interfacebody module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目次
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIAdapter"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIAdapter.check_interfacesupport"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.check_interfacesupport()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIAdapter.check_interfacesupport_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.check_interfacesupport_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIAdapter.desc"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.desc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIAdapter.desc_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.desc_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIAdapter.get_output"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.get_output()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIAdapter.get_output_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.get_output_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIAdapter.output_iter"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.output_iter</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIAdapter.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIDevice"><code class="docutils literal notranslate"><span class="pre">DXGIDevice</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIDevice.adapter"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.adapter</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIDevice.adapter_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.adapter_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIDevice.gputhreadpriority"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.gputhreadpriority</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIDevice.gputhreadpriority_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.gputhreadpriority_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIDevice.query_resourceresidency"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.query_resourceresidency()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIDevice.query_resourceresidency_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.query_resourceresidency_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIDevice.set_gputhreadpriority_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.set_gputhreadpriority_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIDevice.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIFactory"><code class="docutils literal notranslate"><span class="pre">DXGIFactory</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIFactory.adapter_iter"><code class="docutils literal notranslate"><span class="pre">DXGIFactory.adapter_iter</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIFactory.create"><code class="docutils literal notranslate"><span class="pre">DXGIFactory.create()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIFactory.create_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIFactory.create_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIFactory.get_adapter"><code class="docutils literal notranslate"><span class="pre">DXGIFactory.get_adapter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIFactory.get_adapter_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIFactory.get_adapter_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIFactory.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">DXGIFactory.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIObject"><code class="docutils literal notranslate"><span class="pre">DXGIObject</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIObject.get_privatedata"><code class="docutils literal notranslate"><span class="pre">DXGIObject.get_privatedata()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIObject.get_privatedata_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIObject.get_privatedata_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIObject.get_privatedatalen"><code class="docutils literal notranslate"><span class="pre">DXGIObject.get_privatedatalen()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIObject.get_privatedatalen_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIObject.get_privatedatalen_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIObject.parent"><code class="docutils literal notranslate"><span class="pre">DXGIObject.parent</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIObject.parent_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIObject.parent_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIObject.set_privatedata"><code class="docutils literal notranslate"><span class="pre">DXGIObject.set_privatedata()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIObject.set_privatedata_interface"><code class="docutils literal notranslate"><span class="pre">DXGIObject.set_privatedata_interface()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dxgi.DXGIObject.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">DXGIObject.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+著者 poti-san
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, poti-san.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

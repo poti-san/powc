@@ -1,0 +1,1124 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>powc.dataobj module &#8212; powc  ドキュメント</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=1cf7f4d9"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=4755f45a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'apiref/powc.dataobj';</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="powc.datetime module" href="powc.datetime.html" />
+    <link rel="prev" title="powc.core module" href="powc.core.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">powc  ドキュメント</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">検索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../package_summary/index.html">パッケージの概要</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powc.html">powc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcpropsys.html">powcpropsys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcshell.html">powcshell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcwmi.html">powcwmi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powccoreaudio.html">powccoreaudio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcd2d.html">powcd2d</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../apiref.html">APIドキュメント</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="powc.html">powc package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="powc.comcat.html">powc.comcat module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.comobj.html">powc.comobj module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.comsec.html">powc.comsec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.core.html">powc.core module</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">powc.dataobj module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.datetime.html">powc.datetime module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.errlog.html">powc.errlog module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.globalmem.html">powc.globalmem module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.persist.html">powc.persist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.propbag.html">powc.propbag module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.safearray.html">powc.safearray module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.stream.html">powc.stream module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.variant.html">powc.variant module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcpropsys.html">powcpropsys package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html">powcpropsys.propchange module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html">powcpropsys.propdesc module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propkey.html">powcpropsys.propkey module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html">powcpropsys.propstore module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html">powcpropsys.propsys module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html">powcpropsys.propvariant module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcshell.html">powcshell package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcshell.shellitemutil.html">powcshell.shellitemutil package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.computerfolderinfo.html">powcshell.shellitemutil.computerfolderinfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.fontiteminfo.html">powcshell.shellitemutil.fontiteminfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.recyclebiniteminfo.html">powcshell.shellitemutil.recyclebiniteminfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.volumeinfo.html">powcshell.shellitemutil.volumeinfo module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.desktopwallpaper.html">powcshell.desktopwallpaper module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.itemidlist.html">powcshell.itemidlist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfolder.html">powcshell.knownfolder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfolderid.html">powcshell.knownfolderid module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfoldertypeid.html">powcshell.knownfoldertypeid module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellexec.html">powcshell.shellexec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellfileop.html">powcshell.shellfileop module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellfileoputil.html">powcshell.shellfileoputil module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitem.html">powcshell.shellitem module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitem2.html">powcshell.shellitem2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitemarray.html">powcshell.shellitemarray module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitemenum.html">powcshell.shellitemenum module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shelllibrary.html">powcshell.shelllibrary module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shelllink.html">powcshell.shelllink module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.url.html">powcshell.url module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcwmi.html">powcwmi package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.comtypes.html">powcwmi.comtypes module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.wbemflags.html">powcwmi.wbemflags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.wbemstatus.html">powcwmi.wbemstatus module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powccoreaudio.html">powccoreaudio package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devicepropsinstore.html">powccoreaudio.devicepropsinstore module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html">powccoreaudio.devprop module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html">powccoreaudio.endpointvolume module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html">powccoreaudio.mmdevice module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcd2d.html">powcd2d package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.d2d.html">powcd2d.d2d package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.interfacebody.html">powcd2d.d2d.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html">powcd2d.d2d.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dcommon.html">powcd2d.dcommon package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html">powcd2d.dcommon.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dwrite.html">powcd2d.dwrite package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.interfacebody.html">powcd2d.dwrite.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html">powcd2d.dwrite.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dxgi.html">powcd2d.dxgi package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.interfacebody.html">powcd2d.dxgi.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html">powcd2d.dxgi.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.wic.html">powcd2d.wic package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html">powcd2d.wic.constant module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.interfacebody.html">powcd2d.wic.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html">powcd2d.wic.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.d3dmisc.html">powcd2d.d3dmisc module</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../py-modindex.html">モジュール索引</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全画面モード"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>powc.dataobj module</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目次 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.ClipboardFormat"><code class="docutils literal notranslate"><span class="pre">ClipboardFormat</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.ClipboardFormat.formatname"><code class="docutils literal notranslate"><span class="pre">ClipboardFormat.formatname</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.ClipboardFormat.is_gdiobj"><code class="docutils literal notranslate"><span class="pre">ClipboardFormat.is_gdiobj</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.ClipboardFormat.is_private"><code class="docutils literal notranslate"><span class="pre">ClipboardFormat.is_private</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.ClipboardFormat.is_standard"><code class="docutils literal notranslate"><span class="pre">ClipboardFormat.is_standard</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.ClipboardFormat.value"><code class="docutils literal notranslate"><span class="pre">ClipboardFormat.value</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataDirection"><code class="docutils literal notranslate"><span class="pre">DataDirection</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataDirection.GET"><code class="docutils literal notranslate"><span class="pre">DataDirection.GET</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataDirection.SET"><code class="docutils literal notranslate"><span class="pre">DataDirection.SET</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject"><code class="docutils literal notranslate"><span class="pre">DataObject</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.get_clipboard"><code class="docutils literal notranslate"><span class="pre">DataObject.get_clipboard()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.get_clipboard_nothrow"><code class="docutils literal notranslate"><span class="pre">DataObject.get_clipboard_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.get_data"><code class="docutils literal notranslate"><span class="pre">DataObject.get_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.get_data_nothrow"><code class="docutils literal notranslate"><span class="pre">DataObject.get_data_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.get_formatetc_enum"><code class="docutils literal notranslate"><span class="pre">DataObject.get_formatetc_enum()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.get_formatetc_enum_nothrow"><code class="docutils literal notranslate"><span class="pre">DataObject.get_formatetc_enum_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.iter_formatetc_getter"><code class="docutils literal notranslate"><span class="pre">DataObject.iter_formatetc_getter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.iter_formatetc_setter"><code class="docutils literal notranslate"><span class="pre">DataObject.iter_formatetc_setter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.set_clipboard"><code class="docutils literal notranslate"><span class="pre">DataObject.set_clipboard()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.set_clipboard_nothrow"><code class="docutils literal notranslate"><span class="pre">DataObject.set_clipboard_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">DataObject.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DeviceTargetDevice"><code class="docutils literal notranslate"><span class="pre">DeviceTargetDevice</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DeviceTargetDevice.device_name_offset"><code class="docutils literal notranslate"><span class="pre">DeviceTargetDevice.device_name_offset</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DeviceTargetDevice.driver_name_offset"><code class="docutils literal notranslate"><span class="pre">DeviceTargetDevice.driver_name_offset</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DeviceTargetDevice.ext_device_mode_offset"><code class="docutils literal notranslate"><span class="pre">DeviceTargetDevice.ext_device_mode_offset</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DeviceTargetDevice.port_name_offset"><code class="docutils literal notranslate"><span class="pre">DeviceTargetDevice.port_name_offset</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DeviceTargetDevice.size"><code class="docutils literal notranslate"><span class="pre">DeviceTargetDevice.size</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.FormatEtc"><code class="docutils literal notranslate"><span class="pre">FormatEtc</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.FormatEtc.aspect"><code class="docutils literal notranslate"><span class="pre">FormatEtc.aspect</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.FormatEtc.create_simple"><code class="docutils literal notranslate"><span class="pre">FormatEtc.create_simple()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.FormatEtc.format"><code class="docutils literal notranslate"><span class="pre">FormatEtc.format</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.FormatEtc.index"><code class="docutils literal notranslate"><span class="pre">FormatEtc.index</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.FormatEtc.ptd"><code class="docutils literal notranslate"><span class="pre">FormatEtc.ptd</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.FormatEtc.tymed"><code class="docutils literal notranslate"><span class="pre">FormatEtc.tymed</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.FormatEtcEnumerator"><code class="docutils literal notranslate"><span class="pre">FormatEtcEnumerator</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.FormatEtcEnumerator.items"><code class="docutils literal notranslate"><span class="pre">FormatEtcEnumerator.items</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.FormatEtcEnumerator.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">FormatEtcEnumerator.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IDataObject"><code class="docutils literal notranslate"><span class="pre">IDataObject</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IDataObject.DAdvise"><code class="docutils literal notranslate"><span class="pre">IDataObject.DAdvise</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IDataObject.DUnadvise"><code class="docutils literal notranslate"><span class="pre">IDataObject.DUnadvise</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IDataObject.EnumDAdvise"><code class="docutils literal notranslate"><span class="pre">IDataObject.EnumDAdvise</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IDataObject.EnumFormatEtc"><code class="docutils literal notranslate"><span class="pre">IDataObject.EnumFormatEtc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IDataObject.GetCanonicalFormatEtc"><code class="docutils literal notranslate"><span class="pre">IDataObject.GetCanonicalFormatEtc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IDataObject.GetData"><code class="docutils literal notranslate"><span class="pre">IDataObject.GetData</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IDataObject.GetDataHere"><code class="docutils literal notranslate"><span class="pre">IDataObject.GetDataHere</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IDataObject.QueryGetData"><code class="docutils literal notranslate"><span class="pre">IDataObject.QueryGetData</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IDataObject.SetData"><code class="docutils literal notranslate"><span class="pre">IDataObject.SetData</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IEnumFORMATETC"><code class="docutils literal notranslate"><span class="pre">IEnumFORMATETC</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IEnumFORMATETC.Clone"><code class="docutils literal notranslate"><span class="pre">IEnumFORMATETC.Clone</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IEnumFORMATETC.Next"><code class="docutils literal notranslate"><span class="pre">IEnumFORMATETC.Next</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IEnumFORMATETC.Reset"><code class="docutils literal notranslate"><span class="pre">IEnumFORMATETC.Reset</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IEnumFORMATETC.Skip"><code class="docutils literal notranslate"><span class="pre">IEnumFORMATETC.Skip</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.MediumType"><code class="docutils literal notranslate"><span class="pre">MediumType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.MediumType.ENHMF"><code class="docutils literal notranslate"><span class="pre">MediumType.ENHMF</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.MediumType.FILE"><code class="docutils literal notranslate"><span class="pre">MediumType.FILE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.MediumType.GDI"><code class="docutils literal notranslate"><span class="pre">MediumType.GDI</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.MediumType.HGLOBAL"><code class="docutils literal notranslate"><span class="pre">MediumType.HGLOBAL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.MediumType.ISTORAGE"><code class="docutils literal notranslate"><span class="pre">MediumType.ISTORAGE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.MediumType.ISTREAM"><code class="docutils literal notranslate"><span class="pre">MediumType.ISTREAM</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.MediumType.MFPICT"><code class="docutils literal notranslate"><span class="pre">MediumType.MFPICT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.MediumType.NULL"><code class="docutils literal notranslate"><span class="pre">MediumType.NULL</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium"><code class="docutils literal notranslate"><span class="pre">StorageMedium</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.DummyUnion"><code class="docutils literal notranslate"><span class="pre">StorageMedium.DummyUnion</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.DummyUnion.bitmap_handle"><code class="docutils literal notranslate"><span class="pre">StorageMedium.DummyUnion.bitmap_handle</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.DummyUnion.enhmetafile_handle"><code class="docutils literal notranslate"><span class="pre">StorageMedium.DummyUnion.enhmetafile_handle</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.DummyUnion.file"><code class="docutils literal notranslate"><span class="pre">StorageMedium.DummyUnion.file</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.DummyUnion.global_handle"><code class="docutils literal notranslate"><span class="pre">StorageMedium.DummyUnion.global_handle</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.DummyUnion.metafilepict_handle"><code class="docutils literal notranslate"><span class="pre">StorageMedium.DummyUnion.metafilepict_handle</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.DummyUnion.storage_ptr"><code class="docutils literal notranslate"><span class="pre">StorageMedium.DummyUnion.storage_ptr</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.DummyUnion.stream_ptr"><code class="docutils literal notranslate"><span class="pre">StorageMedium.DummyUnion.stream_ptr</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.bitmap_handle"><code class="docutils literal notranslate"><span class="pre">StorageMedium.bitmap_handle</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.bytes"><code class="docutils literal notranslate"><span class="pre">StorageMedium.bytes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.enhmetafile_handle"><code class="docutils literal notranslate"><span class="pre">StorageMedium.enhmetafile_handle</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.file"><code class="docutils literal notranslate"><span class="pre">StorageMedium.file</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.global_handle"><code class="docutils literal notranslate"><span class="pre">StorageMedium.global_handle</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.metafilepict_handle"><code class="docutils literal notranslate"><span class="pre">StorageMedium.metafilepict_handle</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.storage_ptr"><code class="docutils literal notranslate"><span class="pre">StorageMedium.storage_ptr</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.stream_ptr"><code class="docutils literal notranslate"><span class="pre">StorageMedium.stream_ptr</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.tymed"><code class="docutils literal notranslate"><span class="pre">StorageMedium.tymed</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.u"><code class="docutils literal notranslate"><span class="pre">StorageMedium.u</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.unk_for_release"><code class="docutils literal notranslate"><span class="pre">StorageMedium.unk_for_release</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-powc.dataobj">
+<span id="powc-dataobj-module"></span><h1>powc.dataobj module<a class="headerlink" href="#module-powc.dataobj" title="Link to this heading">#</a></h1>
+<p>COMデータオブジェクト</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.dataobj.ClipboardFormat">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.dataobj.</span></span><span class="sig-name descname"><span class="pre">ClipboardFormat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fmt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.dataobj.ClipboardFormat" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.dataobj.ClipboardFormat.formatname">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">formatname</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powc.dataobj.ClipboardFormat.formatname" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.dataobj.ClipboardFormat.is_gdiobj">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_gdiobj</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#powc.dataobj.ClipboardFormat.is_gdiobj" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.dataobj.ClipboardFormat.is_private">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_private</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#powc.dataobj.ClipboardFormat.is_private" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.dataobj.ClipboardFormat.is_standard">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_standard</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#powc.dataobj.ClipboardFormat.is_standard" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.dataobj.ClipboardFormat.value">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.dataobj.ClipboardFormat.value" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.dataobj.DataDirection">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.dataobj.</span></span><span class="sig-name descname"><span class="pre">DataDirection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.dataobj.DataDirection" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<p>DATADIR</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.DataDirection.GET">
+<span class="sig-name descname"><span class="pre">GET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powc.dataobj.DataDirection.GET" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.DataDirection.SET">
+<span class="sig-name descname"><span class="pre">SET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#powc.dataobj.DataDirection.SET" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.dataobj.DataObject">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.dataobj.</span></span><span class="sig-name descname"><span class="pre">DataObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.dataobj.DataObject" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.dataobj.DataObject.get_clipboard">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_clipboard</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.dataobj.DataObject" title="powc.dataobj.DataObject"><span class="pre">DataObject</span></a></span></span><a class="headerlink" href="#powc.dataobj.DataObject.get_clipboard" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.dataobj.DataObject.get_clipboard_nothrow">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_clipboard_nothrow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.dataobj.DataObject" title="powc.dataobj.DataObject"><span class="pre">DataObject</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.dataobj.DataObject.get_clipboard_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.dataobj.DataObject.get_data">
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.dataobj.ClipboardFormat" title="powc.dataobj.ClipboardFormat"><span class="pre">ClipboardFormat</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.dataobj.StorageMedium" title="powc.dataobj.StorageMedium"><span class="pre">StorageMedium</span></a></span></span><a class="headerlink" href="#powc.dataobj.DataObject.get_data" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.dataobj.DataObject.get_data_nothrow">
+<span class="sig-name descname"><span class="pre">get_data_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.dataobj.ClipboardFormat" title="powc.dataobj.ClipboardFormat"><span class="pre">ClipboardFormat</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.dataobj.StorageMedium" title="powc.dataobj.StorageMedium"><span class="pre">StorageMedium</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.dataobj.DataObject.get_data_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.dataobj.DataObject.get_formatetc_enum">
+<span class="sig-name descname"><span class="pre">get_formatetc_enum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.dataobj.DataDirection" title="powc.dataobj.DataDirection"><span class="pre">DataDirection</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.dataobj.FormatEtcEnumerator" title="powc.dataobj.FormatEtcEnumerator"><span class="pre">FormatEtcEnumerator</span></a></span></span><a class="headerlink" href="#powc.dataobj.DataObject.get_formatetc_enum" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.dataobj.DataObject.get_formatetc_enum_nothrow">
+<span class="sig-name descname"><span class="pre">get_formatetc_enum_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.dataobj.DataDirection" title="powc.dataobj.DataDirection"><span class="pre">DataDirection</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.dataobj.FormatEtcEnumerator" title="powc.dataobj.FormatEtcEnumerator"><span class="pre">FormatEtcEnumerator</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.dataobj.DataObject.get_formatetc_enum_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.dataobj.DataObject.iter_formatetc_getter">
+<span class="sig-name descname"><span class="pre">iter_formatetc_getter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.dataobj.FormatEtc" title="powc.dataobj.FormatEtc"><span class="pre">FormatEtc</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.dataobj.DataObject.iter_formatetc_getter" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.dataobj.DataObject.iter_formatetc_setter">
+<span class="sig-name descname"><span class="pre">iter_formatetc_setter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.dataobj.FormatEtc" title="powc.dataobj.FormatEtc"><span class="pre">FormatEtc</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.dataobj.DataObject.iter_formatetc_setter" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.dataobj.DataObject.set_clipboard">
+<span class="sig-name descname"><span class="pre">set_clipboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flush</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powc.dataobj.DataObject.set_clipboard" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.dataobj.DataObject.set_clipboard_nothrow">
+<span class="sig-name descname"><span class="pre">set_clipboard_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flush</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.dataobj.DataObject.set_clipboard_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.dataobj.DataObject.wrapped_obj">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wrapped_obj</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">c_void_p</span></em><a class="headerlink" href="#powc.dataobj.DataObject.wrapped_obj" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.dataobj.DeviceTargetDevice">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.dataobj.</span></span><span class="sig-name descname"><span class="pre">DeviceTargetDevice</span></span><a class="headerlink" href="#powc.dataobj.DeviceTargetDevice" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>DVTARGETDEVICE</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.DeviceTargetDevice.device_name_offset">
+<span class="sig-name descname"><span class="pre">device_name_offset</span></span><a class="headerlink" href="#powc.dataobj.DeviceTargetDevice.device_name_offset" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.DeviceTargetDevice.driver_name_offset">
+<span class="sig-name descname"><span class="pre">driver_name_offset</span></span><a class="headerlink" href="#powc.dataobj.DeviceTargetDevice.driver_name_offset" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.DeviceTargetDevice.ext_device_mode_offset">
+<span class="sig-name descname"><span class="pre">ext_device_mode_offset</span></span><a class="headerlink" href="#powc.dataobj.DeviceTargetDevice.ext_device_mode_offset" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.DeviceTargetDevice.port_name_offset">
+<span class="sig-name descname"><span class="pre">port_name_offset</span></span><a class="headerlink" href="#powc.dataobj.DeviceTargetDevice.port_name_offset" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.DeviceTargetDevice.size">
+<span class="sig-name descname"><span class="pre">size</span></span><a class="headerlink" href="#powc.dataobj.DeviceTargetDevice.size" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.dataobj.FormatEtc">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.dataobj.</span></span><span class="sig-name descname"><span class="pre">FormatEtc</span></span><a class="headerlink" href="#powc.dataobj.FormatEtc" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.FormatEtc.aspect">
+<span class="sig-name descname"><span class="pre">aspect</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.dataobj.FormatEtc.aspect" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.dataobj.FormatEtc.create_simple">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_simple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powc.dataobj.ClipboardFormat" title="powc.dataobj.ClipboardFormat"><span class="pre">ClipboardFormat</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.dataobj.FormatEtc" title="powc.dataobj.FormatEtc"><span class="pre">FormatEtc</span></a></span></span><a class="headerlink" href="#powc.dataobj.FormatEtc.create_simple" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.dataobj.FormatEtc.format">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">format</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powc.dataobj.ClipboardFormat" title="powc.dataobj.ClipboardFormat"><span class="pre">ClipboardFormat</span></a></em><a class="headerlink" href="#powc.dataobj.FormatEtc.format" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.FormatEtc.index">
+<span class="sig-name descname"><span class="pre">index</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.dataobj.FormatEtc.index" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.FormatEtc.ptd">
+<span class="sig-name descname"><span class="pre">ptd</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.dataobj.FormatEtc.ptd" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.dataobj.FormatEtc.tymed">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tymed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powc.dataobj.MediumType" title="powc.dataobj.MediumType"><span class="pre">MediumType</span></a></em><a class="headerlink" href="#powc.dataobj.FormatEtc.tymed" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.dataobj.FormatEtcEnumerator">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.dataobj.</span></span><span class="sig-name descname"><span class="pre">FormatEtcEnumerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.dataobj.FormatEtcEnumerator" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.dataobj.FormatEtcEnumerator.items">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">items</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.dataobj.FormatEtc" title="powc.dataobj.FormatEtc"><span class="pre">FormatEtc</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.dataobj.FormatEtcEnumerator.items" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.dataobj.FormatEtcEnumerator.wrapped_obj">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wrapped_obj</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">c_void_p</span></em><a class="headerlink" href="#powc.dataobj.FormatEtcEnumerator.wrapped_obj" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.dataobj.IDataObject">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.dataobj.</span></span><span class="sig-name descname"><span class="pre">IDataObject</span></span><a class="headerlink" href="#powc.dataobj.IDataObject" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IUnknown</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.IDataObject.DAdvise">
+<span class="sig-name descname"><span class="pre">DAdvise</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">9:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.dataobj.IDataObject.DAdvise" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.IDataObject.DUnadvise">
+<span class="sig-name descname"><span class="pre">DUnadvise</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">10:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.dataobj.IDataObject.DUnadvise" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.IDataObject.EnumDAdvise">
+<span class="sig-name descname"><span class="pre">EnumDAdvise</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">11:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.dataobj.IDataObject.EnumDAdvise" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.IDataObject.EnumFormatEtc">
+<span class="sig-name descname"><span class="pre">EnumFormatEtc</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">8:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.dataobj.IDataObject.EnumFormatEtc" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.IDataObject.GetCanonicalFormatEtc">
+<span class="sig-name descname"><span class="pre">GetCanonicalFormatEtc</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">6:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.dataobj.IDataObject.GetCanonicalFormatEtc" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.IDataObject.GetData">
+<span class="sig-name descname"><span class="pre">GetData</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">3:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.dataobj.IDataObject.GetData" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.IDataObject.GetDataHere">
+<span class="sig-name descname"><span class="pre">GetDataHere</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">4:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.dataobj.IDataObject.GetDataHere" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.IDataObject.QueryGetData">
+<span class="sig-name descname"><span class="pre">QueryGetData</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">5:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.dataobj.IDataObject.QueryGetData" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.IDataObject.SetData">
+<span class="sig-name descname"><span class="pre">SetData</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">7:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.dataobj.IDataObject.SetData" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.dataobj.IEnumFORMATETC">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.dataobj.</span></span><span class="sig-name descname"><span class="pre">IEnumFORMATETC</span></span><a class="headerlink" href="#powc.dataobj.IEnumFORMATETC" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IUnknown</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.IEnumFORMATETC.Clone">
+<span class="sig-name descname"><span class="pre">Clone</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">6:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.dataobj.IEnumFORMATETC.Clone" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.IEnumFORMATETC.Next">
+<span class="sig-name descname"><span class="pre">Next</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">3:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.dataobj.IEnumFORMATETC.Next" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.IEnumFORMATETC.Reset">
+<span class="sig-name descname"><span class="pre">Reset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">5:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.dataobj.IEnumFORMATETC.Reset" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.IEnumFORMATETC.Skip">
+<span class="sig-name descname"><span class="pre">Skip</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">4:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powc.dataobj.IEnumFORMATETC.Skip" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.dataobj.MediumType">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.dataobj.</span></span><span class="sig-name descname"><span class="pre">MediumType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powc.dataobj.MediumType" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntFlag</span></code></p>
+<p>TYMED</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.MediumType.ENHMF">
+<span class="sig-name descname"><span class="pre">ENHMF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">64</span></em><a class="headerlink" href="#powc.dataobj.MediumType.ENHMF" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.MediumType.FILE">
+<span class="sig-name descname"><span class="pre">FILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#powc.dataobj.MediumType.FILE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.MediumType.GDI">
+<span class="sig-name descname"><span class="pre">GDI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em><a class="headerlink" href="#powc.dataobj.MediumType.GDI" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.MediumType.HGLOBAL">
+<span class="sig-name descname"><span class="pre">HGLOBAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powc.dataobj.MediumType.HGLOBAL" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.MediumType.ISTORAGE">
+<span class="sig-name descname"><span class="pre">ISTORAGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#powc.dataobj.MediumType.ISTORAGE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.MediumType.ISTREAM">
+<span class="sig-name descname"><span class="pre">ISTREAM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#powc.dataobj.MediumType.ISTREAM" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.MediumType.MFPICT">
+<span class="sig-name descname"><span class="pre">MFPICT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#powc.dataobj.MediumType.MFPICT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.MediumType.NULL">
+<span class="sig-name descname"><span class="pre">NULL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#powc.dataobj.MediumType.NULL" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.dataobj.StorageMedium">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.dataobj.</span></span><span class="sig-name descname"><span class="pre">StorageMedium</span></span><a class="headerlink" href="#powc.dataobj.StorageMedium" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>STGMEDIUM構造体。</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powc.dataobj.StorageMedium.DummyUnion">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DummyUnion</span></span><a class="headerlink" href="#powc.dataobj.StorageMedium.DummyUnion" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Union</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.StorageMedium.DummyUnion.bitmap_handle">
+<span class="sig-name descname"><span class="pre">bitmap_handle</span></span><a class="headerlink" href="#powc.dataobj.StorageMedium.DummyUnion.bitmap_handle" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.StorageMedium.DummyUnion.enhmetafile_handle">
+<span class="sig-name descname"><span class="pre">enhmetafile_handle</span></span><a class="headerlink" href="#powc.dataobj.StorageMedium.DummyUnion.enhmetafile_handle" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.StorageMedium.DummyUnion.file">
+<span class="sig-name descname"><span class="pre">file</span></span><a class="headerlink" href="#powc.dataobj.StorageMedium.DummyUnion.file" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.StorageMedium.DummyUnion.global_handle">
+<span class="sig-name descname"><span class="pre">global_handle</span></span><a class="headerlink" href="#powc.dataobj.StorageMedium.DummyUnion.global_handle" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.StorageMedium.DummyUnion.metafilepict_handle">
+<span class="sig-name descname"><span class="pre">metafilepict_handle</span></span><a class="headerlink" href="#powc.dataobj.StorageMedium.DummyUnion.metafilepict_handle" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.StorageMedium.DummyUnion.storage_ptr">
+<span class="sig-name descname"><span class="pre">storage_ptr</span></span><a class="headerlink" href="#powc.dataobj.StorageMedium.DummyUnion.storage_ptr" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.StorageMedium.DummyUnion.stream_ptr">
+<span class="sig-name descname"><span class="pre">stream_ptr</span></span><a class="headerlink" href="#powc.dataobj.StorageMedium.DummyUnion.stream_ptr" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.StorageMedium.bitmap_handle">
+<span class="sig-name descname"><span class="pre">bitmap_handle</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.dataobj.StorageMedium.bitmap_handle" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.dataobj.StorageMedium.bytes">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bytes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bytes</span></em><a class="headerlink" href="#powc.dataobj.StorageMedium.bytes" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.StorageMedium.enhmetafile_handle">
+<span class="sig-name descname"><span class="pre">enhmetafile_handle</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.dataobj.StorageMedium.enhmetafile_handle" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.StorageMedium.file">
+<span class="sig-name descname"><span class="pre">file</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#powc.dataobj.StorageMedium.file" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.StorageMedium.global_handle">
+<span class="sig-name descname"><span class="pre">global_handle</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.dataobj.StorageMedium.global_handle" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.StorageMedium.metafilepict_handle">
+<span class="sig-name descname"><span class="pre">metafilepict_handle</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.dataobj.StorageMedium.metafilepict_handle" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.StorageMedium.storage_ptr">
+<span class="sig-name descname"><span class="pre">storage_ptr</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">_Pointer</span><span class="p"><span class="pre">[</span></span><span class="pre">IUnknown</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.dataobj.StorageMedium.storage_ptr" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.StorageMedium.stream_ptr">
+<span class="sig-name descname"><span class="pre">stream_ptr</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">_Pointer</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powc.stream.html#powc.stream.IStream" title="powc.stream.IStream"><span class="pre">IStream</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.dataobj.StorageMedium.stream_ptr" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powc.dataobj.StorageMedium.tymed">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tymed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powc.dataobj.MediumType" title="powc.dataobj.MediumType"><span class="pre">MediumType</span></a></em><a class="headerlink" href="#powc.dataobj.StorageMedium.tymed" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.StorageMedium.u">
+<span class="sig-name descname"><span class="pre">u</span></span><a class="headerlink" href="#powc.dataobj.StorageMedium.u" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powc.dataobj.StorageMedium.unk_for_release">
+<span class="sig-name descname"><span class="pre">unk_for_release</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">_Pointer</span><span class="p"><span class="pre">[</span></span><span class="pre">IUnknown</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.dataobj.StorageMedium.unk_for_release" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="powc.core.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">powc.core module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="powc.datetime.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">powc.datetime module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目次
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.ClipboardFormat"><code class="docutils literal notranslate"><span class="pre">ClipboardFormat</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.ClipboardFormat.formatname"><code class="docutils literal notranslate"><span class="pre">ClipboardFormat.formatname</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.ClipboardFormat.is_gdiobj"><code class="docutils literal notranslate"><span class="pre">ClipboardFormat.is_gdiobj</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.ClipboardFormat.is_private"><code class="docutils literal notranslate"><span class="pre">ClipboardFormat.is_private</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.ClipboardFormat.is_standard"><code class="docutils literal notranslate"><span class="pre">ClipboardFormat.is_standard</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.ClipboardFormat.value"><code class="docutils literal notranslate"><span class="pre">ClipboardFormat.value</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataDirection"><code class="docutils literal notranslate"><span class="pre">DataDirection</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataDirection.GET"><code class="docutils literal notranslate"><span class="pre">DataDirection.GET</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataDirection.SET"><code class="docutils literal notranslate"><span class="pre">DataDirection.SET</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject"><code class="docutils literal notranslate"><span class="pre">DataObject</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.get_clipboard"><code class="docutils literal notranslate"><span class="pre">DataObject.get_clipboard()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.get_clipboard_nothrow"><code class="docutils literal notranslate"><span class="pre">DataObject.get_clipboard_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.get_data"><code class="docutils literal notranslate"><span class="pre">DataObject.get_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.get_data_nothrow"><code class="docutils literal notranslate"><span class="pre">DataObject.get_data_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.get_formatetc_enum"><code class="docutils literal notranslate"><span class="pre">DataObject.get_formatetc_enum()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.get_formatetc_enum_nothrow"><code class="docutils literal notranslate"><span class="pre">DataObject.get_formatetc_enum_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.iter_formatetc_getter"><code class="docutils literal notranslate"><span class="pre">DataObject.iter_formatetc_getter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.iter_formatetc_setter"><code class="docutils literal notranslate"><span class="pre">DataObject.iter_formatetc_setter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.set_clipboard"><code class="docutils literal notranslate"><span class="pre">DataObject.set_clipboard()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.set_clipboard_nothrow"><code class="docutils literal notranslate"><span class="pre">DataObject.set_clipboard_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DataObject.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">DataObject.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DeviceTargetDevice"><code class="docutils literal notranslate"><span class="pre">DeviceTargetDevice</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DeviceTargetDevice.device_name_offset"><code class="docutils literal notranslate"><span class="pre">DeviceTargetDevice.device_name_offset</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DeviceTargetDevice.driver_name_offset"><code class="docutils literal notranslate"><span class="pre">DeviceTargetDevice.driver_name_offset</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DeviceTargetDevice.ext_device_mode_offset"><code class="docutils literal notranslate"><span class="pre">DeviceTargetDevice.ext_device_mode_offset</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DeviceTargetDevice.port_name_offset"><code class="docutils literal notranslate"><span class="pre">DeviceTargetDevice.port_name_offset</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.DeviceTargetDevice.size"><code class="docutils literal notranslate"><span class="pre">DeviceTargetDevice.size</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.FormatEtc"><code class="docutils literal notranslate"><span class="pre">FormatEtc</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.FormatEtc.aspect"><code class="docutils literal notranslate"><span class="pre">FormatEtc.aspect</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.FormatEtc.create_simple"><code class="docutils literal notranslate"><span class="pre">FormatEtc.create_simple()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.FormatEtc.format"><code class="docutils literal notranslate"><span class="pre">FormatEtc.format</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.FormatEtc.index"><code class="docutils literal notranslate"><span class="pre">FormatEtc.index</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.FormatEtc.ptd"><code class="docutils literal notranslate"><span class="pre">FormatEtc.ptd</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.FormatEtc.tymed"><code class="docutils literal notranslate"><span class="pre">FormatEtc.tymed</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.FormatEtcEnumerator"><code class="docutils literal notranslate"><span class="pre">FormatEtcEnumerator</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.FormatEtcEnumerator.items"><code class="docutils literal notranslate"><span class="pre">FormatEtcEnumerator.items</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.FormatEtcEnumerator.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">FormatEtcEnumerator.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IDataObject"><code class="docutils literal notranslate"><span class="pre">IDataObject</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IDataObject.DAdvise"><code class="docutils literal notranslate"><span class="pre">IDataObject.DAdvise</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IDataObject.DUnadvise"><code class="docutils literal notranslate"><span class="pre">IDataObject.DUnadvise</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IDataObject.EnumDAdvise"><code class="docutils literal notranslate"><span class="pre">IDataObject.EnumDAdvise</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IDataObject.EnumFormatEtc"><code class="docutils literal notranslate"><span class="pre">IDataObject.EnumFormatEtc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IDataObject.GetCanonicalFormatEtc"><code class="docutils literal notranslate"><span class="pre">IDataObject.GetCanonicalFormatEtc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IDataObject.GetData"><code class="docutils literal notranslate"><span class="pre">IDataObject.GetData</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IDataObject.GetDataHere"><code class="docutils literal notranslate"><span class="pre">IDataObject.GetDataHere</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IDataObject.QueryGetData"><code class="docutils literal notranslate"><span class="pre">IDataObject.QueryGetData</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IDataObject.SetData"><code class="docutils literal notranslate"><span class="pre">IDataObject.SetData</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IEnumFORMATETC"><code class="docutils literal notranslate"><span class="pre">IEnumFORMATETC</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IEnumFORMATETC.Clone"><code class="docutils literal notranslate"><span class="pre">IEnumFORMATETC.Clone</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IEnumFORMATETC.Next"><code class="docutils literal notranslate"><span class="pre">IEnumFORMATETC.Next</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IEnumFORMATETC.Reset"><code class="docutils literal notranslate"><span class="pre">IEnumFORMATETC.Reset</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.IEnumFORMATETC.Skip"><code class="docutils literal notranslate"><span class="pre">IEnumFORMATETC.Skip</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.MediumType"><code class="docutils literal notranslate"><span class="pre">MediumType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.MediumType.ENHMF"><code class="docutils literal notranslate"><span class="pre">MediumType.ENHMF</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.MediumType.FILE"><code class="docutils literal notranslate"><span class="pre">MediumType.FILE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.MediumType.GDI"><code class="docutils literal notranslate"><span class="pre">MediumType.GDI</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.MediumType.HGLOBAL"><code class="docutils literal notranslate"><span class="pre">MediumType.HGLOBAL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.MediumType.ISTORAGE"><code class="docutils literal notranslate"><span class="pre">MediumType.ISTORAGE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.MediumType.ISTREAM"><code class="docutils literal notranslate"><span class="pre">MediumType.ISTREAM</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.MediumType.MFPICT"><code class="docutils literal notranslate"><span class="pre">MediumType.MFPICT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.MediumType.NULL"><code class="docutils literal notranslate"><span class="pre">MediumType.NULL</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium"><code class="docutils literal notranslate"><span class="pre">StorageMedium</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.DummyUnion"><code class="docutils literal notranslate"><span class="pre">StorageMedium.DummyUnion</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.DummyUnion.bitmap_handle"><code class="docutils literal notranslate"><span class="pre">StorageMedium.DummyUnion.bitmap_handle</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.DummyUnion.enhmetafile_handle"><code class="docutils literal notranslate"><span class="pre">StorageMedium.DummyUnion.enhmetafile_handle</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.DummyUnion.file"><code class="docutils literal notranslate"><span class="pre">StorageMedium.DummyUnion.file</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.DummyUnion.global_handle"><code class="docutils literal notranslate"><span class="pre">StorageMedium.DummyUnion.global_handle</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.DummyUnion.metafilepict_handle"><code class="docutils literal notranslate"><span class="pre">StorageMedium.DummyUnion.metafilepict_handle</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.DummyUnion.storage_ptr"><code class="docutils literal notranslate"><span class="pre">StorageMedium.DummyUnion.storage_ptr</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.DummyUnion.stream_ptr"><code class="docutils literal notranslate"><span class="pre">StorageMedium.DummyUnion.stream_ptr</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.bitmap_handle"><code class="docutils literal notranslate"><span class="pre">StorageMedium.bitmap_handle</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.bytes"><code class="docutils literal notranslate"><span class="pre">StorageMedium.bytes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.enhmetafile_handle"><code class="docutils literal notranslate"><span class="pre">StorageMedium.enhmetafile_handle</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.file"><code class="docutils literal notranslate"><span class="pre">StorageMedium.file</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.global_handle"><code class="docutils literal notranslate"><span class="pre">StorageMedium.global_handle</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.metafilepict_handle"><code class="docutils literal notranslate"><span class="pre">StorageMedium.metafilepict_handle</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.storage_ptr"><code class="docutils literal notranslate"><span class="pre">StorageMedium.storage_ptr</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.stream_ptr"><code class="docutils literal notranslate"><span class="pre">StorageMedium.stream_ptr</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.tymed"><code class="docutils literal notranslate"><span class="pre">StorageMedium.tymed</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.u"><code class="docutils literal notranslate"><span class="pre">StorageMedium.u</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.dataobj.StorageMedium.unk_for_release"><code class="docutils literal notranslate"><span class="pre">StorageMedium.unk_for_release</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+著者 poti-san
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, poti-san.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

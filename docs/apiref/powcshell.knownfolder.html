@@ -1,0 +1,1477 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>powcshell.knownfolder module &#8212; powc  ドキュメント</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=1cf7f4d9"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=4755f45a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'apiref/powcshell.knownfolder';</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="powcshell.knownfolderid module" href="powcshell.knownfolderid.html" />
+    <link rel="prev" title="powcshell.itemidlist module" href="powcshell.itemidlist.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">powc  ドキュメント</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">検索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../package_summary/index.html">パッケージの概要</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powc.html">powc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcpropsys.html">powcpropsys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcshell.html">powcshell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcwmi.html">powcwmi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powccoreaudio.html">powccoreaudio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcd2d.html">powcd2d</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../apiref.html">APIドキュメント</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="powc.html">powc package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powc.comcat.html">powc.comcat module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.comobj.html">powc.comobj module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.comsec.html">powc.comsec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.core.html">powc.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.dataobj.html">powc.dataobj module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.datetime.html">powc.datetime module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.errlog.html">powc.errlog module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.globalmem.html">powc.globalmem module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.persist.html">powc.persist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.propbag.html">powc.propbag module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.safearray.html">powc.safearray module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.stream.html">powc.stream module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.variant.html">powc.variant module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcpropsys.html">powcpropsys package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html">powcpropsys.propchange module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html">powcpropsys.propdesc module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propkey.html">powcpropsys.propkey module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html">powcpropsys.propstore module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html">powcpropsys.propsys module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html">powcpropsys.propvariant module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="powcshell.html">powcshell package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcshell.shellitemutil.html">powcshell.shellitemutil package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.computerfolderinfo.html">powcshell.shellitemutil.computerfolderinfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.fontiteminfo.html">powcshell.shellitemutil.fontiteminfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.recyclebiniteminfo.html">powcshell.shellitemutil.recyclebiniteminfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.volumeinfo.html">powcshell.shellitemutil.volumeinfo module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.desktopwallpaper.html">powcshell.desktopwallpaper module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.itemidlist.html">powcshell.itemidlist module</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">powcshell.knownfolder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfolderid.html">powcshell.knownfolderid module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfoldertypeid.html">powcshell.knownfoldertypeid module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellexec.html">powcshell.shellexec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellfileop.html">powcshell.shellfileop module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellfileoputil.html">powcshell.shellfileoputil module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitem.html">powcshell.shellitem module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitem2.html">powcshell.shellitem2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitemarray.html">powcshell.shellitemarray module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitemenum.html">powcshell.shellitemenum module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shelllibrary.html">powcshell.shelllibrary module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shelllink.html">powcshell.shelllink module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.url.html">powcshell.url module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcwmi.html">powcwmi package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.comtypes.html">powcwmi.comtypes module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.wbemflags.html">powcwmi.wbemflags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.wbemstatus.html">powcwmi.wbemstatus module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powccoreaudio.html">powccoreaudio package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devicepropsinstore.html">powccoreaudio.devicepropsinstore module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html">powccoreaudio.devprop module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html">powccoreaudio.endpointvolume module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html">powccoreaudio.mmdevice module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcd2d.html">powcd2d package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.d2d.html">powcd2d.d2d package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.interfacebody.html">powcd2d.d2d.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html">powcd2d.d2d.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dcommon.html">powcd2d.dcommon package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html">powcd2d.dcommon.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dwrite.html">powcd2d.dwrite package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.interfacebody.html">powcd2d.dwrite.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html">powcd2d.dwrite.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dxgi.html">powcd2d.dxgi package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.interfacebody.html">powcd2d.dxgi.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html">powcd2d.dxgi.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.wic.html">powcd2d.wic package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html">powcd2d.wic.constant module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.interfacebody.html">powcd2d.wic.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html">powcd2d.wic.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.d3dmisc.html">powcd2d.d3dmisc module</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../py-modindex.html">モジュール索引</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全画面モード"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>powcshell.knownfolder module</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目次 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.FffpMode"><code class="docutils literal notranslate"><span class="pre">FffpMode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.FffpMode.EXACT_MATCH"><code class="docutils literal notranslate"><span class="pre">FffpMode.EXACT_MATCH</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.FffpMode.NEAREST_PARENT_MATCH"><code class="docutils literal notranslate"><span class="pre">FffpMode.NEAREST_PARENT_MATCH</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolder"><code class="docutils literal notranslate"><span class="pre">IKnownFolder</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolder.GetCategory"><code class="docutils literal notranslate"><span class="pre">IKnownFolder.GetCategory</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolder.GetFolderDefinition"><code class="docutils literal notranslate"><span class="pre">IKnownFolder.GetFolderDefinition</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolder.GetFolderType"><code class="docutils literal notranslate"><span class="pre">IKnownFolder.GetFolderType</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolder.GetIDList"><code class="docutils literal notranslate"><span class="pre">IKnownFolder.GetIDList</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolder.GetId"><code class="docutils literal notranslate"><span class="pre">IKnownFolder.GetId</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolder.GetPath"><code class="docutils literal notranslate"><span class="pre">IKnownFolder.GetPath</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolder.GetRedirectionCapabilities"><code class="docutils literal notranslate"><span class="pre">IKnownFolder.GetRedirectionCapabilities</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolder.GetShellItem"><code class="docutils literal notranslate"><span class="pre">IKnownFolder.GetShellItem</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolder.SetPath"><code class="docutils literal notranslate"><span class="pre">IKnownFolder.SetPath</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager.FindFolderFromIDList"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager.FindFolderFromIDList</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager.FindFolderFromPath"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager.FindFolderFromPath</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager.FolderIdFromCsidl"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager.FolderIdFromCsidl</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager.FolderIdToCsidl"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager.FolderIdToCsidl</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager.GetFolder"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager.GetFolder</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager.GetFolderByName"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager.GetFolderByName</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager.GetFolderIds"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager.GetFolderIds</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager.Redirect"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager.Redirect</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager.RegisterFolder"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager.RegisterFolder</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager.UnregisterFolder"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager.UnregisterFolder</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder"><code class="docutils literal notranslate"><span class="pre">KnownFolder</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.category"><code class="docutils literal notranslate"><span class="pre">KnownFolder.category</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.category_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolder.category_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.folder_definition"><code class="docutils literal notranslate"><span class="pre">KnownFolder.folder_definition</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.folder_definition_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolder.folder_definition_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.foldertype"><code class="docutils literal notranslate"><span class="pre">KnownFolder.foldertype</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.foldertype_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolder.foldertype_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.get_idlist"><code class="docutils literal notranslate"><span class="pre">KnownFolder.get_idlist()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.get_idlist_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolder.get_idlist_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.get_path"><code class="docutils literal notranslate"><span class="pre">KnownFolder.get_path()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.get_path_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolder.get_path_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.get_shellitem"><code class="docutils literal notranslate"><span class="pre">KnownFolder.get_shellitem()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.get_shellitem_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolder.get_shellitem_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.get_shellitem_v2"><code class="docutils literal notranslate"><span class="pre">KnownFolder.get_shellitem_v2()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.get_shellitem_v2_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolder.get_shellitem_v2_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.id"><code class="docutils literal notranslate"><span class="pre">KnownFolder.id</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.id_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolder.id_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.redirection_capabilitiy_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolder.redirection_capabilitiy_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.redirection_capability"><code class="docutils literal notranslate"><span class="pre">KnownFolder.redirection_capability</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.set_path"><code class="docutils literal notranslate"><span class="pre">KnownFolder.set_path()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.set_path_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolder.set_path_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">KnownFolder.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderCategory"><code class="docutils literal notranslate"><span class="pre">KnownFolderCategory</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderCategory.COMMON"><code class="docutils literal notranslate"><span class="pre">KnownFolderCategory.COMMON</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderCategory.FIXED"><code class="docutils literal notranslate"><span class="pre">KnownFolderCategory.FIXED</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderCategory.PERUSER"><code class="docutils literal notranslate"><span class="pre">KnownFolderCategory.PERUSER</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderCategory.VIRTUAL"><code class="docutils literal notranslate"><span class="pre">KnownFolderCategory.VIRTUAL</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.attributes"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.attributes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.category"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.category</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.description"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.description</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.empty"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.empty()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.flags"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.flags</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.foldertypeid"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.foldertypeid</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.icon"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.icon</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.localized_name"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.localized_name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.name"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.parent_folderid"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.parent_folderid</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.parsing_name"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.parsing_name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.relative_path"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.relative_path</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.security"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.security</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.tooltip"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.tooltip</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinitionFlag"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinitionFlag</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinitionFlag.DEFAULT"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinitionFlag.DEFAULT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinitionFlag.LOCAL_REDIRECT_ONLY"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinitionFlag.LOCAL_REDIRECT_ONLY</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinitionFlag.NO_REDIRECT_UI"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinitionFlag.NO_REDIRECT_UI</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinitionFlag.PRECREATE"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinitionFlag.PRECREATE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinitionFlag.PUBLISHEXPANDEDPATH"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinitionFlag.PUBLISHEXPANDEDPATH</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinitionFlag.ROAMABLE"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinitionFlag.ROAMABLE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinitionFlag.STREAM"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinitionFlag.STREAM</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.ALIAS_ONLY"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.ALIAS_ONLY</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.CREATE"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.CREATE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.DEFAULT"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.DEFAULT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.DEFAULT_PATH"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.DEFAULT_PATH</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.DONT_UNEXPAND"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.DONT_UNEXPAND</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.DONT_VERIFY"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.DONT_VERIFY</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.FORCE_APPCONTAINER_REDIRECTION"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.FORCE_APPCONTAINER_REDIRECTION</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.FORCE_APP_DATA_REDIRECTION"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.FORCE_APP_DATA_REDIRECTION</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.FORCE_PACKAGE_REDIRECTION"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.FORCE_PACKAGE_REDIRECTION</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.INIT"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.INIT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.NOT_PARENT_RELATIVE"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.NOT_PARENT_RELATIVE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.NO_ALIAS"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.NO_ALIAS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.NO_APPCONTAINER_REDIRECTION"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.NO_APPCONTAINER_REDIRECTION</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.NO_PACKAGE_REDIRECTION"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.NO_PACKAGE_REDIRECTION</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.RETURN_FILTER_REDIRECTION_TARGET"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.RETURN_FILTER_REDIRECTION_TARGET</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.SIMPLE_IDLIST"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.SIMPLE_IDLIST</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.create"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.create()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.find_folder_from_idlist"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.find_folder_from_idlist()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.find_folder_from_idlist_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.find_folder_from_idlist_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.find_folder_from_path"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.find_folder_from_path()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.find_folder_from_path_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.find_folder_from_path_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.folderid_from_csidl"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.folderid_from_csidl()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.folderid_from_csidl_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.folderid_from_csidl_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.folderid_to_csidl"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.folderid_to_csidl()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.folderid_to_csidl_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.folderid_to_csidl_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.folderids"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.folderids</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.folderids_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.folderids_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.get_folder"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.get_folder()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.get_folder_byname"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.get_folder_byname()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.get_folder_byname_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.get_folder_byname_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.get_folder_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.get_folder_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.redirect"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.redirect()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.redirect_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.redirect_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.register_folder"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.register_folder()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.register_folder_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.register_folder_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.unregister_folder"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.unregister_folder()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.unregister_folder_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.unregister_folder_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.CHECK_ONLY"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.CHECK_ONLY</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.COPY_CONTENTS"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.COPY_CONTENTS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.COPY_SOURCE_DACL"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.COPY_SOURCE_DACL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.DEL_SOURCE_CONTENTS"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.DEL_SOURCE_CONTENTS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.EXCLUDE_ALL_KNOWN_SUBFOLDERS"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.EXCLUDE_ALL_KNOWN_SUBFOLDERS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.OWNER_USER"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.OWNER_USER</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.PIN"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.PIN</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.SET_OWNER_EXPLICIT"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.SET_OWNER_EXPLICIT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.UNPIN"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.UNPIN</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.USER_EXCLUSIVE"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.USER_EXCLUSIVE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.WITH_UI"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.WITH_UI</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectionCapability"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectionCapability</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectionCapability.ALLOW_ALL"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectionCapability.ALLOW_ALL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectionCapability.DENY_ALL"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectionCapability.DENY_ALL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectionCapability.DENY_PERMISSIONS"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectionCapability.DENY_PERMISSIONS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectionCapability.DENY_POLICY"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectionCapability.DENY_POLICY</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectionCapability.DENY_POLICY_REDIRECTED"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectionCapability.DENY_POLICY_REDIRECTED</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectionCapability.REDIRECTABLE"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectionCapability.REDIRECTABLE</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-powcshell.knownfolder">
+<span id="powcshell-knownfolder-module"></span><h1>powcshell.knownfolder module<a class="headerlink" href="#module-powcshell.knownfolder" title="Link to this heading">#</a></h1>
+<p>デスクトップやマイドキュメントのような既知のフォルダ。</p>
+<p>主なクラスは <a class="reference internal" href="#powcshell.knownfolder.KnownFolderManager" title="powcshell.knownfolder.KnownFolderManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">KnownFolderManager</span></code></a> と <a class="reference internal" href="#powcshell.knownfolder.KnownFolder" title="powcshell.knownfolder.KnownFolder"><code class="xref py py-class docutils literal notranslate"><span class="pre">KnownFolder</span></code></a> です。</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.knownfolder.FffpMode">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.knownfolder.</span></span><span class="sig-name descname"><span class="pre">FffpMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcshell.knownfolder.FffpMode" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<p>FFFP_MODE</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.FffpMode.EXACT_MATCH">
+<span class="sig-name descname"><span class="pre">EXACT_MATCH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#powcshell.knownfolder.FffpMode.EXACT_MATCH" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.FffpMode.NEAREST_PARENT_MATCH">
+<span class="sig-name descname"><span class="pre">NEAREST_PARENT_MATCH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powcshell.knownfolder.FffpMode.NEAREST_PARENT_MATCH" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.knownfolder.IKnownFolder">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.knownfolder.</span></span><span class="sig-name descname"><span class="pre">IKnownFolder</span></span><a class="headerlink" href="#powcshell.knownfolder.IKnownFolder" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IUnknown</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.IKnownFolder.GetCategory">
+<span class="sig-name descname"><span class="pre">GetCategory</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">4:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.knownfolder.IKnownFolder.GetCategory" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.IKnownFolder.GetFolderDefinition">
+<span class="sig-name descname"><span class="pre">GetFolderDefinition</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">11:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.knownfolder.IKnownFolder.GetFolderDefinition" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.IKnownFolder.GetFolderType">
+<span class="sig-name descname"><span class="pre">GetFolderType</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">9:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.knownfolder.IKnownFolder.GetFolderType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.IKnownFolder.GetIDList">
+<span class="sig-name descname"><span class="pre">GetIDList</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">8:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.knownfolder.IKnownFolder.GetIDList" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.IKnownFolder.GetId">
+<span class="sig-name descname"><span class="pre">GetId</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">3:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.knownfolder.IKnownFolder.GetId" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.IKnownFolder.GetPath">
+<span class="sig-name descname"><span class="pre">GetPath</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">6:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.knownfolder.IKnownFolder.GetPath" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.IKnownFolder.GetRedirectionCapabilities">
+<span class="sig-name descname"><span class="pre">GetRedirectionCapabilities</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">10:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.knownfolder.IKnownFolder.GetRedirectionCapabilities" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.IKnownFolder.GetShellItem">
+<span class="sig-name descname"><span class="pre">GetShellItem</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">5:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.knownfolder.IKnownFolder.GetShellItem" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.IKnownFolder.SetPath">
+<span class="sig-name descname"><span class="pre">SetPath</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">7:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.knownfolder.IKnownFolder.SetPath" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.knownfolder.IKnownFolderManager">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.knownfolder.</span></span><span class="sig-name descname"><span class="pre">IKnownFolderManager</span></span><a class="headerlink" href="#powcshell.knownfolder.IKnownFolderManager" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IUnknown</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.IKnownFolderManager.FindFolderFromIDList">
+<span class="sig-name descname"><span class="pre">FindFolderFromIDList</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">11:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.knownfolder.IKnownFolderManager.FindFolderFromIDList" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.IKnownFolderManager.FindFolderFromPath">
+<span class="sig-name descname"><span class="pre">FindFolderFromPath</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">10:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.knownfolder.IKnownFolderManager.FindFolderFromPath" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.IKnownFolderManager.FolderIdFromCsidl">
+<span class="sig-name descname"><span class="pre">FolderIdFromCsidl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">3:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.knownfolder.IKnownFolderManager.FolderIdFromCsidl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.IKnownFolderManager.FolderIdToCsidl">
+<span class="sig-name descname"><span class="pre">FolderIdToCsidl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">4:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.knownfolder.IKnownFolderManager.FolderIdToCsidl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.IKnownFolderManager.GetFolder">
+<span class="sig-name descname"><span class="pre">GetFolder</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">6:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.knownfolder.IKnownFolderManager.GetFolder" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.IKnownFolderManager.GetFolderByName">
+<span class="sig-name descname"><span class="pre">GetFolderByName</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">7:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.knownfolder.IKnownFolderManager.GetFolderByName" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.IKnownFolderManager.GetFolderIds">
+<span class="sig-name descname"><span class="pre">GetFolderIds</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">5:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.knownfolder.IKnownFolderManager.GetFolderIds" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.IKnownFolderManager.Redirect">
+<span class="sig-name descname"><span class="pre">Redirect</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">12:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.knownfolder.IKnownFolderManager.Redirect" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.IKnownFolderManager.RegisterFolder">
+<span class="sig-name descname"><span class="pre">RegisterFolder</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">8:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.knownfolder.IKnownFolderManager.RegisterFolder" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.IKnownFolderManager.UnregisterFolder">
+<span class="sig-name descname"><span class="pre">UnregisterFolder</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;COM</span> <span class="pre">method</span> <span class="pre">offset</span> <span class="pre">9:</span> <span class="pre">WinFunctionType&gt;</span></em><a class="headerlink" href="#powcshell.knownfolder.IKnownFolderManager.UnregisterFolder" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.knownfolder.</span></span><span class="sig-name descname"><span class="pre">KnownFolder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcshell.knownfolder.KnownFolder" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>既知フォルダ。IKnownFolderインターフェイスのラッパーです。</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder.category">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">category</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powcshell.knownfolder.KnownFolderCategory" title="powcshell.knownfolder.KnownFolderCategory"><span class="pre">KnownFolderCategory</span></a></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolder.category" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder.category_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">category_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcshell.knownfolder.KnownFolderCategory" title="powcshell.knownfolder.KnownFolderCategory"><span class="pre">KnownFolderCategory</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolder.category_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder.folder_definition">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">folder_definition</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powcshell.knownfolder.KnownFolderDefinition" title="powcshell.knownfolder.KnownFolderDefinition"><span class="pre">KnownFolderDefinition</span></a></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolder.folder_definition" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder.folder_definition_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">folder_definition_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcshell.knownfolder.KnownFolderDefinition" title="powcshell.knownfolder.KnownFolderDefinition"><span class="pre">KnownFolderDefinition</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolder.folder_definition_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder.foldertype">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">foldertype</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">GUID</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolder.foldertype" title="Link to this definition">#</a></dt>
+<dd><p>フォルダの種類（FolderTypeID定数）を取得します。</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder.foldertype_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">foldertype_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">GUID</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolder.foldertype_nothrow" title="Link to this definition">#</a></dt>
+<dd><p>フォルダの種類（FolderTypeID定数）を取得します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder.get_idlist">
+<span class="sig-name descname"><span class="pre">get_idlist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powcshell.knownfolder.KnownFolderFlag" title="powcshell.knownfolder.KnownFolderFlag"><span class="pre">KnownFolderFlag</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powcshell.itemidlist.html#powcshell.itemidlist.ItemIDList" title="powcshell.itemidlist.ItemIDList"><span class="pre">ItemIDList</span></a></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolder.get_idlist" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder.get_idlist_nothrow">
+<span class="sig-name descname"><span class="pre">get_idlist_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powcshell.knownfolder.KnownFolderFlag" title="powcshell.knownfolder.KnownFolderFlag"><span class="pre">KnownFolderFlag</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcshell.itemidlist.html#powcshell.itemidlist.ItemIDList" title="powcshell.itemidlist.ItemIDList"><span class="pre">ItemIDList</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolder.get_idlist_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder.get_path">
+<span class="sig-name descname"><span class="pre">get_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powcshell.knownfolder.KnownFolderFlag" title="powcshell.knownfolder.KnownFolderFlag"><span class="pre">KnownFolderFlag</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolder.get_path" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder.get_path_nothrow">
+<span class="sig-name descname"><span class="pre">get_path_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powcshell.knownfolder.KnownFolderFlag" title="powcshell.knownfolder.KnownFolderFlag"><span class="pre">KnownFolderFlag</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolder.get_path_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder.get_shellitem">
+<span class="sig-name descname"><span class="pre">get_shellitem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powcshell.knownfolder.KnownFolderFlag" title="powcshell.knownfolder.KnownFolderFlag"><span class="pre">KnownFolderFlag</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powcshell.shellitem2.html#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolder.get_shellitem" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder.get_shellitem_nothrow">
+<span class="sig-name descname"><span class="pre">get_shellitem_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powcshell.knownfolder.KnownFolderFlag" title="powcshell.knownfolder.KnownFolderFlag"><span class="pre">KnownFolderFlag</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcshell.shellitem2.html#powcshell.shellitem2.ShellItem2" title="powcshell.shellitem2.ShellItem2"><span class="pre">ShellItem2</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolder.get_shellitem_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder.get_shellitem_v2">
+<span class="sig-name descname"><span class="pre">get_shellitem_v2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powcshell.knownfolder.KnownFolderFlag" title="powcshell.knownfolder.KnownFolderFlag"><span class="pre">KnownFolderFlag</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powcshell.shellitem.html#powcshell.shellitem.ShellItem" title="powcshell.shellitem.ShellItem"><span class="pre">ShellItem</span></a></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolder.get_shellitem_v2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder.get_shellitem_v2_nothrow">
+<span class="sig-name descname"><span class="pre">get_shellitem_v2_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powcshell.knownfolder.KnownFolderFlag" title="powcshell.knownfolder.KnownFolderFlag"><span class="pre">KnownFolderFlag</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powcshell.shellitem.html#powcshell.shellitem.ShellItem" title="powcshell.shellitem.ShellItem"><span class="pre">ShellItem</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolder.get_shellitem_v2_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder.id">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">GUID</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolder.id" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder.id_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">GUID</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolder.id_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder.redirection_capabilitiy_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">redirection_capabilitiy_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcshell.knownfolder.KnownFolderRedirectionCapability" title="powcshell.knownfolder.KnownFolderRedirectionCapability"><span class="pre">KnownFolderRedirectionCapability</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolder.redirection_capabilitiy_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder.redirection_capability">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">redirection_capability</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powcshell.knownfolder.KnownFolderRedirectionCapability" title="powcshell.knownfolder.KnownFolderRedirectionCapability"><span class="pre">KnownFolderRedirectionCapability</span></a></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolder.redirection_capability" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder.set_path">
+<span class="sig-name descname"><span class="pre">set_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powcshell.knownfolder.KnownFolderFlag" title="powcshell.knownfolder.KnownFolderFlag"><span class="pre">KnownFolderFlag</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolder.set_path" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder.set_path_nothrow">
+<span class="sig-name descname"><span class="pre">set_path_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powcshell.knownfolder.KnownFolderFlag" title="powcshell.knownfolder.KnownFolderFlag"><span class="pre">KnownFolderFlag</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolder.set_path_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolder.wrapped_obj">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wrapped_obj</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">c_void_p</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolder.wrapped_obj" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderCategory">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.knownfolder.</span></span><span class="sig-name descname"><span class="pre">KnownFolderCategory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderCategory" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<p>KF_CATEGORY</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderCategory.COMMON">
+<span class="sig-name descname"><span class="pre">COMMON</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderCategory.COMMON" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderCategory.FIXED">
+<span class="sig-name descname"><span class="pre">FIXED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderCategory.FIXED" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderCategory.PERUSER">
+<span class="sig-name descname"><span class="pre">PERUSER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderCategory.PERUSER" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderCategory.VIRTUAL">
+<span class="sig-name descname"><span class="pre">VIRTUAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderCategory.VIRTUAL" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinition">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.knownfolder.</span></span><span class="sig-name descname"><span class="pre">KnownFolderDefinition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powcshell.knownfolder.KnownFolderCategory" title="powcshell.knownfolder.KnownFolderCategory"><span class="pre">KnownFolderCategory</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent_folderid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parsing_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tooltip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">localized_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">security</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attributes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powcshell.knownfolder.KnownFolderDefinitionFlag" title="powcshell.knownfolder.KnownFolderDefinitionFlag"><span class="pre">KnownFolderDefinitionFlag</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">foldertypeid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinition" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>フォルダ定義情報。KNOWNFOLDER_DEFINITION構造体のラッパーです。</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinition.attributes">
+<span class="sig-name descname"><span class="pre">attributes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinition.attributes" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinition.category">
+<span class="sig-name descname"><span class="pre">category</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powcshell.knownfolder.KnownFolderCategory" title="powcshell.knownfolder.KnownFolderCategory"><span class="pre">KnownFolderCategory</span></a></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinition.category" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinition.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinition.description" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinition.empty">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powcshell.knownfolder.KnownFolderDefinition" title="powcshell.knownfolder.KnownFolderDefinition"><span class="pre">KnownFolderDefinition</span></a></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinition.empty" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinition.flags">
+<span class="sig-name descname"><span class="pre">flags</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#powcshell.knownfolder.KnownFolderDefinitionFlag" title="powcshell.knownfolder.KnownFolderDefinitionFlag"><span class="pre">KnownFolderDefinitionFlag</span></a></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinition.flags" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinition.foldertypeid">
+<span class="sig-name descname"><span class="pre">foldertypeid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">GUID</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinition.foldertypeid" title="Link to this definition">#</a></dt>
+<dd><p>FolderTypeIDクラスのGUID定数。</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinition.icon">
+<span class="sig-name descname"><span class="pre">icon</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinition.icon" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinition.localized_name">
+<span class="sig-name descname"><span class="pre">localized_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinition.localized_name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinition.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinition.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinition.parent_folderid">
+<span class="sig-name descname"><span class="pre">parent_folderid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">GUID</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinition.parent_folderid" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinition.parsing_name">
+<span class="sig-name descname"><span class="pre">parsing_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinition.parsing_name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinition.relative_path">
+<span class="sig-name descname"><span class="pre">relative_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinition.relative_path" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinition.security">
+<span class="sig-name descname"><span class="pre">security</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinition.security" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinition.tooltip">
+<span class="sig-name descname"><span class="pre">tooltip</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinition.tooltip" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinitionFlag">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.knownfolder.</span></span><span class="sig-name descname"><span class="pre">KnownFolderDefinitionFlag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinitionFlag" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntFlag</span></code></p>
+<p>KF_DEFINITION_FLAGS</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinitionFlag.DEFAULT">
+<span class="sig-name descname"><span class="pre">DEFAULT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinitionFlag.DEFAULT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinitionFlag.LOCAL_REDIRECT_ONLY">
+<span class="sig-name descname"><span class="pre">LOCAL_REDIRECT_ONLY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinitionFlag.LOCAL_REDIRECT_ONLY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinitionFlag.NO_REDIRECT_UI">
+<span class="sig-name descname"><span class="pre">NO_REDIRECT_UI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">64</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinitionFlag.NO_REDIRECT_UI" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinitionFlag.PRECREATE">
+<span class="sig-name descname"><span class="pre">PRECREATE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinitionFlag.PRECREATE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinitionFlag.PUBLISHEXPANDEDPATH">
+<span class="sig-name descname"><span class="pre">PUBLISHEXPANDEDPATH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinitionFlag.PUBLISHEXPANDEDPATH" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinitionFlag.ROAMABLE">
+<span class="sig-name descname"><span class="pre">ROAMABLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinitionFlag.ROAMABLE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderDefinitionFlag.STREAM">
+<span class="sig-name descname"><span class="pre">STREAM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderDefinitionFlag.STREAM" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderFlag">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.knownfolder.</span></span><span class="sig-name descname"><span class="pre">KnownFolderFlag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderFlag" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntFlag</span></code></p>
+<p>KNOWN_FOLDER_FLAG</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderFlag.ALIAS_ONLY">
+<span class="sig-name descname"><span class="pre">ALIAS_ONLY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2147483648</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderFlag.ALIAS_ONLY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderFlag.CREATE">
+<span class="sig-name descname"><span class="pre">CREATE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32768</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderFlag.CREATE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderFlag.DEFAULT">
+<span class="sig-name descname"><span class="pre">DEFAULT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderFlag.DEFAULT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderFlag.DEFAULT_PATH">
+<span class="sig-name descname"><span class="pre">DEFAULT_PATH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1024</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderFlag.DEFAULT_PATH" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderFlag.DONT_UNEXPAND">
+<span class="sig-name descname"><span class="pre">DONT_UNEXPAND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8192</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderFlag.DONT_UNEXPAND" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderFlag.DONT_VERIFY">
+<span class="sig-name descname"><span class="pre">DONT_VERIFY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16384</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderFlag.DONT_VERIFY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderFlag.FORCE_APPCONTAINER_REDIRECTION">
+<span class="sig-name descname"><span class="pre">FORCE_APPCONTAINER_REDIRECTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">131072</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderFlag.FORCE_APPCONTAINER_REDIRECTION" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderFlag.FORCE_APP_DATA_REDIRECTION">
+<span class="sig-name descname"><span class="pre">FORCE_APP_DATA_REDIRECTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">524288</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderFlag.FORCE_APP_DATA_REDIRECTION" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderFlag.FORCE_PACKAGE_REDIRECTION">
+<span class="sig-name descname"><span class="pre">FORCE_PACKAGE_REDIRECTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">131072</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderFlag.FORCE_PACKAGE_REDIRECTION" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderFlag.INIT">
+<span class="sig-name descname"><span class="pre">INIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2048</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderFlag.INIT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderFlag.NOT_PARENT_RELATIVE">
+<span class="sig-name descname"><span class="pre">NOT_PARENT_RELATIVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">512</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderFlag.NOT_PARENT_RELATIVE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderFlag.NO_ALIAS">
+<span class="sig-name descname"><span class="pre">NO_ALIAS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4096</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderFlag.NO_ALIAS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderFlag.NO_APPCONTAINER_REDIRECTION">
+<span class="sig-name descname"><span class="pre">NO_APPCONTAINER_REDIRECTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">65536</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderFlag.NO_APPCONTAINER_REDIRECTION" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderFlag.NO_PACKAGE_REDIRECTION">
+<span class="sig-name descname"><span class="pre">NO_PACKAGE_REDIRECTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">65536</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderFlag.NO_PACKAGE_REDIRECTION" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderFlag.RETURN_FILTER_REDIRECTION_TARGET">
+<span class="sig-name descname"><span class="pre">RETURN_FILTER_REDIRECTION_TARGET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">262144</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderFlag.RETURN_FILTER_REDIRECTION_TARGET" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderFlag.SIMPLE_IDLIST">
+<span class="sig-name descname"><span class="pre">SIMPLE_IDLIST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">256</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderFlag.SIMPLE_IDLIST" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.knownfolder.</span></span><span class="sig-name descname"><span class="pre">KnownFolderManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>既知フォルダマネージャ。IKnownFolderManagerインターフェイスのラッパーです。</p>
+<p class="rubric">サンプル</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">kfmanager</span> <span class="o">=</span> <span class="n">KnownFolderManager</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.create">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powcshell.knownfolder.KnownFolderManager" title="powcshell.knownfolder.KnownFolderManager"><span class="pre">KnownFolderManager</span></a></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.create" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.find_folder_from_idlist">
+<span class="sig-name descname"><span class="pre">find_folder_from_idlist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pidl</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">c_void_p</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powcshell.knownfolder.KnownFolder" title="powcshell.knownfolder.KnownFolder"><span class="pre">KnownFolder</span></a></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.find_folder_from_idlist" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.find_folder_from_idlist_nothrow">
+<span class="sig-name descname"><span class="pre">find_folder_from_idlist_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pidl</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">c_void_p</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcshell.knownfolder.KnownFolder" title="powcshell.knownfolder.KnownFolder"><span class="pre">KnownFolder</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.find_folder_from_idlist_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.find_folder_from_path">
+<span class="sig-name descname"><span class="pre">find_folder_from_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powcshell.knownfolder.FffpMode" title="powcshell.knownfolder.FffpMode"><span class="pre">FffpMode</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powcshell.knownfolder.KnownFolder" title="powcshell.knownfolder.KnownFolder"><span class="pre">KnownFolder</span></a></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.find_folder_from_path" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.find_folder_from_path_nothrow">
+<span class="sig-name descname"><span class="pre">find_folder_from_path_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powcshell.knownfolder.FffpMode" title="powcshell.knownfolder.FffpMode"><span class="pre">FffpMode</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcshell.knownfolder.KnownFolder" title="powcshell.knownfolder.KnownFolder"><span class="pre">KnownFolder</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.find_folder_from_path_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.folderid_from_csidl">
+<span class="sig-name descname"><span class="pre">folderid_from_csidl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csidl</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">GUID</span></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.folderid_from_csidl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.folderid_from_csidl_nothrow">
+<span class="sig-name descname"><span class="pre">folderid_from_csidl_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csidl</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">GUID</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.folderid_from_csidl_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.folderid_to_csidl">
+<span class="sig-name descname"><span class="pre">folderid_to_csidl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folderid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.folderid_to_csidl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.folderid_to_csidl_nothrow">
+<span class="sig-name descname"><span class="pre">folderid_to_csidl_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folderid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.folderid_to_csidl_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.folderids">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">folderids</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">GUID</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.folderids" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.folderids_nothrow">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">folderids_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">GUID</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.folderids_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.get_folder">
+<span class="sig-name descname"><span class="pre">get_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folderid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powcshell.knownfolder.KnownFolder" title="powcshell.knownfolder.KnownFolder"><span class="pre">KnownFolder</span></a></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.get_folder" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.get_folder_byname">
+<span class="sig-name descname"><span class="pre">get_folder_byname</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powcshell.knownfolder.KnownFolder" title="powcshell.knownfolder.KnownFolder"><span class="pre">KnownFolder</span></a></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.get_folder_byname" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.get_folder_byname_nothrow">
+<span class="sig-name descname"><span class="pre">get_folder_byname_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcshell.knownfolder.KnownFolder" title="powcshell.knownfolder.KnownFolder"><span class="pre">KnownFolder</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.get_folder_byname_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.get_folder_nothrow">
+<span class="sig-name descname"><span class="pre">get_folder_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folderid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powcshell.knownfolder.KnownFolder" title="powcshell.knownfolder.KnownFolder"><span class="pre">KnownFolder</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.get_folder_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.redirect">
+<span class="sig-name descname"><span class="pre">redirect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folderid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powcshell.knownfolder.KnownFolderRedirectFlag" title="powcshell.knownfolder.KnownFolderRedirectFlag"><span class="pre">KnownFolderRedirectFlag</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclusions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">GUID</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_handle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.redirect" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.redirect_nothrow">
+<span class="sig-name descname"><span class="pre">redirect_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folderid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powcshell.knownfolder.KnownFolderRedirectFlag" title="powcshell.knownfolder.KnownFolderRedirectFlag"><span class="pre">KnownFolderRedirectFlag</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclusions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">GUID</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_handle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.redirect_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.register_folder">
+<span class="sig-name descname"><span class="pre">register_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folderid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">definition</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powcshell.knownfolder.KnownFolderDefinition" title="powcshell.knownfolder.KnownFolderDefinition"><span class="pre">KnownFolderDefinition</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.register_folder" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.register_folder_nothrow">
+<span class="sig-name descname"><span class="pre">register_folder_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folderid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">definition</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#powcshell.knownfolder.KnownFolderDefinition" title="powcshell.knownfolder.KnownFolderDefinition"><span class="pre">KnownFolderDefinition</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.register_folder_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.unregister_folder">
+<span class="sig-name descname"><span class="pre">unregister_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folderid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.unregister_folder" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.unregister_folder_nothrow">
+<span class="sig-name descname"><span class="pre">unregister_folder_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folderid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.unregister_folder_nothrow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderManager.wrapped_obj">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wrapped_obj</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">c_void_p</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderManager.wrapped_obj" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderRedirectFlag">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.knownfolder.</span></span><span class="sig-name descname"><span class="pre">KnownFolderRedirectFlag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderRedirectFlag" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntFlag</span></code></p>
+<p>KF_REDIRECT_FLAGS</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderRedirectFlag.CHECK_ONLY">
+<span class="sig-name descname"><span class="pre">CHECK_ONLY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderRedirectFlag.CHECK_ONLY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderRedirectFlag.COPY_CONTENTS">
+<span class="sig-name descname"><span class="pre">COPY_CONTENTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">512</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderRedirectFlag.COPY_CONTENTS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderRedirectFlag.COPY_SOURCE_DACL">
+<span class="sig-name descname"><span class="pre">COPY_SOURCE_DACL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderRedirectFlag.COPY_SOURCE_DACL" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderRedirectFlag.DEL_SOURCE_CONTENTS">
+<span class="sig-name descname"><span class="pre">DEL_SOURCE_CONTENTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1024</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderRedirectFlag.DEL_SOURCE_CONTENTS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderRedirectFlag.EXCLUDE_ALL_KNOWN_SUBFOLDERS">
+<span class="sig-name descname"><span class="pre">EXCLUDE_ALL_KNOWN_SUBFOLDERS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">128</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderRedirectFlag.EXCLUDE_ALL_KNOWN_SUBFOLDERS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderRedirectFlag.OWNER_USER">
+<span class="sig-name descname"><span class="pre">OWNER_USER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderRedirectFlag.OWNER_USER" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderRedirectFlag.PIN">
+<span class="sig-name descname"><span class="pre">PIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">128</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderRedirectFlag.PIN" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderRedirectFlag.SET_OWNER_EXPLICIT">
+<span class="sig-name descname"><span class="pre">SET_OWNER_EXPLICIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderRedirectFlag.SET_OWNER_EXPLICIT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderRedirectFlag.UNPIN">
+<span class="sig-name descname"><span class="pre">UNPIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">64</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderRedirectFlag.UNPIN" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderRedirectFlag.USER_EXCLUSIVE">
+<span class="sig-name descname"><span class="pre">USER_EXCLUSIVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderRedirectFlag.USER_EXCLUSIVE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderRedirectFlag.WITH_UI">
+<span class="sig-name descname"><span class="pre">WITH_UI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderRedirectFlag.WITH_UI" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderRedirectionCapability">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.knownfolder.</span></span><span class="sig-name descname"><span class="pre">KnownFolderRedirectionCapability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcshell.knownfolder.KnownFolderRedirectionCapability" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntFlag</span></code></p>
+<p>KF_REDIRECTION_CAPABILITIES</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderRedirectionCapability.ALLOW_ALL">
+<span class="sig-name descname"><span class="pre">ALLOW_ALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">255</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderRedirectionCapability.ALLOW_ALL" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderRedirectionCapability.DENY_ALL">
+<span class="sig-name descname"><span class="pre">DENY_ALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1048320</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderRedirectionCapability.DENY_ALL" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderRedirectionCapability.DENY_PERMISSIONS">
+<span class="sig-name descname"><span class="pre">DENY_PERMISSIONS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1024</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderRedirectionCapability.DENY_PERMISSIONS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderRedirectionCapability.DENY_POLICY">
+<span class="sig-name descname"><span class="pre">DENY_POLICY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">512</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderRedirectionCapability.DENY_POLICY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderRedirectionCapability.DENY_POLICY_REDIRECTED">
+<span class="sig-name descname"><span class="pre">DENY_POLICY_REDIRECTED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">256</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderRedirectionCapability.DENY_POLICY_REDIRECTED" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfolder.KnownFolderRedirectionCapability.REDIRECTABLE">
+<span class="sig-name descname"><span class="pre">REDIRECTABLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powcshell.knownfolder.KnownFolderRedirectionCapability.REDIRECTABLE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="powcshell.itemidlist.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">powcshell.itemidlist module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="powcshell.knownfolderid.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">powcshell.knownfolderid module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目次
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.FffpMode"><code class="docutils literal notranslate"><span class="pre">FffpMode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.FffpMode.EXACT_MATCH"><code class="docutils literal notranslate"><span class="pre">FffpMode.EXACT_MATCH</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.FffpMode.NEAREST_PARENT_MATCH"><code class="docutils literal notranslate"><span class="pre">FffpMode.NEAREST_PARENT_MATCH</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolder"><code class="docutils literal notranslate"><span class="pre">IKnownFolder</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolder.GetCategory"><code class="docutils literal notranslate"><span class="pre">IKnownFolder.GetCategory</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolder.GetFolderDefinition"><code class="docutils literal notranslate"><span class="pre">IKnownFolder.GetFolderDefinition</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolder.GetFolderType"><code class="docutils literal notranslate"><span class="pre">IKnownFolder.GetFolderType</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolder.GetIDList"><code class="docutils literal notranslate"><span class="pre">IKnownFolder.GetIDList</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolder.GetId"><code class="docutils literal notranslate"><span class="pre">IKnownFolder.GetId</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolder.GetPath"><code class="docutils literal notranslate"><span class="pre">IKnownFolder.GetPath</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolder.GetRedirectionCapabilities"><code class="docutils literal notranslate"><span class="pre">IKnownFolder.GetRedirectionCapabilities</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolder.GetShellItem"><code class="docutils literal notranslate"><span class="pre">IKnownFolder.GetShellItem</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolder.SetPath"><code class="docutils literal notranslate"><span class="pre">IKnownFolder.SetPath</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager.FindFolderFromIDList"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager.FindFolderFromIDList</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager.FindFolderFromPath"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager.FindFolderFromPath</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager.FolderIdFromCsidl"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager.FolderIdFromCsidl</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager.FolderIdToCsidl"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager.FolderIdToCsidl</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager.GetFolder"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager.GetFolder</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager.GetFolderByName"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager.GetFolderByName</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager.GetFolderIds"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager.GetFolderIds</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager.Redirect"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager.Redirect</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager.RegisterFolder"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager.RegisterFolder</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.IKnownFolderManager.UnregisterFolder"><code class="docutils literal notranslate"><span class="pre">IKnownFolderManager.UnregisterFolder</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder"><code class="docutils literal notranslate"><span class="pre">KnownFolder</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.category"><code class="docutils literal notranslate"><span class="pre">KnownFolder.category</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.category_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolder.category_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.folder_definition"><code class="docutils literal notranslate"><span class="pre">KnownFolder.folder_definition</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.folder_definition_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolder.folder_definition_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.foldertype"><code class="docutils literal notranslate"><span class="pre">KnownFolder.foldertype</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.foldertype_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolder.foldertype_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.get_idlist"><code class="docutils literal notranslate"><span class="pre">KnownFolder.get_idlist()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.get_idlist_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolder.get_idlist_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.get_path"><code class="docutils literal notranslate"><span class="pre">KnownFolder.get_path()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.get_path_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolder.get_path_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.get_shellitem"><code class="docutils literal notranslate"><span class="pre">KnownFolder.get_shellitem()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.get_shellitem_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolder.get_shellitem_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.get_shellitem_v2"><code class="docutils literal notranslate"><span class="pre">KnownFolder.get_shellitem_v2()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.get_shellitem_v2_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolder.get_shellitem_v2_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.id"><code class="docutils literal notranslate"><span class="pre">KnownFolder.id</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.id_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolder.id_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.redirection_capabilitiy_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolder.redirection_capabilitiy_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.redirection_capability"><code class="docutils literal notranslate"><span class="pre">KnownFolder.redirection_capability</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.set_path"><code class="docutils literal notranslate"><span class="pre">KnownFolder.set_path()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.set_path_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolder.set_path_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolder.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">KnownFolder.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderCategory"><code class="docutils literal notranslate"><span class="pre">KnownFolderCategory</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderCategory.COMMON"><code class="docutils literal notranslate"><span class="pre">KnownFolderCategory.COMMON</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderCategory.FIXED"><code class="docutils literal notranslate"><span class="pre">KnownFolderCategory.FIXED</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderCategory.PERUSER"><code class="docutils literal notranslate"><span class="pre">KnownFolderCategory.PERUSER</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderCategory.VIRTUAL"><code class="docutils literal notranslate"><span class="pre">KnownFolderCategory.VIRTUAL</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.attributes"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.attributes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.category"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.category</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.description"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.description</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.empty"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.empty()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.flags"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.flags</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.foldertypeid"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.foldertypeid</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.icon"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.icon</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.localized_name"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.localized_name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.name"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.parent_folderid"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.parent_folderid</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.parsing_name"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.parsing_name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.relative_path"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.relative_path</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.security"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.security</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinition.tooltip"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinition.tooltip</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinitionFlag"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinitionFlag</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinitionFlag.DEFAULT"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinitionFlag.DEFAULT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinitionFlag.LOCAL_REDIRECT_ONLY"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinitionFlag.LOCAL_REDIRECT_ONLY</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinitionFlag.NO_REDIRECT_UI"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinitionFlag.NO_REDIRECT_UI</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinitionFlag.PRECREATE"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinitionFlag.PRECREATE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinitionFlag.PUBLISHEXPANDEDPATH"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinitionFlag.PUBLISHEXPANDEDPATH</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinitionFlag.ROAMABLE"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinitionFlag.ROAMABLE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderDefinitionFlag.STREAM"><code class="docutils literal notranslate"><span class="pre">KnownFolderDefinitionFlag.STREAM</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.ALIAS_ONLY"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.ALIAS_ONLY</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.CREATE"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.CREATE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.DEFAULT"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.DEFAULT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.DEFAULT_PATH"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.DEFAULT_PATH</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.DONT_UNEXPAND"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.DONT_UNEXPAND</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.DONT_VERIFY"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.DONT_VERIFY</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.FORCE_APPCONTAINER_REDIRECTION"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.FORCE_APPCONTAINER_REDIRECTION</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.FORCE_APP_DATA_REDIRECTION"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.FORCE_APP_DATA_REDIRECTION</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.FORCE_PACKAGE_REDIRECTION"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.FORCE_PACKAGE_REDIRECTION</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.INIT"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.INIT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.NOT_PARENT_RELATIVE"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.NOT_PARENT_RELATIVE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.NO_ALIAS"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.NO_ALIAS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.NO_APPCONTAINER_REDIRECTION"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.NO_APPCONTAINER_REDIRECTION</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.NO_PACKAGE_REDIRECTION"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.NO_PACKAGE_REDIRECTION</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.RETURN_FILTER_REDIRECTION_TARGET"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.RETURN_FILTER_REDIRECTION_TARGET</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderFlag.SIMPLE_IDLIST"><code class="docutils literal notranslate"><span class="pre">KnownFolderFlag.SIMPLE_IDLIST</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.create"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.create()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.find_folder_from_idlist"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.find_folder_from_idlist()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.find_folder_from_idlist_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.find_folder_from_idlist_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.find_folder_from_path"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.find_folder_from_path()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.find_folder_from_path_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.find_folder_from_path_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.folderid_from_csidl"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.folderid_from_csidl()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.folderid_from_csidl_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.folderid_from_csidl_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.folderid_to_csidl"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.folderid_to_csidl()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.folderid_to_csidl_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.folderid_to_csidl_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.folderids"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.folderids</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.folderids_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.folderids_nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.get_folder"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.get_folder()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.get_folder_byname"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.get_folder_byname()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.get_folder_byname_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.get_folder_byname_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.get_folder_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.get_folder_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.redirect"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.redirect()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.redirect_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.redirect_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.register_folder"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.register_folder()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.register_folder_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.register_folder_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.unregister_folder"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.unregister_folder()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.unregister_folder_nothrow"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.unregister_folder_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderManager.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">KnownFolderManager.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.CHECK_ONLY"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.CHECK_ONLY</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.COPY_CONTENTS"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.COPY_CONTENTS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.COPY_SOURCE_DACL"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.COPY_SOURCE_DACL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.DEL_SOURCE_CONTENTS"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.DEL_SOURCE_CONTENTS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.EXCLUDE_ALL_KNOWN_SUBFOLDERS"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.EXCLUDE_ALL_KNOWN_SUBFOLDERS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.OWNER_USER"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.OWNER_USER</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.PIN"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.PIN</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.SET_OWNER_EXPLICIT"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.SET_OWNER_EXPLICIT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.UNPIN"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.UNPIN</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.USER_EXCLUSIVE"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.USER_EXCLUSIVE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectFlag.WITH_UI"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectFlag.WITH_UI</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectionCapability"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectionCapability</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectionCapability.ALLOW_ALL"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectionCapability.ALLOW_ALL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectionCapability.DENY_ALL"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectionCapability.DENY_ALL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectionCapability.DENY_PERMISSIONS"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectionCapability.DENY_PERMISSIONS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectionCapability.DENY_POLICY"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectionCapability.DENY_POLICY</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectionCapability.DENY_POLICY_REDIRECTED"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectionCapability.DENY_POLICY_REDIRECTED</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfolder.KnownFolderRedirectionCapability.REDIRECTABLE"><code class="docutils literal notranslate"><span class="pre">KnownFolderRedirectionCapability.REDIRECTABLE</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+著者 poti-san
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, poti-san.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

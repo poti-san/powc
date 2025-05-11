@@ -1,0 +1,1095 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>powccoreaudio package &#8212; powc  ドキュメント</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=1cf7f4d9"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=4755f45a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'apiref/powccoreaudio';</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="powccoreaudio.devicepropsinstore module" href="powccoreaudio.devicepropsinstore.html" />
+    <link rel="prev" title="powcwmi.wbemstatus module" href="powcwmi.wbemstatus.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">powc  ドキュメント</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">検索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../package_summary/index.html">パッケージの概要</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powc.html">powc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcpropsys.html">powcpropsys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcshell.html">powcshell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcwmi.html">powcwmi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powccoreaudio.html">powccoreaudio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcd2d.html">powcd2d</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../apiref.html">APIドキュメント</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="powc.html">powc package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powc.comcat.html">powc.comcat module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.comobj.html">powc.comobj module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.comsec.html">powc.comsec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.core.html">powc.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.dataobj.html">powc.dataobj module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.datetime.html">powc.datetime module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.errlog.html">powc.errlog module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.globalmem.html">powc.globalmem module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.persist.html">powc.persist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.propbag.html">powc.propbag module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.safearray.html">powc.safearray module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.stream.html">powc.stream module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.variant.html">powc.variant module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcpropsys.html">powcpropsys package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html">powcpropsys.propchange module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html">powcpropsys.propdesc module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propkey.html">powcpropsys.propkey module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html">powcpropsys.propstore module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html">powcpropsys.propsys module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html">powcpropsys.propvariant module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcshell.html">powcshell package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcshell.shellitemutil.html">powcshell.shellitemutil package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.computerfolderinfo.html">powcshell.shellitemutil.computerfolderinfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.fontiteminfo.html">powcshell.shellitemutil.fontiteminfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.recyclebiniteminfo.html">powcshell.shellitemutil.recyclebiniteminfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.volumeinfo.html">powcshell.shellitemutil.volumeinfo module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.desktopwallpaper.html">powcshell.desktopwallpaper module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.itemidlist.html">powcshell.itemidlist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfolder.html">powcshell.knownfolder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfolderid.html">powcshell.knownfolderid module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfoldertypeid.html">powcshell.knownfoldertypeid module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellexec.html">powcshell.shellexec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellfileop.html">powcshell.shellfileop module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellfileoputil.html">powcshell.shellfileoputil module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitem.html">powcshell.shellitem module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitem2.html">powcshell.shellitem2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitemarray.html">powcshell.shellitemarray module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitemenum.html">powcshell.shellitemenum module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shelllibrary.html">powcshell.shelllibrary module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shelllink.html">powcshell.shelllink module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.url.html">powcshell.url module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcwmi.html">powcwmi package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.comtypes.html">powcwmi.comtypes module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.wbemflags.html">powcwmi.wbemflags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.wbemstatus.html">powcwmi.wbemstatus module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">powccoreaudio package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devicepropsinstore.html">powccoreaudio.devicepropsinstore module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html">powccoreaudio.devprop module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html">powccoreaudio.endpointvolume module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html">powccoreaudio.mmdevice module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcd2d.html">powcd2d package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.d2d.html">powcd2d.d2d package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.interfacebody.html">powcd2d.d2d.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html">powcd2d.d2d.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dcommon.html">powcd2d.dcommon package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html">powcd2d.dcommon.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dwrite.html">powcd2d.dwrite package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.interfacebody.html">powcd2d.dwrite.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html">powcd2d.dwrite.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dxgi.html">powcd2d.dxgi package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.interfacebody.html">powcd2d.dxgi.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html">powcd2d.dxgi.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.wic.html">powcd2d.wic package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html">powcd2d.wic.constant module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.interfacebody.html">powcd2d.wic.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html">powcd2d.wic.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.d3dmisc.html">powcd2d.d3dmisc module</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../py-modindex.html">モジュール索引</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全画面モード"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>powccoreaudio package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目次 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-powccoreaudio">
+<span id="powccoreaudio-package"></span><h1>powccoreaudio package<a class="headerlink" href="#module-powccoreaudio" title="Link to this heading">#</a></h1>
+<p>CoreAudio API。</p>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="powccoreaudio.devicepropsinstore.html">powccoreaudio.devicepropsinstore module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.devicepropsinstore.html#powccoreaudio.devicepropsinstore.DevicePropertiesReadOnlyInPropertyStore"><code class="docutils literal notranslate"><span class="pre">DevicePropertiesReadOnlyInPropertyStore</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devicepropsinstore.html#powccoreaudio.devicepropsinstore.DevicePropertiesReadOnlyInPropertyStore.device_desc"><code class="docutils literal notranslate"><span class="pre">DevicePropertiesReadOnlyInPropertyStore.device_desc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devicepropsinstore.html#powccoreaudio.devicepropsinstore.DevicePropertiesReadOnlyInPropertyStore.device_desc_nothrow"><code class="docutils literal notranslate"><span class="pre">DevicePropertiesReadOnlyInPropertyStore.device_desc_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devicepropsinstore.html#powccoreaudio.devicepropsinstore.DevicePropertiesReadOnlyInPropertyStore.friendlyname"><code class="docutils literal notranslate"><span class="pre">DevicePropertiesReadOnlyInPropertyStore.friendlyname</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devicepropsinstore.html#powccoreaudio.devicepropsinstore.DevicePropertiesReadOnlyInPropertyStore.friendlyname_nothrow"><code class="docutils literal notranslate"><span class="pre">DevicePropertiesReadOnlyInPropertyStore.friendlyname_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devicepropsinstore.html#powccoreaudio.devicepropsinstore.DevicePropertiesReadOnlyInPropertyStore.manufacturer"><code class="docutils literal notranslate"><span class="pre">DevicePropertiesReadOnlyInPropertyStore.manufacturer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devicepropsinstore.html#powccoreaudio.devicepropsinstore.DevicePropertiesReadOnlyInPropertyStore.manufacturer_nothrow"><code class="docutils literal notranslate"><span class="pre">DevicePropertiesReadOnlyInPropertyStore.manufacturer_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devicepropsinstore.html#powccoreaudio.devicepropsinstore.DevicePropertiesReadOnlyInPropertyStore.propstore"><code class="docutils literal notranslate"><span class="pre">DevicePropertiesReadOnlyInPropertyStore.propstore</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="powccoreaudio.devprop.html">powccoreaudio.devprop module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceClassPropertyKeys"><code class="docutils literal notranslate"><span class="pre">DeviceClassPropertyKeys</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceClassPropertyKeys.CHARACTERISTICS"><code class="docutils literal notranslate"><span class="pre">DeviceClassPropertyKeys.CHARACTERISTICS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceClassPropertyKeys.CLASS_CO_INSTALLERS"><code class="docutils literal notranslate"><span class="pre">DeviceClassPropertyKeys.CLASS_CO_INSTALLERS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceClassPropertyKeys.CLASS_INSTALLER"><code class="docutils literal notranslate"><span class="pre">DeviceClassPropertyKeys.CLASS_INSTALLER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceClassPropertyKeys.CLASS_NAME"><code class="docutils literal notranslate"><span class="pre">DeviceClassPropertyKeys.CLASS_NAME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceClassPropertyKeys.DEFAULT_SERVICE"><code class="docutils literal notranslate"><span class="pre">DeviceClassPropertyKeys.DEFAULT_SERVICE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceClassPropertyKeys.DEV_TYPE"><code class="docutils literal notranslate"><span class="pre">DeviceClassPropertyKeys.DEV_TYPE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceClassPropertyKeys.DHP_REBALANCE_OPT_OUT"><code class="docutils literal notranslate"><span class="pre">DeviceClassPropertyKeys.DHP_REBALANCE_OPT_OUT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceClassPropertyKeys.EXCLUSIVE"><code class="docutils literal notranslate"><span class="pre">DeviceClassPropertyKeys.EXCLUSIVE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceClassPropertyKeys.ICON"><code class="docutils literal notranslate"><span class="pre">DeviceClassPropertyKeys.ICON</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceClassPropertyKeys.ICON_PATH"><code class="docutils literal notranslate"><span class="pre">DeviceClassPropertyKeys.ICON_PATH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceClassPropertyKeys.LOWER_FILTERS"><code class="docutils literal notranslate"><span class="pre">DeviceClassPropertyKeys.LOWER_FILTERS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceClassPropertyKeys.NAME"><code class="docutils literal notranslate"><span class="pre">DeviceClassPropertyKeys.NAME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceClassPropertyKeys.NO_DISPLAY_CLASS"><code class="docutils literal notranslate"><span class="pre">DeviceClassPropertyKeys.NO_DISPLAY_CLASS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceClassPropertyKeys.NO_INSTALL_CLASS"><code class="docutils literal notranslate"><span class="pre">DeviceClassPropertyKeys.NO_INSTALL_CLASS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceClassPropertyKeys.NO_USE_CLASS"><code class="docutils literal notranslate"><span class="pre">DeviceClassPropertyKeys.NO_USE_CLASS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceClassPropertyKeys.PROP_PAGE_PROVIDER"><code class="docutils literal notranslate"><span class="pre">DeviceClassPropertyKeys.PROP_PAGE_PROVIDER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceClassPropertyKeys.SECURITY"><code class="docutils literal notranslate"><span class="pre">DeviceClassPropertyKeys.SECURITY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceClassPropertyKeys.SECURITY_SDS"><code class="docutils literal notranslate"><span class="pre">DeviceClassPropertyKeys.SECURITY_SDS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceClassPropertyKeys.SILENT_INSTALL"><code class="docutils literal notranslate"><span class="pre">DeviceClassPropertyKeys.SILENT_INSTALL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceClassPropertyKeys.UPPER_FILTERS"><code class="docutils literal notranslate"><span class="pre">DeviceClassPropertyKeys.UPPER_FILTERS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.ADDRESS"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.ADDRESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.ALWAYS_SHOW_DEVICE_AS_CONNECTED"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.ALWAYS_SHOW_DEVICE_AS_CONNECTED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.ASSOCIATION_ARRAY"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.ASSOCIATION_ARRAY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.BASELINE_EXPERIENCE_ID"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.BASELINE_EXPERIENCE_ID</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.CATEGORY"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.CATEGORY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.CATEGORY_DESC_PLURAL"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.CATEGORY_DESC_PLURAL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.CATEGORY_DESC_SINGULAR"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.CATEGORY_DESC_SINGULAR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.CATEGORY_GROUP_DESC"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.CATEGORY_GROUP_DESC</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.CATEGORY_GROUP_ICON"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.CATEGORY_GROUP_ICON</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.CATEGORY_ICON"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.CATEGORY_ICON</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.CONFIG_FLAGS"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.CONFIG_FLAGS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.CUSTOM_PRIVILEGED_PACKAGE_FAMILY_NAMES"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.CUSTOM_PRIVILEGED_PACKAGE_FAMILY_NAMES</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.DEVICE_DESCRIPTION1"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.DEVICE_DESCRIPTION1</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.DEVICE_DESCRIPTION2"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.DEVICE_DESCRIPTION2</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.DEVICE_FUNCTION_SUB_RANK"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.DEVICE_FUNCTION_SUB_RANK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.DISCOVERY_METHOD"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.DISCOVERY_METHOD</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.EXPERIENCE_ID"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.EXPERIENCE_ID</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.FRIENDLY_NAME"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.FRIENDLY_NAME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.HAS_PROBLEM"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.HAS_PROBLEM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.ICON"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.ICON</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.INSTALL_IN_PROGRESS"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.INSTALL_IN_PROGRESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.IS_AUTHENTICATED"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.IS_AUTHENTICATED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.IS_CONNECTED"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.IS_CONNECTED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.IS_DEFAULT_DEVICE"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.IS_DEFAULT_DEVICE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.IS_DEVICE_UNIQUELY_IDENTIFIABLE"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.IS_DEVICE_UNIQUELY_IDENTIFIABLE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.IS_ENCRYPTED"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.IS_ENCRYPTED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.IS_LOCAL_MACHINE"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.IS_LOCAL_MACHINE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.IS_METADATA_SEARCH_IN_PROGRESS"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.IS_METADATA_SEARCH_IN_PROGRESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.IS_NETWORK_DEVICE"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.IS_NETWORK_DEVICE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.IS_NOT_INTERESTING_FOR_DISPLAY"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.IS_NOT_INTERESTING_FOR_DISPLAY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.IS_PAIRED"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.IS_PAIRED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.IS_REBOOT_REQUIRED"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.IS_REBOOT_REQUIRED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.IS_SHARED_DEVICE"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.IS_SHARED_DEVICE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.IS_SHOW_IN_DISCONNECTED_STATE"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.IS_SHOW_IN_DISCONNECTED_STATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.LAST_CONNECTED"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.LAST_CONNECTED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.LAST_SEEN"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.LAST_SEEN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.LAUNCH_DEVICE_STAGE_FROM_EXPLORER"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.LAUNCH_DEVICE_STAGE_FROM_EXPLORER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.LAUNCH_DEVICE_STAGE_ON_DEVICE_CONNECT"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.LAUNCH_DEVICE_STAGE_ON_DEVICE_CONNECT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.MANUFACTURER"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.MANUFACTURER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.METADATA_CABINET"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.METADATA_CABINET</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.METADATA_CHECKSUM"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.METADATA_CHECKSUM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.METADATA_PATH"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.METADATA_PATH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.MODEL_NAME"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.MODEL_NAME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.MODEL_NUMBER"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.MODEL_NUMBER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.PRIMARY_CATEGORY"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.PRIMARY_CATEGORY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.PRIVILEGED_PACKAGE_FAMILY_NAMES"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.PRIVILEGED_PACKAGE_FAMILY_NAMES</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.REQUIRES_PAIRING_ELEVATION"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.REQUIRES_PAIRING_ELEVATION</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.REQUIRES_UNINSTALL_ELEVATION"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.REQUIRES_UNINSTALL_ELEVATION</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.UNPAIR_UNINSTALL"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.UNPAIR_UNINSTALL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceContainerDevicePropertyKeys.VERSION"><code class="docutils literal notranslate"><span class="pre">DeviceContainerDevicePropertyKeys.VERSION</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceDisplayDevicePropertyKeys"><code class="docutils literal notranslate"><span class="pre">DeviceDisplayDevicePropertyKeys</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceDisplayDevicePropertyKeys.ALWAYS_SHOW_DEVICE_AS_CONNECTED"><code class="docutils literal notranslate"><span class="pre">DeviceDisplayDevicePropertyKeys.ALWAYS_SHOW_DEVICE_AS_CONNECTED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceDisplayDevicePropertyKeys.CATEGORY"><code class="docutils literal notranslate"><span class="pre">DeviceDisplayDevicePropertyKeys.CATEGORY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceDisplayDevicePropertyKeys.DISCOVERY_METHOD"><code class="docutils literal notranslate"><span class="pre">DeviceDisplayDevicePropertyKeys.DISCOVERY_METHOD</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceDisplayDevicePropertyKeys.IS_NETWORK_DEVICE"><code class="docutils literal notranslate"><span class="pre">DeviceDisplayDevicePropertyKeys.IS_NETWORK_DEVICE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceDisplayDevicePropertyKeys.IS_NOT_INTERESTING_FOR_DISPLAY"><code class="docutils literal notranslate"><span class="pre">DeviceDisplayDevicePropertyKeys.IS_NOT_INTERESTING_FOR_DISPLAY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceDisplayDevicePropertyKeys.IS_SHOW_IN_DISCONNECTED_STATE"><code class="docutils literal notranslate"><span class="pre">DeviceDisplayDevicePropertyKeys.IS_SHOW_IN_DISCONNECTED_STATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceDisplayDevicePropertyKeys.REQUIRES_UNINSTALL_ELEVATION"><code class="docutils literal notranslate"><span class="pre">DeviceDisplayDevicePropertyKeys.REQUIRES_UNINSTALL_ELEVATION</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceDisplayDevicePropertyKeys.UNPAIR_UNINSTALL"><code class="docutils literal notranslate"><span class="pre">DeviceDisplayDevicePropertyKeys.UNPAIR_UNINSTALL</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceInterfaceClassDevicePropertyKeys"><code class="docutils literal notranslate"><span class="pre">DeviceInterfaceClassDevicePropertyKeys</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceInterfaceClassDevicePropertyKeys.DEFAULT_INTERFACE"><code class="docutils literal notranslate"><span class="pre">DeviceInterfaceClassDevicePropertyKeys.DEFAULT_INTERFACE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceInterfaceClassDevicePropertyKeys.NAME"><code class="docutils literal notranslate"><span class="pre">DeviceInterfaceClassDevicePropertyKeys.NAME</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceInterfaceDevicePropertyKeys"><code class="docutils literal notranslate"><span class="pre">DeviceInterfaceDevicePropertyKeys</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceInterfaceDevicePropertyKeys.CLASS_GUID"><code class="docutils literal notranslate"><span class="pre">DeviceInterfaceDevicePropertyKeys.CLASS_GUID</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceInterfaceDevicePropertyKeys.ENABLED"><code class="docutils literal notranslate"><span class="pre">DeviceInterfaceDevicePropertyKeys.ENABLED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceInterfaceDevicePropertyKeys.FRIENDLY_NAME"><code class="docutils literal notranslate"><span class="pre">DeviceInterfaceDevicePropertyKeys.FRIENDLY_NAME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceInterfaceDevicePropertyKeys.REFERENCE_STRING"><code class="docutils literal notranslate"><span class="pre">DeviceInterfaceDevicePropertyKeys.REFERENCE_STRING</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceInterfaceDevicePropertyKeys.RESTRICTED"><code class="docutils literal notranslate"><span class="pre">DeviceInterfaceDevicePropertyKeys.RESTRICTED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceInterfaceDevicePropertyKeys.SCHEMATIC_NAME"><code class="docutils literal notranslate"><span class="pre">DeviceInterfaceDevicePropertyKeys.SCHEMATIC_NAME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceInterfaceDevicePropertyKeys.UNRESTRICTED_APP_CAPABILITIES"><code class="docutils literal notranslate"><span class="pre">DeviceInterfaceDevicePropertyKeys.UNRESTRICTED_APP_CAPABILITIES</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePackageDevicePropertyKeys"><code class="docutils literal notranslate"><span class="pre">DevicePackageDevicePropertyKeys</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePackageDevicePropertyKeys.BRANDING_ICON"><code class="docutils literal notranslate"><span class="pre">DevicePackageDevicePropertyKeys.BRANDING_ICON</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePackageDevicePropertyKeys.DETAILED_DESCRIPTION"><code class="docutils literal notranslate"><span class="pre">DevicePackageDevicePropertyKeys.DETAILED_DESCRIPTION</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePackageDevicePropertyKeys.DOCUMENTATION_LINK"><code class="docutils literal notranslate"><span class="pre">DevicePackageDevicePropertyKeys.DOCUMENTATION_LINK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePackageDevicePropertyKeys.ICON"><code class="docutils literal notranslate"><span class="pre">DevicePackageDevicePropertyKeys.ICON</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePackageDevicePropertyKeys.MODEL"><code class="docutils literal notranslate"><span class="pre">DevicePackageDevicePropertyKeys.MODEL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePackageDevicePropertyKeys.VENDOR_WEB_SITE"><code class="docutils literal notranslate"><span class="pre">DevicePackageDevicePropertyKeys.VENDOR_WEB_SITE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceProperty"><code class="docutils literal notranslate"><span class="pre">DeviceProperty</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceProperty.int_or_none"><code class="docutils literal notranslate"><span class="pre">DeviceProperty.int_or_none</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceProperty.key"><code class="docutils literal notranslate"><span class="pre">DeviceProperty.key</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceProperty.str_or_none"><code class="docutils literal notranslate"><span class="pre">DeviceProperty.str_or_none</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceProperty.type"><code class="docutils literal notranslate"><span class="pre">DeviceProperty.type</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceProperty.value"><code class="docutils literal notranslate"><span class="pre">DeviceProperty.value</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceProperty.value_raw"><code class="docutils literal notranslate"><span class="pre">DeviceProperty.value_raw</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyEmptyType"><code class="docutils literal notranslate"><span class="pre">DevicePropertyEmptyType</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.ADDITIONAL_SOFTWARE_REQUESTED"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.ADDITIONAL_SOFTWARE_REQUESTED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.ADDRESS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.ADDRESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.ASSIGNED_TO_GUEST"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.ASSIGNED_TO_GUEST</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.BASE_CONTAINER_ID"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.BASE_CONTAINER_ID</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.BIOS_DEVICE_NAME"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.BIOS_DEVICE_NAME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.BUS_NUMBER"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.BUS_NUMBER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.BUS_RELATIONS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.BUS_RELATIONS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.BUS_REPORTED_DEVICE_DESC"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.BUS_REPORTED_DEVICE_DESC</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.BUS_TYPE_GUID"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.BUS_TYPE_GUID</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.CAPABILITIES"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.CAPABILITIES</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.CHARACTERISTICS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.CHARACTERISTICS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.CHILDREN"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.CHILDREN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.CLASS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.CLASS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.CLASS_GUID"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.CLASS_GUID</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.COMPANION_APPS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.COMPANION_APPS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.COMPATIBLE_IDS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.COMPATIBLE_IDS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.CONFIGURATION_ID"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.CONFIGURATION_ID</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.CONFIG_FLAGS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.CONFIG_FLAGS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.CONTAINER_ID"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.CONTAINER_ID</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.CREATOR_PROCESS_ID"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.CREATOR_PROCESS_ID</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.DEBUGGER_SAFE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.DEBUGGER_SAFE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.DEPENDENCY_DEPENDENTS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.DEPENDENCY_DEPENDENTS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.DEPENDENCY_PROVIDERS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.DEPENDENCY_PROVIDERS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.DEVICE_DESC"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.DEVICE_DESC</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.DEV_NODE_STATUS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.DEV_NODE_STATUS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.DEV_TYPE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.DEV_TYPE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.DHP_REBALANCE_POLICY"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.DHP_REBALANCE_POLICY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.DRIVER"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.DRIVER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.DRIVER_CO_INSTALLERS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.DRIVER_CO_INSTALLERS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.DRIVER_DATE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.DRIVER_DATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.DRIVER_DESC"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.DRIVER_DESC</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.DRIVER_INF_PATH"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.DRIVER_INF_PATH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.DRIVER_INF_SECTION"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.DRIVER_INF_SECTION</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.DRIVER_INF_SECTION_EXT"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.DRIVER_INF_SECTION_EXT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.DRIVER_LOGO_LEVEL"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.DRIVER_LOGO_LEVEL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.DRIVER_PROBLEM_DESC"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.DRIVER_PROBLEM_DESC</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.DRIVER_PROP_PAGE_PROVIDER"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.DRIVER_PROP_PAGE_PROVIDER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.DRIVER_PROVIDER"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.DRIVER_PROVIDER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.DRIVER_RANK"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.DRIVER_RANK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.DRIVER_VERSION"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.DRIVER_VERSION</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.EJECTION_RELATIONS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.EJECTION_RELATIONS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.ENUMERATOR_NAME"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.ENUMERATOR_NAME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.EXCLUSIVE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.EXCLUSIVE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.EXTENDED_ADDRESS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.EXTENDED_ADDRESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.EXTENDED_CONFIGURATION_IDS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.EXTENDED_CONFIGURATION_IDS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.FIRMWARE_DATE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.FIRMWARE_DATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.FIRMWARE_REVISION"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.FIRMWARE_REVISION</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.FIRMWARE_VENDOR"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.FIRMWARE_VENDOR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.FIRMWARE_VERSION"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.FIRMWARE_VERSION</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.FIRST_INSTALL_DATE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.FIRST_INSTALL_DATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.FRIENDLY_NAME"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.FRIENDLY_NAME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.FRIENDLY_NAME_ATTRIBUTES"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.FRIENDLY_NAME_ATTRIBUTES</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.GENERIC_DRIVER_INSTALLED"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.GENERIC_DRIVER_INSTALLED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.HARDWARE_IDS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.HARDWARE_IDS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.HAS_PROBLEM"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.HAS_PROBLEM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.INSTALL_DATE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.INSTALL_DATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.INSTALL_STATE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.INSTALL_STATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.INSTANCE_ID"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.INSTANCE_ID</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.IN_LOCAL_MACHINE_CONTAINER"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.IN_LOCAL_MACHINE_CONTAINER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.IS_ASSOCIATEABLE_BY_USER_ACTION"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.IS_ASSOCIATEABLE_BY_USER_ACTION</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.IS_PRESENT"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.IS_PRESENT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.IS_REBOOT_REQUIRED"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.IS_REBOOT_REQUIRED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.LAST_ARRIVAL_DATE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.LAST_ARRIVAL_DATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.LAST_REMOVAL_DATE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.LAST_REMOVAL_DATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.LEGACY"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.LEGACY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.LEGACY_BUS_TYPE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.LEGACY_BUS_TYPE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.LOCATION_INFO"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.LOCATION_INFO</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.LOCATION_PATHS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.LOCATION_PATHS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.LOWER_FILTERS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.LOWER_FILTERS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.MANUFACTURER"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.MANUFACTURER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.MANUFACTURER_ATTRIBUTES"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.MANUFACTURER_ATTRIBUTES</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.MATCHING_DEVICE_ID"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.MATCHING_DEVICE_ID</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.MODEL"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.MODEL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.MODEL_ID"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.MODEL_ID</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.NAME"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.NAME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.NO_CONNECT_SOUND"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.NO_CONNECT_SOUND</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.NUMA_NODE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.NUMA_NODE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.NUMA_PROXIMITY_DOMAIN"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.NUMA_PROXIMITY_DOMAIN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.PARENT"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.PARENT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.PDO_NAME"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.PDO_NAME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.PHYSICAL_DEVICE_LOCATION"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.PHYSICAL_DEVICE_LOCATION</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.POST_INSTALL_IN_PROGRESS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.POST_INSTALL_IN_PROGRESS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.POWER_DATA"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.POWER_DATA</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.POWER_RELATIONS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.POWER_RELATIONS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.PRESENCE_NOT_FOR_DEVICE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.PRESENCE_NOT_FOR_DEVICE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.PRIMARY_COMPANION_APP"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.PRIMARY_COMPANION_APP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.PROBLEM_CODE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.PROBLEM_CODE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.PROBLEM_STATUS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.PROBLEM_STATUS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.REMOVAL_POLICY"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.REMOVAL_POLICY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.REMOVAL_POLICY_DEFAULT"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.REMOVAL_POLICY_DEFAULT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.REMOVAL_POLICY_OVERRIDE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.REMOVAL_POLICY_OVERRIDE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.REMOVAL_RELATIONS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.REMOVAL_RELATIONS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.REPORTED"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.REPORTED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.REPORTED_DEVICE_IDS_HASH"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.REPORTED_DEVICE_IDS_HASH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.RESOURCE_PICKER_EXCEPTIONS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.RESOURCE_PICKER_EXCEPTIONS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.RESOURCE_PICKER_TAGS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.RESOURCE_PICKER_TAGS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.SAFE_REMOVAL_REQUIRED"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.SAFE_REMOVAL_REQUIRED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.SAFE_REMOVAL_REQUIRED_OVERRIDE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.SAFE_REMOVAL_REQUIRED_OVERRIDE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.SECURITY"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.SECURITY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.SECURITY_SDS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.SECURITY_SDS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.SERVICE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.SERVICE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.SESSION_ID"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.SESSION_ID</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.SHOW_IN_UNINSTALL_UI"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.SHOW_IN_UNINSTALL_UI</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.SIBLINGS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.SIBLINGS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.SIGNAL_STRENGTH"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.SIGNAL_STRENGTH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.SOFT_RESTART_SUPPORTED"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.SOFT_RESTART_SUPPORTED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.STACK"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.STACK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.TRANSPORT_RELATIONS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.TRANSPORT_RELATIONS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.UI_NUMBER"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.UI_NUMBER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.UI_NUMBER_DESC_FORMAT"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.UI_NUMBER_DESC_FORMAT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyKeys.UPPER_FILTERS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyKeys.UPPER_FILTERS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyModifier"><code class="docutils literal notranslate"><span class="pre">DevicePropertyModifier</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyModifier.ARRAY"><code class="docutils literal notranslate"><span class="pre">DevicePropertyModifier.ARRAY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyModifier.LIST"><code class="docutils literal notranslate"><span class="pre">DevicePropertyModifier.LIST</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyNullType"><code class="docutils literal notranslate"><span class="pre">DevicePropertyNullType</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.BINARY"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.BINARY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.BOOLEAN"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.BOOLEAN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.BYTE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.BYTE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.CURRENCY"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.CURRENCY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.DATE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.DATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.DECIMAL"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.DECIMAL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.DEVPROPKEY"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.DEVPROPKEY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.DEVPROPTYPE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.DEVPROPTYPE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.DOUBLE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.DOUBLE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.EMPTY"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.EMPTY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.ERROR"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.ERROR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.FILETIME"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.FILETIME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.FLOAT"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.FLOAT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.GUID"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.GUID</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.INT16"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.INT16</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.INT32"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.INT32</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.INT64"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.INT64</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.NTSTATUS"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.NTSTATUS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.NULL"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.NULL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.SBYTE"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.SBYTE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.SECURITY_DESCRIPTOR"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.SECURITY_DESCRIPTOR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.SECURITY_DESCRIPTOR_STRING"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.SECURITY_DESCRIPTOR_STRING</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.STRING"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.STRING</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.STRING_INDIRECT"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.STRING_INDIRECT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.STRING_LIST"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.STRING_LIST</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.UINT16"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.UINT16</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.UINT32"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.UINT32</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DevicePropertyType.UINT64"><code class="docutils literal notranslate"><span class="pre">DevicePropertyType.UINT64</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceQueryDevicePropertyKeys"><code class="docutils literal notranslate"><span class="pre">DeviceQueryDevicePropertyKeys</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html#powccoreaudio.devprop.DeviceQueryDevicePropertyKeys.OBJECT_TYPE"><code class="docutils literal notranslate"><span class="pre">DeviceQueryDevicePropertyKeys.OBJECT_TYPE</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="powccoreaudio.endpointvolume.html">powccoreaudio.endpointvolume module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.VolumeRange"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.VolumeRange</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.VolumeRange.increment_db"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.VolumeRange.increment_db</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.VolumeRange.max_db"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.VolumeRange.max_db</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.VolumeRange.min_db"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.VolumeRange.min_db</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.VolumeStepInfo"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.VolumeStepInfo</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.VolumeStepInfo.step"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.VolumeStepInfo.step</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.VolumeStepInfo.step_count"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.VolumeStepInfo.step_count</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.channel_count"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.channel_count</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.channel_count_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.channel_count_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.eventcontext_guid"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.eventcontext_guid</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.get_channel_volume_level_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.get_channel_volume_level_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.get_channel_volume_level_scalar_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.get_channel_volume_level_scalar_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.hardware_support"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.hardware_support</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.hardware_support_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.hardware_support_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.master_volume_level"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.master_volume_level</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.master_volume_level_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.master_volume_level_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.master_volume_level_scalar"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.master_volume_level_scalar</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.master_volume_level_scalar_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.master_volume_level_scalar_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.mute"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.mute</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.mute_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.mute_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.set_channel_volume_level"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.set_channel_volume_level()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.set_channel_volume_level_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.set_channel_volume_level_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.set_channel_volume_level_scalar"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.set_channel_volume_level_scalar()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.set_channel_volume_level_scalar_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.set_channel_volume_level_scalar_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.set_master_volume_level_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.set_master_volume_level_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.set_master_volume_level_scalar_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.set_master_volume_level_scalar_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.set_mute_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.set_mute_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.volume_range"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.volume_range</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.volume_range_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.volume_range_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.volume_step_info"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.volume_step_info</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.volume_step_info_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.volume_step_info_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.volume_stepdown"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.volume_stepdown()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.volume_stepdown_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.volume_stepdown_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.volume_stepup"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.volume_stepup()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.volume_stepup_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.volume_stepup_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioEndpointVolume.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">AudioEndpointVolume.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioMeterInformation"><code class="docutils literal notranslate"><span class="pre">AudioMeterInformation</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioMeterInformation.channelspeakvalues"><code class="docutils literal notranslate"><span class="pre">AudioMeterInformation.channelspeakvalues</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioMeterInformation.channelspeakvalues_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioMeterInformation.channelspeakvalues_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioMeterInformation.hardwaresupport"><code class="docutils literal notranslate"><span class="pre">AudioMeterInformation.hardwaresupport</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioMeterInformation.hardwaresupport_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioMeterInformation.hardwaresupport_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioMeterInformation.meteringchannelcount"><code class="docutils literal notranslate"><span class="pre">AudioMeterInformation.meteringchannelcount</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioMeterInformation.meteringchannelcount_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioMeterInformation.meteringchannelcount_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioMeterInformation.peakvalue"><code class="docutils literal notranslate"><span class="pre">AudioMeterInformation.peakvalue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioMeterInformation.peakvalue_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioMeterInformation.peakvalue_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioMeterInformation.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">AudioMeterInformation.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioVolumeNotificationData"><code class="docutils literal notranslate"><span class="pre">AudioVolumeNotificationData</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioVolumeNotificationData.channel_volumes0"><code class="docutils literal notranslate"><span class="pre">AudioVolumeNotificationData.channel_volumes0</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioVolumeNotificationData.channels"><code class="docutils literal notranslate"><span class="pre">AudioVolumeNotificationData.channels</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioVolumeNotificationData.event_context_guid"><code class="docutils literal notranslate"><span class="pre">AudioVolumeNotificationData.event_context_guid</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioVolumeNotificationData.master_volume"><code class="docutils literal notranslate"><span class="pre">AudioVolumeNotificationData.master_volume</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.AudioVolumeNotificationData.muted"><code class="docutils literal notranslate"><span class="pre">AudioVolumeNotificationData.muted</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.ENDPOINT_HARDWARE_SUPPORT"><code class="docutils literal notranslate"><span class="pre">ENDPOINT_HARDWARE_SUPPORT</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.ENDPOINT_HARDWARE_SUPPORT.METER"><code class="docutils literal notranslate"><span class="pre">ENDPOINT_HARDWARE_SUPPORT.METER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.ENDPOINT_HARDWARE_SUPPORT.MUTE"><code class="docutils literal notranslate"><span class="pre">ENDPOINT_HARDWARE_SUPPORT.MUTE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.ENDPOINT_HARDWARE_SUPPORT.VOLUME"><code class="docutils literal notranslate"><span class="pre">ENDPOINT_HARDWARE_SUPPORT.VOLUME</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolume"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolume</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolume.GetChannelCount"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolume.GetChannelCount</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolume.GetChannelVolumeLevel"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolume.GetChannelVolumeLevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolume.GetChannelVolumeLevelScalar"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolume.GetChannelVolumeLevelScalar</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolume.GetMasterVolumeLevel"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolume.GetMasterVolumeLevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolume.GetMasterVolumeLevelScalar"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolume.GetMasterVolumeLevelScalar</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolume.GetMute"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolume.GetMute</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolume.GetVolumeRange"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolume.GetVolumeRange</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolume.GetVolumeStepInfo"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolume.GetVolumeStepInfo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolume.QueryHardwareSupport"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolume.QueryHardwareSupport</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolume.RegisterControlChangeNotify"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolume.RegisterControlChangeNotify</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolume.SetChannelVolumeLevel"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolume.SetChannelVolumeLevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolume.SetChannelVolumeLevelScalar"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolume.SetChannelVolumeLevelScalar</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolume.SetMasterVolumeLevel"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolume.SetMasterVolumeLevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolume.SetMasterVolumeLevelScalar"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolume.SetMasterVolumeLevelScalar</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolume.SetMute"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolume.SetMute</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolume.UnregisterControlChangeNotify"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolume.UnregisterControlChangeNotify</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolume.VolumeStepDown"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolume.VolumeStepDown</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolume.VolumeStepUp"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolume.VolumeStepUp</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolumeCallback"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolumeCallback</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolumeCallback.OnNotify"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolumeCallback.OnNotify</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolumeEx"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolumeEx</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioEndpointVolumeEx.GetVolumeRangeChannel"><code class="docutils literal notranslate"><span class="pre">IAudioEndpointVolumeEx.GetVolumeRangeChannel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioMeterInformation"><code class="docutils literal notranslate"><span class="pre">IAudioMeterInformation</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioMeterInformation.GetChannelsPeakValues"><code class="docutils literal notranslate"><span class="pre">IAudioMeterInformation.GetChannelsPeakValues</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioMeterInformation.GetMeteringChannelCount"><code class="docutils literal notranslate"><span class="pre">IAudioMeterInformation.GetMeteringChannelCount</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioMeterInformation.GetPeakValue"><code class="docutils literal notranslate"><span class="pre">IAudioMeterInformation.GetPeakValue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html#powccoreaudio.endpointvolume.IAudioMeterInformation.QueryHardwareSupport"><code class="docutils literal notranslate"><span class="pre">IAudioMeterInformation.QueryHardwareSupport</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="powccoreaudio.mmdevice.html">powccoreaudio.mmdevice module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioExtensionParams"><code class="docutils literal notranslate"><span class="pre">AudioExtensionParams</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioExtensionParams.add_page_param"><code class="docutils literal notranslate"><span class="pre">AudioExtensionParams.add_page_param</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioExtensionParams.endppoint_p"><code class="docutils literal notranslate"><span class="pre">AudioExtensionParams.endppoint_p</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioExtensionParams.pnp_devnode_p"><code class="docutils literal notranslate"><span class="pre">AudioExtensionParams.pnp_devnode_p</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioExtensionParams.pnp_interface_p"><code class="docutils literal notranslate"><span class="pre">AudioExtensionParams.pnp_interface_p</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioSystemEffectsPropStoreType"><code class="docutils literal notranslate"><span class="pre">AudioSystemEffectsPropStoreType</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioSystemEffectsPropStoreType.DEFAULT"><code class="docutils literal notranslate"><span class="pre">AudioSystemEffectsPropStoreType.DEFAULT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioSystemEffectsPropStoreType.USER"><code class="docutils literal notranslate"><span class="pre">AudioSystemEffectsPropStoreType.USER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioSystemEffectsPropStoreType.VOLATILE"><code class="docutils literal notranslate"><span class="pre">AudioSystemEffectsPropStoreType.VOLATILE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioSystemEffectsPropertyStore"><code class="docutils literal notranslate"><span class="pre">AudioSystemEffectsPropertyStore</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioSystemEffectsPropertyStore.IAudioSystemEffectsPropertyChangeNotificationClientType"><code class="docutils literal notranslate"><span class="pre">AudioSystemEffectsPropertyStore.IAudioSystemEffectsPropertyChangeNotificationClientType</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioSystemEffectsPropertyStore.open_defaultpropstore"><code class="docutils literal notranslate"><span class="pre">AudioSystemEffectsPropertyStore.open_defaultpropstore()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioSystemEffectsPropertyStore.open_defaultpropstore_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioSystemEffectsPropertyStore.open_defaultpropstore_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioSystemEffectsPropertyStore.open_userpropstore"><code class="docutils literal notranslate"><span class="pre">AudioSystemEffectsPropertyStore.open_userpropstore()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioSystemEffectsPropertyStore.open_userpropstore_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioSystemEffectsPropertyStore.open_userpropstore_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioSystemEffectsPropertyStore.open_volatilepropstore"><code class="docutils literal notranslate"><span class="pre">AudioSystemEffectsPropertyStore.open_volatilepropstore()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioSystemEffectsPropertyStore.open_volatilepropstore_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioSystemEffectsPropertyStore.open_volatilepropstore_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioSystemEffectsPropertyStore.register_propchangenotification"><code class="docutils literal notranslate"><span class="pre">AudioSystemEffectsPropertyStore.register_propchangenotification()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioSystemEffectsPropertyStore.register_propchangenotification_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioSystemEffectsPropertyStore.register_propchangenotification_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioSystemEffectsPropertyStore.reset_userpropstore"><code class="docutils literal notranslate"><span class="pre">AudioSystemEffectsPropertyStore.reset_userpropstore()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioSystemEffectsPropertyStore.reset_userpropstore_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioSystemEffectsPropertyStore.reset_userpropstore_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioSystemEffectsPropertyStore.reset_volatilepropstore"><code class="docutils literal notranslate"><span class="pre">AudioSystemEffectsPropertyStore.reset_volatilepropstore()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioSystemEffectsPropertyStore.reset_volatilepropstore_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioSystemEffectsPropertyStore.reset_volatilepropstore_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioSystemEffectsPropertyStore.unregister_propchangenotification"><code class="docutils literal notranslate"><span class="pre">AudioSystemEffectsPropertyStore.unregister_propchangenotification()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioSystemEffectsPropertyStore.unregister_propchangenotification_nothrow"><code class="docutils literal notranslate"><span class="pre">AudioSystemEffectsPropertyStore.unregister_propchangenotification_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.AudioSystemEffectsPropertyStore.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">AudioSystemEffectsPropertyStore.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.DataFlow"><code class="docutils literal notranslate"><span class="pre">DataFlow</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.DataFlow.All"><code class="docutils literal notranslate"><span class="pre">DataFlow.All</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.DataFlow.Capture"><code class="docutils literal notranslate"><span class="pre">DataFlow.Capture</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.DataFlow.Render"><code class="docutils literal notranslate"><span class="pre">DataFlow.Render</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.DeviceState"><code class="docutils literal notranslate"><span class="pre">DeviceState</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.DeviceState.ACTIVE"><code class="docutils literal notranslate"><span class="pre">DeviceState.ACTIVE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.DeviceState.DISABLED"><code class="docutils literal notranslate"><span class="pre">DeviceState.DISABLED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.DeviceState.NOTPRESENT"><code class="docutils literal notranslate"><span class="pre">DeviceState.NOTPRESENT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.DeviceState.UNPLUGGED"><code class="docutils literal notranslate"><span class="pre">DeviceState.UNPLUGGED</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.DirectXAudioActivationParams"><code class="docutils literal notranslate"><span class="pre">DirectXAudioActivationParams</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.DirectXAudioActivationParams.audio_session_guid"><code class="docutils literal notranslate"><span class="pre">DirectXAudioActivationParams.audio_session_guid</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.DirectXAudioActivationParams.audio_stream_flags"><code class="docutils literal notranslate"><span class="pre">DirectXAudioActivationParams.audio_stream_flags</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.DirectXAudioActivationParams.directx_audio_activation_params"><code class="docutils literal notranslate"><span class="pre">DirectXAudioActivationParams.directx_audio_activation_params</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.EndpointFormFactor"><code class="docutils literal notranslate"><span class="pre">EndpointFormFactor</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.EndpointFormFactor.DigitalAudioDisplayDevice"><code class="docutils literal notranslate"><span class="pre">EndpointFormFactor.DigitalAudioDisplayDevice</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.EndpointFormFactor.Handset"><code class="docutils literal notranslate"><span class="pre">EndpointFormFactor.Handset</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.EndpointFormFactor.Headphones"><code class="docutils literal notranslate"><span class="pre">EndpointFormFactor.Headphones</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.EndpointFormFactor.Headset"><code class="docutils literal notranslate"><span class="pre">EndpointFormFactor.Headset</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.EndpointFormFactor.LineLevel"><code class="docutils literal notranslate"><span class="pre">EndpointFormFactor.LineLevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.EndpointFormFactor.Microphone"><code class="docutils literal notranslate"><span class="pre">EndpointFormFactor.Microphone</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.EndpointFormFactor.RemoteNetworkDevice"><code class="docutils literal notranslate"><span class="pre">EndpointFormFactor.RemoteNetworkDevice</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.EndpointFormFactor.SPDIF"><code class="docutils literal notranslate"><span class="pre">EndpointFormFactor.SPDIF</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.EndpointFormFactor.Speakers"><code class="docutils literal notranslate"><span class="pre">EndpointFormFactor.Speakers</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.EndpointFormFactor.UnknownDigitalPassthrough"><code class="docutils literal notranslate"><span class="pre">EndpointFormFactor.UnknownDigitalPassthrough</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.EndpointFormFactor.UnknownFormFactor"><code class="docutils literal notranslate"><span class="pre">EndpointFormFactor.UnknownFormFactor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IActivateAudioInterfaceAsyncOperation"><code class="docutils literal notranslate"><span class="pre">IActivateAudioInterfaceAsyncOperation</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IActivateAudioInterfaceAsyncOperation.GetActivateResult"><code class="docutils literal notranslate"><span class="pre">IActivateAudioInterfaceAsyncOperation.GetActivateResult</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IActivateAudioInterfaceCompletionHandler"><code class="docutils literal notranslate"><span class="pre">IActivateAudioInterfaceCompletionHandler</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IActivateAudioInterfaceCompletionHandler.ActivateCompleted"><code class="docutils literal notranslate"><span class="pre">IActivateAudioInterfaceCompletionHandler.ActivateCompleted</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IAudioSystemEffectsPropertyChangeNotificationClient"><code class="docutils literal notranslate"><span class="pre">IAudioSystemEffectsPropertyChangeNotificationClient</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IAudioSystemEffectsPropertyChangeNotificationClient.OnPropertyChanged"><code class="docutils literal notranslate"><span class="pre">IAudioSystemEffectsPropertyChangeNotificationClient.OnPropertyChanged</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IAudioSystemEffectsPropertyStore"><code class="docutils literal notranslate"><span class="pre">IAudioSystemEffectsPropertyStore</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IAudioSystemEffectsPropertyStore.OpenDefaultPropertyStore"><code class="docutils literal notranslate"><span class="pre">IAudioSystemEffectsPropertyStore.OpenDefaultPropertyStore</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IAudioSystemEffectsPropertyStore.OpenUserPropertyStore"><code class="docutils literal notranslate"><span class="pre">IAudioSystemEffectsPropertyStore.OpenUserPropertyStore</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IAudioSystemEffectsPropertyStore.OpenVolatilePropertyStore"><code class="docutils literal notranslate"><span class="pre">IAudioSystemEffectsPropertyStore.OpenVolatilePropertyStore</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IAudioSystemEffectsPropertyStore.RegisterPropertyChangeNotification"><code class="docutils literal notranslate"><span class="pre">IAudioSystemEffectsPropertyStore.RegisterPropertyChangeNotification</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IAudioSystemEffectsPropertyStore.ResetUserPropertyStore"><code class="docutils literal notranslate"><span class="pre">IAudioSystemEffectsPropertyStore.ResetUserPropertyStore</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IAudioSystemEffectsPropertyStore.ResetVolatilePropertyStore"><code class="docutils literal notranslate"><span class="pre">IAudioSystemEffectsPropertyStore.ResetVolatilePropertyStore</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IAudioSystemEffectsPropertyStore.UnregisterPropertyChangeNotification"><code class="docutils literal notranslate"><span class="pre">IAudioSystemEffectsPropertyStore.UnregisterPropertyChangeNotification</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMDevice"><code class="docutils literal notranslate"><span class="pre">IMMDevice</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMDevice.Activate"><code class="docutils literal notranslate"><span class="pre">IMMDevice.Activate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMDevice.GetId"><code class="docutils literal notranslate"><span class="pre">IMMDevice.GetId</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMDevice.GetState"><code class="docutils literal notranslate"><span class="pre">IMMDevice.GetState</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMDevice.OpenPropertyStore"><code class="docutils literal notranslate"><span class="pre">IMMDevice.OpenPropertyStore</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMDeviceActivator"><code class="docutils literal notranslate"><span class="pre">IMMDeviceActivator</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMDeviceActivator.Activate"><code class="docutils literal notranslate"><span class="pre">IMMDeviceActivator.Activate</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMDeviceCollection"><code class="docutils literal notranslate"><span class="pre">IMMDeviceCollection</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMDeviceCollection.GetCount"><code class="docutils literal notranslate"><span class="pre">IMMDeviceCollection.GetCount</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMDeviceCollection.Item"><code class="docutils literal notranslate"><span class="pre">IMMDeviceCollection.Item</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMDeviceEnumerator"><code class="docutils literal notranslate"><span class="pre">IMMDeviceEnumerator</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMDeviceEnumerator.EnumAudioEndpoints"><code class="docutils literal notranslate"><span class="pre">IMMDeviceEnumerator.EnumAudioEndpoints</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMDeviceEnumerator.GetDefaultAudioEndpoint"><code class="docutils literal notranslate"><span class="pre">IMMDeviceEnumerator.GetDefaultAudioEndpoint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMDeviceEnumerator.GetDevice"><code class="docutils literal notranslate"><span class="pre">IMMDeviceEnumerator.GetDevice</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMDeviceEnumerator.RegisterEndpointNotificationCallback"><code class="docutils literal notranslate"><span class="pre">IMMDeviceEnumerator.RegisterEndpointNotificationCallback</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMDeviceEnumerator.UnregisterEndpointNotificationCallback"><code class="docutils literal notranslate"><span class="pre">IMMDeviceEnumerator.UnregisterEndpointNotificationCallback</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMEndpoint"><code class="docutils literal notranslate"><span class="pre">IMMEndpoint</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMEndpoint.GetDataFlow"><code class="docutils literal notranslate"><span class="pre">IMMEndpoint.GetDataFlow</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMNotificationClient"><code class="docutils literal notranslate"><span class="pre">IMMNotificationClient</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMNotificationClient.OnDefaultDeviceChanged"><code class="docutils literal notranslate"><span class="pre">IMMNotificationClient.OnDefaultDeviceChanged</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMNotificationClient.OnDeviceAdded"><code class="docutils literal notranslate"><span class="pre">IMMNotificationClient.OnDeviceAdded</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMNotificationClient.OnDeviceRemoved"><code class="docutils literal notranslate"><span class="pre">IMMNotificationClient.OnDeviceRemoved</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMNotificationClient.OnDeviceStateChanged"><code class="docutils literal notranslate"><span class="pre">IMMNotificationClient.OnDeviceStateChanged</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.IMMNotificationClient.OnPropertyValueChanged"><code class="docutils literal notranslate"><span class="pre">IMMNotificationClient.OnPropertyValueChanged</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice"><code class="docutils literal notranslate"><span class="pre">MMDevice</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice.activate"><code class="docutils literal notranslate"><span class="pre">MMDevice.activate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice.activate_audioendpointvolume"><code class="docutils literal notranslate"><span class="pre">MMDevice.activate_audioendpointvolume()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice.activate_audioendpointvolume_nothrow"><code class="docutils literal notranslate"><span class="pre">MMDevice.activate_audioendpointvolume_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice.activate_audiometerinfo"><code class="docutils literal notranslate"><span class="pre">MMDevice.activate_audiometerinfo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice.activate_audiometerinfo_nothrow"><code class="docutils literal notranslate"><span class="pre">MMDevice.activate_audiometerinfo_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice.activate_audiosystemeffectspropstore"><code class="docutils literal notranslate"><span class="pre">MMDevice.activate_audiosystemeffectspropstore()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice.activate_audiosystemeffectspropstore_nothrow"><code class="docutils literal notranslate"><span class="pre">MMDevice.activate_audiosystemeffectspropstore_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice.activate_nothrow"><code class="docutils literal notranslate"><span class="pre">MMDevice.activate_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice.device_props_readonly"><code class="docutils literal notranslate"><span class="pre">MMDevice.device_props_readonly</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice.device_props_readonly_nothrow"><code class="docutils literal notranslate"><span class="pre">MMDevice.device_props_readonly_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice.id"><code class="docutils literal notranslate"><span class="pre">MMDevice.id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice.id_nothrow"><code class="docutils literal notranslate"><span class="pre">MMDevice.id_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice.open_propstore"><code class="docutils literal notranslate"><span class="pre">MMDevice.open_propstore()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice.open_propstore_nothrow"><code class="docutils literal notranslate"><span class="pre">MMDevice.open_propstore_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice.propstore_read"><code class="docutils literal notranslate"><span class="pre">MMDevice.propstore_read</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice.propstore_read_nothrow"><code class="docutils literal notranslate"><span class="pre">MMDevice.propstore_read_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice.propstore_readwrite"><code class="docutils literal notranslate"><span class="pre">MMDevice.propstore_readwrite</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice.propstore_readwrite_nothrow"><code class="docutils literal notranslate"><span class="pre">MMDevice.propstore_readwrite_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice.state"><code class="docutils literal notranslate"><span class="pre">MMDevice.state</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice.state_nothrow"><code class="docutils literal notranslate"><span class="pre">MMDevice.state_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDevice.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">MMDevice.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceCollection"><code class="docutils literal notranslate"><span class="pre">MMDeviceCollection</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceCollection.getat"><code class="docutils literal notranslate"><span class="pre">MMDeviceCollection.getat()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceCollection.items"><code class="docutils literal notranslate"><span class="pre">MMDeviceCollection.items</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceCollection.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">MMDeviceCollection.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceEnumerator"><code class="docutils literal notranslate"><span class="pre">MMDeviceEnumerator</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceEnumerator.CLSID_MMDEVICEENUMERATOR"><code class="docutils literal notranslate"><span class="pre">MMDeviceEnumerator.CLSID_MMDEVICEENUMERATOR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceEnumerator.create"><code class="docutils literal notranslate"><span class="pre">MMDeviceEnumerator.create()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceEnumerator.get_default_audioendpoint"><code class="docutils literal notranslate"><span class="pre">MMDeviceEnumerator.get_default_audioendpoint()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceEnumerator.get_default_audioendpoint_nothrow"><code class="docutils literal notranslate"><span class="pre">MMDeviceEnumerator.get_default_audioendpoint_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceEnumerator.get_device"><code class="docutils literal notranslate"><span class="pre">MMDeviceEnumerator.get_device()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceEnumerator.get_device_nothrow"><code class="docutils literal notranslate"><span class="pre">MMDeviceEnumerator.get_device_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceEnumerator.get_enum_audioendpoints"><code class="docutils literal notranslate"><span class="pre">MMDeviceEnumerator.get_enum_audioendpoints()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceEnumerator.get_enum_audioendpoints_nothrow"><code class="docutils literal notranslate"><span class="pre">MMDeviceEnumerator.get_enum_audioendpoints_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceEnumerator.get_microphone"><code class="docutils literal notranslate"><span class="pre">MMDeviceEnumerator.get_microphone()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceEnumerator.get_speaker"><code class="docutils literal notranslate"><span class="pre">MMDeviceEnumerator.get_speaker()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceEnumerator.microphones"><code class="docutils literal notranslate"><span class="pre">MMDeviceEnumerator.microphones</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceEnumerator.register_endpoint_notification_callback"><code class="docutils literal notranslate"><span class="pre">MMDeviceEnumerator.register_endpoint_notification_callback()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceEnumerator.register_endpoint_notification_callback_nothrow"><code class="docutils literal notranslate"><span class="pre">MMDeviceEnumerator.register_endpoint_notification_callback_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceEnumerator.speakers"><code class="docutils literal notranslate"><span class="pre">MMDeviceEnumerator.speakers</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceEnumerator.unregister_endpoint_notification_callback"><code class="docutils literal notranslate"><span class="pre">MMDeviceEnumerator.unregister_endpoint_notification_callback()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceEnumerator.unregister_endpoint_notification_callback_nothrow"><code class="docutils literal notranslate"><span class="pre">MMDeviceEnumerator.unregister_endpoint_notification_callback_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMDeviceEnumerator.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">MMDeviceEnumerator.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMEndpoint"><code class="docutils literal notranslate"><span class="pre">MMEndpoint</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMEndpoint.dataflow_nothrow"><code class="docutils literal notranslate"><span class="pre">MMEndpoint.dataflow_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMEndpoint.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">MMEndpoint.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMNotificationClientBase"><code class="docutils literal notranslate"><span class="pre">MMNotificationClientBase</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMNotificationClientBase.defaultdevice_changed"><code class="docutils literal notranslate"><span class="pre">MMNotificationClientBase.defaultdevice_changed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMNotificationClientBase.device_added"><code class="docutils literal notranslate"><span class="pre">MMNotificationClientBase.device_added()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMNotificationClientBase.device_removed"><code class="docutils literal notranslate"><span class="pre">MMNotificationClientBase.device_removed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMNotificationClientBase.device_state_changed"><code class="docutils literal notranslate"><span class="pre">MMNotificationClientBase.device_state_changed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMNotificationClientBase.propvalue_changed"><code class="docutils literal notranslate"><span class="pre">MMNotificationClientBase.propvalue_changed()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMNotificationClientForCall"><code class="docutils literal notranslate"><span class="pre">MMNotificationClientForCall</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMNotificationClientForCall.defaultdevice_changed"><code class="docutils literal notranslate"><span class="pre">MMNotificationClientForCall.defaultdevice_changed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMNotificationClientForCall.device_added"><code class="docutils literal notranslate"><span class="pre">MMNotificationClientForCall.device_added()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMNotificationClientForCall.device_removed"><code class="docutils literal notranslate"><span class="pre">MMNotificationClientForCall.device_removed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMNotificationClientForCall.device_state_changed"><code class="docutils literal notranslate"><span class="pre">MMNotificationClientForCall.device_state_changed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMNotificationClientForCall.propvalue_changed"><code class="docutils literal notranslate"><span class="pre">MMNotificationClientForCall.propvalue_changed()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMNotificationClientForPrint"><code class="docutils literal notranslate"><span class="pre">MMNotificationClientForPrint</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMNotificationClientWrapper"><code class="docutils literal notranslate"><span class="pre">MMNotificationClientWrapper</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMNotificationClientWrapper.IMMNotificationClient_OnDefaultDeviceChanged"><code class="docutils literal notranslate"><span class="pre">MMNotificationClientWrapper.IMMNotificationClient_OnDefaultDeviceChanged()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMNotificationClientWrapper.IMMNotificationClient_OnDeviceAdded"><code class="docutils literal notranslate"><span class="pre">MMNotificationClientWrapper.IMMNotificationClient_OnDeviceAdded()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMNotificationClientWrapper.IMMNotificationClient_OnDeviceRemoved"><code class="docutils literal notranslate"><span class="pre">MMNotificationClientWrapper.IMMNotificationClient_OnDeviceRemoved()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMNotificationClientWrapper.IMMNotificationClient_OnDeviceStateChanged"><code class="docutils literal notranslate"><span class="pre">MMNotificationClientWrapper.IMMNotificationClient_OnDeviceStateChanged()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.MMNotificationClientWrapper.IMMNotificationClient_OnPropertyValueChanged"><code class="docutils literal notranslate"><span class="pre">MMNotificationClientWrapper.IMMNotificationClient_OnPropertyValueChanged()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.Role"><code class="docutils literal notranslate"><span class="pre">Role</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.Role.Communications"><code class="docutils literal notranslate"><span class="pre">Role.Communications</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.Role.Console"><code class="docutils literal notranslate"><span class="pre">Role.Console</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html#powccoreaudio.mmdevice.Role.Multimedia"><code class="docutils literal notranslate"><span class="pre">Role.Multimedia</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="powcwmi.wbemstatus.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">powcwmi.wbemstatus module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="powccoreaudio.devicepropsinstore.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">powccoreaudio.devicepropsinstore module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目次
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+著者 poti-san
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, poti-san.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

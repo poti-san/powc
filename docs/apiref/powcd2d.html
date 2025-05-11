@@ -1,0 +1,1229 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>powcd2d package &#8212; powc  ドキュメント</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=1cf7f4d9"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=4755f45a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'apiref/powcd2d';</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="powcd2d.d2d package" href="powcd2d.d2d.html" />
+    <link rel="prev" title="powccoreaudio.mmdevice module" href="powccoreaudio.mmdevice.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">powc  ドキュメント</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">検索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../package_summary/index.html">パッケージの概要</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powc.html">powc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcpropsys.html">powcpropsys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcshell.html">powcshell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcwmi.html">powcwmi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powccoreaudio.html">powccoreaudio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcd2d.html">powcd2d</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../apiref.html">APIドキュメント</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="powc.html">powc package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powc.comcat.html">powc.comcat module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.comobj.html">powc.comobj module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.comsec.html">powc.comsec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.core.html">powc.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.dataobj.html">powc.dataobj module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.datetime.html">powc.datetime module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.errlog.html">powc.errlog module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.globalmem.html">powc.globalmem module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.persist.html">powc.persist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.propbag.html">powc.propbag module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.safearray.html">powc.safearray module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.stream.html">powc.stream module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.variant.html">powc.variant module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcpropsys.html">powcpropsys package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html">powcpropsys.propchange module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html">powcpropsys.propdesc module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propkey.html">powcpropsys.propkey module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html">powcpropsys.propstore module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html">powcpropsys.propsys module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html">powcpropsys.propvariant module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcshell.html">powcshell package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcshell.shellitemutil.html">powcshell.shellitemutil package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.computerfolderinfo.html">powcshell.shellitemutil.computerfolderinfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.fontiteminfo.html">powcshell.shellitemutil.fontiteminfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.recyclebiniteminfo.html">powcshell.shellitemutil.recyclebiniteminfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.volumeinfo.html">powcshell.shellitemutil.volumeinfo module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.desktopwallpaper.html">powcshell.desktopwallpaper module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.itemidlist.html">powcshell.itemidlist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfolder.html">powcshell.knownfolder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfolderid.html">powcshell.knownfolderid module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfoldertypeid.html">powcshell.knownfoldertypeid module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellexec.html">powcshell.shellexec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellfileop.html">powcshell.shellfileop module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellfileoputil.html">powcshell.shellfileoputil module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitem.html">powcshell.shellitem module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitem2.html">powcshell.shellitem2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitemarray.html">powcshell.shellitemarray module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitemenum.html">powcshell.shellitemenum module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shelllibrary.html">powcshell.shelllibrary module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shelllink.html">powcshell.shelllink module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.url.html">powcshell.url module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcwmi.html">powcwmi package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.comtypes.html">powcwmi.comtypes module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.wbemflags.html">powcwmi.wbemflags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.wbemstatus.html">powcwmi.wbemstatus module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powccoreaudio.html">powccoreaudio package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devicepropsinstore.html">powccoreaudio.devicepropsinstore module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html">powccoreaudio.devprop module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html">powccoreaudio.endpointvolume module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html">powccoreaudio.mmdevice module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">powcd2d package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.d2d.html">powcd2d.d2d package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.interfacebody.html">powcd2d.d2d.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html">powcd2d.d2d.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dcommon.html">powcd2d.dcommon package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html">powcd2d.dcommon.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dwrite.html">powcd2d.dwrite package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.interfacebody.html">powcd2d.dwrite.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html">powcd2d.dwrite.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dxgi.html">powcd2d.dxgi package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.interfacebody.html">powcd2d.dxgi.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html">powcd2d.dxgi.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.wic.html">powcd2d.wic package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html">powcd2d.wic.constant module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.interfacebody.html">powcd2d.wic.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html">powcd2d.wic.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.d3dmisc.html">powcd2d.d3dmisc module</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../py-modindex.html">モジュール索引</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全画面モード"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>powcd2d package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目次 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-powcd2d">
+<span id="powcd2d-package"></span><h1>powcd2d package<a class="headerlink" href="#module-powcd2d" title="Link to this heading">#</a></h1>
+<p>powcd2dライブラリの初期化。</p>
+<p>DXGI、Direct2D、Direct2D、WICはインターフェイスを共有するため、先に全て初期化します。
+ライブラリ分類は索引性のためです</p>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="powcd2d.d2d.html">powcd2d.d2d package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.d2d.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.d2d.interfacebody.html">powcd2d.d2d.interfacebody module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.d2d.types.html">powcd2d.d2d.types module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1AntialiasMode"><code class="docutils literal notranslate"><span class="pre">D2D1AntialiasMode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1ArcSize"><code class="docutils literal notranslate"><span class="pre">D2D1ArcSize</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1ArgSegment"><code class="docutils literal notranslate"><span class="pre">D2D1ArgSegment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1BezierSegment"><code class="docutils literal notranslate"><span class="pre">D2D1BezierSegment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1BitmapBrushProps"><code class="docutils literal notranslate"><span class="pre">D2D1BitmapBrushProps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1BitmapInterpolationMode"><code class="docutils literal notranslate"><span class="pre">D2D1BitmapInterpolationMode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1BitmapProps"><code class="docutils literal notranslate"><span class="pre">D2D1BitmapProps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1BrushProps"><code class="docutils literal notranslate"><span class="pre">D2D1BrushProps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1CapStyle"><code class="docutils literal notranslate"><span class="pre">D2D1CapStyle</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1CombineMode"><code class="docutils literal notranslate"><span class="pre">D2D1CombineMode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1CompatibleRenderTargetOption"><code class="docutils literal notranslate"><span class="pre">D2D1CompatibleRenderTargetOption</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1DCInitializeMode"><code class="docutils literal notranslate"><span class="pre">D2D1DCInitializeMode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1DashStyle"><code class="docutils literal notranslate"><span class="pre">D2D1DashStyle</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1DebugLevel"><code class="docutils literal notranslate"><span class="pre">D2D1DebugLevel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1DrawTextOption"><code class="docutils literal notranslate"><span class="pre">D2D1DrawTextOption</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1DrawingStateDesc"><code class="docutils literal notranslate"><span class="pre">D2D1DrawingStateDesc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1Ellipse"><code class="docutils literal notranslate"><span class="pre">D2D1Ellipse</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1ExtendMode"><code class="docutils literal notranslate"><span class="pre">D2D1ExtendMode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1FactoryOption"><code class="docutils literal notranslate"><span class="pre">D2D1FactoryOption</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1FactoryType"><code class="docutils literal notranslate"><span class="pre">D2D1FactoryType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1FeatureLevel"><code class="docutils literal notranslate"><span class="pre">D2D1FeatureLevel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1FigureBegin"><code class="docutils literal notranslate"><span class="pre">D2D1FigureBegin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1FigureEnd"><code class="docutils literal notranslate"><span class="pre">D2D1FigureEnd</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1FillMode"><code class="docutils literal notranslate"><span class="pre">D2D1FillMode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1Gamma"><code class="docutils literal notranslate"><span class="pre">D2D1Gamma</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1GeometryRelation"><code class="docutils literal notranslate"><span class="pre">D2D1GeometryRelation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1GeometrySimplificationOption"><code class="docutils literal notranslate"><span class="pre">D2D1GeometrySimplificationOption</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1GradientStop"><code class="docutils literal notranslate"><span class="pre">D2D1GradientStop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1HwndRenderTargetProps"><code class="docutils literal notranslate"><span class="pre">D2D1HwndRenderTargetProps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1InterpolationModeDefinition"><code class="docutils literal notranslate"><span class="pre">D2D1InterpolationModeDefinition</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1LayerOption"><code class="docutils literal notranslate"><span class="pre">D2D1LayerOption</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1LayerParams"><code class="docutils literal notranslate"><span class="pre">D2D1LayerParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1LineJoin"><code class="docutils literal notranslate"><span class="pre">D2D1LineJoin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1LinearGradientBrushProps"><code class="docutils literal notranslate"><span class="pre">D2D1LinearGradientBrushProps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1OpacityMaskContent"><code class="docutils literal notranslate"><span class="pre">D2D1OpacityMaskContent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1PathSegment"><code class="docutils literal notranslate"><span class="pre">D2D1PathSegment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1PresentOption"><code class="docutils literal notranslate"><span class="pre">D2D1PresentOption</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1QuardraticBezierSegment"><code class="docutils literal notranslate"><span class="pre">D2D1QuardraticBezierSegment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1RadialGradientBrushProps"><code class="docutils literal notranslate"><span class="pre">D2D1RadialGradientBrushProps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1RenderTargetProps"><code class="docutils literal notranslate"><span class="pre">D2D1RenderTargetProps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1RenderTargetType"><code class="docutils literal notranslate"><span class="pre">D2D1RenderTargetType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1RenderTargetUsage"><code class="docutils literal notranslate"><span class="pre">D2D1RenderTargetUsage</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1RoundedRect"><code class="docutils literal notranslate"><span class="pre">D2D1RoundedRect</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1StrokeStyleProps"><code class="docutils literal notranslate"><span class="pre">D2D1StrokeStyleProps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1SweepDirection"><code class="docutils literal notranslate"><span class="pre">D2D1SweepDirection</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1TextAntialiasMode"><code class="docutils literal notranslate"><span class="pre">D2D1TextAntialiasMode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1Triangle"><code class="docutils literal notranslate"><span class="pre">D2D1Triangle</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.D2D1WindowState"><code class="docutils literal notranslate"><span class="pre">D2D1WindowState</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1Bitmap"><code class="docutils literal notranslate"><span class="pre">ID2D1Bitmap</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1BitmapBrush"><code class="docutils literal notranslate"><span class="pre">ID2D1BitmapBrush</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1BitmapRenderTarget"><code class="docutils literal notranslate"><span class="pre">ID2D1BitmapRenderTarget</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1Brush"><code class="docutils literal notranslate"><span class="pre">ID2D1Brush</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1DCRenderTarget"><code class="docutils literal notranslate"><span class="pre">ID2D1DCRenderTarget</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1DrawingStateBlock"><code class="docutils literal notranslate"><span class="pre">ID2D1DrawingStateBlock</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1EllipseGeometry"><code class="docutils literal notranslate"><span class="pre">ID2D1EllipseGeometry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1Factory"><code class="docutils literal notranslate"><span class="pre">ID2D1Factory</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1GdiInteropRenderTarget"><code class="docutils literal notranslate"><span class="pre">ID2D1GdiInteropRenderTarget</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1Geometry"><code class="docutils literal notranslate"><span class="pre">ID2D1Geometry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1GeometryGroup"><code class="docutils literal notranslate"><span class="pre">ID2D1GeometryGroup</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1GeometrySink"><code class="docutils literal notranslate"><span class="pre">ID2D1GeometrySink</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1GradientStopCollection"><code class="docutils literal notranslate"><span class="pre">ID2D1GradientStopCollection</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1HwndRenderTarget"><code class="docutils literal notranslate"><span class="pre">ID2D1HwndRenderTarget</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1Image"><code class="docutils literal notranslate"><span class="pre">ID2D1Image</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1Layer"><code class="docutils literal notranslate"><span class="pre">ID2D1Layer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1LinearGradientBrush"><code class="docutils literal notranslate"><span class="pre">ID2D1LinearGradientBrush</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1Mesh"><code class="docutils literal notranslate"><span class="pre">ID2D1Mesh</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1PathGeometry"><code class="docutils literal notranslate"><span class="pre">ID2D1PathGeometry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1RadialGradientBrush"><code class="docutils literal notranslate"><span class="pre">ID2D1RadialGradientBrush</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1RectangleGeometry"><code class="docutils literal notranslate"><span class="pre">ID2D1RectangleGeometry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1RenderTarget"><code class="docutils literal notranslate"><span class="pre">ID2D1RenderTarget</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1Resource"><code class="docutils literal notranslate"><span class="pre">ID2D1Resource</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1RoundedRectangleGeometry"><code class="docutils literal notranslate"><span class="pre">ID2D1RoundedRectangleGeometry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1SimplifiedGeometrySink"><code class="docutils literal notranslate"><span class="pre">ID2D1SimplifiedGeometrySink</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1SolidColorBrush"><code class="docutils literal notranslate"><span class="pre">ID2D1SolidColorBrush</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1StrokeStyle"><code class="docutils literal notranslate"><span class="pre">ID2D1StrokeStyle</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1TessellationSink"><code class="docutils literal notranslate"><span class="pre">ID2D1TessellationSink</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.ID2D1TransformedGeometry"><code class="docutils literal notranslate"><span class="pre">ID2D1TransformedGeometry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html#powcd2d.d2d.types.IDWriteGeometrySink"><code class="docutils literal notranslate"><span class="pre">IDWriteGeometrySink</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="powcd2d.dcommon.html">powcd2d.dcommon package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dcommon.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dcommon.types.html">powcd2d.dcommon.types module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2D1AlphaMode"><code class="docutils literal notranslate"><span class="pre">D2D1AlphaMode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2D1Matrix3X2F"><code class="docutils literal notranslate"><span class="pre">D2D1Matrix3X2F</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2D1PixelFormat"><code class="docutils literal notranslate"><span class="pre">D2D1PixelFormat</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2D1Point2F"><code class="docutils literal notranslate"><span class="pre">D2D1Point2F</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2D1Point2L"><code class="docutils literal notranslate"><span class="pre">D2D1Point2L</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2D1Point2U"><code class="docutils literal notranslate"><span class="pre">D2D1Point2U</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2D1RectF"><code class="docutils literal notranslate"><span class="pre">D2D1RectF</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2D1RectL"><code class="docutils literal notranslate"><span class="pre">D2D1RectL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2D1RectU"><code class="docutils literal notranslate"><span class="pre">D2D1RectU</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2D1SizeF"><code class="docutils literal notranslate"><span class="pre">D2D1SizeF</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2D1SizeU"><code class="docutils literal notranslate"><span class="pre">D2D1SizeU</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2DMatrix3X2F"><code class="docutils literal notranslate"><span class="pre">D2DMatrix3X2F</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2DMatrix4X3F"><code class="docutils literal notranslate"><span class="pre">D2DMatrix4X3F</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2DMatrix4X4F"><code class="docutils literal notranslate"><span class="pre">D2DMatrix4X4F</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2DMatrix5X4F"><code class="docutils literal notranslate"><span class="pre">D2DMatrix5X4F</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2DPoint2F"><code class="docutils literal notranslate"><span class="pre">D2DPoint2F</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2DPoint2L"><code class="docutils literal notranslate"><span class="pre">D2DPoint2L</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2DPoint2U"><code class="docutils literal notranslate"><span class="pre">D2DPoint2U</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2DRectF"><code class="docutils literal notranslate"><span class="pre">D2DRectF</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2DRectL"><code class="docutils literal notranslate"><span class="pre">D2DRectL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2DRectU"><code class="docutils literal notranslate"><span class="pre">D2DRectU</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2DSizeF"><code class="docutils literal notranslate"><span class="pre">D2DSizeF</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2DSizeU"><code class="docutils literal notranslate"><span class="pre">D2DSizeU</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2DVector2F"><code class="docutils literal notranslate"><span class="pre">D2DVector2F</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2DVector3F"><code class="docutils literal notranslate"><span class="pre">D2DVector3F</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.D2DVector4F"><code class="docutils literal notranslate"><span class="pre">D2DVector4F</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.DWriteGlyphImageFormat"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html#powcd2d.dcommon.types.DWriteMeasuringMode"><code class="docutils literal notranslate"><span class="pre">DWriteMeasuringMode</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="powcd2d.dwrite.html">powcd2d.dwrite package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFactory"><code class="docutils literal notranslate"><span class="pre">DWriteFactory</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFactory.create"><code class="docutils literal notranslate"><span class="pre">DWriteFactory.create()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFactory.create_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteFactory.create_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFactory.systemfontcollection"><code class="docutils literal notranslate"><span class="pre">DWriteFactory.systemfontcollection</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFactory.systemfontcollection_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteFactory.systemfontcollection_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFactory.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">DWriteFactory.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFont"><code class="docutils literal notranslate"><span class="pre">DWriteFont</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFont.facenames"><code class="docutils literal notranslate"><span class="pre">DWriteFont.facenames</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFont.facenames_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteFont.facenames_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFont.fontfamily"><code class="docutils literal notranslate"><span class="pre">DWriteFont.fontfamily</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFont.fontfamily_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteFont.fontfamily_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFont.is_symbolfont"><code class="docutils literal notranslate"><span class="pre">DWriteFont.is_symbolfont</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFont.is_symbolfont_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteFont.is_symbolfont_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFont.stretch"><code class="docutils literal notranslate"><span class="pre">DWriteFont.stretch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFont.stretch_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteFont.stretch_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFont.style"><code class="docutils literal notranslate"><span class="pre">DWriteFont.style</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFont.style_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteFont.style_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFont.weight"><code class="docutils literal notranslate"><span class="pre">DWriteFont.weight</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFont.weight_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteFont.weight_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFont.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">DWriteFont.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontCollection"><code class="docutils literal notranslate"><span class="pre">DWriteFontCollection</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontCollection.find_familyname"><code class="docutils literal notranslate"><span class="pre">DWriteFontCollection.find_familyname()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontCollection.find_familyname_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteFontCollection.find_familyname_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontCollection.fontfamilies"><code class="docutils literal notranslate"><span class="pre">DWriteFontCollection.fontfamilies</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontCollection.fontfamily_count"><code class="docutils literal notranslate"><span class="pre">DWriteFontCollection.fontfamily_count</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontCollection.fontfamily_count_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteFontCollection.fontfamily_count_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontCollection.fontfamily_iter"><code class="docutils literal notranslate"><span class="pre">DWriteFontCollection.fontfamily_iter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontCollection.get_font_from_fontface"><code class="docutils literal notranslate"><span class="pre">DWriteFontCollection.get_font_from_fontface()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontCollection.get_font_from_fontface_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteFontCollection.get_font_from_fontface_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontCollection.get_fontfamily"><code class="docutils literal notranslate"><span class="pre">DWriteFontCollection.get_fontfamily()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontCollection.get_fontfamily_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteFontCollection.get_fontfamily_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontCollection.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">DWriteFontCollection.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontFace"><code class="docutils literal notranslate"><span class="pre">DWriteFontFace</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontFace.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">DWriteFontFace.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontFamily"><code class="docutils literal notranslate"><span class="pre">DWriteFontFamily</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontFamily.familynames"><code class="docutils literal notranslate"><span class="pre">DWriteFontFamily.familynames</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontFamily.familynames_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteFontFamily.familynames_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontFamily.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">DWriteFontFamily.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontList"><code class="docutils literal notranslate"><span class="pre">DWriteFontList</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontList.as_collection"><code class="docutils literal notranslate"><span class="pre">DWriteFontList.as_collection()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontList.as_collection_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteFontList.as_collection_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontList.count"><code class="docutils literal notranslate"><span class="pre">DWriteFontList.count</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontList.count_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteFontList.count_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontList.font_iter"><code class="docutils literal notranslate"><span class="pre">DWriteFontList.font_iter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontList.fonts"><code class="docutils literal notranslate"><span class="pre">DWriteFontList.fonts</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontList.get_font"><code class="docutils literal notranslate"><span class="pre">DWriteFontList.get_font()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontList.get_font_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteFontList.get_font_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteFontList.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">DWriteFontList.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteLocalizedStrings"><code class="docutils literal notranslate"><span class="pre">DWriteLocalizedStrings</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteLocalizedStrings.count"><code class="docutils literal notranslate"><span class="pre">DWriteLocalizedStrings.count</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteLocalizedStrings.count_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteLocalizedStrings.count_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteLocalizedStrings.find_localename"><code class="docutils literal notranslate"><span class="pre">DWriteLocalizedStrings.find_localename()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteLocalizedStrings.find_localename_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteLocalizedStrings.find_localename_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteLocalizedStrings.get_localename"><code class="docutils literal notranslate"><span class="pre">DWriteLocalizedStrings.get_localename()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteLocalizedStrings.get_localename_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteLocalizedStrings.get_localename_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteLocalizedStrings.get_localenamelen"><code class="docutils literal notranslate"><span class="pre">DWriteLocalizedStrings.get_localenamelen()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteLocalizedStrings.get_localenamelen_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteLocalizedStrings.get_localenamelen_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteLocalizedStrings.get_string"><code class="docutils literal notranslate"><span class="pre">DWriteLocalizedStrings.get_string()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteLocalizedStrings.get_string_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteLocalizedStrings.get_string_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteLocalizedStrings.get_stringlen"><code class="docutils literal notranslate"><span class="pre">DWriteLocalizedStrings.get_stringlen()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteLocalizedStrings.get_stringlen_nothrow"><code class="docutils literal notranslate"><span class="pre">DWriteLocalizedStrings.get_stringlen_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteLocalizedStrings.localename_iter"><code class="docutils literal notranslate"><span class="pre">DWriteLocalizedStrings.localename_iter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteLocalizedStrings.localnames"><code class="docutils literal notranslate"><span class="pre">DWriteLocalizedStrings.localnames</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteLocalizedStrings.string_iter"><code class="docutils literal notranslate"><span class="pre">DWriteLocalizedStrings.string_iter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteLocalizedStrings.strings"><code class="docutils literal notranslate"><span class="pre">DWriteLocalizedStrings.strings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.html#powcd2d.dwrite.DWriteLocalizedStrings.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">DWriteLocalizedStrings.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dwrite.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.interfacebody.html">powcd2d.dwrite.interfacebody module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dwrite.types.html">powcd2d.dwrite.types module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteBreakCondition"><code class="docutils literal notranslate"><span class="pre">DWriteBreakCondition</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteClusterMetrics"><code class="docutils literal notranslate"><span class="pre">DWriteClusterMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteFactoryType"><code class="docutils literal notranslate"><span class="pre">DWriteFactoryType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteFlowDirection"><code class="docutils literal notranslate"><span class="pre">DWriteFlowDirection</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteFontFaceType"><code class="docutils literal notranslate"><span class="pre">DWriteFontFaceType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteFontFeature"><code class="docutils literal notranslate"><span class="pre">DWriteFontFeature</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteFontFeatureTag"><code class="docutils literal notranslate"><span class="pre">DWriteFontFeatureTag</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteFontFileType"><code class="docutils literal notranslate"><span class="pre">DWriteFontFileType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteFontMetrics"><code class="docutils literal notranslate"><span class="pre">DWriteFontMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteFontSimulation"><code class="docutils literal notranslate"><span class="pre">DWriteFontSimulation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteFontStretch"><code class="docutils literal notranslate"><span class="pre">DWriteFontStretch</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteFontStyle"><code class="docutils literal notranslate"><span class="pre">DWriteFontStyle</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteFontWeight"><code class="docutils literal notranslate"><span class="pre">DWriteFontWeight</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteGlyphMetrics"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteGlyphOffset"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphOffset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteGlyphRun"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphRun</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteGlyphRunDesc"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphRunDesc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteHitTestMetrics"><code class="docutils literal notranslate"><span class="pre">DWriteHitTestMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteInfoStringID"><code class="docutils literal notranslate"><span class="pre">DWriteInfoStringID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteInlineObjectMetrics"><code class="docutils literal notranslate"><span class="pre">DWriteInlineObjectMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteLineBreakpoint"><code class="docutils literal notranslate"><span class="pre">DWriteLineBreakpoint</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteLineMetrics"><code class="docutils literal notranslate"><span class="pre">DWriteLineMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteLineSpacingMethod"><code class="docutils literal notranslate"><span class="pre">DWriteLineSpacingMethod</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteMatrix"><code class="docutils literal notranslate"><span class="pre">DWriteMatrix</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteNumberSubstitutionMethod"><code class="docutils literal notranslate"><span class="pre">DWriteNumberSubstitutionMethod</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteOverhangMetrics"><code class="docutils literal notranslate"><span class="pre">DWriteOverhangMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteParagraphAlign"><code class="docutils literal notranslate"><span class="pre">DWriteParagraphAlign</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWritePixelGeometry"><code class="docutils literal notranslate"><span class="pre">DWritePixelGeometry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteReadingDirection"><code class="docutils literal notranslate"><span class="pre">DWriteReadingDirection</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteRenderingMode"><code class="docutils literal notranslate"><span class="pre">DWriteRenderingMode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteScriptAnalysis"><code class="docutils literal notranslate"><span class="pre">DWriteScriptAnalysis</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteScriptShape"><code class="docutils literal notranslate"><span class="pre">DWriteScriptShape</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteShapingGlyphProps"><code class="docutils literal notranslate"><span class="pre">DWriteShapingGlyphProps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteShapingTextProps"><code class="docutils literal notranslate"><span class="pre">DWriteShapingTextProps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteStrikethrough"><code class="docutils literal notranslate"><span class="pre">DWriteStrikethrough</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteTextAlign"><code class="docutils literal notranslate"><span class="pre">DWriteTextAlign</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteTextMetrics"><code class="docutils literal notranslate"><span class="pre">DWriteTextMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteTextRange"><code class="docutils literal notranslate"><span class="pre">DWriteTextRange</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteTextureType"><code class="docutils literal notranslate"><span class="pre">DWriteTextureType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteTrimming"><code class="docutils literal notranslate"><span class="pre">DWriteTrimming</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteTrimmingGranularity"><code class="docutils literal notranslate"><span class="pre">DWriteTrimmingGranularity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteTypegraphicFeatures"><code class="docutils literal notranslate"><span class="pre">DWriteTypegraphicFeatures</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteUnderline"><code class="docutils literal notranslate"><span class="pre">DWriteUnderline</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.DWriteWordWrap"><code class="docutils literal notranslate"><span class="pre">DWriteWordWrap</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteBitmapRenderTarget"><code class="docutils literal notranslate"><span class="pre">IDWriteBitmapRenderTarget</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteFactory"><code class="docutils literal notranslate"><span class="pre">IDWriteFactory</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteFont"><code class="docutils literal notranslate"><span class="pre">IDWriteFont</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteFontCollection"><code class="docutils literal notranslate"><span class="pre">IDWriteFontCollection</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteFontCollectionLoader"><code class="docutils literal notranslate"><span class="pre">IDWriteFontCollectionLoader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteFontFace"><code class="docutils literal notranslate"><span class="pre">IDWriteFontFace</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteFontFamily"><code class="docutils literal notranslate"><span class="pre">IDWriteFontFamily</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteFontFile"><code class="docutils literal notranslate"><span class="pre">IDWriteFontFile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteFontFileEnumerator"><code class="docutils literal notranslate"><span class="pre">IDWriteFontFileEnumerator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteFontFileLoader"><code class="docutils literal notranslate"><span class="pre">IDWriteFontFileLoader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteFontFileStream"><code class="docutils literal notranslate"><span class="pre">IDWriteFontFileStream</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteFontList"><code class="docutils literal notranslate"><span class="pre">IDWriteFontList</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteGdiInterop"><code class="docutils literal notranslate"><span class="pre">IDWriteGdiInterop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteGlyphRunAnalysis"><code class="docutils literal notranslate"><span class="pre">IDWriteGlyphRunAnalysis</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteInlineObject"><code class="docutils literal notranslate"><span class="pre">IDWriteInlineObject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteLocalFontFileLoader"><code class="docutils literal notranslate"><span class="pre">IDWriteLocalFontFileLoader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteLocalizedStrings"><code class="docutils literal notranslate"><span class="pre">IDWriteLocalizedStrings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteNumberSubstitution"><code class="docutils literal notranslate"><span class="pre">IDWriteNumberSubstitution</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWritePixelSnapping"><code class="docutils literal notranslate"><span class="pre">IDWritePixelSnapping</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteRenderingParams"><code class="docutils literal notranslate"><span class="pre">IDWriteRenderingParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteTextAnalysisSink"><code class="docutils literal notranslate"><span class="pre">IDWriteTextAnalysisSink</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteTextAnalysisSource"><code class="docutils literal notranslate"><span class="pre">IDWriteTextAnalysisSource</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteTextAnalyzer"><code class="docutils literal notranslate"><span class="pre">IDWriteTextAnalyzer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteTextFormat"><code class="docutils literal notranslate"><span class="pre">IDWriteTextFormat</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteTextLayout"><code class="docutils literal notranslate"><span class="pre">IDWriteTextLayout</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteTextRenderer"><code class="docutils literal notranslate"><span class="pre">IDWriteTextRenderer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.IDWriteTypography"><code class="docutils literal notranslate"><span class="pre">IDWriteTypography</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html#powcd2d.dwrite.types.dwrite_make_opentype_tag"><code class="docutils literal notranslate"><span class="pre">dwrite_make_opentype_tag()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="powcd2d.dxgi.html">powcd2d.dxgi package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIAdapter"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIAdapter.check_interfacesupport"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.check_interfacesupport()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIAdapter.check_interfacesupport_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.check_interfacesupport_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIAdapter.desc"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.desc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIAdapter.desc_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.desc_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIAdapter.get_output"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.get_output()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIAdapter.get_output_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.get_output_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIAdapter.output_iter"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.output_iter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIAdapter.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">DXGIAdapter.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIDevice"><code class="docutils literal notranslate"><span class="pre">DXGIDevice</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIDevice.adapter"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.adapter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIDevice.adapter_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.adapter_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIDevice.gputhreadpriority"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.gputhreadpriority</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIDevice.gputhreadpriority_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.gputhreadpriority_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIDevice.query_resourceresidency"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.query_resourceresidency()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIDevice.query_resourceresidency_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.query_resourceresidency_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIDevice.set_gputhreadpriority_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.set_gputhreadpriority_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIDevice.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">DXGIDevice.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIFactory"><code class="docutils literal notranslate"><span class="pre">DXGIFactory</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIFactory.adapter_iter"><code class="docutils literal notranslate"><span class="pre">DXGIFactory.adapter_iter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIFactory.create"><code class="docutils literal notranslate"><span class="pre">DXGIFactory.create()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIFactory.create_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIFactory.create_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIFactory.get_adapter"><code class="docutils literal notranslate"><span class="pre">DXGIFactory.get_adapter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIFactory.get_adapter_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIFactory.get_adapter_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIFactory.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">DXGIFactory.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIObject"><code class="docutils literal notranslate"><span class="pre">DXGIObject</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIObject.get_privatedata"><code class="docutils literal notranslate"><span class="pre">DXGIObject.get_privatedata()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIObject.get_privatedata_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIObject.get_privatedata_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIObject.get_privatedatalen"><code class="docutils literal notranslate"><span class="pre">DXGIObject.get_privatedatalen()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIObject.get_privatedatalen_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIObject.get_privatedatalen_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIObject.parent"><code class="docutils literal notranslate"><span class="pre">DXGIObject.parent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIObject.parent_nothrow"><code class="docutils literal notranslate"><span class="pre">DXGIObject.parent_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIObject.set_privatedata"><code class="docutils literal notranslate"><span class="pre">DXGIObject.set_privatedata()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIObject.set_privatedata_interface"><code class="docutils literal notranslate"><span class="pre">DXGIObject.set_privatedata_interface()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.html#powcd2d.dxgi.DXGIObject.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">DXGIObject.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.dxgi.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.interfacebody.html">powcd2d.dxgi.interfacebody module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.dxgi.types.html">powcd2d.dxgi.types module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.D2DColorF"><code class="docutils literal notranslate"><span class="pre">D2DColorF</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.D3DColorValue"><code class="docutils literal notranslate"><span class="pre">D3DColorValue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterDesc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterDesc1"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterDesc1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIAdapterFlag"><code class="docutils literal notranslate"><span class="pre">DXGIAdapterFlag</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIColorSpaceType"><code class="docutils literal notranslate"><span class="pre">DXGIColorSpaceType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGICpuAccess"><code class="docutils literal notranslate"><span class="pre">DXGICpuAccess</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIDisplayColorSpace"><code class="docutils literal notranslate"><span class="pre">DXGIDisplayColorSpace</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIEnumMode"><code class="docutils literal notranslate"><span class="pre">DXGIEnumMode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFormat"><code class="docutils literal notranslate"><span class="pre">DXGIFormat</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIFrameStats"><code class="docutils literal notranslate"><span class="pre">DXGIFrameStats</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIGammaControl"><code class="docutils literal notranslate"><span class="pre">DXGIGammaControl</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIGammaControlCaps"><code class="docutils literal notranslate"><span class="pre">DXGIGammaControlCaps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIJpegACHuffmanTable"><code class="docutils literal notranslate"><span class="pre">DXGIJpegACHuffmanTable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIJpegDCHuffmanTable"><code class="docutils literal notranslate"><span class="pre">DXGIJpegDCHuffmanTable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIJpegQuantizationTable"><code class="docutils literal notranslate"><span class="pre">DXGIJpegQuantizationTable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIMap"><code class="docutils literal notranslate"><span class="pre">DXGIMap</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIMappedRect"><code class="docutils literal notranslate"><span class="pre">DXGIMappedRect</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeDesc"><code class="docutils literal notranslate"><span class="pre">DXGIModeDesc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeRotation"><code class="docutils literal notranslate"><span class="pre">DXGIModeRotation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeScaling"><code class="docutils literal notranslate"><span class="pre">DXGIModeScaling</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIModeScanlineOrder"><code class="docutils literal notranslate"><span class="pre">DXGIModeScanlineOrder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIOutputDesc"><code class="docutils literal notranslate"><span class="pre">DXGIOutputDesc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIPresent"><code class="docutils literal notranslate"><span class="pre">DXGIPresent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIRGB"><code class="docutils literal notranslate"><span class="pre">DXGIRGB</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIRGBA"><code class="docutils literal notranslate"><span class="pre">DXGIRGBA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIRational"><code class="docutils literal notranslate"><span class="pre">DXGIRational</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIResidency"><code class="docutils literal notranslate"><span class="pre">DXGIResidency</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIResourcePriority"><code class="docutils literal notranslate"><span class="pre">DXGIResourcePriority</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISampleDesc"><code class="docutils literal notranslate"><span class="pre">DXGISampleDesc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISampleDescQuality"><code class="docutils literal notranslate"><span class="pre">DXGISampleDescQuality</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISharedResource"><code class="docutils literal notranslate"><span class="pre">DXGISharedResource</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISurfaceDesc"><code class="docutils literal notranslate"><span class="pre">DXGISurfaceDesc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainDesc"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainDesc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapChainFlag"><code class="docutils literal notranslate"><span class="pre">DXGISwapChainFlag</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGISwapEffect"><code class="docutils literal notranslate"><span class="pre">DXGISwapEffect</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.DXGIUsage"><code class="docutils literal notranslate"><span class="pre">DXGIUsage</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIAdapter"><code class="docutils literal notranslate"><span class="pre">IDXGIAdapter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIAdapter1"><code class="docutils literal notranslate"><span class="pre">IDXGIAdapter1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDevice1"><code class="docutils literal notranslate"><span class="pre">IDXGIDevice1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIDeviceSubObject"><code class="docutils literal notranslate"><span class="pre">IDXGIDeviceSubObject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIFactory1"><code class="docutils literal notranslate"><span class="pre">IDXGIFactory1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIKeyedMutex"><code class="docutils literal notranslate"><span class="pre">IDXGIKeyedMutex</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIObject"><code class="docutils literal notranslate"><span class="pre">IDXGIObject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIOutput"><code class="docutils literal notranslate"><span class="pre">IDXGIOutput</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGIResource"><code class="docutils literal notranslate"><span class="pre">IDXGIResource</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface"><code class="docutils literal notranslate"><span class="pre">IDXGISurface</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISurface1"><code class="docutils literal notranslate"><span class="pre">IDXGISurface1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.IDXGISwapChain"><code class="docutils literal notranslate"><span class="pre">IDXGISwapChain</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html#powcd2d.dxgi.types.LUID"><code class="docutils literal notranslate"><span class="pre">LUID</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="powcd2d.wic.html">powcd2d.wic package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmap"><code class="docutils literal notranslate"><span class="pre">WICBitmap</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmap.lock"><code class="docutils literal notranslate"><span class="pre">WICBitmap.lock()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmap.lock_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmap.lock_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmap.resolution"><code class="docutils literal notranslate"><span class="pre">WICBitmap.resolution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmap.resolution_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmap.resolution_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmap.set_palette"><code class="docutils literal notranslate"><span class="pre">WICBitmap.set_palette()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmap.set_palette_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmap.set_palette_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmap.set_resolution_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmap.set_resolution_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmap.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">WICBitmap.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.colormanagementversion"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.colormanagementversion</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.colormanagementversion_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.colormanagementversion_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.containerformat"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.containerformat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.containerformat_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.containerformat_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.devicemanufacturer"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.devicemanufacturer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.devicemanufacturer_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.devicemanufacturer_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.devicemodels"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.devicemodels</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.devicemodels_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.devicemodels_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.does_supports_animation"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.does_supports_animation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.does_supports_animation_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.does_supports_animation_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.does_supports_chromakey"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.does_supports_chromakey</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.does_supports_chromakey_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.does_supports_chromakey_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.does_supports_lossless"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.does_supports_lossless</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.does_supports_lossless_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.does_supports_lossless_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.does_supports_multiframe"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.does_supports_multiframe</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.does_supports_multiframe_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.does_supports_multiframe_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.fileextensions"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.fileextensions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.fileextensions_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.fileextensions_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.matches_mimetype"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.matches_mimetype()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.matches_mimetype_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.matches_mimetype_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.mimetypes"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.mimetypes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.mimetypes_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.mimetypes_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.pixelformats"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.pixelformats</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.pixelformats_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.pixelformats_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapCodecInfo.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">WICBitmapCodecInfo.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapDecoder"><code class="docutils literal notranslate"><span class="pre">WICBitmapDecoder</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapDecoder.containerformat"><code class="docutils literal notranslate"><span class="pre">WICBitmapDecoder.containerformat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapDecoder.containerformat_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapDecoder.containerformat_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapDecoder.decoderinfo"><code class="docutils literal notranslate"><span class="pre">WICBitmapDecoder.decoderinfo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapDecoder.decoderinfo_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapDecoder.decoderinfo_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapDecoder.framecount"><code class="docutils literal notranslate"><span class="pre">WICBitmapDecoder.framecount</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapDecoder.framecount_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapDecoder.framecount_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapDecoder.get_frame"><code class="docutils literal notranslate"><span class="pre">WICBitmapDecoder.get_frame()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapDecoder.get_frame_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapDecoder.get_frame_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapDecoder.initialize"><code class="docutils literal notranslate"><span class="pre">WICBitmapDecoder.initialize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapDecoder.initialize_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapDecoder.initialize_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapDecoder.query_capability"><code class="docutils literal notranslate"><span class="pre">WICBitmapDecoder.query_capability()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapDecoder.query_capability_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapDecoder.query_capability_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapDecoder.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">WICBitmapDecoder.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapDecoderInfo"><code class="docutils literal notranslate"><span class="pre">WICBitmapDecoderInfo</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapDecoderInfo.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">WICBitmapDecoderInfo.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapEncoder"><code class="docutils literal notranslate"><span class="pre">WICBitmapEncoder</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapEncoder.commit"><code class="docutils literal notranslate"><span class="pre">WICBitmapEncoder.commit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapEncoder.commit_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapEncoder.commit_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapEncoder.containerformat"><code class="docutils literal notranslate"><span class="pre">WICBitmapEncoder.containerformat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapEncoder.containerformat_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapEncoder.containerformat_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapEncoder.encoderinfo"><code class="docutils literal notranslate"><span class="pre">WICBitmapEncoder.encoderinfo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapEncoder.encoderinfo_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapEncoder.encoderinfo_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapEncoder.initialize"><code class="docutils literal notranslate"><span class="pre">WICBitmapEncoder.initialize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapEncoder.initialize_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapEncoder.initialize_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapEncoder.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">WICBitmapEncoder.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapEncoderInfo"><code class="docutils literal notranslate"><span class="pre">WICBitmapEncoderInfo</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapEncoderInfo.create_instance"><code class="docutils literal notranslate"><span class="pre">WICBitmapEncoderInfo.create_instance()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapEncoderInfo.create_instance_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapEncoderInfo.create_instance_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapEncoderInfo.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">WICBitmapEncoderInfo.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapFrameDecode"><code class="docutils literal notranslate"><span class="pre">WICBitmapFrameDecode</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapFrameDecode.get_metadataqueryreader"><code class="docutils literal notranslate"><span class="pre">WICBitmapFrameDecode.get_metadataqueryreader()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapFrameDecode.get_metadataqueryreader_nothtow"><code class="docutils literal notranslate"><span class="pre">WICBitmapFrameDecode.get_metadataqueryreader_nothtow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapFrameDecode.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">WICBitmapFrameDecode.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapFrameEncode"><code class="docutils literal notranslate"><span class="pre">WICBitmapFrameEncode</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapFrameEncode.initialize"><code class="docutils literal notranslate"><span class="pre">WICBitmapFrameEncode.initialize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapFrameEncode.initialize_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapFrameEncode.initialize_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapFrameEncode.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">WICBitmapFrameEncode.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapLock"><code class="docutils literal notranslate"><span class="pre">WICBitmapLock</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapLock.datapointer"><code class="docutils literal notranslate"><span class="pre">WICBitmapLock.datapointer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapLock.datapointer_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapLock.datapointer_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapLock.pixelformat"><code class="docutils literal notranslate"><span class="pre">WICBitmapLock.pixelformat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapLock.pixelformat_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapLock.pixelformat_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapLock.size"><code class="docutils literal notranslate"><span class="pre">WICBitmapLock.size</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapLock.size_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapLock.size_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapLock.stride"><code class="docutils literal notranslate"><span class="pre">WICBitmapLock.stride</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapLock.stride_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapLock.stride_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapLock.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">WICBitmapLock.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapSource"><code class="docutils literal notranslate"><span class="pre">WICBitmapSource</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapSource.copy_palette"><code class="docutils literal notranslate"><span class="pre">WICBitmapSource.copy_palette()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapSource.copy_palette_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapSource.copy_palette_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapSource.copy_pixels"><code class="docutils literal notranslate"><span class="pre">WICBitmapSource.copy_pixels()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapSource.copy_pixels_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapSource.copy_pixels_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapSource.pixelformat"><code class="docutils literal notranslate"><span class="pre">WICBitmapSource.pixelformat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapSource.pixelformat_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapSource.pixelformat_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapSource.resolution"><code class="docutils literal notranslate"><span class="pre">WICBitmapSource.resolution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapSource.resolution_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapSource.resolution_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapSource.size"><code class="docutils literal notranslate"><span class="pre">WICBitmapSource.size</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapSource.size_nothrow"><code class="docutils literal notranslate"><span class="pre">WICBitmapSource.size_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICBitmapSource.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">WICBitmapSource.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICComponentInfo"><code class="docutils literal notranslate"><span class="pre">WICComponentInfo</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICComponentInfo.author"><code class="docutils literal notranslate"><span class="pre">WICComponentInfo.author</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICComponentInfo.author_nothrow"><code class="docutils literal notranslate"><span class="pre">WICComponentInfo.author_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICComponentInfo.clsid"><code class="docutils literal notranslate"><span class="pre">WICComponentInfo.clsid</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICComponentInfo.clsid_nothrow"><code class="docutils literal notranslate"><span class="pre">WICComponentInfo.clsid_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICComponentInfo.componenttype"><code class="docutils literal notranslate"><span class="pre">WICComponentInfo.componenttype</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICComponentInfo.componenttype_nothrow"><code class="docutils literal notranslate"><span class="pre">WICComponentInfo.componenttype_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICComponentInfo.friendlyname"><code class="docutils literal notranslate"><span class="pre">WICComponentInfo.friendlyname</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICComponentInfo.friendlyname_nothrow"><code class="docutils literal notranslate"><span class="pre">WICComponentInfo.friendlyname_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICComponentInfo.signingstatus"><code class="docutils literal notranslate"><span class="pre">WICComponentInfo.signingstatus</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICComponentInfo.signingstatus_nothrow"><code class="docutils literal notranslate"><span class="pre">WICComponentInfo.signingstatus_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICComponentInfo.specversion"><code class="docutils literal notranslate"><span class="pre">WICComponentInfo.specversion</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICComponentInfo.specversion_nothrow"><code class="docutils literal notranslate"><span class="pre">WICComponentInfo.specversion_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICComponentInfo.vendorguid"><code class="docutils literal notranslate"><span class="pre">WICComponentInfo.vendorguid</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICComponentInfo.vendorguid_nothrow"><code class="docutils literal notranslate"><span class="pre">WICComponentInfo.vendorguid_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICComponentInfo.version"><code class="docutils literal notranslate"><span class="pre">WICComponentInfo.version</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICComponentInfo.version_nothrow"><code class="docutils literal notranslate"><span class="pre">WICComponentInfo.version_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICComponentInfo.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">WICComponentInfo.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICFastMetadataEncoder"><code class="docutils literal notranslate"><span class="pre">WICFastMetadataEncoder</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICFastMetadataEncoder.commit"><code class="docutils literal notranslate"><span class="pre">WICFastMetadataEncoder.commit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICFastMetadataEncoder.commit_nothrow"><code class="docutils literal notranslate"><span class="pre">WICFastMetadataEncoder.commit_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICFastMetadataEncoder.metadataquerywriter"><code class="docutils literal notranslate"><span class="pre">WICFastMetadataEncoder.metadataquerywriter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICFastMetadataEncoder.metadataquerywriter_nothrow"><code class="docutils literal notranslate"><span class="pre">WICFastMetadataEncoder.metadataquerywriter_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICFastMetadataEncoder.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">WICFastMetadataEncoder.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImageEncoder"><code class="docutils literal notranslate"><span class="pre">WICImageEncoder</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImageEncoder.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">WICImageEncoder.wrapped_obj</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImageEncoder.write_frame"><code class="docutils literal notranslate"><span class="pre">WICImageEncoder.write_frame()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImageEncoder.write_frame_nothrow"><code class="docutils literal notranslate"><span class="pre">WICImageEncoder.write_frame_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImageEncoder.write_framethumbnail"><code class="docutils literal notranslate"><span class="pre">WICImageEncoder.write_framethumbnail()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImageEncoder.write_framethumbnail_nothrow"><code class="docutils literal notranslate"><span class="pre">WICImageEncoder.write_framethumbnail_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImageEncoder.write_thumbnail"><code class="docutils literal notranslate"><span class="pre">WICImageEncoder.write_thumbnail()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImageEncoder.write_thumbnail_nothrow"><code class="docutils literal notranslate"><span class="pre">WICImageEncoder.write_thumbnail_nothrow()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_bitmap_from_bitmaphandle"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_bitmap_from_bitmaphandle()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_bitmap_from_bitmaphandle_nothrow"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_bitmap_from_bitmaphandle_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_bitmap_from_iconhandle"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_bitmap_from_iconhandle()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_bitmap_from_iconhandle_nothrow"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_bitmap_from_iconhandle_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_componentenumerator_nothrow"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_componentenumerator_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_componentinfo"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_componentinfo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_componentinfo_nothrow"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_componentinfo_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_decoder"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_decoder()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_decoder_from_filehandle"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_decoder_from_filehandle()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_decoder_from_filehandle_nothrow"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_decoder_from_filehandle_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_decoder_from_filename"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_decoder_from_filename()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_decoder_from_filename_nothrow"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_decoder_from_filename_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_decoder_from_stream"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_decoder_from_stream()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_decoder_from_stream_nothrow"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_decoder_from_stream_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_decoder_nothrow"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_decoder_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_encoder"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_encoder()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_encoder_nothrow"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_encoder_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_fast_metadata_encoder_from_decoder"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_fast_metadata_encoder_from_decoder()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_fast_metadata_encoder_from_decoder_nothrow"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_fast_metadata_encoder_from_decoder_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_palette"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_palette()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_palette_nothrow"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_palette_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.create_querywriter_nothrow"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.create_querywriter_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.iter_infos"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.iter_infos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.iter_infos_all"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.iter_infos_all()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.iter_infos_encoder"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.iter_infos_encoder()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory2"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory2</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory2.create_imageencoder"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory2.create_imageencoder()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory2.create_imageencoder_nothrow"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory2.create_imageencoder_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICImagingFactory2.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">WICImagingFactory2.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICMetadataQueryReader"><code class="docutils literal notranslate"><span class="pre">WICMetadataQueryReader</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICMetadataQueryReader.containerformat"><code class="docutils literal notranslate"><span class="pre">WICMetadataQueryReader.containerformat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICMetadataQueryReader.containerformat_nothrow"><code class="docutils literal notranslate"><span class="pre">WICMetadataQueryReader.containerformat_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICMetadataQueryReader.enumerator"><code class="docutils literal notranslate"><span class="pre">WICMetadataQueryReader.enumerator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICMetadataQueryReader.enumerator_nothrow"><code class="docutils literal notranslate"><span class="pre">WICMetadataQueryReader.enumerator_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICMetadataQueryReader.get_metadata_by_name"><code class="docutils literal notranslate"><span class="pre">WICMetadataQueryReader.get_metadata_by_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICMetadataQueryReader.get_metadata_by_name_nothrow"><code class="docutils literal notranslate"><span class="pre">WICMetadataQueryReader.get_metadata_by_name_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICMetadataQueryReader.location_nothrow"><code class="docutils literal notranslate"><span class="pre">WICMetadataQueryReader.location_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICMetadataQueryReader.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">WICMetadataQueryReader.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICMetadataQueryWriter"><code class="docutils literal notranslate"><span class="pre">WICMetadataQueryWriter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICMetadataQueryWriter.remove_metadata_by_name"><code class="docutils literal notranslate"><span class="pre">WICMetadataQueryWriter.remove_metadata_by_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICMetadataQueryWriter.remove_metadata_by_name_nothrow"><code class="docutils literal notranslate"><span class="pre">WICMetadataQueryWriter.remove_metadata_by_name_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICMetadataQueryWriter.set_metadata_by_name"><code class="docutils literal notranslate"><span class="pre">WICMetadataQueryWriter.set_metadata_by_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICMetadataQueryWriter.set_metadata_by_name_nothrow"><code class="docutils literal notranslate"><span class="pre">WICMetadataQueryWriter.set_metadata_by_name_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICMetadataQueryWriter.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">WICMetadataQueryWriter.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICPalette"><code class="docutils literal notranslate"><span class="pre">WICPalette</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICPalette.colorcount"><code class="docutils literal notranslate"><span class="pre">WICPalette.colorcount</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICPalette.colorcount_nothrow"><code class="docutils literal notranslate"><span class="pre">WICPalette.colorcount_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICPalette.colors_nothrow"><code class="docutils literal notranslate"><span class="pre">WICPalette.colors_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICPalette.has_alpha"><code class="docutils literal notranslate"><span class="pre">WICPalette.has_alpha</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICPalette.has_alpha_nothrow"><code class="docutils literal notranslate"><span class="pre">WICPalette.has_alpha_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICPalette.initialize_custom"><code class="docutils literal notranslate"><span class="pre">WICPalette.initialize_custom()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICPalette.initialize_custom_nothrow"><code class="docutils literal notranslate"><span class="pre">WICPalette.initialize_custom_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICPalette.initialize_from_bitmap"><code class="docutils literal notranslate"><span class="pre">WICPalette.initialize_from_bitmap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICPalette.initialize_from_bitmap_nothrow"><code class="docutils literal notranslate"><span class="pre">WICPalette.initialize_from_bitmap_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICPalette.initialize_from_palette"><code class="docutils literal notranslate"><span class="pre">WICPalette.initialize_from_palette()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICPalette.initialize_from_palette_nothrow"><code class="docutils literal notranslate"><span class="pre">WICPalette.initialize_from_palette_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICPalette.initilaize_predefined"><code class="docutils literal notranslate"><span class="pre">WICPalette.initilaize_predefined()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICPalette.initilaize_predefined_nothrow"><code class="docutils literal notranslate"><span class="pre">WICPalette.initilaize_predefined_nothrow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICPalette.is_blackwhite"><code class="docutils literal notranslate"><span class="pre">WICPalette.is_blackwhite</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICPalette.is_blackwhite_nothrow"><code class="docutils literal notranslate"><span class="pre">WICPalette.is_blackwhite_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICPalette.is_grayscale"><code class="docutils literal notranslate"><span class="pre">WICPalette.is_grayscale</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICPalette.is_grayscale_nothrow"><code class="docutils literal notranslate"><span class="pre">WICPalette.is_grayscale_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICPalette.type"><code class="docutils literal notranslate"><span class="pre">WICPalette.type</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICPalette.type_nothrow"><code class="docutils literal notranslate"><span class="pre">WICPalette.type_nothrow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.html#powcd2d.wic.WICPalette.wrapped_obj"><code class="docutils literal notranslate"><span class="pre">WICPalette.wrapped_obj</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.wic.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.constant.html">powcd2d.wic.constant module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.D2D1AlphaMode"><code class="docutils literal notranslate"><span class="pre">D2D1AlphaMode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.DXGIFormat"><code class="docutils literal notranslate"><span class="pre">DXGIFormat</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.FileAccess"><code class="docutils literal notranslate"><span class="pre">FileAccess</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WIC8BIMIptcDigestProp"><code class="docutils literal notranslate"><span class="pre">WIC8BIMIptcDigestProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WIC8BIMIptcProp"><code class="docutils literal notranslate"><span class="pre">WIC8BIMIptcProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WIC8BIMResolutionInfoProp"><code class="docutils literal notranslate"><span class="pre">WIC8BIMResolutionInfoProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICBitmapAlphaChannelOption"><code class="docutils literal notranslate"><span class="pre">WICBitmapAlphaChannelOption</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICBitmapCreateCacheOption"><code class="docutils literal notranslate"><span class="pre">WICBitmapCreateCacheOption</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICBitmapDecoderCaps"><code class="docutils literal notranslate"><span class="pre">WICBitmapDecoderCaps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICBitmapDitherType"><code class="docutils literal notranslate"><span class="pre">WICBitmapDitherType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICBitmapEncoderCacheOption"><code class="docutils literal notranslate"><span class="pre">WICBitmapEncoderCacheOption</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICBitmapInterpolationMode"><code class="docutils literal notranslate"><span class="pre">WICBitmapInterpolationMode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICBitmapLockFlag"><code class="docutils literal notranslate"><span class="pre">WICBitmapLockFlag</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICBitmapPaletteType"><code class="docutils literal notranslate"><span class="pre">WICBitmapPaletteType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICBitmapTransformOption"><code class="docutils literal notranslate"><span class="pre">WICBitmapTransformOption</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICColorContextType"><code class="docutils literal notranslate"><span class="pre">WICColorContextType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICComponentEnumOption"><code class="docutils literal notranslate"><span class="pre">WICComponentEnumOption</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICComponentSigning"><code class="docutils literal notranslate"><span class="pre">WICComponentSigning</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICComponentType"><code class="docutils literal notranslate"><span class="pre">WICComponentType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICDecodeOption"><code class="docutils literal notranslate"><span class="pre">WICDecodeOption</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICGifApplicationExtensionProp"><code class="docutils literal notranslate"><span class="pre">WICGifApplicationExtensionProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICGifCommentExtensionProp"><code class="docutils literal notranslate"><span class="pre">WICGifCommentExtensionProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICGifGraphicControlExtensionProp"><code class="docutils literal notranslate"><span class="pre">WICGifGraphicControlExtensionProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICGifImageDescriptorProp"><code class="docutils literal notranslate"><span class="pre">WICGifImageDescriptorProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICGifLogicalScreenDescriptorProp"><code class="docutils literal notranslate"><span class="pre">WICGifLogicalScreenDescriptorProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICHeifHdrProp"><code class="docutils literal notranslate"><span class="pre">WICHeifHdrProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICHeifProp"><code class="docutils literal notranslate"><span class="pre">WICHeifProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICJpegChrominanceProp"><code class="docutils literal notranslate"><span class="pre">WICJpegChrominanceProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICJpegCommentProp"><code class="docutils literal notranslate"><span class="pre">WICJpegCommentProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICJpegIndexingOption"><code class="docutils literal notranslate"><span class="pre">WICJpegIndexingOption</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICJpegLuminanceProp"><code class="docutils literal notranslate"><span class="pre">WICJpegLuminanceProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICJpegScanType"><code class="docutils literal notranslate"><span class="pre">WICJpegScanType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICJpegTransferMatrix"><code class="docutils literal notranslate"><span class="pre">WICJpegTransferMatrix</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICJpegXLAnimFrameProp"><code class="docutils literal notranslate"><span class="pre">WICJpegXLAnimFrameProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICJpegXLAnimProp"><code class="docutils literal notranslate"><span class="pre">WICJpegXLAnimProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICPixelFormatNumericRepresentation"><code class="docutils literal notranslate"><span class="pre">WICPixelFormatNumericRepresentation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICPlanarOption"><code class="docutils literal notranslate"><span class="pre">WICPlanarOption</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICPngBkgdProp"><code class="docutils literal notranslate"><span class="pre">WICPngBkgdProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICPngChrmProp"><code class="docutils literal notranslate"><span class="pre">WICPngChrmProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICPngGamaProp"><code class="docutils literal notranslate"><span class="pre">WICPngGamaProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICPngHistProp"><code class="docutils literal notranslate"><span class="pre">WICPngHistProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICPngIccpProp"><code class="docutils literal notranslate"><span class="pre">WICPngIccpProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICPngItxtProp"><code class="docutils literal notranslate"><span class="pre">WICPngItxtProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICPngSrgbProp"><code class="docutils literal notranslate"><span class="pre">WICPngSrgbProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICPngTimeProp"><code class="docutils literal notranslate"><span class="pre">WICPngTimeProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICProgressNotification"><code class="docutils literal notranslate"><span class="pre">WICProgressNotification</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICProgressOperation"><code class="docutils literal notranslate"><span class="pre">WICProgressOperation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICSectionAccessLevel"><code class="docutils literal notranslate"><span class="pre">WICSectionAccessLevel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICWebpAnimProp"><code class="docutils literal notranslate"><span class="pre">WICWebpAnimProp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html#powcd2d.wic.constant.WICWebpAnmfProp"><code class="docutils literal notranslate"><span class="pre">WICWebpAnmfProp</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.interfacebody.html">powcd2d.wic.interfacebody module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.wic.types.html">powcd2d.wic.types module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.D2D1PixelFormat"><code class="docutils literal notranslate"><span class="pre">D2D1PixelFormat</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICBitmap"><code class="docutils literal notranslate"><span class="pre">IWICBitmap</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICBitmapClipper"><code class="docutils literal notranslate"><span class="pre">IWICBitmapClipper</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICBitmapCodecInfo"><code class="docutils literal notranslate"><span class="pre">IWICBitmapCodecInfo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICBitmapCodecProgressNotification"><code class="docutils literal notranslate"><span class="pre">IWICBitmapCodecProgressNotification</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICBitmapDecoder"><code class="docutils literal notranslate"><span class="pre">IWICBitmapDecoder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICBitmapDecoderInfo"><code class="docutils literal notranslate"><span class="pre">IWICBitmapDecoderInfo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICBitmapEncoder"><code class="docutils literal notranslate"><span class="pre">IWICBitmapEncoder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICBitmapEncoderInfo"><code class="docutils literal notranslate"><span class="pre">IWICBitmapEncoderInfo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICBitmapFlipRotator"><code class="docutils literal notranslate"><span class="pre">IWICBitmapFlipRotator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICBitmapFrameDecode"><code class="docutils literal notranslate"><span class="pre">IWICBitmapFrameDecode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICBitmapFrameEncode"><code class="docutils literal notranslate"><span class="pre">IWICBitmapFrameEncode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICBitmapLock"><code class="docutils literal notranslate"><span class="pre">IWICBitmapLock</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICBitmapScaler"><code class="docutils literal notranslate"><span class="pre">IWICBitmapScaler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICBitmapSource"><code class="docutils literal notranslate"><span class="pre">IWICBitmapSource</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICBitmapSourceTransform"><code class="docutils literal notranslate"><span class="pre">IWICBitmapSourceTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICColorContext"><code class="docutils literal notranslate"><span class="pre">IWICColorContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICColorTransform"><code class="docutils literal notranslate"><span class="pre">IWICColorTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICComponentInfo"><code class="docutils literal notranslate"><span class="pre">IWICComponentInfo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICDisplayAdaptationControl"><code class="docutils literal notranslate"><span class="pre">IWICDisplayAdaptationControl</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICEnumMetadataItem"><code class="docutils literal notranslate"><span class="pre">IWICEnumMetadataItem</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICFastMetadataEncoder"><code class="docutils literal notranslate"><span class="pre">IWICFastMetadataEncoder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICFormatConverter"><code class="docutils literal notranslate"><span class="pre">IWICFormatConverter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICFormatConverterInfo"><code class="docutils literal notranslate"><span class="pre">IWICFormatConverterInfo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICImageEncoder"><code class="docutils literal notranslate"><span class="pre">IWICImageEncoder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICImagingFactory"><code class="docutils literal notranslate"><span class="pre">IWICImagingFactory</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICImagingFactory2"><code class="docutils literal notranslate"><span class="pre">IWICImagingFactory2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICMetadataQueryReader"><code class="docutils literal notranslate"><span class="pre">IWICMetadataQueryReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICMetadataQueryWriter"><code class="docutils literal notranslate"><span class="pre">IWICMetadataQueryWriter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICPalette"><code class="docutils literal notranslate"><span class="pre">IWICPalette</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICPixelFormatInfo"><code class="docutils literal notranslate"><span class="pre">IWICPixelFormatInfo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICPixelFormatInfo2"><code class="docutils literal notranslate"><span class="pre">IWICPixelFormatInfo2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICPlanarBitmapFrameEncode"><code class="docutils literal notranslate"><span class="pre">IWICPlanarBitmapFrameEncode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICPlanarBitmapSourceTransform"><code class="docutils literal notranslate"><span class="pre">IWICPlanarBitmapSourceTransform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICPlanarFormatConverter"><code class="docutils literal notranslate"><span class="pre">IWICPlanarFormatConverter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICProgressCallback"><code class="docutils literal notranslate"><span class="pre">IWICProgressCallback</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICProgressiveLevelControl"><code class="docutils literal notranslate"><span class="pre">IWICProgressiveLevelControl</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.IWICStream"><code class="docutils literal notranslate"><span class="pre">IWICStream</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.WICBitmapPattern"><code class="docutils literal notranslate"><span class="pre">WICBitmapPattern</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.WICBitmapPlane"><code class="docutils literal notranslate"><span class="pre">WICBitmapPlane</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.WICBitmapPlaneDesc"><code class="docutils literal notranslate"><span class="pre">WICBitmapPlaneDesc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.WICImageParameters"><code class="docutils literal notranslate"><span class="pre">WICImageParameters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.WICJpegFrameHeader"><code class="docutils literal notranslate"><span class="pre">WICJpegFrameHeader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.WICJpegScanHeader"><code class="docutils literal notranslate"><span class="pre">WICJpegScanHeader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html#powcd2d.wic.types.WICRect"><code class="docutils literal notranslate"><span class="pre">WICRect</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="powcd2d.d3dmisc.html">powcd2d.d3dmisc module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="powcd2d.d3dmisc.html#powcd2d.d3dmisc.GUID_DEVICE_TYPE"><code class="docutils literal notranslate"><span class="pre">GUID_DEVICE_TYPE</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="powccoreaudio.mmdevice.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">powccoreaudio.mmdevice module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="powcd2d.d2d.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">powcd2d.d2d package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目次
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+著者 poti-san
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, poti-san.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

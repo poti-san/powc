@@ -1,0 +1,746 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>powcshell.knownfoldertypeid module &#8212; powc  ドキュメント</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=1cf7f4d9"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=4755f45a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'apiref/powcshell.knownfoldertypeid';</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="powcshell.shellexec module" href="powcshell.shellexec.html" />
+    <link rel="prev" title="powcshell.knownfolderid module" href="powcshell.knownfolderid.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">powc  ドキュメント</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">検索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../package_summary/index.html">パッケージの概要</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powc.html">powc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcpropsys.html">powcpropsys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcshell.html">powcshell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcwmi.html">powcwmi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powccoreaudio.html">powccoreaudio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcd2d.html">powcd2d</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../apiref.html">APIドキュメント</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="powc.html">powc package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powc.comcat.html">powc.comcat module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.comobj.html">powc.comobj module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.comsec.html">powc.comsec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.core.html">powc.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.dataobj.html">powc.dataobj module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.datetime.html">powc.datetime module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.errlog.html">powc.errlog module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.globalmem.html">powc.globalmem module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.persist.html">powc.persist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.propbag.html">powc.propbag module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.safearray.html">powc.safearray module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.stream.html">powc.stream module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.variant.html">powc.variant module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcpropsys.html">powcpropsys package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html">powcpropsys.propchange module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html">powcpropsys.propdesc module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propkey.html">powcpropsys.propkey module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html">powcpropsys.propstore module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html">powcpropsys.propsys module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html">powcpropsys.propvariant module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="powcshell.html">powcshell package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcshell.shellitemutil.html">powcshell.shellitemutil package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.computerfolderinfo.html">powcshell.shellitemutil.computerfolderinfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.fontiteminfo.html">powcshell.shellitemutil.fontiteminfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.recyclebiniteminfo.html">powcshell.shellitemutil.recyclebiniteminfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.volumeinfo.html">powcshell.shellitemutil.volumeinfo module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.desktopwallpaper.html">powcshell.desktopwallpaper module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.itemidlist.html">powcshell.itemidlist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfolder.html">powcshell.knownfolder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfolderid.html">powcshell.knownfolderid module</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">powcshell.knownfoldertypeid module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellexec.html">powcshell.shellexec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellfileop.html">powcshell.shellfileop module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellfileoputil.html">powcshell.shellfileoputil module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitem.html">powcshell.shellitem module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitem2.html">powcshell.shellitem2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitemarray.html">powcshell.shellitemarray module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitemenum.html">powcshell.shellitemenum module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shelllibrary.html">powcshell.shelllibrary module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shelllink.html">powcshell.shelllink module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.url.html">powcshell.url module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcwmi.html">powcwmi package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.comtypes.html">powcwmi.comtypes module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.wbemflags.html">powcwmi.wbemflags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.wbemstatus.html">powcwmi.wbemstatus module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powccoreaudio.html">powccoreaudio package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devicepropsinstore.html">powccoreaudio.devicepropsinstore module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html">powccoreaudio.devprop module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html">powccoreaudio.endpointvolume module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html">powccoreaudio.mmdevice module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcd2d.html">powcd2d package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.d2d.html">powcd2d.d2d package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.interfacebody.html">powcd2d.d2d.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html">powcd2d.d2d.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dcommon.html">powcd2d.dcommon package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dcommon.types.html">powcd2d.dcommon.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dwrite.html">powcd2d.dwrite package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.interfacebody.html">powcd2d.dwrite.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html">powcd2d.dwrite.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dxgi.html">powcd2d.dxgi package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.interfacebody.html">powcd2d.dxgi.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html">powcd2d.dxgi.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.wic.html">powcd2d.wic package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html">powcd2d.wic.constant module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.interfacebody.html">powcd2d.wic.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html">powcd2d.wic.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.d3dmisc.html">powcd2d.d3dmisc module</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../py-modindex.html">モジュール索引</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全画面モード"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>powcshell.knownfoldertypeid module</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目次 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.ACCOUNT_PICTURES"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.ACCOUNT_PICTURES</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.COMMUNICATIONS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.COMMUNICATIONS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.COMPRESSED_FOLDER"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.COMPRESSED_FOLDER</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.CONTACTS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.CONTACTS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.CONTROLPANEL_CATEGORY"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.CONTROLPANEL_CATEGORY</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.CONTROLPANEL_CLASSIC"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.CONTROLPANEL_CLASSIC</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.DOCUMENTS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.DOCUMENTS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.DOWNLOADS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.DOWNLOADS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.GAMES_FOLDER"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.GAMES_FOLDER</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.GENERIC"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.GENERIC</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.GENERIC_LIBRARY"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.GENERIC_LIBRARY</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.GENERIC_SEARCH_RESULTS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.GENERIC_SEARCH_RESULTS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.INVALID"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.INVALID</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.MUSIC"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.MUSIC</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.NETWORK_EXPLORER"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.NETWORK_EXPLORER</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.OPEN_SEARCH"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.OPEN_SEARCH</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.OTHERUSERS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.OTHERUSERS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.PICTURES"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.PICTURES</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.PRINTERS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.PRINTERS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.PUBLISHED_ITEMS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.PUBLISHED_ITEMS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.RECORDED_TV"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.RECORDED_TV</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.RECYCLEBIN"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.RECYCLEBIN</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.SAVED_GAMES"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.SAVED_GAMES</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.SEARCHES"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.SEARCHES</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.SEARCH_CONNECTOR"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.SEARCH_CONNECTOR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.SEARCH_HOME"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.SEARCH_HOME</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.SOFTWARE_EXPLORER"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.SOFTWARE_EXPLORER</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.STARTMENU"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.STARTMENU</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.STORAGE_PROVIDER_DOCUMENTS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.STORAGE_PROVIDER_DOCUMENTS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.STORAGE_PROVIDER_GENERIC"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.STORAGE_PROVIDER_GENERIC</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.STORAGE_PROVIDER_MUSIC"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.STORAGE_PROVIDER_MUSIC</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.STORAGE_PROVIDER_PICTURES"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.STORAGE_PROVIDER_PICTURES</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.STORAGE_PROVIDER_VIDEOS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.STORAGE_PROVIDER_VIDEOS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.USERFILES"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.USERFILES</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.USERS_LIBRARIES"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.USERS_LIBRARIES</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.VERSION_CONTROL"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.VERSION_CONTROL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.VIDEOS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.VIDEOS</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-powcshell.knownfoldertypeid">
+<span id="powcshell-knownfoldertypeid-module"></span><h1>powcshell.knownfoldertypeid module<a class="headerlink" href="#module-powcshell.knownfoldertypeid" title="Link to this heading">#</a></h1>
+<p>既知フォルダ種類ID。</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcshell.knownfoldertypeid.</span></span><span class="sig-name descname"><span class="pre">KnownFolderTypeID</span></span><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>既知フォルダ種類ID定数。</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.ACCOUNT_PICTURES">
+<span class="sig-name descname"><span class="pre">ACCOUNT_PICTURES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{DB2A5D8F-06E6-4007-ABA6-AF877D526EA6}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.ACCOUNT_PICTURES" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.COMMUNICATIONS">
+<span class="sig-name descname"><span class="pre">COMMUNICATIONS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{91475FE5-586B-4EBA-8D75-D17434B8CDF6}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.COMMUNICATIONS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.COMPRESSED_FOLDER">
+<span class="sig-name descname"><span class="pre">COMPRESSED_FOLDER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{80213E82-BCFD-4C4F-8817-BB27601267A9}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.COMPRESSED_FOLDER" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.CONTACTS">
+<span class="sig-name descname"><span class="pre">CONTACTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{DE2B70EC-9BF7-4A93-BD3D-243F7881D492}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.CONTACTS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.CONTROLPANEL_CATEGORY">
+<span class="sig-name descname"><span class="pre">CONTROLPANEL_CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{DE4F0660-FA10-4B8F-A494-068B20B22307}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.CONTROLPANEL_CATEGORY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.CONTROLPANEL_CLASSIC">
+<span class="sig-name descname"><span class="pre">CONTROLPANEL_CLASSIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{0C3794F3-B545-43AA-A329-C37430C58D2A}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.CONTROLPANEL_CLASSIC" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.DOCUMENTS">
+<span class="sig-name descname"><span class="pre">DOCUMENTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{7D49D726-3C21-4F05-99AA-FDC2C9474656}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.DOCUMENTS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.DOWNLOADS">
+<span class="sig-name descname"><span class="pre">DOWNLOADS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{885A186E-A440-4ADA-812B-DB871B942259}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.DOWNLOADS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.GAMES_FOLDER">
+<span class="sig-name descname"><span class="pre">GAMES_FOLDER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{B689B0D0-76D3-4CBB-87F7-585D0E0CE070}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.GAMES_FOLDER" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.GENERIC">
+<span class="sig-name descname"><span class="pre">GENERIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{5C4F28B5-F869-4E84-8E60-F11DB97C5CC7}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.GENERIC" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.GENERIC_LIBRARY">
+<span class="sig-name descname"><span class="pre">GENERIC_LIBRARY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{5F4EAB9A-6833-4F61-899D-31CF46979D49}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.GENERIC_LIBRARY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.GENERIC_SEARCH_RESULTS">
+<span class="sig-name descname"><span class="pre">GENERIC_SEARCH_RESULTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{7FDE1A1E-8B31-49A5-93B8-6BE14CFA4943}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.GENERIC_SEARCH_RESULTS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.INVALID">
+<span class="sig-name descname"><span class="pre">INVALID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{57807898-8C4F-4462-BB63-71042380B109}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.INVALID" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.MUSIC">
+<span class="sig-name descname"><span class="pre">MUSIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{94D6DDCC-4A68-4175-A374-BD584A510B78}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.MUSIC" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.NETWORK_EXPLORER">
+<span class="sig-name descname"><span class="pre">NETWORK_EXPLORER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{25CC242B-9A7C-4F51-80E0-7A2928FEBE42}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.NETWORK_EXPLORER" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.OPEN_SEARCH">
+<span class="sig-name descname"><span class="pre">OPEN_SEARCH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{8FAF9629-1980-46FF-8023-9DCEAB9C3EE3}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.OPEN_SEARCH" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.OTHERUSERS">
+<span class="sig-name descname"><span class="pre">OTHERUSERS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{B337FD00-9DD5-4635-A6D4-DA33FD102B7A}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.OTHERUSERS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.PICTURES">
+<span class="sig-name descname"><span class="pre">PICTURES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{B3690E58-E961-423B-B687-386EBFD83239}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.PICTURES" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.PRINTERS">
+<span class="sig-name descname"><span class="pre">PRINTERS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{2C7BBEC6-C844-4A0A-91FA-CEF6F59CFDA1}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.PRINTERS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.PUBLISHED_ITEMS">
+<span class="sig-name descname"><span class="pre">PUBLISHED_ITEMS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{7F2F5B96-FF74-41DA-AFD8-1C78A5F3AEA2}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.PUBLISHED_ITEMS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.RECORDED_TV">
+<span class="sig-name descname"><span class="pre">RECORDED_TV</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{5557A28F-5DA6-4F83-8809-C2C98A11A6FA}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.RECORDED_TV" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.RECYCLEBIN">
+<span class="sig-name descname"><span class="pre">RECYCLEBIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{D6D9E004-CD87-442B-9D57-5E0AEB4F6F72}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.RECYCLEBIN" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.SAVED_GAMES">
+<span class="sig-name descname"><span class="pre">SAVED_GAMES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{D0363307-28CB-4106-9F23-2956E3E5E0E7}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.SAVED_GAMES" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.SEARCHES">
+<span class="sig-name descname"><span class="pre">SEARCHES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{0B0BA2E3-405F-415E-A6EE-CAD625207853}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.SEARCHES" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.SEARCH_CONNECTOR">
+<span class="sig-name descname"><span class="pre">SEARCH_CONNECTOR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{982725EE-6F47-479E-B447-812BFA7D2E8F}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.SEARCH_CONNECTOR" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.SEARCH_HOME">
+<span class="sig-name descname"><span class="pre">SEARCH_HOME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{834D8A44-0974-4ED6-866E-F203D80B3810}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.SEARCH_HOME" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.SOFTWARE_EXPLORER">
+<span class="sig-name descname"><span class="pre">SOFTWARE_EXPLORER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{D674391B-52D9-4E07-834E-67C98610F39D}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.SOFTWARE_EXPLORER" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.STARTMENU">
+<span class="sig-name descname"><span class="pre">STARTMENU</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{EF87B4CB-F2CE-4785-8658-4CA6C63E38C6}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.STARTMENU" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.STORAGE_PROVIDER_DOCUMENTS">
+<span class="sig-name descname"><span class="pre">STORAGE_PROVIDER_DOCUMENTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{DD61BD66-70E8-48DD-9655-65C5E1AAC2D1}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.STORAGE_PROVIDER_DOCUMENTS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.STORAGE_PROVIDER_GENERIC">
+<span class="sig-name descname"><span class="pre">STORAGE_PROVIDER_GENERIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{4F01EBC5-2385-41F2-A28E-2C5C91FB56E0}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.STORAGE_PROVIDER_GENERIC" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.STORAGE_PROVIDER_MUSIC">
+<span class="sig-name descname"><span class="pre">STORAGE_PROVIDER_MUSIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{672ECD7E-AF04-4399-875C-0290845B6247}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.STORAGE_PROVIDER_MUSIC" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.STORAGE_PROVIDER_PICTURES">
+<span class="sig-name descname"><span class="pre">STORAGE_PROVIDER_PICTURES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{71D642A9-F2B1-42CD-AD92-EB9300C7CC0A}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.STORAGE_PROVIDER_PICTURES" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.STORAGE_PROVIDER_VIDEOS">
+<span class="sig-name descname"><span class="pre">STORAGE_PROVIDER_VIDEOS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{51294DA1-D7B1-485B-9E9A-17CFFE33E187}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.STORAGE_PROVIDER_VIDEOS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.USERFILES">
+<span class="sig-name descname"><span class="pre">USERFILES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{CD0FC69B-71E2-46E5-9690-5BCD9F57AAB3}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.USERFILES" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.USERS_LIBRARIES">
+<span class="sig-name descname"><span class="pre">USERS_LIBRARIES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{C4D98F09-6124-4FE0-9942-826416082DA9}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.USERS_LIBRARIES" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.VERSION_CONTROL">
+<span class="sig-name descname"><span class="pre">VERSION_CONTROL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{69F1E26B-EC64-4280-BC83-F1EB887EC35A}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.VERSION_CONTROL" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcshell.knownfoldertypeid.KnownFolderTypeID.VIDEOS">
+<span class="sig-name descname"><span class="pre">VIDEOS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GUID(&quot;{5FA96407-7E77-483C-AC93-691D05850DE8}&quot;)</span></em><a class="headerlink" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.VIDEOS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="powcshell.knownfolderid.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">powcshell.knownfolderid module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="powcshell.shellexec.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">powcshell.shellexec module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目次
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.ACCOUNT_PICTURES"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.ACCOUNT_PICTURES</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.COMMUNICATIONS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.COMMUNICATIONS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.COMPRESSED_FOLDER"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.COMPRESSED_FOLDER</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.CONTACTS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.CONTACTS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.CONTROLPANEL_CATEGORY"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.CONTROLPANEL_CATEGORY</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.CONTROLPANEL_CLASSIC"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.CONTROLPANEL_CLASSIC</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.DOCUMENTS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.DOCUMENTS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.DOWNLOADS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.DOWNLOADS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.GAMES_FOLDER"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.GAMES_FOLDER</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.GENERIC"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.GENERIC</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.GENERIC_LIBRARY"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.GENERIC_LIBRARY</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.GENERIC_SEARCH_RESULTS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.GENERIC_SEARCH_RESULTS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.INVALID"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.INVALID</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.MUSIC"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.MUSIC</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.NETWORK_EXPLORER"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.NETWORK_EXPLORER</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.OPEN_SEARCH"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.OPEN_SEARCH</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.OTHERUSERS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.OTHERUSERS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.PICTURES"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.PICTURES</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.PRINTERS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.PRINTERS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.PUBLISHED_ITEMS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.PUBLISHED_ITEMS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.RECORDED_TV"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.RECORDED_TV</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.RECYCLEBIN"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.RECYCLEBIN</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.SAVED_GAMES"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.SAVED_GAMES</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.SEARCHES"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.SEARCHES</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.SEARCH_CONNECTOR"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.SEARCH_CONNECTOR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.SEARCH_HOME"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.SEARCH_HOME</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.SOFTWARE_EXPLORER"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.SOFTWARE_EXPLORER</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.STARTMENU"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.STARTMENU</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.STORAGE_PROVIDER_DOCUMENTS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.STORAGE_PROVIDER_DOCUMENTS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.STORAGE_PROVIDER_GENERIC"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.STORAGE_PROVIDER_GENERIC</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.STORAGE_PROVIDER_MUSIC"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.STORAGE_PROVIDER_MUSIC</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.STORAGE_PROVIDER_PICTURES"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.STORAGE_PROVIDER_PICTURES</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.STORAGE_PROVIDER_VIDEOS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.STORAGE_PROVIDER_VIDEOS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.USERFILES"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.USERFILES</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.USERS_LIBRARIES"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.USERS_LIBRARIES</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.VERSION_CONTROL"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.VERSION_CONTROL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcshell.knownfoldertypeid.KnownFolderTypeID.VIDEOS"><code class="docutils literal notranslate"><span class="pre">KnownFolderTypeID.VIDEOS</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+著者 poti-san
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, poti-san.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

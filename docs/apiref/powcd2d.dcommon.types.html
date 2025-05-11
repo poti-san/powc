@@ -1,0 +1,1201 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>powcd2d.dcommon.types module &#8212; powc  ドキュメント</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=1cf7f4d9"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=4755f45a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'apiref/powcd2d.dcommon.types';</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="powcd2d.dwrite package" href="powcd2d.dwrite.html" />
+    <link rel="prev" title="powcd2d.dcommon package" href="powcd2d.dcommon.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">powc  ドキュメント</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">検索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../package_summary/index.html">パッケージの概要</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powc.html">powc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcpropsys.html">powcpropsys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcshell.html">powcshell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcwmi.html">powcwmi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powccoreaudio.html">powccoreaudio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../package_summary/powcd2d.html">powcd2d</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../apiref.html">APIドキュメント</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="powc.html">powc package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powc.comcat.html">powc.comcat module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.comobj.html">powc.comobj module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.comsec.html">powc.comsec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.core.html">powc.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.dataobj.html">powc.dataobj module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.datetime.html">powc.datetime module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.errlog.html">powc.errlog module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.globalmem.html">powc.globalmem module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.persist.html">powc.persist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.propbag.html">powc.propbag module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.safearray.html">powc.safearray module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.stream.html">powc.stream module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powc.variant.html">powc.variant module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcpropsys.html">powcpropsys package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propchange.html">powcpropsys.propchange module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propdesc.html">powcpropsys.propdesc module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propkey.html">powcpropsys.propkey module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propstore.html">powcpropsys.propstore module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propsys.html">powcpropsys.propsys module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcpropsys.propvariant.html">powcpropsys.propvariant module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcshell.html">powcshell package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcshell.shellitemutil.html">powcshell.shellitemutil package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.computerfolderinfo.html">powcshell.shellitemutil.computerfolderinfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.fontiteminfo.html">powcshell.shellitemutil.fontiteminfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.recyclebiniteminfo.html">powcshell.shellitemutil.recyclebiniteminfo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcshell.shellitemutil.volumeinfo.html">powcshell.shellitemutil.volumeinfo module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.desktopwallpaper.html">powcshell.desktopwallpaper module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.itemidlist.html">powcshell.itemidlist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfolder.html">powcshell.knownfolder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfolderid.html">powcshell.knownfolderid module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.knownfoldertypeid.html">powcshell.knownfoldertypeid module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellexec.html">powcshell.shellexec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellfileop.html">powcshell.shellfileop module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellfileoputil.html">powcshell.shellfileoputil module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitem.html">powcshell.shellitem module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitem2.html">powcshell.shellitem2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitemarray.html">powcshell.shellitemarray module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shellitemenum.html">powcshell.shellitemenum module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shelllibrary.html">powcshell.shelllibrary module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.shelllink.html">powcshell.shelllink module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcshell.url.html">powcshell.url module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powcwmi.html">powcwmi package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.comtypes.html">powcwmi.comtypes module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.wbemflags.html">powcwmi.wbemflags module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powcwmi.wbemstatus.html">powcwmi.wbemstatus module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="powccoreaudio.html">powccoreaudio package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devicepropsinstore.html">powccoreaudio.devicepropsinstore module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.devprop.html">powccoreaudio.devprop module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.endpointvolume.html">powccoreaudio.endpointvolume module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="powccoreaudio.mmdevice.html">powccoreaudio.mmdevice module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="powcd2d.html">powcd2d package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.d2d.html">powcd2d.d2d package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.interfacebody.html">powcd2d.d2d.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.d2d.types.html">powcd2d.d2d.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="powcd2d.dcommon.html">powcd2d.dcommon package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l4 current active"><a class="current reference internal" href="#">powcd2d.dcommon.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dwrite.html">powcd2d.dwrite package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.interfacebody.html">powcd2d.dwrite.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dwrite.types.html">powcd2d.dwrite.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.dxgi.html">powcd2d.dxgi package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.interfacebody.html">powcd2d.dxgi.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.dxgi.types.html">powcd2d.dxgi.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="powcd2d.wic.html">powcd2d.wic package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.constant.html">powcd2d.wic.constant module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.interfacebody.html">powcd2d.wic.interfacebody module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="powcd2d.wic.types.html">powcd2d.wic.types module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="powcd2d.d3dmisc.html">powcd2d.d3dmisc module</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../py-modindex.html">モジュール索引</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全画面モード"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>powcd2d.dcommon.types module</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目次 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1AlphaMode"><code class="docutils literal notranslate"><span class="pre">D2D1AlphaMode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1AlphaMode.IGNORE"><code class="docutils literal notranslate"><span class="pre">D2D1AlphaMode.IGNORE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1AlphaMode.PREMULTIPLIED"><code class="docutils literal notranslate"><span class="pre">D2D1AlphaMode.PREMULTIPLIED</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1AlphaMode.STRAIGHT"><code class="docutils literal notranslate"><span class="pre">D2D1AlphaMode.STRAIGHT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1AlphaMode.UNKNOWN"><code class="docutils literal notranslate"><span class="pre">D2D1AlphaMode.UNKNOWN</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1Matrix3X2F"><code class="docutils literal notranslate"><span class="pre">D2D1Matrix3X2F</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1PixelFormat"><code class="docutils literal notranslate"><span class="pre">D2D1PixelFormat</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1PixelFormat.alphamode"><code class="docutils literal notranslate"><span class="pre">D2D1PixelFormat.alphamode</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1PixelFormat.format"><code class="docutils literal notranslate"><span class="pre">D2D1PixelFormat.format</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1Point2F"><code class="docutils literal notranslate"><span class="pre">D2D1Point2F</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1Point2L"><code class="docutils literal notranslate"><span class="pre">D2D1Point2L</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1Point2U"><code class="docutils literal notranslate"><span class="pre">D2D1Point2U</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1RectF"><code class="docutils literal notranslate"><span class="pre">D2D1RectF</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1RectL"><code class="docutils literal notranslate"><span class="pre">D2D1RectL</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1RectU"><code class="docutils literal notranslate"><span class="pre">D2D1RectU</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1SizeF"><code class="docutils literal notranslate"><span class="pre">D2D1SizeF</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1SizeU"><code class="docutils literal notranslate"><span class="pre">D2D1SizeU</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix3X2F"><code class="docutils literal notranslate"><span class="pre">D2DMatrix3X2F</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1"><code class="docutils literal notranslate"><span class="pre">D2DMatrix3X2F.DUMMYSTRUCTURE1</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.dx"><code class="docutils literal notranslate"><span class="pre">D2DMatrix3X2F.DUMMYSTRUCTURE1.dx</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.dy"><code class="docutils literal notranslate"><span class="pre">D2DMatrix3X2F.DUMMYSTRUCTURE1.dy</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.m11"><code class="docutils literal notranslate"><span class="pre">D2DMatrix3X2F.DUMMYSTRUCTURE1.m11</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.m12"><code class="docutils literal notranslate"><span class="pre">D2DMatrix3X2F.DUMMYSTRUCTURE1.m12</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.m21"><code class="docutils literal notranslate"><span class="pre">D2DMatrix3X2F.DUMMYSTRUCTURE1.m21</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE2"><code class="docutils literal notranslate"><span class="pre">D2DMatrix3X2F.DUMMYSTRUCTURE2</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix4X3F"><code class="docutils literal notranslate"><span class="pre">D2DMatrix4X3F</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix4X3F.DUMMYSTRUCTURE"><code class="docutils literal notranslate"><span class="pre">D2DMatrix4X3F.DUMMYSTRUCTURE</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix4X4F"><code class="docutils literal notranslate"><span class="pre">D2DMatrix4X4F</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix4X4F.DUMMYSTRUCTURE"><code class="docutils literal notranslate"><span class="pre">D2DMatrix4X4F.DUMMYSTRUCTURE</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix5X4F"><code class="docutils literal notranslate"><span class="pre">D2DMatrix5X4F</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix5X4F.DUMMYSTRUCTURE"><code class="docutils literal notranslate"><span class="pre">D2DMatrix5X4F.DUMMYSTRUCTURE</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DPoint2F"><code class="docutils literal notranslate"><span class="pre">D2DPoint2F</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DPoint2F.x"><code class="docutils literal notranslate"><span class="pre">D2DPoint2F.x</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DPoint2F.y"><code class="docutils literal notranslate"><span class="pre">D2DPoint2F.y</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DPoint2L"><code class="docutils literal notranslate"><span class="pre">D2DPoint2L</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DPoint2U"><code class="docutils literal notranslate"><span class="pre">D2DPoint2U</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DPoint2U.x"><code class="docutils literal notranslate"><span class="pre">D2DPoint2U.x</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DPoint2U.y"><code class="docutils literal notranslate"><span class="pre">D2DPoint2U.y</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectF"><code class="docutils literal notranslate"><span class="pre">D2DRectF</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectF.bottom"><code class="docutils literal notranslate"><span class="pre">D2DRectF.bottom</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectF.left"><code class="docutils literal notranslate"><span class="pre">D2DRectF.left</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectF.right"><code class="docutils literal notranslate"><span class="pre">D2DRectF.right</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectF.top"><code class="docutils literal notranslate"><span class="pre">D2DRectF.top</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectL"><code class="docutils literal notranslate"><span class="pre">D2DRectL</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectU"><code class="docutils literal notranslate"><span class="pre">D2DRectU</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectU.bottom"><code class="docutils literal notranslate"><span class="pre">D2DRectU.bottom</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectU.left"><code class="docutils literal notranslate"><span class="pre">D2DRectU.left</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectU.right"><code class="docutils literal notranslate"><span class="pre">D2DRectU.right</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectU.top"><code class="docutils literal notranslate"><span class="pre">D2DRectU.top</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DSizeF"><code class="docutils literal notranslate"><span class="pre">D2DSizeF</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DSizeF.height"><code class="docutils literal notranslate"><span class="pre">D2DSizeF.height</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DSizeF.width"><code class="docutils literal notranslate"><span class="pre">D2DSizeF.width</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DSizeU"><code class="docutils literal notranslate"><span class="pre">D2DSizeU</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DSizeU.height"><code class="docutils literal notranslate"><span class="pre">D2DSizeU.height</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DSizeU.width"><code class="docutils literal notranslate"><span class="pre">D2DSizeU.width</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector2F"><code class="docutils literal notranslate"><span class="pre">D2DVector2F</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector2F.x"><code class="docutils literal notranslate"><span class="pre">D2DVector2F.x</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector2F.y"><code class="docutils literal notranslate"><span class="pre">D2DVector2F.y</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector3F"><code class="docutils literal notranslate"><span class="pre">D2DVector3F</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector3F.x"><code class="docutils literal notranslate"><span class="pre">D2DVector3F.x</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector3F.y"><code class="docutils literal notranslate"><span class="pre">D2DVector3F.y</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector3F.z"><code class="docutils literal notranslate"><span class="pre">D2DVector3F.z</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector4F"><code class="docutils literal notranslate"><span class="pre">D2DVector4F</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector4F.w"><code class="docutils literal notranslate"><span class="pre">D2DVector4F.w</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector4F.x"><code class="docutils literal notranslate"><span class="pre">D2DVector4F.x</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector4F.y"><code class="docutils literal notranslate"><span class="pre">D2DVector4F.y</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector4F.z"><code class="docutils literal notranslate"><span class="pre">D2DVector4F.z</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.CFF"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat.CFF</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.COLR"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat.COLR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.COLR_PAINT_TREE"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat.COLR_PAINT_TREE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.JPEG"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat.JPEG</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.NONE"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat.NONE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.PNG"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat.PNG</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.PREMULTIPLIED_B8G8R8A8"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat.PREMULTIPLIED_B8G8R8A8</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.SVG"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat.SVG</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.TIFF"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat.TIFF</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.TRUETYPE"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat.TRUETYPE</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteMeasuringMode"><code class="docutils literal notranslate"><span class="pre">DWriteMeasuringMode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteMeasuringMode.GDI_CLASSIC"><code class="docutils literal notranslate"><span class="pre">DWriteMeasuringMode.GDI_CLASSIC</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteMeasuringMode.GDI_NATURAL"><code class="docutils literal notranslate"><span class="pre">DWriteMeasuringMode.GDI_NATURAL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteMeasuringMode.NATURAL"><code class="docutils literal notranslate"><span class="pre">DWriteMeasuringMode.NATURAL</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-powcd2d.dcommon.types">
+<span id="powcd2d-dcommon-types-module"></span><h1>powcd2d.dcommon.types module<a class="headerlink" href="#module-powcd2d.dcommon.types" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1AlphaMode">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1AlphaMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1AlphaMode" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<p>D2D1_ALPHA_MODE</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1AlphaMode.IGNORE">
+<span class="sig-name descname"><span class="pre">IGNORE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#powcd2d.dcommon.types.D2D1AlphaMode.IGNORE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1AlphaMode.PREMULTIPLIED">
+<span class="sig-name descname"><span class="pre">PREMULTIPLIED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powcd2d.dcommon.types.D2D1AlphaMode.PREMULTIPLIED" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1AlphaMode.STRAIGHT">
+<span class="sig-name descname"><span class="pre">STRAIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#powcd2d.dcommon.types.D2D1AlphaMode.STRAIGHT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1AlphaMode.UNKNOWN">
+<span class="sig-name descname"><span class="pre">UNKNOWN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#powcd2d.dcommon.types.D2D1AlphaMode.UNKNOWN" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1Matrix3X2F">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1Matrix3X2F</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1Matrix3X2F" title="Link to this definition">#</a></dt>
+<dd><p>D2D1_MATRIX_3X2_F</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1PixelFormat">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1PixelFormat</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1PixelFormat" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>D2D1_PIXEL_FORMAT</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1PixelFormat.alphamode">
+<span class="sig-name descname"><span class="pre">alphamode</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1PixelFormat.alphamode" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1PixelFormat.format">
+<span class="sig-name descname"><span class="pre">format</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1PixelFormat.format" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1Point2F">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1Point2F</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1Point2F" title="Link to this definition">#</a></dt>
+<dd><p>D2D1_POINT_2F</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1Point2L">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1Point2L</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1Point2L" title="Link to this definition">#</a></dt>
+<dd><p>D2D1_POINT_2L</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1Point2U">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1Point2U</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1Point2U" title="Link to this definition">#</a></dt>
+<dd><p>D2D1_POINT_2U</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1RectF">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1RectF</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1RectF" title="Link to this definition">#</a></dt>
+<dd><p>D2D1_RECT_F</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1RectL">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1RectL</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1RectL" title="Link to this definition">#</a></dt>
+<dd><p>D2D1_RECT_L</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1RectU">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1RectU</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1RectU" title="Link to this definition">#</a></dt>
+<dd><p>D2D1_RECT_U</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1SizeF">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1SizeF</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1SizeF" title="Link to this definition">#</a></dt>
+<dd><p>D2D1_SIZE_F</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2D1SizeU">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2D1SizeU</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2D1SizeU" title="Link to this definition">#</a></dt>
+<dd><p>D2D1_SIZE_U</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix3X2F">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DMatrix3X2F</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix3X2F" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Union</span></code></p>
+<p>D2D_MATRIX_3X2_F</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DUMMYSTRUCTURE1</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.dx">
+<span class="sig-name descname"><span class="pre">dx</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.dx" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.dy">
+<span class="sig-name descname"><span class="pre">dy</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.dy" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.m11">
+<span class="sig-name descname"><span class="pre">m11</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.m11" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.m12">
+<span class="sig-name descname"><span class="pre">m12</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.m12" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.m21">
+<span class="sig-name descname"><span class="pre">m21</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.m21" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE2">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DUMMYSTRUCTURE2</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE2" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix4X3F">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DMatrix4X3F</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix4X3F" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Union</span></code></p>
+<p>D2D_MATRIX_4X3_F</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix4X3F.DUMMYSTRUCTURE">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DUMMYSTRUCTURE</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix4X3F.DUMMYSTRUCTURE" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix4X4F">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DMatrix4X4F</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix4X4F" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Union</span></code></p>
+<p>D2D_MATRIX_4X4_F</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix4X4F.DUMMYSTRUCTURE">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DUMMYSTRUCTURE</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix4X4F.DUMMYSTRUCTURE" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix5X4F">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DMatrix5X4F</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix5X4F" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Union</span></code></p>
+<p>D2D_MATRIX_5X4_F</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DMatrix5X4F.DUMMYSTRUCTURE">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DUMMYSTRUCTURE</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DMatrix5X4F.DUMMYSTRUCTURE" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DPoint2F">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DPoint2F</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DPoint2F" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>D2D_POINT_2F</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DPoint2F.x">
+<span class="sig-name descname"><span class="pre">x</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DPoint2F.x" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DPoint2F.y">
+<span class="sig-name descname"><span class="pre">y</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DPoint2F.y" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DPoint2L">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DPoint2L</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DPoint2L" title="Link to this definition">#</a></dt>
+<dd><p>D2D_POINT_2L</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DPoint2U">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DPoint2U</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DPoint2U" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>D2D_POINT_2U</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DPoint2U.x">
+<span class="sig-name descname"><span class="pre">x</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DPoint2U.x" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DPoint2U.y">
+<span class="sig-name descname"><span class="pre">y</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DPoint2U.y" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectF">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DRectF</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectF" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>D2D_RECT_F</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectF.bottom">
+<span class="sig-name descname"><span class="pre">bottom</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectF.bottom" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectF.left">
+<span class="sig-name descname"><span class="pre">left</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectF.left" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectF.right">
+<span class="sig-name descname"><span class="pre">right</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectF.right" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectF.top">
+<span class="sig-name descname"><span class="pre">top</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectF.top" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectL">
+<span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DRectL</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectL" title="Link to this definition">#</a></dt>
+<dd><p>D2D_RECT_L</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectU">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DRectU</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectU" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>D2D_RECT_U</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectU.bottom">
+<span class="sig-name descname"><span class="pre">bottom</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectU.bottom" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectU.left">
+<span class="sig-name descname"><span class="pre">left</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectU.left" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectU.right">
+<span class="sig-name descname"><span class="pre">right</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectU.right" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DRectU.top">
+<span class="sig-name descname"><span class="pre">top</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DRectU.top" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DSizeF">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DSizeF</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DSizeF" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>D2D_SIZE_F</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DSizeF.height">
+<span class="sig-name descname"><span class="pre">height</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DSizeF.height" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DSizeF.width">
+<span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DSizeF.width" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DSizeU">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DSizeU</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DSizeU" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>D2D_SIZE_U</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DSizeU.height">
+<span class="sig-name descname"><span class="pre">height</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DSizeU.height" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DSizeU.width">
+<span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DSizeU.width" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector2F">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DVector2F</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector2F" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>D2D_VECTOR_2F</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector2F.x">
+<span class="sig-name descname"><span class="pre">x</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector2F.x" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector2F.y">
+<span class="sig-name descname"><span class="pre">y</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector2F.y" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector3F">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DVector3F</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector3F" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>D2D_VECTOR_3F</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector3F.x">
+<span class="sig-name descname"><span class="pre">x</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector3F.x" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector3F.y">
+<span class="sig-name descname"><span class="pre">y</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector3F.y" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector3F.z">
+<span class="sig-name descname"><span class="pre">z</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector3F.z" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector4F">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">D2DVector4F</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector4F" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></p>
+<p>D2D_VECTOR_4F</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector4F.w">
+<span class="sig-name descname"><span class="pre">w</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector4F.w" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector4F.x">
+<span class="sig-name descname"><span class="pre">x</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector4F.x" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector4F.y">
+<span class="sig-name descname"><span class="pre">y</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector4F.y" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.D2DVector4F.z">
+<span class="sig-name descname"><span class="pre">z</span></span><a class="headerlink" href="#powcd2d.dcommon.types.D2DVector4F.z" title="Link to this definition">#</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">DWriteGlyphImageFormat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntFlag</span></code></p>
+<p>DWRITE_GLYPH_IMAGE_FORMATS</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat.CFF">
+<span class="sig-name descname"><span class="pre">CFF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.CFF" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat.COLR">
+<span class="sig-name descname"><span class="pre">COLR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.COLR" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat.COLR_PAINT_TREE">
+<span class="sig-name descname"><span class="pre">COLR_PAINT_TREE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">256</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.COLR_PAINT_TREE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat.JPEG">
+<span class="sig-name descname"><span class="pre">JPEG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.JPEG" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat.NONE">
+<span class="sig-name descname"><span class="pre">NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.NONE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat.PNG">
+<span class="sig-name descname"><span class="pre">PNG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.PNG" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat.PREMULTIPLIED_B8G8R8A8">
+<span class="sig-name descname"><span class="pre">PREMULTIPLIED_B8G8R8A8</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">128</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.PREMULTIPLIED_B8G8R8A8" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat.SVG">
+<span class="sig-name descname"><span class="pre">SVG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.SVG" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat.TIFF">
+<span class="sig-name descname"><span class="pre">TIFF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">64</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.TIFF" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteGlyphImageFormat.TRUETYPE">
+<span class="sig-name descname"><span class="pre">TRUETYPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.TRUETYPE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteMeasuringMode">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powcd2d.dcommon.types.</span></span><span class="sig-name descname"><span class="pre">DWriteMeasuringMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#powcd2d.dcommon.types.DWriteMeasuringMode" title="Link to this definition">#</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<p>DWRITE_MEASURING_MODE</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteMeasuringMode.GDI_CLASSIC">
+<span class="sig-name descname"><span class="pre">GDI_CLASSIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteMeasuringMode.GDI_CLASSIC" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteMeasuringMode.GDI_NATURAL">
+<span class="sig-name descname"><span class="pre">GDI_NATURAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteMeasuringMode.GDI_NATURAL" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="powcd2d.dcommon.types.DWriteMeasuringMode.NATURAL">
+<span class="sig-name descname"><span class="pre">NATURAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#powcd2d.dcommon.types.DWriteMeasuringMode.NATURAL" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="powcd2d.dcommon.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">powcd2d.dcommon package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="powcd2d.dwrite.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">powcd2d.dwrite package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目次
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1AlphaMode"><code class="docutils literal notranslate"><span class="pre">D2D1AlphaMode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1AlphaMode.IGNORE"><code class="docutils literal notranslate"><span class="pre">D2D1AlphaMode.IGNORE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1AlphaMode.PREMULTIPLIED"><code class="docutils literal notranslate"><span class="pre">D2D1AlphaMode.PREMULTIPLIED</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1AlphaMode.STRAIGHT"><code class="docutils literal notranslate"><span class="pre">D2D1AlphaMode.STRAIGHT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1AlphaMode.UNKNOWN"><code class="docutils literal notranslate"><span class="pre">D2D1AlphaMode.UNKNOWN</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1Matrix3X2F"><code class="docutils literal notranslate"><span class="pre">D2D1Matrix3X2F</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1PixelFormat"><code class="docutils literal notranslate"><span class="pre">D2D1PixelFormat</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1PixelFormat.alphamode"><code class="docutils literal notranslate"><span class="pre">D2D1PixelFormat.alphamode</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1PixelFormat.format"><code class="docutils literal notranslate"><span class="pre">D2D1PixelFormat.format</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1Point2F"><code class="docutils literal notranslate"><span class="pre">D2D1Point2F</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1Point2L"><code class="docutils literal notranslate"><span class="pre">D2D1Point2L</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1Point2U"><code class="docutils literal notranslate"><span class="pre">D2D1Point2U</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1RectF"><code class="docutils literal notranslate"><span class="pre">D2D1RectF</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1RectL"><code class="docutils literal notranslate"><span class="pre">D2D1RectL</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1RectU"><code class="docutils literal notranslate"><span class="pre">D2D1RectU</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1SizeF"><code class="docutils literal notranslate"><span class="pre">D2D1SizeF</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2D1SizeU"><code class="docutils literal notranslate"><span class="pre">D2D1SizeU</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix3X2F"><code class="docutils literal notranslate"><span class="pre">D2DMatrix3X2F</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1"><code class="docutils literal notranslate"><span class="pre">D2DMatrix3X2F.DUMMYSTRUCTURE1</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.dx"><code class="docutils literal notranslate"><span class="pre">D2DMatrix3X2F.DUMMYSTRUCTURE1.dx</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.dy"><code class="docutils literal notranslate"><span class="pre">D2DMatrix3X2F.DUMMYSTRUCTURE1.dy</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.m11"><code class="docutils literal notranslate"><span class="pre">D2DMatrix3X2F.DUMMYSTRUCTURE1.m11</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.m12"><code class="docutils literal notranslate"><span class="pre">D2DMatrix3X2F.DUMMYSTRUCTURE1.m12</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE1.m21"><code class="docutils literal notranslate"><span class="pre">D2DMatrix3X2F.DUMMYSTRUCTURE1.m21</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix3X2F.DUMMYSTRUCTURE2"><code class="docutils literal notranslate"><span class="pre">D2DMatrix3X2F.DUMMYSTRUCTURE2</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix4X3F"><code class="docutils literal notranslate"><span class="pre">D2DMatrix4X3F</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix4X3F.DUMMYSTRUCTURE"><code class="docutils literal notranslate"><span class="pre">D2DMatrix4X3F.DUMMYSTRUCTURE</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix4X4F"><code class="docutils literal notranslate"><span class="pre">D2DMatrix4X4F</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix4X4F.DUMMYSTRUCTURE"><code class="docutils literal notranslate"><span class="pre">D2DMatrix4X4F.DUMMYSTRUCTURE</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix5X4F"><code class="docutils literal notranslate"><span class="pre">D2DMatrix5X4F</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DMatrix5X4F.DUMMYSTRUCTURE"><code class="docutils literal notranslate"><span class="pre">D2DMatrix5X4F.DUMMYSTRUCTURE</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DPoint2F"><code class="docutils literal notranslate"><span class="pre">D2DPoint2F</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DPoint2F.x"><code class="docutils literal notranslate"><span class="pre">D2DPoint2F.x</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DPoint2F.y"><code class="docutils literal notranslate"><span class="pre">D2DPoint2F.y</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DPoint2L"><code class="docutils literal notranslate"><span class="pre">D2DPoint2L</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DPoint2U"><code class="docutils literal notranslate"><span class="pre">D2DPoint2U</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DPoint2U.x"><code class="docutils literal notranslate"><span class="pre">D2DPoint2U.x</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DPoint2U.y"><code class="docutils literal notranslate"><span class="pre">D2DPoint2U.y</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectF"><code class="docutils literal notranslate"><span class="pre">D2DRectF</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectF.bottom"><code class="docutils literal notranslate"><span class="pre">D2DRectF.bottom</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectF.left"><code class="docutils literal notranslate"><span class="pre">D2DRectF.left</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectF.right"><code class="docutils literal notranslate"><span class="pre">D2DRectF.right</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectF.top"><code class="docutils literal notranslate"><span class="pre">D2DRectF.top</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectL"><code class="docutils literal notranslate"><span class="pre">D2DRectL</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectU"><code class="docutils literal notranslate"><span class="pre">D2DRectU</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectU.bottom"><code class="docutils literal notranslate"><span class="pre">D2DRectU.bottom</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectU.left"><code class="docutils literal notranslate"><span class="pre">D2DRectU.left</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectU.right"><code class="docutils literal notranslate"><span class="pre">D2DRectU.right</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DRectU.top"><code class="docutils literal notranslate"><span class="pre">D2DRectU.top</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DSizeF"><code class="docutils literal notranslate"><span class="pre">D2DSizeF</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DSizeF.height"><code class="docutils literal notranslate"><span class="pre">D2DSizeF.height</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DSizeF.width"><code class="docutils literal notranslate"><span class="pre">D2DSizeF.width</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DSizeU"><code class="docutils literal notranslate"><span class="pre">D2DSizeU</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DSizeU.height"><code class="docutils literal notranslate"><span class="pre">D2DSizeU.height</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DSizeU.width"><code class="docutils literal notranslate"><span class="pre">D2DSizeU.width</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector2F"><code class="docutils literal notranslate"><span class="pre">D2DVector2F</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector2F.x"><code class="docutils literal notranslate"><span class="pre">D2DVector2F.x</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector2F.y"><code class="docutils literal notranslate"><span class="pre">D2DVector2F.y</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector3F"><code class="docutils literal notranslate"><span class="pre">D2DVector3F</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector3F.x"><code class="docutils literal notranslate"><span class="pre">D2DVector3F.x</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector3F.y"><code class="docutils literal notranslate"><span class="pre">D2DVector3F.y</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector3F.z"><code class="docutils literal notranslate"><span class="pre">D2DVector3F.z</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector4F"><code class="docutils literal notranslate"><span class="pre">D2DVector4F</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector4F.w"><code class="docutils literal notranslate"><span class="pre">D2DVector4F.w</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector4F.x"><code class="docutils literal notranslate"><span class="pre">D2DVector4F.x</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector4F.y"><code class="docutils literal notranslate"><span class="pre">D2DVector4F.y</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.D2DVector4F.z"><code class="docutils literal notranslate"><span class="pre">D2DVector4F.z</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.CFF"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat.CFF</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.COLR"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat.COLR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.COLR_PAINT_TREE"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat.COLR_PAINT_TREE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.JPEG"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat.JPEG</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.NONE"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat.NONE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.PNG"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat.PNG</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.PREMULTIPLIED_B8G8R8A8"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat.PREMULTIPLIED_B8G8R8A8</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.SVG"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat.SVG</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.TIFF"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat.TIFF</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteGlyphImageFormat.TRUETYPE"><code class="docutils literal notranslate"><span class="pre">DWriteGlyphImageFormat.TRUETYPE</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteMeasuringMode"><code class="docutils literal notranslate"><span class="pre">DWriteMeasuringMode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteMeasuringMode.GDI_CLASSIC"><code class="docutils literal notranslate"><span class="pre">DWriteMeasuringMode.GDI_CLASSIC</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteMeasuringMode.GDI_NATURAL"><code class="docutils literal notranslate"><span class="pre">DWriteMeasuringMode.GDI_NATURAL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powcd2d.dcommon.types.DWriteMeasuringMode.NATURAL"><code class="docutils literal notranslate"><span class="pre">DWriteMeasuringMode.NATURAL</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+著者 poti-san
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, poti-san.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
