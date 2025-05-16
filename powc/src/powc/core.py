@@ -1,4 +1,4 @@
-"""基本的なCOM機能。"""
+"""基本的なCOM機能。他のCOMラッパーから使用される機能を提供します。"""
 
 from contextlib import contextmanager
 from ctypes import POINTER, WinError, _Pointer, c_int32, c_size_t, c_void_p, memmove

@@ -1,4 +1,4 @@
-"""COMデータオブジェクト"""
+"""COMデータオブジェクト機能を提供します。主なクラスは :class:`DataObject` です。"""
 
 from ctypes import (
     POINTER,

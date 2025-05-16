@@ -4,6 +4,7 @@
 """
 
 from ctypes import POINTER, byref, c_int32, c_int64, c_uint32, c_uint64, c_wchar_p
+from os import PathLike
 from typing import Any, Iterator, override
 
 from comtypes import GUID, STDMETHOD, IUnknown
@@ -126,15 +127,15 @@ class ShellItem2(ShellItem):
     create_knownfolder_item.__doc__ = create_knownfolder_item_nothrow.__doc__
 
     @staticmethod
-    def create_parsingname_nothrow(name: str) -> "ComResult[ShellItem2]":
+    def create_parsingname_nothrow(name: str | PathLike) -> "ComResult[ShellItem2]":
         """解析名からシェルアイテムを作成します。"""
         p = POINTER(IShellItem2)()
-        return cr(_SHCreateItemFromParsingName(name, None, IShellItem2._iid_, byref(p)), ShellItem2(p))
+        return cr(_SHCreateItemFromParsingName(str(name), None, IShellItem2._iid_, byref(p)), ShellItem2(p))
 
     @staticmethod
-    def create_parsingname(name: str) -> "ShellItem2":
+    def create_parsingname(name: str | PathLike) -> "ShellItem2":
         """解析名からシェルアイテムを作成します。"""
-        return ShellItem2.create_parsingname_nothrow(name).value
+        return ShellItem2.create_parsingname_nothrow(str(name)).value
 
     @staticmethod
     def create_from_idlist_nothrow(pidl: int) -> "ComResult[ShellItem2]":
@@ -302,5 +303,4 @@ class ShellItem2(ShellItem):
     @property
     @override
     def linktarget(self) -> "ShellItem2":
-        return self.linktarget_nothrow.value
         return self.linktarget_nothrow.value

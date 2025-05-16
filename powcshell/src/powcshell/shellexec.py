@@ -15,6 +15,7 @@ from ctypes import (
     sizeof,
 )
 from enum import IntEnum
+from os import PathLike
 
 from . import _shell32
 
@@ -136,7 +137,7 @@ class ShellExecute:
 
     @staticmethod
     def execute_path(
-        path: str,
+        path: str | PathLike,
         verb: str,
         invokes: bool = True,
         params: str | None = None,
@@ -155,7 +156,7 @@ class ShellExecute:
             | (_SEE_MASK_HMONITOR if monitor_handle else 0)
             | options
         )
-        see.lpFile = path
+        see.lpFile = str(path)
         see.lpVerb = verb
         see.lpParameters = params
         see.lpDirectory = dir

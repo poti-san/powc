@@ -13,6 +13,7 @@ from ctypes import (
     c_wchar_p,
 )
 from enum import IntFlag
+from os import PathLike
 from typing import Any, Final
 
 from comtypes import GUID, STDMETHOD, CoCreateInstance, IUnknown
@@ -133,9 +134,9 @@ class ShellLink:
         return ShellLink(CoCreateInstance(CLSID_ShellLink, IShellLinkW))
 
     @staticmethod
-    def create_from_file(path: str, mode: StorageMode = StorageMode.READ) -> "ShellLink":
+    def create_from_file(path: str | PathLike, mode: StorageMode = StorageMode.READ) -> "ShellLink":
         link = ShellLink.create()
-        link.persist_file.load(path, mode)
+        link.persist_file.load(str(path), mode)
         return link
 
     @staticmethod
@@ -151,11 +152,11 @@ class ShellLink:
     def get_path(self, flags: ShellLinkGetPath) -> str:
         return self.get_path_nothrow(flags).value
 
-    def set_path_nothrow(self, path: str) -> ComResult[None]:
-        return cr(self.__o.SetPath(path), None)
+    def set_path_nothrow(self, path: str | PathLike) -> ComResult[None]:
+        return cr(self.__o.SetPath(str(path)), None)
 
-    def set_path(self, path: str) -> None:
-        return self.set_path_nothrow(path).value
+    def set_path(self, path: str | PathLike) -> None:
+        return self.set_path_nothrow(str(path)).value
 
     @property
     def path_nothrow(self) -> ComResult[str]:
@@ -206,16 +207,16 @@ class ShellLink:
         buf = (c_wchar * ShellLink.__INFOTIPSIZE)()
         return cr(self.__o.GetDescription(buf, len(buf)), buf.value)
 
-    def set_description_nothrow(self, path: str) -> ComResult[None]:
-        return cr(self.__o.SetDescription(path), None)
+    def set_description_nothrow(self, value: str) -> ComResult[None]:
+        return cr(self.__o.SetDescription(value), None)
 
     @property
     def description(self) -> str:
         return self.description_nothrow.value
 
     @description.setter
-    def description(self, path: str) -> None:
-        check_hresult(self.__o.SetDescription(path))
+    def description(self, value: str) -> None:
+        check_hresult(self.__o.SetDescription(value))
 
     @property
     def workdir_nothrow(self) -> ComResult[str]:
@@ -226,12 +227,12 @@ class ShellLink:
     def workdir(self) -> str:
         return self.workdir_nothrow.value
 
-    def set_workdir_nothrow(self, path: str) -> ComResult[None]:
-        return cr(self.__o.SetPath(path), None)
+    def set_workdir_nothrow(self, value: str) -> ComResult[None]:
+        return cr(self.__o.SetPath(value), None)
 
     @workdir.setter
-    def workdir(self, path: str) -> None:
-        return self.set_workdir_nothrow(path).value
+    def workdir(self, value: str) -> None:
+        return self.set_workdir_nothrow(value).value
 
     @property
     def arguments_nothrow(self) -> ComResult[str]:

@@ -1,4 +1,7 @@
-"""COMオブジェクトカテゴリ。"""
+"""
+COMカテゴリオブジェクト。
+COMカテゴリ情報の取得 :class:`CategoryInformation` や登録・解除 :class:`CategoryRegister` 機能を提供します。
+"""
 
 from ctypes import (
     POINTER,
@@ -149,84 +152,47 @@ class CategoryRegister:
         CLSID_StdComponentCategoriesMgr = GUID("{0002E005-0000-0000-C000-000000000046}")
         return CategoryRegister(CoCreateInstance(CLSID_StdComponentCategoriesMgr, ICatRegister))
 
-    def get_enum_categories_nothrow(
-        self, impl_categoryids: Sequence[GUID] | None, req_caterogyids: Sequence[GUID] | None
-    ) -> ComResult[CategoryInfoEnumerator]:
-        impl_catids = (GUID * len(impl_categoryids))(impl_categoryids) if impl_categoryids else None
-        req_catids = (GUID * len(req_caterogyids))(req_caterogyids) if req_caterogyids else None
-        x = POINTER(IEnumCATEGORYINFO)()
-        return cr(
-            self.__o.EnumCategories(
-                len(impl_catids) if impl_catids else -1,
-                impl_catids,
-                len(req_catids) if req_catids else 0,
-                req_catids,
-                byref(x),
-            ),
-            CategoryInfoEnumerator(x),
-        )
+    def register_categories_nothrow(self, catinfos: Sequence[CategoryInfo]) -> ComResult[None]:
+        x = (CategoryInfo * len(catinfos))(*catinfos)
+        return cr(self.__o.RegisterCategories(len(catinfos), x), None)
 
-    def get_enum_categories(
-        self, impl_categoryids: Sequence[GUID] | None, req_caterogyids: Sequence[GUID] | None
-    ) -> CategoryInfoEnumerator:
-        return self.get_enum_categories(impl_categoryids, req_caterogyids)
+    def register_categories(self, catinfos: Sequence[CategoryInfo]) -> None:
+        return self.register_categories_nothrow(catinfos).value
 
-    def get_categorydesc_nothrow(self, catid: GUID, lcid: int = 0) -> ComResult[str]:
-        with cotaskmem(c_wchar_p()) as p:
-            return cr(self.__o.GetCategoryDesc(catid, lcid, byref(p)), p.value or "")
+    def unregister_categories_nothrow(self, catinfos: Sequence[CategoryInfo]) -> ComResult[None]:
+        x = (CategoryInfo * len(catinfos))(*catinfos)
+        return cr(self.__o.UnRegisterCategories(len(catinfos), x), None)
 
-    def get_categorydesc(self, catid: GUID, lcid: int = 0) -> str:
-        return self.get_categorydesc_nothrow(catid, lcid).value
+    def unregister_categories(self, catinfos: Sequence[CategoryInfo]) -> None:
+        return self.unregister_categories_nothrow(catinfos).value
 
-    def get_enum_classesofcategories_nothrow(
-        self, impl_categoryids: Sequence[GUID] | None, req_caterogyids: Sequence[GUID] | None
-    ) -> ComResult[GuidEnumerator]:
+    def register_classimplcategories_nothrow(self, clsid: GUID, catinfos: Sequence[CategoryInfo]) -> ComResult[None]:
+        x = (CategoryInfo * len(catinfos))(*catinfos)
+        return cr(self.__o.RegisterClassImplCategories(clsid, len(catinfos), x), None)
 
-        impl_catids = (GUID * len(impl_categoryids))(impl_categoryids) if impl_categoryids else None
-        req_catids = (GUID * len(req_caterogyids))(req_caterogyids) if req_caterogyids else None
-        x = POINTER(IEnumGUID)()
-        return cr(
-            self.__o.EnumClassesOfCategories(
-                len(impl_catids) if impl_catids else -1,
-                impl_catids,
-                len(req_catids) if req_catids else 0,
-                req_catids,
-                byref(x),
-            ),
-            GuidEnumerator(x),
-        )
+    def register_classimplcategories(self, clsid: GUID, catinfos: Sequence[CategoryInfo]) -> None:
+        return self.register_classimplcategories_nothrow(clsid, catinfos).value
 
-    def get_enum_classesofcategories(
-        self, impl_categoryids: Sequence[GUID] | None, req_caterogyids: Sequence[GUID] | None
-    ) -> GuidEnumerator:
-        return self.get_enum_classesofcategories_nothrow(impl_categoryids, req_caterogyids).value
+    def unregister_classimplcategories_nothrow(self, clsid: GUID, catinfos: Sequence[CategoryInfo]) -> ComResult[None]:
+        x = (CategoryInfo * len(catinfos))(*catinfos)
+        return cr(self.__o.UnRegisterClassImplCategories(clsid, len(catinfos), x), None)
 
-    def is_classofcategories_nothrow(
-        self, clsid: GUID, impl_categoryids: Sequence[GUID] | None, req_caterogyids: Sequence[GUID] | None
-    ) -> ComResult[bool]:
-        impl_catids = (GUID * len(impl_categoryids))(impl_categoryids) if impl_categoryids else None
-        req_catids = (GUID * len(req_caterogyids))(req_caterogyids) if req_caterogyids else None
-        hr = self.__o.IsClassOfCategories(
-            clsid,
-            len(impl_catids) if impl_catids else -1,
-            impl_catids,
-            len(req_catids) if req_catids else 0,
-            req_catids,
-        )
-        return cr(hr, hr == 0)
+    def unregister_classimplcategories(self, clsid: GUID, catinfos: Sequence[CategoryInfo]) -> None:
+        return self.unregister_classimplcategories_nothrow(clsid, catinfos).value
 
-    def is_classofcategories(
-        self, clsid: GUID, impl_categoryids: Sequence[GUID] | None, req_caterogyids: Sequence[GUID] | None
-    ) -> bool:
-        return self.is_classofcategories_nothrow(clsid, impl_categoryids, req_caterogyids).value
+    def register_classreqcategories_nothrow(self, clsid: GUID, catinfos: Sequence[CategoryInfo]) -> ComResult[None]:
+        x = (CategoryInfo * len(catinfos))(catinfos)
+        return cr(self.__o.RegisterClassReqCategories(clsid, len(catinfos), x), None)
 
-    def enum_implcategoriesofclass(self, clsid: GUID) -> ComResult[GuidEnumerator]:
-        x = POINTER(IEnumGUID)()
-        return cr(self.__o.EnumImplCategoriesOfClass(clsid, byref(x)), GuidEnumerator(x))
+    def register_classreqcategories(self, clsid: GUID, catinfos: Sequence[CategoryInfo]) -> None:
+        return self.register_classimplcategories_nothrow(clsid, catinfos).value
 
-    def enum_reqcategoriesofclass(self, clsid: GUID) -> ComResult[GuidEnumerator]:
-        x = POINTER(IEnumGUID)()
-        return cr(self.__o.EnumReqCategoriesOfClass(clsid, byref(x)), GuidEnumerator(x))
+    def unregister_classreqcategories_nothrow(self, clsid: GUID, catinfos: Sequence[CategoryInfo]) -> ComResult[None]:
+        x = (CategoryInfo * len(catinfos))(catinfos)
+        return cr(self.__o.UnRegisterClassReqCategories(clsid, len(catinfos), x), None)
+
+    def unregister_classreqcategories(self, clsid: GUID, catinfos: Sequence[CategoryInfo]) -> None:
+        return self.unregister_classimplcategories_nothrow(clsid, catinfos).value
 
 
 class ICatInformation(IUnknown):

@@ -5,6 +5,7 @@
 
 from ctypes import POINTER, _Pointer, byref, c_int32, c_uint32, c_void_p, c_wchar_p
 from enum import IntEnum, IntFlag
+from os import PathLike
 from typing import TYPE_CHECKING, Any, Iterator
 
 from comtypes import GUID, STDMETHOD, IUnknown
@@ -186,15 +187,15 @@ class ShellItem:
     create_knownfolder_item.__doc__ = create_knownfolder_item_nothrow.__doc__
 
     @staticmethod
-    def create_parsingname_nothrow(name: str) -> "ComResult[ShellItem]":
+    def create_parsingname_nothrow(name: str | PathLike) -> "ComResult[ShellItem]":
         """解析名からシェルアイテムを作成します。"""
         p = POINTER(IShellItem)()
-        return cr(_SHCreateItemFromParsingName(name, None, IShellItem._iid_, byref(p)), ShellItem(p))
+        return cr(_SHCreateItemFromParsingName(str(name), None, IShellItem._iid_, byref(p)), ShellItem(p))
 
     @staticmethod
-    def create_parsingname(name: str) -> "ShellItem":
+    def create_parsingname(name: str | PathLike) -> "ShellItem":
         """解析名からシェルアイテムを作成します。"""
-        return ShellItem.create_parsingname_nothrow(name).value
+        return ShellItem.create_parsingname_nothrow(str(name)).value
 
     @staticmethod
     def create_from_idlist_nothrow(pidl: int) -> "ComResult[ShellItem]":

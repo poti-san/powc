@@ -1,3 +1,5 @@
+"""COMセキュリティ機能を提供します。"""
+
 from ctypes import c_int32, c_uint32, c_void_p, c_wchar_p
 from enum import IntEnum
 from typing import Any

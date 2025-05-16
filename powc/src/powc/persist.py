@@ -1,6 +1,7 @@
 """永続化機能。IPersist、IPersistFile、IPersistStreamのラッパーです。"""
 
 from ctypes import POINTER, byref, c_int32, c_uint32, c_uint64, c_void_p, c_wchar_p
+from os import PathLike
 from typing import Any
 
 from comtypes import GUID, STDMETHOD, IUnknown
@@ -92,26 +93,26 @@ class PersistFile(Persist):
     def isdirty(self) -> bool:
         return self.isdirty_nothrow.value
 
-    def load_nothrow(self, path: str, mode: StorageMode) -> ComResult[bool]:
-        hr = self.__o.Load(path, int(mode))
+    def load_nothrow(self, path: str | PathLike, mode: StorageMode) -> ComResult[bool]:
+        hr = self.__o.Load(str(path), int(mode))
         return cr(hr, hr == 0)
 
-    def load(self, path: str, mode: StorageMode) -> bool:
-        return self.load_nothrow(path, mode).value
+    def load(self, path: str | PathLike, mode: StorageMode) -> bool:
+        return self.load_nothrow(str(path), mode).value
 
-    def save_nothrow(self, path: str, remembers: bool) -> ComResult[bool]:
-        hr = self.__o.Save(path, 1 if remembers else 0)
+    def save_nothrow(self, path: str | PathLike, remembers: bool) -> ComResult[bool]:
+        hr = self.__o.Save(str(path), 1 if remembers else 0)
         return cr(hr, hr == 0)
 
-    def save(self, path: str, remembers: bool) -> bool:
-        return self.save_nothrow(path, remembers).value
+    def save(self, path: str | PathLike, remembers: bool) -> bool:
+        return self.save_nothrow(str(path), remembers).value
 
-    def save_completed_nothrow(self, path: str) -> ComResult[bool]:
-        hr = self.__o.SaveCompleted(path)
+    def save_completed_nothrow(self, path: str | PathLike) -> ComResult[bool]:
+        hr = self.__o.SaveCompleted(str(path))
         return cr(hr, hr == 0)
 
-    def savecompleted(self, path: str) -> bool:
-        return self.save_completed_nothrow(path).value
+    def savecompleted(self, path: str | PathLike) -> bool:
+        return self.save_completed_nothrow(str(path)).value
 
     @property
     def curfile_nothrow(self) -> ComResult[str]:

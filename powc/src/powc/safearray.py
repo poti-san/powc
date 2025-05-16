@@ -1,4 +1,4 @@
-"""SAFEARRAY関係の機能を提供します。"""
+"""SAFEARRAY機能を提供します。"""
 
 from contextlib import contextmanager
 from ctypes import (

@@ -271,4 +271,3 @@ class DesktopWallpaper:
 
     def set_enable(self, value: bool) -> None:
         return self.set_enable_nothrow(value).value
-        return self.set_enable_nothrow(value).value

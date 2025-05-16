@@ -5,6 +5,7 @@
 
 from ctypes import POINTER, byref, c_int32, c_uint32, c_void_p, c_wchar_p
 from enum import IntEnum, IntFlag
+from os import PathLike
 from typing import Any
 
 from comtypes import GUID, STDMETHOD, CoCreateInstance, IUnknown
@@ -110,8 +111,8 @@ class ShellLibrary:
         return lib
 
     @staticmethod
-    def load_from_parsing_name(name: str, mode: StorageMode | int) -> "ShellLibrary":
-        return ShellLibrary.load_from_item(ShellItem2.create_parsingname(name), mode)
+    def load_from_parsing_name(name: str | PathLike, mode: StorageMode | int) -> "ShellLibrary":
+        return ShellLibrary.load_from_item(ShellItem2.create_parsingname(str(name)), mode)
 
     def loadlib_from_item_nothrow(self, item: ShellItem, mode: StorageMode | int) -> ComResult[None]:
         return cr(self.__o.LoadLibraryFromItem(item.wrapped_obj, int(mode)), None)
@@ -346,26 +347,28 @@ class ShellLibrary:
     ) -> ShellItem2:
         return self.save_in_knownfolder_nothrow(folder_id_to_save_in, lib_name, flags).value
 
-    def add_folder_path_nothrow(self, path: str) -> ComResult[None]:
-        item = ShellItem2.create_parsingname_nothrow(path)
+    def add_folder_path_nothrow(self, path: str | PathLike) -> ComResult[None]:
+        item = ShellItem2.create_parsingname_nothrow(str(path))
         if not item:
             return cr(item.hr, None)
         return self.add_folder_nothrow(item.value_unchecked)
 
-    def add_folder_path(self, path: str) -> None:
-        return self.add_folder_path_nothrow(path).value
+    def add_folder_path(self, path: str | PathLike) -> None:
+        return self.add_folder_path_nothrow(str(path)).value
 
-    def remove_folder_path_nothrow(self, path: str) -> ComResult[None]:
-        item = ShellItem2.create_parsingname_nothrow(path)
+    def remove_folder_path_nothrow(self, path: str | PathLike) -> ComResult[None]:
+        item = ShellItem2.create_parsingname_nothrow(str(path))
         if not item:
             return cr(item.hr, None)
         return self.remove_folder_nothrow(item.value_unchecked)
 
-    def remove_folder_path(self, path: str) -> None:
-        return self.remove_folder_path_nothrow(path).value
+    def remove_folder_path(self, path: str | PathLike) -> None:
+        return self.remove_folder_path_nothrow(str(path)).value
 
-    def save_in_folder_path_nothrow(self, path: str, lib_name: str, flags: LibrarySaveFlag) -> ComResult[str]:
-        item = ShellItem2.create_parsingname_nothrow(path)
+    def save_in_folder_path_nothrow(
+        self, path: str | PathLike, lib_name: str, flags: LibrarySaveFlag
+    ) -> ComResult[str]:
+        item = ShellItem2.create_parsingname_nothrow(str(path))
         if not item:
             return cr(item.hr, "")
         ret = self.save_nothrow(item.value_unchecked, lib_name, flags)
@@ -373,6 +376,5 @@ class ShellLibrary:
             return cr(ret.hr, "")
         return item.value_unchecked.name_desktopabsparsing_nothrow
 
-    def save_in_folder_path(self, path: str, lib_name: str, flags: LibrarySaveFlag) -> str:
-        return self.save_in_folder_path_nothrow(path, lib_name, flags).value
-        return self.save_in_folder_path_nothrow(path, lib_name, flags).value
+    def save_in_folder_path(self, path: str | PathLike, lib_name: str, flags: LibrarySaveFlag) -> str:
+        return self.save_in_folder_path_nothrow(str(path), lib_name, flags).value

@@ -1,4 +1,4 @@
-"""プロパティバッグ。"""
+"""プロパティバッグ。主なクラスは :class:`PropertyBag2` です。"""
 
 from ctypes import (
     POINTER,

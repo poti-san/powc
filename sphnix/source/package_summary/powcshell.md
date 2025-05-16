@@ -44,10 +44,10 @@ if not testtext_path.is_file():
         f.flush()
 
 link1 = ShellLink.create()
-link1.path = str(testtext_path)
-link1.persist_file.save(str(scriptdir_path / "test.txt.lnk"), True)
+link1.path = testtext_path
+link1.persist_file.save(scriptdir_path / "test.txt.lnk", True)
 
-link2 = ShellLink.create_from_file(str(scriptdir_path / r"test.txt.lnk"))
+link2 = ShellLink.create_from_file(scriptdir_path / r"test.txt.lnk")
 print(link2.persist_file.curfile)
 ```
 
@@ -82,7 +82,7 @@ with testfile_path.open("w") as f:
     print("TEST", file=f)
     f.flush()
 
-testfile_item = ShellItem2.create_parsingname(str(testfile_path))
+testfile_item = ShellItem2.create_parsingname(testfile_path
 
 sink = ShellFileOperationProgressSinkForCall(
     lambda funcname, args: print(f"{funcname}:\n{pformat(args, sort_dicts=False)}")

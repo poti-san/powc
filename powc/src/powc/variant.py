@@ -1,4 +1,4 @@
-"""VARIANT型関係機能。"""
+"""VARIANT型関係機能。:class:`Variant` クラスと値の型 :class:`VARENUM` を含みます。"""
 
 from ctypes import (
     POINTER,
