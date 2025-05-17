@@ -82,7 +82,7 @@ with testfile_path.open("w") as f:
     print("TEST", file=f)
     f.flush()
 
-testfile_item = ShellItem2.create_parsingname(testfile_path
+testfile_item = ShellItem2.create_parsingname(testfile_path)
 
 sink = ShellFileOperationProgressSinkForCall(
     lambda funcname, args: print(f"{funcname}:\n{pformat(args, sort_dicts=False)}")
