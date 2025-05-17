@@ -415,10 +415,10 @@ document.write(`
         <span class="n">f</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
 
 <span class="n">link1</span> <span class="o">=</span> <span class="n">ShellLink</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-<span class="n">link1</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">testtext_path</span><span class="p">)</span>
-<span class="n">link1</span><span class="o">.</span><span class="n">persist_file</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">scriptdir_path</span> <span class="o">/</span> <span class="s2">&quot;test.txt.lnk&quot;</span><span class="p">),</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">link1</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">testtext_path</span>
+<span class="n">link1</span><span class="o">.</span><span class="n">persist_file</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">scriptdir_path</span> <span class="o">/</span> <span class="s2">&quot;test.txt.lnk&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 
-<span class="n">link2</span> <span class="o">=</span> <span class="n">ShellLink</span><span class="o">.</span><span class="n">create_from_file</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">scriptdir_path</span> <span class="o">/</span> <span class="sa">r</span><span class="s2">&quot;test.txt.lnk&quot;</span><span class="p">))</span>
+<span class="n">link2</span> <span class="o">=</span> <span class="n">ShellLink</span><span class="o">.</span><span class="n">create_from_file</span><span class="p">(</span><span class="n">scriptdir_path</span> <span class="o">/</span> <span class="sa">r</span><span class="s2">&quot;test.txt.lnk&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">link2</span><span class="o">.</span><span class="n">persist_file</span><span class="o">.</span><span class="n">curfile</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -453,7 +453,7 @@ document.write(`
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TEST&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
     <span class="n">f</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
 
-<span class="n">testfile_item</span> <span class="o">=</span> <span class="n">ShellItem2</span><span class="o">.</span><span class="n">create_parsingname</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">testfile_path</span><span class="p">))</span>
+<span class="n">testfile_item</span> <span class="o">=</span> <span class="n">ShellItem2</span><span class="o">.</span><span class="n">create_parsingname</span><span class="p">(</span><span class="n">testfile_path</span>
 
 <span class="n">sink</span> <span class="o">=</span> <span class="n">ShellFileOperationProgressSinkForCall</span><span class="p">(</span>
     <span class="k">lambda</span> <span class="n">funcname</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">funcname</span><span class="si">}</span><span class="s2">:</span><span class="se">\n</span><span class="si">{</span><span class="n">pformat</span><span class="p">(</span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="n">sort_dicts</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>

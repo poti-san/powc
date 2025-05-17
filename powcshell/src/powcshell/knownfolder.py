@@ -383,12 +383,12 @@ class KnownFolderManager:
     def get_folder(self, folderid: GUID) -> KnownFolder:
         return self.get_folder_nothrow(folderid).value
 
-    def get_folder_byname_nothrow(self, name: str) -> ComResult[KnownFolder]:
+    def get_folderbyname_nothrow(self, name: str) -> ComResult[KnownFolder]:
         p = POINTER(IKnownFolder)()
         return cr(self.__o.GetFolderByName(name, byref(p)), KnownFolder(p))
 
-    def get_folder_byname(self, name: str) -> KnownFolder:
-        return self.get_folder_byname_nothrow(name).value
+    def get_folderbyname(self, name: str) -> KnownFolder:
+        return self.get_folderbyname_nothrow(name).value
 
     def register_folder_nothrow(self, folderid: GUID, definition: KnownFolderDefinition) -> ComResult[None]:
         kf = _KNOWNFOLDER_DEFINITION()
@@ -416,19 +416,19 @@ class KnownFolderManager:
     def unregister_folder(self, folderid: GUID) -> None:
         return self.unregister_folder_nothrow(folderid).value
 
-    def find_folder_from_path_nothrow(self, path: str, mode: FffpMode) -> ComResult[KnownFolder]:
+    def find_folderfrompath_nothrow(self, path: str, mode: FffpMode) -> ComResult[KnownFolder]:
         p = POINTER(IKnownFolder)()
         return cr(self.__o.FindFolderFromPath(path, int(mode), byref(p)), KnownFolder(p))
 
-    def find_folder_from_path(self, path: str, mode: FffpMode) -> KnownFolder:
-        return self.find_folder_from_path_nothrow(path, mode).value
+    def find_folderfrompath(self, path: str, mode: FffpMode) -> KnownFolder:
+        return self.find_folderfrompath_nothrow(path, mode).value
 
-    def find_folder_from_idlist_nothrow(self, pidl: c_void_p) -> ComResult[KnownFolder]:
+    def find_folderfromidlist_nothrow(self, pidl: c_void_p) -> ComResult[KnownFolder]:
         p = POINTER(IKnownFolder)()
         return cr(self.__o.FindFolderFromIDList(pidl, byref(p)), KnownFolder(p))
 
-    def find_folder_from_idlist(self, pidl: c_void_p) -> KnownFolder:
-        return self.find_folder_from_idlist_nothrow(pidl).value
+    def find_folderfromidlist(self, pidl: c_void_p) -> KnownFolder:
+        return self.find_folderfromidlist_nothrow(pidl).value
 
     def redirect_nothrow(
         self,

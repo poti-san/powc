@@ -43,6 +43,7 @@ def filetimeint64_to_datetime(ft: int) -> datetime:
     return datetime(1601, 1, 1, 0, 0, 0) + timedelta(microseconds=ft / 10)
 
 
+# NOTE 変数を減らすためにメソッド内へ移動することも考慮
 _MACROSECONDS_160101010000 = datetime(1601, 1, 1, 0, 0, 0).microsecond
 
 

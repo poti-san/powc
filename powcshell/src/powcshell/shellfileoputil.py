@@ -43,17 +43,17 @@ class ShellFileOperationProgressSinkForCall(ShellFileOperationProgressSinkBase):
         return hresult.S_OK
 
     @override
-    def pre_rename_item(self, flags: int, item: ShellItem2, newname: str) -> int:
+    def pre_renameitem(self, flags: int, item: ShellItem2, newname: str) -> int:
         self.__f(
             "PreRenameItem",
-            inspect_sig(ShellFileOperationProgressSinkForCall.pre_rename_item)
+            inspect_sig(ShellFileOperationProgressSinkForCall.pre_renameitem)
             .bind(self, flags, item, newname)
             .arguments,
         )
         return hresult.S_OK
 
     @override
-    def post_rename_item(
+    def post_renameitem(
         self,
         flags: int,
         item: ShellItem2,
@@ -63,24 +63,24 @@ class ShellFileOperationProgressSinkForCall(ShellFileOperationProgressSinkBase):
     ) -> int:
         self.__f(
             "PostRenameItem",
-            inspect_sig(ShellFileOperationProgressSinkForCall.post_rename_item)
+            inspect_sig(ShellFileOperationProgressSinkForCall.post_renameitem)
             .bind(self, flags, item, newname, hr_rename, newly_created_item)
             .arguments,
         )
         return hresult.S_OK
 
     @override
-    def pre_move_item(self, flags: int, item: ShellItem2, dest_folder: ShellItem2, newname: str) -> int:
+    def pre_moveitem(self, flags: int, item: ShellItem2, dest_folder: ShellItem2, newname: str) -> int:
         self.__f(
             "PreMoveItem",
-            inspect_sig(ShellFileOperationProgressSinkForCall.pre_move_item)
+            inspect_sig(ShellFileOperationProgressSinkForCall.pre_moveitem)
             .bind(self, flags, item, dest_folder, newname)
             .arguments,
         )
         return hresult.S_OK
 
     @override
-    def post_move_item(
+    def post_moveitem(
         self,
         flags: int,
         item: ShellItem2,
@@ -91,24 +91,24 @@ class ShellFileOperationProgressSinkForCall(ShellFileOperationProgressSinkBase):
     ) -> int:
         self.__f(
             "PostMoveItem",
-            inspect_sig(ShellFileOperationProgressSinkForCall.post_move_item)
+            inspect_sig(ShellFileOperationProgressSinkForCall.post_moveitem)
             .bind(self, flags, item, dest_folder, newname, hr_move, newly_created_item)
             .arguments,
         )
         return hresult.S_OK
 
     @override
-    def pre_copy_item(self, flags: int, item: ShellItem2, dest_folder: ShellItem2, newname: str) -> int:
+    def pre_copyitem(self, flags: int, item: ShellItem2, dest_folder: ShellItem2, newname: str) -> int:
         self.__f(
             "PreCopyItem",
-            inspect_sig(ShellFileOperationProgressSinkForCall.pre_copy_item)
+            inspect_sig(ShellFileOperationProgressSinkForCall.pre_copyitem)
             .bind(self, flags, item, dest_folder, newname)
             .arguments,
         )
         return hresult.S_OK
 
     @override
-    def post_copy_item(
+    def post_copyitem(
         self,
         flags: int,
         item: ShellItem2,
@@ -119,22 +119,22 @@ class ShellFileOperationProgressSinkForCall(ShellFileOperationProgressSinkBase):
     ) -> int:
         self.__f(
             "PostCopyItem",
-            inspect_sig(ShellFileOperationProgressSinkForCall.post_copy_item)
+            inspect_sig(ShellFileOperationProgressSinkForCall.post_copyitem)
             .bind(self, flags, item, dest_folder, newname, hr_copy, newly_created_item)
             .arguments,
         )
         return hresult.S_OK
 
     @override
-    def pre_delete_item(self, flags: int, item: ShellItem2) -> int:
+    def pre_deleteitem(self, flags: int, item: ShellItem2) -> int:
         self.__f(
             "PreDeleteItem",
-            inspect_sig(ShellFileOperationProgressSinkForCall.pre_delete_item).bind(self, flags, item).arguments,
+            inspect_sig(ShellFileOperationProgressSinkForCall.pre_deleteitem).bind(self, flags, item).arguments,
         )
         return hresult.S_OK
 
     @override
-    def post_delete_item(
+    def post_deleteitem(
         self,
         flags: int,
         item: ShellItem2,
@@ -143,22 +143,22 @@ class ShellFileOperationProgressSinkForCall(ShellFileOperationProgressSinkBase):
     ) -> int:
         self.__f(
             "PostDeleteItem",
-            inspect_sig(ShellFileOperationProgressSinkForCall.post_delete_item)
+            inspect_sig(ShellFileOperationProgressSinkForCall.post_deleteitem)
             .bind(self, flags, item, hr_delete, newly_created_item)
             .arguments,
         )
         return hresult.S_OK
 
     @override
-    def pre_new_item(self, flags: int, item: ShellItem2, newname: str) -> int:
+    def pre_newitem(self, flags: int, item: ShellItem2, newname: str) -> int:
         self.__f(
             "PreNewItem",
-            inspect_sig(ShellFileOperationProgressSinkForCall.pre_new_item).bind(self, flags, item, newname).arguments,
+            inspect_sig(ShellFileOperationProgressSinkForCall.pre_newitem).bind(self, flags, item, newname).arguments,
         )
         return hresult.S_OK
 
     @override
-    def post_new_item(
+    def post_newitem(
         self,
         flags: int,
         dest_folder: ShellItem2,
@@ -170,7 +170,7 @@ class ShellFileOperationProgressSinkForCall(ShellFileOperationProgressSinkBase):
     ) -> int:
         self.__f(
             "PostNewItem",
-            inspect_sig(ShellFileOperationProgressSinkForCall.post_new_item)
+            inspect_sig(ShellFileOperationProgressSinkForCall.post_newitem)
             .bind(self, flags, dest_folder, newname, templatename, file_attrs, hr_new, newly_created_item)
             .arguments,
         )

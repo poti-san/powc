@@ -7,6 +7,6 @@ print(
     壁紙:{wallpaper.get_wallpaper(0)}
     表示位置:{wallpaper.position}
     背景色:{wallpaper.bgcolor}
-    モニタデバイスパス:{tuple(wallpaper.monitor_device_paths)}
+    モニタデバイスパス:{tuple(wallpaper.monitordevicepaths)}
     """
 )

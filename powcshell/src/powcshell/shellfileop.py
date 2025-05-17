@@ -179,10 +179,10 @@ class ShellFileOperationProgressSinkBase:
     def finish_operations(self, hr_result: int) -> int:
         return hresult.S_OK
 
-    def pre_rename_item(self, flags: TransferSourceFlag, item: ShellItem2, newname: str) -> int:
+    def pre_renameitem(self, flags: TransferSourceFlag, item: ShellItem2, newname: str) -> int:
         return hresult.S_OK
 
-    def post_rename_item(
+    def post_renameitem(
         self,
         flags: TransferSourceFlag,
         item: ShellItem2,
@@ -192,10 +192,10 @@ class ShellFileOperationProgressSinkBase:
     ) -> int:
         return hresult.S_OK
 
-    def pre_move_item(self, flags: TransferSourceFlag, item: ShellItem2, dest_folder: ShellItem2, newname: str) -> int:
+    def pre_moveitem(self, flags: TransferSourceFlag, item: ShellItem2, dest_folder: ShellItem2, newname: str) -> int:
         return hresult.S_OK
 
-    def post_move_item(
+    def post_moveitem(
         self,
         flags: TransferSourceFlag,
         item: ShellItem2,
@@ -206,10 +206,10 @@ class ShellFileOperationProgressSinkBase:
     ) -> int:
         return hresult.S_OK
 
-    def pre_copy_item(self, flags: TransferSourceFlag, item: ShellItem2, dest_folder: ShellItem2, newname: str) -> int:
+    def pre_copyitem(self, flags: TransferSourceFlag, item: ShellItem2, dest_folder: ShellItem2, newname: str) -> int:
         return hresult.S_OK
 
-    def post_copy_item(
+    def post_copyitem(
         self,
         flags: TransferSourceFlag,
         item: ShellItem2,
@@ -220,10 +220,10 @@ class ShellFileOperationProgressSinkBase:
     ) -> int:
         return hresult.S_OK
 
-    def pre_delete_item(self, flags: TransferSourceFlag, item: ShellItem2) -> int:
+    def pre_deleteitem(self, flags: TransferSourceFlag, item: ShellItem2) -> int:
         return hresult.S_OK
 
-    def post_delete_item(
+    def post_deleteitem(
         self,
         flags: TransferSourceFlag,
         item: ShellItem2,
@@ -232,10 +232,10 @@ class ShellFileOperationProgressSinkBase:
     ) -> int:
         return hresult.S_OK
 
-    def pre_new_item(self, flags: TransferSourceFlag, item: ShellItem2, newname: str) -> int:
+    def pre_newitem(self, flags: TransferSourceFlag, item: ShellItem2, newname: str) -> int:
         return hresult.S_OK
 
-    def post_new_item(
+    def post_newitem(
         self,
         flags: TransferSourceFlag,
         dest_folder: ShellItem2,
@@ -278,7 +278,7 @@ class _ShellFileOperationProgressSink(COMObject):
         return self.__sink.finish_operations(hr_result)
 
     def IFileOperationProgressSink_PreRenameItem(self, this, flags: int, item: IShellItemPointer, newname: str) -> int:
-        return self.__sink.pre_rename_item(TransferSourceFlag(flags), ShellItem2(item), newname)
+        return self.__sink.pre_renameitem(TransferSourceFlag(flags), ShellItem2(item), newname)
 
     def IFileOperationProgressSink_PostRenameItem(
         self,
@@ -289,14 +289,14 @@ class _ShellFileOperationProgressSink(COMObject):
         hr_rename: int,
         newly_created_item: IShellItemPointer,
     ) -> int:
-        return self.__sink.post_rename_item(
+        return self.__sink.post_renameitem(
             TransferSourceFlag(flags), ShellItem2(item), newname, hr_rename, ShellItem2(newly_created_item)
         )
 
     def IFileOperationProgressSink_PreMoveItem(
         self, this, flags: int, item: IShellItemPointer, dest_folder: IShellItemPointer, newname: str
     ) -> int:
-        return self.__sink.pre_move_item(TransferSourceFlag(flags), ShellItem2(item), ShellItem2(dest_folder), newname)
+        return self.__sink.pre_moveitem(TransferSourceFlag(flags), ShellItem2(item), ShellItem2(dest_folder), newname)
 
     def IFileOperationProgressSink_PostMoveItem(
         self,
@@ -308,14 +308,14 @@ class _ShellFileOperationProgressSink(COMObject):
         hr_move: int,
         newly_created_item: IShellItemPointer,
     ) -> int:
-        return self.__sink.post_move_item(
+        return self.__sink.post_moveitem(
             TransferSourceFlag(flags), ShellItem2(item), ShellItem2(dest_folder), newname, hr_move, newly_created_item
         )
 
     def IFileOperationProgressSink_PreCopyItem(
         self, this, flags: int, item: IShellItemPointer, dest_folder: IShellItemPointer, newname: str
     ) -> int:
-        return self.__sink.pre_copy_item(TransferSourceFlag(flags), ShellItem2(item), ShellItem2(dest_folder), newname)
+        return self.__sink.pre_copyitem(TransferSourceFlag(flags), ShellItem2(item), ShellItem2(dest_folder), newname)
 
     def IFileOperationProgressSink_PostCopyItem(
         self,
@@ -327,7 +327,7 @@ class _ShellFileOperationProgressSink(COMObject):
         hr_copy: int,
         newly_created_item: IShellItemPointer,
     ) -> int:
-        return self.__sink.post_copy_item(
+        return self.__sink.post_copyitem(
             TransferSourceFlag(flags),
             ShellItem2(item),
             ShellItem2(dest_folder),
@@ -337,7 +337,7 @@ class _ShellFileOperationProgressSink(COMObject):
         )
 
     def IFileOperationProgressSink_PreDeleteItem(self, this, flags: int, item: IShellItemPointer) -> int:
-        return self.__sink.pre_delete_item(TransferSourceFlag(flags), ShellItem2(item))
+        return self.__sink.pre_deleteitem(TransferSourceFlag(flags), ShellItem2(item))
 
     def IFileOperationProgressSink_PostDeleteItem(
         self,
@@ -347,12 +347,12 @@ class _ShellFileOperationProgressSink(COMObject):
         hr_delete: int,
         newly_created_item: IShellItemPointer,
     ) -> int:
-        return self.__sink.post_delete_item(
+        return self.__sink.post_deleteitem(
             TransferSourceFlag(flags), ShellItem2(item), hr_delete, ShellItem2(newly_created_item)
         )
 
     def IFileOperationProgressSink_PreNewItem(self, this, flags: int, item: IShellItemPointer, newname: str) -> int:
-        return self.__sink.pre_new_item(TransferSourceFlag(flags), ShellItem2(item), newname)
+        return self.__sink.pre_newitem(TransferSourceFlag(flags), ShellItem2(item), newname)
 
     def IFileOperationProgressSink_PostNewItem(
         self,
@@ -365,7 +365,7 @@ class _ShellFileOperationProgressSink(COMObject):
         hr_new: int,
         newly_created_item: IShellItemPointer,
     ) -> int:
-        return self.__sink.post_new_item(
+        return self.__sink.post_newitem(
             TransferSourceFlag(flags),
             ShellItem2(dest_folder),
             newname,
@@ -431,11 +431,11 @@ class ShellFileOperation:
     def set_opflags(self, flags: ShellFileOperationFlag) -> None:
         return self.set_opflags_nothrow(flags).value
 
-    def set_progress_msg_nothrow(self, msg: str) -> ComResult[None]:
+    def set_progressmsg_nothrow(self, msg: str) -> ComResult[None]:
         return cr(self.__o.SetProgressMessage(msg), None)
 
-    def set_progress_msg(self, msg: str) -> None:
-        return self.set_progress_msg_nothrow(msg).value
+    def set_progressmsg(self, msg: str) -> None:
+        return self.set_progressmsg_nothrow(msg).value
 
     # TODO
     # STDMETHOD(c_int32, "SetProgressDialog", (POINTER(IUnknown),)),  # TODO IOperationsProgressDialog
@@ -446,23 +446,23 @@ class ShellFileOperation:
     def set_props(self, array: PropertyChangeArray) -> None:
         return self.set_props_nothrow(array).value
 
-    def set_owner_window_nothrow(self, window_handle: int) -> ComResult[None]:
+    def set_ownerwindow_nothrow(self, window_handle: int) -> ComResult[None]:
         return cr(self.__o.SetOwnerWindow(window_handle), None)
 
-    def set_owner_window(self, window_handle: int) -> None:
-        return self.set_owner_window_nothrow(window_handle).value
+    def set_ownerwindow(self, window_handle: int) -> None:
+        return self.set_ownerwindow_nothrow(window_handle).value
 
-    def apply_props_item_nothrow(self, item: ShellItem) -> ComResult[None]:
+    def apply_propsitem_nothrow(self, item: ShellItem) -> ComResult[None]:
         return cr(self.__o.ApplyPropertiesToItem(item.wrapped_obj), None)
 
-    def apply_props_item(self, item: ShellItem) -> None:
-        return self.apply_props_item_nothrow(item).value
+    def apply_propsitem(self, item: ShellItem) -> None:
+        return self.apply_propsitem_nothrow(item).value
 
-    def apply_props_items_nothrow(self, items: ShellItemArray | EnumShellItems) -> ComResult[None]:
+    def apply_propsitems_nothrow(self, items: ShellItemArray | EnumShellItems) -> ComResult[None]:
         return cr(self.__o.ApplyPropertiesToItems(items.wrapped_obj), None)
 
-    def apply_props_items(self, items: ShellItemArray | EnumShellItems) -> None:
-        return self.apply_props_items_nothrow(items).value
+    def apply_propsitems(self, items: ShellItemArray | EnumShellItems) -> None:
+        return self.apply_propsitems_nothrow(items).value
 
     def rename_item_nothrow(
         self, item: ShellItem, new_name: str, sink: ShellFileOperationProgressSinkBase | None = None
@@ -588,13 +588,13 @@ class ShellFileOperation:
         return self.perform_operations_nothrow().value
 
     @property
-    def any_operations_aborted_nothrow(self) -> ComResult[bool]:
+    def any_operationsaborted_nothrow(self) -> ComResult[bool]:
         x = c_int32()
         return cr(self.__o.GetAnyOperationsAborted(byref(x)), x.value != 0)
 
     @property
-    def any_operations_aborted(self) -> bool:
-        return self.any_operations_aborted_nothrow.value
+    def any_operationsaborted(self) -> bool:
+        return self.any_operationsaborted_nothrow.value
 
 
 # MIDL_INTERFACE("cd8f23c1-8f61-4916-909d-55bdd0918753")

@@ -134,13 +134,13 @@ class ShellLink:
         return ShellLink(CoCreateInstance(CLSID_ShellLink, IShellLinkW))
 
     @staticmethod
-    def create_from_file(path: str | PathLike, mode: StorageMode = StorageMode.READ) -> "ShellLink":
+    def create_fromfile(path: str | PathLike, mode: StorageMode = StorageMode.READ) -> "ShellLink":
         link = ShellLink.create()
         link.persist_file.load(str(path), mode)
         return link
 
     @staticmethod
-    def create_from_stream(stream: ComStream) -> "ShellLink":
+    def create_fromstream(stream: ComStream) -> "ShellLink":
         link = ShellLink.create()
         link.persist_stream.load(stream)
         return link

@@ -366,10 +366,19 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.clone_nothrow"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.clone_nothrow()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.create_array"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.create_array()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.create_vector"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.create_vector()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.create_vector_int16"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.create_vector_int16()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.create_vector_int32"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.create_vector_int32()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.create_vector_int64"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.create_vector_int64()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.create_vector_int8"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.create_vector_int8()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.create_vector_uint16"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.create_vector_uint16()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.create_vector_uint32"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.create_vector_uint32()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.create_vector_uint64"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.create_vector_uint64()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.create_vector_uint8"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.create_vector_uint8()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.dim"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.dim</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.elemsize"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.elemsize</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.get_elem_at"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.get_elem_at()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.get_elem_at_nothrow"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.get_elem_at_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.get_elemraw_at"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.get_elemraw_at()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.get_elemraw_at_nothrow"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.get_elemraw_at_nothrow()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.get_lbound"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.get_lbound()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.get_lbound_nothrow"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.get_lbound_nothrow()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.get_ubound"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.get_ubound()</span></code></a></li>
@@ -407,155 +416,341 @@ document.write(`
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">powc.safearray.</span></span><span class="sig-name descname"><span class="pre">SafeArrayPtr</span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr" title="Link to this definition">#</a></dt>
 <dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">c_void_p</span></code></p>
+<p>セーフ配列の管理機能を提供します。データは <code class="code docutils literal notranslate"><span class="pre">SAFEARRAY*</span></code> として管理します。</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.access_data">
 <span class="sig-name descname"><span class="pre">access_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">Array</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.access_data" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列のメモリにアクセスします。セーフ配列は列挙終了までロックされます。</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.access_data_mv">
 <span class="sig-name descname"><span class="pre">access_data_mv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">memoryview</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.access_data_mv" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列のメモリにアクセスします。セーフ配列は列挙終了までロックされます。</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.bounds">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bounds</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.safearray.SafeArrayPtr.bounds" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列の各次元の範囲を取得します。</p>
+<p class="rubric">サンプル</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">powc.safearray</span><span class="w"> </span><span class="kn">import</span> <span class="n">SafeArrayPtr</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">powc.variant</span><span class="w"> </span><span class="kn">import</span> <span class="n">VARENUM</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">SafeArrayPtr</span><span class="o">.</span><span class="n">create_array</span><span class="p">(</span><span class="n">VARENUM</span><span class="o">.</span><span class="n">VT_I4</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span>
+<span class="c1"># ((0, 2), (0, 2), (0, 4))</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.clear_data">
 <span class="sig-name descname"><span class="pre">clear_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.clear_data" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列の各要素を解放します。</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.clear_data_nothrow">
 <span class="sig-name descname"><span class="pre">clear_data_nothrow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.clear_data_nothrow" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列の各要素を解放します。</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.clone">
 <span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.safearray.SafeArrayPtr" title="powc.safearray.SafeArrayPtr"><span class="pre">SafeArrayPtr</span></a></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.clone" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列の複製を取得します。</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.clone_nothrow">
 <span class="sig-name descname"><span class="pre">clone_nothrow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.safearray.SafeArrayPtr" title="powc.safearray.SafeArrayPtr"><span class="pre">SafeArrayPtr</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.clone_nothrow" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列の複製を取得します。</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.create_array">
 <em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powc.variant.html#powc.variant.VARENUM" title="powc.variant.VARENUM"><span class="pre">VARENUM</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">elements</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbounds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.safearray.SafeArrayPtr" title="powc.safearray.SafeArrayPtr"><span class="pre">SafeArrayPtr</span></a></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.create_array" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>新しい多次元セーフ配列を作成します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vt</strong> (<a class="reference internal" href="powc.variant.html#powc.variant.VARENUM" title="powc.variant.VARENUM"><em>VARENUM</em></a>) -- 要素の型。</p></li>
+<li><p><strong>elements</strong> (<em>Sequence</em><em>[</em><em>int</em><em>]</em>) -- 各次元の要素数。</p></li>
+<li><p><strong>lbounds</strong> (<em>Sequence</em><em>[</em><em>int</em><em>] </em><em>| </em><em>None</em><em>, </em><em>optional</em>) -- 各次元のインデックス下限値。既定値は全て0です。</p></li>
+</ul>
+</dd>
+<dt class="field-even">例外<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> -- 要素と下限のサイズが一致しない。</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.create_vector">
 <em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="powc.variant.html#powc.variant.VARENUM" title="powc.variant.VARENUM"><span class="pre">VARENUM</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">elements</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.safearray.SafeArrayPtr" title="powc.safearray.SafeArrayPtr"><span class="pre">SafeArrayPtr</span></a></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.create_vector" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>新しい1次元セーフ配列を作成します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vt</strong> (<a class="reference internal" href="powc.variant.html#powc.variant.VARENUM" title="powc.variant.VARENUM"><em>VARENUM</em></a>) -- 要素の型。</p></li>
+<li><p><strong>elements</strong> (<em>int</em>) -- 要素数。</p></li>
+<li><p><strong>lbound</strong> (<em>int</em><em>, </em><em>optional</em>) -- 要素インデックスの下限値。既定値は0です。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.create_vector_int16">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_vector_int16</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.safearray.SafeArrayPtr" title="powc.safearray.SafeArrayPtr"><span class="pre">SafeArrayPtr</span></a></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.create_vector_int16" title="Link to this definition">#</a></dt>
+<dd><p><code class="code docutils literal notranslate"><span class="pre">ctypes.c_int16</span></code> の1次元セーフ配列を作成します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.create_vector_int32">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_vector_int32</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.safearray.SafeArrayPtr" title="powc.safearray.SafeArrayPtr"><span class="pre">SafeArrayPtr</span></a></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.create_vector_int32" title="Link to this definition">#</a></dt>
+<dd><p><code class="code docutils literal notranslate"><span class="pre">ctypes.c_int32</span></code> の1次元セーフ配列を作成します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.create_vector_int64">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_vector_int64</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.safearray.SafeArrayPtr" title="powc.safearray.SafeArrayPtr"><span class="pre">SafeArrayPtr</span></a></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.create_vector_int64" title="Link to this definition">#</a></dt>
+<dd><p><code class="code docutils literal notranslate"><span class="pre">ctypes.c_int64</span></code> の1次元セーフ配列を作成します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.create_vector_int8">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_vector_int8</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.safearray.SafeArrayPtr" title="powc.safearray.SafeArrayPtr"><span class="pre">SafeArrayPtr</span></a></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.create_vector_int8" title="Link to this definition">#</a></dt>
+<dd><p><code class="code docutils literal notranslate"><span class="pre">ctypes.c_int8</span></code> の1次元セーフ配列を作成します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.create_vector_uint16">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_vector_uint16</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.safearray.SafeArrayPtr" title="powc.safearray.SafeArrayPtr"><span class="pre">SafeArrayPtr</span></a></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.create_vector_uint16" title="Link to this definition">#</a></dt>
+<dd><p><code class="code docutils literal notranslate"><span class="pre">ctypes.c_uint16</span></code> の1次元セーフ配列を作成します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.create_vector_uint32">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_vector_uint32</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.safearray.SafeArrayPtr" title="powc.safearray.SafeArrayPtr"><span class="pre">SafeArrayPtr</span></a></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.create_vector_uint32" title="Link to this definition">#</a></dt>
+<dd><p><code class="code docutils literal notranslate"><span class="pre">ctypes.c_uint32</span></code> の1次元セーフ配列を作成します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.create_vector_uint64">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_vector_uint64</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.safearray.SafeArrayPtr" title="powc.safearray.SafeArrayPtr"><span class="pre">SafeArrayPtr</span></a></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.create_vector_uint64" title="Link to this definition">#</a></dt>
+<dd><p><code class="code docutils literal notranslate"><span class="pre">ctypes.c_uint64</span></code> の1次元セーフ配列を作成します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.create_vector_uint8">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_vector_uint8</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#powc.safearray.SafeArrayPtr" title="powc.safearray.SafeArrayPtr"><span class="pre">SafeArrayPtr</span></a></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.create_vector_uint8" title="Link to this definition">#</a></dt>
+<dd><p><code class="code docutils literal notranslate"><span class="pre">ctypes.c_uint8</span></code> の1次元セーフ配列を作成します。</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.dim">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dim</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.safearray.SafeArrayPtr.dim" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列の次元数を取得します。</p>
+<p class="rubric">サンプル</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">powc.safearray</span><span class="w"> </span><span class="kn">import</span> <span class="n">SafeArrayPtr</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">powc.variant</span><span class="w"> </span><span class="kn">import</span> <span class="n">VARENUM</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">SafeArrayPtr</span><span class="o">.</span><span class="n">create_array</span><span class="p">(</span><span class="n">VARENUM</span><span class="o">.</span><span class="n">VT_I4</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+<span class="c1"># 3</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.elemsize">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elemsize</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.safearray.SafeArrayPtr.elemsize" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列の要素のバイト数を取得します。</p>
+<p class="rubric">サンプル</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">powc.safearray</span><span class="w"> </span><span class="kn">import</span> <span class="n">SafeArrayPtr</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">powc.variant</span><span class="w"> </span><span class="kn">import</span> <span class="n">VARENUM</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">SafeArrayPtr</span><span class="o">.</span><span class="n">create_array</span><span class="p">(</span><span class="n">VARENUM</span><span class="o">.</span><span class="n">VT_I4</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">elemsize</span><span class="p">)</span>
+<span class="c1"># 4 (VT_I4のバイト数)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.get_elem_at">
-<span class="sig-name descname"><span class="pre">get_elem_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indexes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Array</span></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.get_elem_at" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">get_elem_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indexes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convertsNotSupportedTypeToBytes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.get_elem_at" title="Link to this definition">#</a></dt>
+<dd><p>各次元のインデックスを指定して要素を取得します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>indexes</strong> (<em>Sequence</em><em>[</em><em>int</em><em>]</em>) -- 各次元のインデックス。</p></li>
+<li><p><strong>convertsNotSupportedTypeToBytes</strong> (<em>bool</em><em>, </em><em>optional</em>) -- 未対応の型をバイナリ表現に変換するか。偽の場合、未対応の型に対して例外を発生します。既定値は真です。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.get_elem_at_nothrow">
-<span class="sig-name descname"><span class="pre">get_elem_at_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indexes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Array</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.get_elem_at_nothrow" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.get_elemraw_at">
+<span class="sig-name descname"><span class="pre">get_elemraw_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indexes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Array</span></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.get_elemraw_at" title="Link to this definition">#</a></dt>
+<dd><p>各次元のインデックスを指定して要素のバイナリ表現を取得します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.get_elemraw_at_nothrow">
+<span class="sig-name descname"><span class="pre">get_elemraw_at_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indexes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Array</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.get_elemraw_at_nothrow" title="Link to this definition">#</a></dt>
+<dd><p>各次元のインデックスを指定して要素のバイナリ表現を取得します。</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.get_lbound">
 <span class="sig-name descname"><span class="pre">get_lbound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.get_lbound" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>指定した次元のインデックス下限を取得します。</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.get_lbound_nothrow">
 <span class="sig-name descname"><span class="pre">get_lbound_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.get_lbound_nothrow" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>指定した次元のインデックス下限を取得します。</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.get_ubound">
 <span class="sig-name descname"><span class="pre">get_ubound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.get_ubound" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>指定した次元のインデックス上限を取得します。</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.get_ubound_nothrow">
 <span class="sig-name descname"><span class="pre">get_ubound_nothrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.get_ubound_nothrow" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>指定した次元のインデックス上限を取得します。</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.indices">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">indices</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.safearray.SafeArrayPtr.indices" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列の次元数のインデックスを取得します。</p>
+<p class="rubric">サンプル</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">powc.safearray</span><span class="w"> </span><span class="kn">import</span> <span class="n">SafeArrayPtr</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">powc.variant</span><span class="w"> </span><span class="kn">import</span> <span class="n">VARENUM</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">SafeArrayPtr</span><span class="o">.</span><span class="n">create_array</span><span class="p">(</span><span class="n">VARENUM</span><span class="o">.</span><span class="n">VT_I4</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">indices</span><span class="p">)</span>
+<span class="c1"># (0, 1, 2)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.lock">
 <span class="sig-name descname"><span class="pre">lock</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.lock" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列のロック数を加算します。使用後は <a class="reference internal" href="#powc.safearray.SafeArrayPtr.unlock" title="powc.safearray.SafeArrayPtr.unlock"><code class="xref py py-meth docutils literal notranslate"><span class="pre">unlock()</span></code></a> を呼び出してください</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.lock_nothrow">
 <span class="sig-name descname"><span class="pre">lock_nothrow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.lock_nothrow" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列のロック数を加算します。使用後は <a class="reference internal" href="#powc.safearray.SafeArrayPtr.unlock" title="powc.safearray.SafeArrayPtr.unlock"><code class="xref py py-meth docutils literal notranslate"><span class="pre">unlock()</span></code></a> を呼び出してください</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.lock_scope">
 <span class="sig-name descname"><span class="pre">lock_scope</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#powc.safearray.SafeArrayPtr" title="powc.safearray.SafeArrayPtr"><span class="pre">SafeArrayPtr</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.lock_scope" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列のロックスコープを作成します。通常は <code class="code docutils literal notranslate"><span class="pre">with</span></code> と組み合わせて使用します。</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.to_bstrarray">
 <span class="sig-name descname"><span class="pre">to_bstrarray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.to_bstrarray" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列を <code class="code docutils literal notranslate"><span class="pre">BSTR</span></code> 型とみなした配列を作成します。</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.to_int32array">
 <span class="sig-name descname"><span class="pre">to_int32array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.to_int32array" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列を32ビット符号付き整数とみなした配列を作成します。</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.to_uint32array">
 <span class="sig-name descname"><span class="pre">to_uint32array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.to_uint32array" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列を32ビット符号無し整数とみなした配列を作成します。</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.totallen">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">totallen</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.safearray.SafeArrayPtr.totallen" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列の全要素数を取得します。</p>
+<p class="rubric">サンプル</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">powc.safearray</span><span class="w"> </span><span class="kn">import</span> <span class="n">SafeArrayPtr</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">powc.variant</span><span class="w"> </span><span class="kn">import</span> <span class="n">VARENUM</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">SafeArrayPtr</span><span class="o">.</span><span class="n">create_array</span><span class="p">(</span><span class="n">VARENUM</span><span class="o">.</span><span class="n">VT_I4</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">totallen</span><span class="p">)</span>
+<span class="c1"># 11</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.totalsize">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">totalsize</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#powc.safearray.SafeArrayPtr.totalsize" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列の全要素のバイト数を取得します。</p>
+<p class="rubric">サンプル</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">powc.safearray</span><span class="w"> </span><span class="kn">import</span> <span class="n">SafeArrayPtr</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">powc.variant</span><span class="w"> </span><span class="kn">import</span> <span class="n">VARENUM</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">SafeArrayPtr</span><span class="o">.</span><span class="n">create_array</span><span class="p">(</span><span class="n">VARENUM</span><span class="o">.</span><span class="n">VT_I4</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">totalsize</span><span class="p">)</span>
+<span class="c1"># 44</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.unlock">
 <span class="sig-name descname"><span class="pre">unlock</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.unlock" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列のロック数を減算します。通常は <a class="reference internal" href="#powc.safearray.SafeArrayPtr.lock" title="powc.safearray.SafeArrayPtr.lock"><code class="xref py py-meth docutils literal notranslate"><span class="pre">lock()</span></code></a> の後で呼び出します。</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.unlock_nothrow">
 <span class="sig-name descname"><span class="pre">unlock_nothrow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#powc.safearray.SafeArrayPtr.unlock_nothrow" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列のロック数を減算します。通常は <a class="reference internal" href="#powc.safearray.SafeArrayPtr.lock" title="powc.safearray.SafeArrayPtr.lock"><code class="xref py py-meth docutils literal notranslate"><span class="pre">lock()</span></code></a> の後で呼び出します。</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.vartype">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vartype</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.variant.html#powc.variant.VARENUM" title="powc.variant.VARENUM"><span class="pre">VARENUM</span></a></em><a class="headerlink" href="#powc.safearray.SafeArrayPtr.vartype" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列の全要素の型を取得します。</p>
+<p class="rubric">サンプル</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">powc.safearray</span><span class="w"> </span><span class="kn">import</span> <span class="n">SafeArrayPtr</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">powc.variant</span><span class="w"> </span><span class="kn">import</span> <span class="n">VARENUM</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">SafeArrayPtr</span><span class="o">.</span><span class="n">create_array</span><span class="p">(</span><span class="n">VARENUM</span><span class="o">.</span><span class="n">VT_I4</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">vartype</span><span class="p">)</span>
+<span class="c1"># 3 (VT_I4)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="powc.safearray.SafeArrayPtr.vartype_nothrow">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vartype_nothrow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="powc.core.html#powc.core.ComResult" title="powc.core.ComResult"><span class="pre">ComResult</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="powc.variant.html#powc.variant.VARENUM" title="powc.variant.VARENUM"><span class="pre">VARENUM</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#powc.safearray.SafeArrayPtr.vartype_nothrow" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>セーフ配列の全要素の型を取得します。</p>
+<p class="rubric">サンプル</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">powc.safearray</span><span class="w"> </span><span class="kn">import</span> <span class="n">SafeArrayPtr</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">powc.variant</span><span class="w"> </span><span class="kn">import</span> <span class="n">VARENUM</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">SafeArrayPtr</span><span class="o">.</span><span class="n">create_array</span><span class="p">(</span><span class="n">VARENUM</span><span class="o">.</span><span class="n">VT_I4</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">vartype</span><span class="p">)</span>
+<span class="c1"># 3 (VT_I4)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 </dd></dl>
 
@@ -616,10 +811,19 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.clone_nothrow"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.clone_nothrow()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.create_array"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.create_array()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.create_vector"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.create_vector()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.create_vector_int16"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.create_vector_int16()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.create_vector_int32"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.create_vector_int32()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.create_vector_int64"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.create_vector_int64()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.create_vector_int8"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.create_vector_int8()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.create_vector_uint16"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.create_vector_uint16()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.create_vector_uint32"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.create_vector_uint32()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.create_vector_uint64"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.create_vector_uint64()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.create_vector_uint8"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.create_vector_uint8()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.dim"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.dim</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.elemsize"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.elemsize</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.get_elem_at"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.get_elem_at()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.get_elem_at_nothrow"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.get_elem_at_nothrow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.get_elemraw_at"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.get_elemraw_at()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.get_elemraw_at_nothrow"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.get_elemraw_at_nothrow()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.get_lbound"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.get_lbound()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.get_lbound_nothrow"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.get_lbound_nothrow()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powc.safearray.SafeArrayPtr.get_ubound"><code class="docutils literal notranslate"><span class="pre">SafeArrayPtr.get_ubound()</span></code></a></li>

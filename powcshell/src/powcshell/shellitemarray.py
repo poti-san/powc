@@ -68,24 +68,24 @@ class ShellItemArray:
 
     if TYPE_CHECKING:
 
-        def bind_to_handler_nothrow[TIUnknown](
+        def bind_tohandler_nothrow[TIUnknown](
             self, bhid: GUID, type: type[TIUnknown]
         ) -> ComResult[_Pointer[TIUnknown]]:  # type: ignore
             """バインドハンドラIDで指定されたハンドラを取得します。"""
             ...
 
-        def bind_to_handler[TIUnknown](self, bhid: GUID, type: type[TIUnknown]) -> _Pointer[TIUnknown]:  # type: ignore
+        def bind_tohandler[TIUnknown](self, bhid: GUID, type: type[TIUnknown]) -> _Pointer[TIUnknown]:  # type: ignore
             """バインドハンドラIDで指定されたハンドラを取得します。"""
             ...
 
     else:
 
-        def bind_to_handler_nothrow[TIUnknown](self, bhid: GUID, type: type[TIUnknown]):
+        def bind_tohandler_nothrow[TIUnknown](self, bhid: GUID, type: type[TIUnknown]):
             """バインドハンドラIDで指定されたハンドラを取得します。"""
             p = POINTER(type)()
             return cr(self.__o.BindToHandler(None, bhid, p._iid_, byref(p)), p)
 
-        def bind_to_handler[TIUnknown](self, bhid: GUID, type: type[TIUnknown]):
+        def bind_tohandler[TIUnknown](self, bhid: GUID, type: type[TIUnknown]):
             """バインドハンドラIDで指定されたハンドラを取得します。"""
             return self.bind_to_handler_nothrow(bhid, type).value
 
@@ -227,16 +227,16 @@ class ShellItemArray:
         return ShellItemArray.create_nothrow(parent_pidl, child_pidls).value
 
     @staticmethod
-    def create_from_dataobj_nothrow(dataobj: c_void_p) -> "ComResult[ShellItemArray]":
+    def create_fromdataobj_nothrow(dataobj: c_void_p) -> "ComResult[ShellItemArray]":
         o = POINTER(IShellItemArray)()
         return cr(_SHCreateShellItemArrayFromDataObject(dataobj, IShellItemArray._iid_, byref(o)), ShellItemArray(o))
 
     @staticmethod
-    def create_from_dataobj(dataobj: c_void_p) -> "ShellItemArray":
-        return ShellItemArray.create_from_dataobj_nothrow(dataobj).value
+    def create_fromdataobj(dataobj: c_void_p) -> "ShellItemArray":
+        return ShellItemArray.create_fromdataobj_nothrow(dataobj).value
 
     @staticmethod
-    def create_from_idlists_nothrow(pidls: Sequence[int]) -> "ComResult[ShellItemArray]":
+    def create_fromidlists_nothrow(pidls: Sequence[int]) -> "ComResult[ShellItemArray]":
         p = (c_void_p * len(pidls))()
         for i in range(len(pidls)):
             p[i] = pidls[i]
@@ -244,68 +244,68 @@ class ShellItemArray:
         return cr(_SHCreateShellItemArrayFromIDLists(len(pidls), p, byref(o)), ShellItemArray(o))
 
     @staticmethod
-    def create_from_idlists(pidls: Sequence[int]) -> "ShellItemArray":
-        return ShellItemArray.create_from_idlists_nothrow(pidls).value
+    def create_fromidlists(pidls: Sequence[int]) -> "ShellItemArray":
+        return ShellItemArray.create_fromidlists_nothrow(pidls).value
 
     @staticmethod
-    def create_from_item_nothrow(item: ShellItem) -> "ComResult[ShellItemArray]":
+    def create_fromitem_nothrow(item: ShellItem) -> "ComResult[ShellItemArray]":
         o = POINTER(IShellItemArray)()
         return cr(
             _SHCreateShellItemArrayFromShellItem(item.wrapped_obj, IShellItemArray._iid_, byref(o)), ShellItemArray(o)
         )
 
     @staticmethod
-    def create_from_item(item: ShellItem) -> "ShellItemArray":
-        return ShellItemArray.create_from_item_nothrow(item).value
+    def create_fromitem(item: ShellItem) -> "ShellItemArray":
+        return ShellItemArray.create_fromitem_nothrow(item).value
 
     @staticmethod
-    def create_from_clipboard_nothrow() -> "ComResult[ShellItemArray]":
+    def create_fromclipboard_nothrow() -> "ComResult[ShellItemArray]":
         dataobj = POINTER(IUnknown)()
         ret = cr(_OleGetClipboard(byref(dataobj)), None)
         if not ret:
             return cr(ret.hr, ShellItemArray(None))
-        return ShellItemArray.create_from_dataobj_nothrow(dataobj)  # type: ignore
+        return ShellItemArray.create_fromdataobj_nothrow(dataobj)  # type: ignore
 
     @staticmethod
-    def create_from_clipboard() -> "ShellItemArray":
+    def create_fromclipboard() -> "ShellItemArray":
         """クリップボードからシェル項目配列ShellItemArrayを作成して返します。
 
         Examples:
-            >>> tuple(ShellItemArray.create_from_clipboard().iter_items())
+            >>> tuple(ShellItemArray.create_fromclipboard().iter_items())
         """
-        return ShellItemArray.create_from_clipboard_nothrow().value
+        return ShellItemArray.create_fromclipboard_nothrow().value
 
     @staticmethod
-    def getitems_from_clipboard_nothrow() -> ComResult[tuple[ShellItem2, ...]]:
-        array = ShellItemArray.create_from_clipboard_nothrow()
+    def getitems_fromclipboard_nothrow() -> ComResult[tuple[ShellItem2, ...]]:
+        array = ShellItemArray.create_fromclipboard_nothrow()
         if not array:
             return cr(array.hr, ())
         return cr(array.hr, tuple(array.value_unchecked.iter_items()))
 
     @staticmethod
-    def getitems_from_clipboard() -> tuple[ShellItem2, ...]:
+    def getitems_fromclipboard() -> tuple[ShellItem2, ...]:
         """クリップボードからシェル項目配列tuple[ShellItem2, ...]を作成して返します。
 
         Examples:
-            >>> ShellItemArray.getitems_from_clipboard()
+            >>> ShellItemArray.getitems_fromclipboard()
         """
-        return tuple(ShellItemArray.create_from_clipboard().iter_items())
+        return tuple(ShellItemArray.create_fromclipboard().iter_items())
 
     @staticmethod
-    def getitems_v1_from_clipboard_nothrow() -> ComResult[tuple[ShellItem, ...]]:
-        array = ShellItemArray.create_from_clipboard_nothrow()
+    def getitems_v1_fromclipboard_nothrow() -> ComResult[tuple[ShellItem, ...]]:
+        array = ShellItemArray.create_fromclipboard_nothrow()
         if not array:
             return cr(array.hr, ())
         return cr(array.hr, tuple(array.value_unchecked.iter_items_v1()))
 
     @staticmethod
-    def getitems_v1_from_clipboard() -> tuple[ShellItem, ...]:
+    def getitems_v1_fromclipboard() -> tuple[ShellItem, ...]:
         """クリップボードからシェル項目配列tuple[ShellItem2, ...]を作成して返します。
 
         Examples:
-            >>> ShellItemArray.getitems_v1_from_clipboard()
+            >>> ShellItemArray.getitems_v1_fromclipboard()
         """
-        return tuple(ShellItemArray.create_from_clipboard().iter_items_v1())
+        return tuple(ShellItemArray.create_fromclipboard().iter_items_v1())
 
 
 _SHCreateShellItemArray = _shell32.SHCreateShellItemArray

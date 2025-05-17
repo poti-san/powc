@@ -1,6 +1,6 @@
 """エンドポイントの音量。
 
-主なクラスは :class:`AudioEndpointVolume` です。:class:`MMDevice`から作成されます。
+主なクラスは :class:`AudioEndpointVolume` です。:class:`MMDevice` から作成されます。
 """
 
 from ctypes import POINTER, Structure, byref, c_float, c_int32, c_uint32, c_void_p

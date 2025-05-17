@@ -99,32 +99,32 @@ class ShellLibrary:
         return ShellLibrary(CoCreateInstance(CLSID_ShellLibrary, IShellLibrary))
 
     @staticmethod
-    def load_from_item(item: ShellItem, mode: StorageMode | int) -> "ShellLibrary":
+    def load_fromitem(item: ShellItem, mode: StorageMode | int) -> "ShellLibrary":
         lib = ShellLibrary.create()
-        lib.loadlib_from_item(item, mode)
+        lib.load_libfromitem(item, mode)
         return lib
 
     @staticmethod
-    def load_from_knownfolder(folder_id: KnownFolderID, mode: StorageMode | int) -> "ShellLibrary":
+    def load_fromknownfolder(folder_id: KnownFolderID, mode: StorageMode | int) -> "ShellLibrary":
         lib = ShellLibrary.create()
-        lib.loadlib_from_knownfolder(folder_id, mode)
+        lib.load_libfromknownfolder(folder_id, mode)
         return lib
 
     @staticmethod
-    def load_from_parsing_name(name: str | PathLike, mode: StorageMode | int) -> "ShellLibrary":
-        return ShellLibrary.load_from_item(ShellItem2.create_parsingname(str(name)), mode)
+    def load_fromparsingname(name: str | PathLike, mode: StorageMode | int) -> "ShellLibrary":
+        return ShellLibrary.load_fromitem(ShellItem2.create_parsingname(str(name)), mode)
 
-    def loadlib_from_item_nothrow(self, item: ShellItem, mode: StorageMode | int) -> ComResult[None]:
+    def load_libfromitem_nothrow(self, item: ShellItem, mode: StorageMode | int) -> ComResult[None]:
         return cr(self.__o.LoadLibraryFromItem(item.wrapped_obj, int(mode)), None)
 
-    def loadlib_from_item(self, item: ShellItem, mode: StorageMode | int) -> None:
-        return self.loadlib_from_item_nothrow(item, mode).value
+    def load_libfromitem(self, item: ShellItem, mode: StorageMode | int) -> None:
+        return self.load_libfromitem_nothrow(item, mode).value
 
-    def loadlib_from_knownfolder_nothrow(self, folder_id: KnownFolderID, mode: StorageMode | int) -> ComResult[None]:
+    def load_libfromknownfolder_nothrow(self, folder_id: KnownFolderID, mode: StorageMode | int) -> ComResult[None]:
         return cr(self.__o.LoadLibraryFromKnownFolder(folder_id, int(mode)), None)
 
-    def loadlib_from_knownfolder(self, folder_id: KnownFolderID, mode: StorageMode | int) -> None:
-        return self.loadlib_from_knownfolder_nothrow(folder_id, mode).value
+    def load_libfromknownfolder(self, folder_id: KnownFolderID, mode: StorageMode | int) -> None:
+        return self.load_libfromknownfolder_nothrow(folder_id, mode).value
 
     def add_folder_nothrow(self, item: ShellItem) -> ComResult[None]:
         return cr(self.__o.AddFolder(item.wrapped_obj), None)
@@ -184,63 +184,63 @@ class ShellLibrary:
     def resolve_folder(self, folder_to_resolve: ShellItem, timeout: int) -> ShellItem2:
         return self.resolve_folder_nothrow(folder_to_resolve, timeout).value
 
-    def get_default_save_folder_nothrow(self, folder_type: DefaultSaveFolderType) -> ComResult[ShellItem2]:
+    def get_defaultsavefolder_nothrow(self, folder_type: DefaultSaveFolderType) -> ComResult[ShellItem2]:
         x = POINTER(IShellItem2)()
         return cr(self.__o.GetDefaultSaveFolder(int(folder_type), IShellItem2._iid_, byref(x)), ShellItem2(x))
 
-    def get_default_save_folder(self, folder_type: DefaultSaveFolderType) -> ShellItem2:
-        return self.get_default_save_folder_nothrow(folder_type).value
+    def get_defaultsavefolder(self, folder_type: DefaultSaveFolderType) -> ShellItem2:
+        return self.get_defaultsavefolder_nothrow(folder_type).value
 
     @property
-    def default_save_folder_detect_nothrow(self) -> ComResult[ShellItem2]:
-        return self.get_default_save_folder_nothrow(DefaultSaveFolderType.DETECT)
+    def defaultsavefolder_detect_nothrow(self) -> ComResult[ShellItem2]:
+        return self.get_defaultsavefolder_nothrow(DefaultSaveFolderType.DETECT)
 
     @property
-    def default_save_folder_public_nothrow(self) -> ComResult[ShellItem2]:
-        return self.get_default_save_folder_nothrow(DefaultSaveFolderType.PUBLIC)
+    def defaultsavefolder_public_nothrow(self) -> ComResult[ShellItem2]:
+        return self.get_defaultsavefolder_nothrow(DefaultSaveFolderType.PUBLIC)
 
     @property
-    def default_save_folder_private_nothrow(self) -> ComResult[ShellItem2]:
-        return self.get_default_save_folder_nothrow(DefaultSaveFolderType.PRIVATE)
+    def defaultsavefolder_private_nothrow(self) -> ComResult[ShellItem2]:
+        return self.get_defaultsavefolder_nothrow(DefaultSaveFolderType.PRIVATE)
 
     @property
-    def default_save_folder_detect(self) -> ShellItem2:
-        return self.get_default_save_folder_nothrow(DefaultSaveFolderType.DETECT).value
+    def defaultsavefolder_detect(self) -> ShellItem2:
+        return self.get_defaultsavefolder_nothrow(DefaultSaveFolderType.DETECT).value
 
     @property
-    def default_save_folder_public(self) -> ShellItem2:
-        return self.get_default_save_folder_nothrow(DefaultSaveFolderType.PUBLIC).value
+    def defaultsavefolder_public(self) -> ShellItem2:
+        return self.get_defaultsavefolder_nothrow(DefaultSaveFolderType.PUBLIC).value
 
     @property
-    def default_save_folder_private(self) -> ShellItem2:
-        return self.get_default_save_folder_nothrow(DefaultSaveFolderType.PRIVATE).value
+    def defaultsavefolder_private(self) -> ShellItem2:
+        return self.get_defaultsavefolder_nothrow(DefaultSaveFolderType.PRIVATE).value
 
-    def set_default_save_folder_nothrow(self, folder_type: DefaultSaveFolderType, item: ShellItem) -> ComResult[None]:
+    def set_defaultsavefolder_nothrow(self, folder_type: DefaultSaveFolderType, item: ShellItem) -> ComResult[None]:
         return cr(self.__o.SetDefaultSaveFolder(int(folder_type), item.wrapped_obj), None)
 
-    def set_default_save_folder(self, folder_type: DefaultSaveFolderType, item: ShellItem) -> None:
-        return self.set_default_save_folder_nothrow(folder_type, item).value
+    def set_defaultsavefolder(self, folder_type: DefaultSaveFolderType, item: ShellItem) -> None:
+        return self.set_defaultsavefolder_nothrow(folder_type, item).value
 
-    def set_default_save_folder_detect_nothrow(self, item: ShellItem) -> ComResult[None]:
-        return self.set_default_save_folder_nothrow(DefaultSaveFolderType.DETECT, item)
+    def set_defaultsavefolder_detect_nothrow(self, item: ShellItem) -> ComResult[None]:
+        return self.set_defaultsavefolder_nothrow(DefaultSaveFolderType.DETECT, item)
 
-    def set_default_save_folder_public_nothrow(self, item: ShellItem) -> ComResult[None]:
-        return self.set_default_save_folder_nothrow(DefaultSaveFolderType.PUBLIC, item)
+    def set_defaultsavefolder_public_nothrow(self, item: ShellItem) -> ComResult[None]:
+        return self.set_defaultsavefolder_nothrow(DefaultSaveFolderType.PUBLIC, item)
 
-    def set_default_save_folder_private_nothrow(self, item: ShellItem) -> ComResult[None]:
-        return self.set_default_save_folder_nothrow(DefaultSaveFolderType.PRIVATE, item)
+    def set_defaultsavefolder_private_nothrow(self, item: ShellItem) -> ComResult[None]:
+        return self.set_defaultsavefolder_nothrow(DefaultSaveFolderType.PRIVATE, item)
 
-    @default_save_folder_detect.setter
-    def default_save_folder_detect(self, item: ShellItem) -> None:
-        return self.set_default_save_folder_detect_nothrow(item).value
+    @defaultsavefolder_detect.setter
+    def defaultsavefolder_detect(self, item: ShellItem) -> None:
+        return self.set_defaultsavefolder_detect_nothrow(item).value
 
-    @default_save_folder_public.setter
-    def default_save_folder_public(self, item: ShellItem) -> None:
-        return self.set_default_save_folder_public_nothrow(item).value
+    @defaultsavefolder_public.setter
+    def defaultsavefolder_public(self, item: ShellItem) -> None:
+        return self.set_defaultsavefolder_public_nothrow(item).value
 
-    @default_save_folder_private.setter
-    def default_save_folder_private(self, item: ShellItem) -> None:
-        return self.set_default_save_folder_private_nothrow(item).value
+    @defaultsavefolder_private.setter
+    def defaultsavefolder_private(self, item: ShellItem) -> None:
+        return self.set_defaultsavefolder_private_nothrow(item).value
 
     @property
     def options_nothrow(self) -> ComResult[LibraryOptionFlag]:
@@ -258,42 +258,42 @@ class ShellLibrary:
         return self.set_options_nothrow(mask, options).value
 
     @property
-    def pinned_to_navbar_nothrow(self) -> ComResult[bool]:
+    def pinnedtonavbar_nothrow(self) -> ComResult[bool]:
         ret = self.options_nothrow
         if not ret:
             return cr(ret.hr, False)
         return cr(ret.hr, (ret.value_unchecked & LibraryOptionFlag.PINNED_TO_NAVPANE) != 0)
 
     @property
-    def pinned_to_navbar(self) -> bool:
-        return self.pinned_to_navbar_nothrow.value
+    def pinnedtonavbar(self) -> bool:
+        return self.pinnedtonavbar_nothrow.value
 
-    def set_pinned_to_navbar_nothrow(self, value: bool) -> ComResult[None]:
+    def set_pinnedtonavbar_nothrow(self, value: bool) -> ComResult[None]:
         f = LibraryOptionFlag.PINNED_TO_NAVPANE if value else 0
         return self.set_options_nothrow(LibraryOptionFlag.PINNED_TO_NAVPANE, f)
 
-    @pinned_to_navbar.setter
-    def pinned_to_navbar(self, value: bool) -> None:
-        return self.set_pinned_to_navbar_nothrow(value).value
+    @pinnedtonavbar.setter
+    def pinnedtonavbar(self, value: bool) -> None:
+        return self.set_pinnedtonavbar_nothrow(value).value
 
     @property
-    def folder_type_nothrow(self) -> ComResult[GUID]:
+    def foldertype_nothrow(self) -> ComResult[GUID]:
         """フォルダの種類（FolderTypeID定数）を取得します。"""
         x = GUID()
         return cr(self.__o.GetFolderType(byref(x)), x)
 
     @property
-    def folder_type(self) -> GUID:
+    def foldertype(self) -> GUID:
         """フォルダの種類（FolderTypeID定数）を取得または設定します。"""
-        return self.folder_type_nothrow.value
+        return self.foldertype_nothrow.value
 
-    def set_folder_type_nothrow(self, value: GUID) -> ComResult[None]:
+    def set_foldertype_nothrow(self, value: GUID) -> ComResult[None]:
         """フォルダの種類（FolderTypeID定数）を設定します。"""
         return cr(self.__o.SetFolderType(value), None)
 
-    @folder_type.setter
-    def folder_type(self, value: GUID) -> None:
-        return self.set_folder_type_nothrow(value).value
+    @foldertype.setter
+    def foldertype(self, value: GUID) -> None:
+        return self.set_foldertype_nothrow(value).value
 
     @property
     def icon_nothrow(self) -> ComResult[str]:
@@ -332,7 +332,7 @@ class ShellLibrary:
         """ライブラリを保存します。既定の場所（FOLDERID_Libraries）に保存する場合はfolder_to_save_inをNoneにします。"""
         return self.save_nothrow(folder_to_save_in, lib_name, flags).value
 
-    def save_in_knownfolder_nothrow(
+    def save_inknownfolder_nothrow(
         self, folder_id_to_save_in: KnownFolderID, lib_name: str, flags: LibrarySaveFlag | int
     ) -> ComResult[ShellItem2]:
 
@@ -342,32 +342,30 @@ class ShellLibrary:
             ShellItem2(x),
         )
 
-    def save_in_knownfolder(
+    def save_inknownfolder(
         self, folder_id_to_save_in: KnownFolderID, lib_name: str, flags: LibrarySaveFlag | int
     ) -> ShellItem2:
-        return self.save_in_knownfolder_nothrow(folder_id_to_save_in, lib_name, flags).value
+        return self.save_inknownfolder_nothrow(folder_id_to_save_in, lib_name, flags).value
 
-    def add_folder_path_nothrow(self, path: str | PathLike) -> ComResult[None]:
+    def add_folderpath_nothrow(self, path: str | PathLike) -> ComResult[None]:
         item = ShellItem2.create_parsingname_nothrow(str(path))
         if not item:
             return cr(item.hr, None)
         return self.add_folder_nothrow(item.value_unchecked)
 
-    def add_folder_path(self, path: str | PathLike) -> None:
-        return self.add_folder_path_nothrow(str(path)).value
+    def add_folderpath(self, path: str | PathLike) -> None:
+        return self.add_folderpath_nothrow(str(path)).value
 
-    def remove_folder_path_nothrow(self, path: str | PathLike) -> ComResult[None]:
+    def remove_folderpath_nothrow(self, path: str | PathLike) -> ComResult[None]:
         item = ShellItem2.create_parsingname_nothrow(str(path))
         if not item:
             return cr(item.hr, None)
         return self.remove_folder_nothrow(item.value_unchecked)
 
-    def remove_folder_path(self, path: str | PathLike) -> None:
-        return self.remove_folder_path_nothrow(str(path)).value
+    def remove_folderpath(self, path: str | PathLike) -> None:
+        return self.remove_folderpath_nothrow(str(path)).value
 
-    def save_in_folder_path_nothrow(
-        self, path: str | PathLike, lib_name: str, flags: LibrarySaveFlag
-    ) -> ComResult[str]:
+    def save_infolderpath_nothrow(self, path: str | PathLike, lib_name: str, flags: LibrarySaveFlag) -> ComResult[str]:
         item = ShellItem2.create_parsingname_nothrow(str(path))
         if not item:
             return cr(item.hr, "")
@@ -376,5 +374,5 @@ class ShellLibrary:
             return cr(ret.hr, "")
         return item.value_unchecked.name_desktopabsparsing_nothrow
 
-    def save_in_folder_path(self, path: str | PathLike, lib_name: str, flags: LibrarySaveFlag) -> str:
-        return self.save_in_folder_path_nothrow(str(path), lib_name, flags).value
+    def save_infolderpath(self, path: str | PathLike, lib_name: str, flags: LibrarySaveFlag) -> str:
+        return self.save_infolderpath_nothrow(str(path), lib_name, flags).value

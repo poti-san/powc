@@ -106,7 +106,7 @@ class DesktopWallpaper:
 
     def set_wallpaper_nothrow(self, monitor_id_or_index: str | int, wallpaper: str) -> ComResult[None]:
         if isinstance(monitor_id_or_index, int):
-            ret = self.get_monitor_device_path_at_nothrow(monitor_id_or_index)
+            ret = self.get_monitordevicepathat_nothrow(monitor_id_or_index)
             if not ret:
                 return cr(ret.hr, None)
             monitor_id_or_index = ret.value_unchecked
@@ -117,17 +117,17 @@ class DesktopWallpaper:
         return self.set_wallpaper_nothrow(monitor_id_or_index, wallpaper).value
 
     @property
-    def monitor_device_path_count_nothrow(self) -> ComResult[int]:
+    def monitordevicepathcount_nothrow(self) -> ComResult[int]:
         x = c_uint32()
         return cr(self.__o.GetMonitorDevicePathCount(byref(x)), x.value)
 
     @property
-    def monitor_device_path_count(self) -> int:
-        return self.monitor_device_path_count_nothrow.value
+    def monitordevicepathcount(self) -> int:
+        return self.monitordevicepathcount_nothrow.value
 
     def get_wallpaper_nothrow(self, monitor_id_or_index: str | int) -> ComResult[str]:
         if isinstance(monitor_id_or_index, int):
-            ret = self.get_monitor_device_path_at_nothrow(monitor_id_or_index)
+            ret = self.get_monitordevicepathat_nothrow(monitor_id_or_index)
             if not ret:
                 return cr(ret.hr, "")
             monitor_id_or_index = ret.value_unchecked
@@ -138,26 +138,26 @@ class DesktopWallpaper:
     def get_wallpaper(self, monitor_id_or_index: str | int) -> str:
         return self.get_wallpaper_nothrow(monitor_id_or_index).value
 
-    def get_monitor_device_path_at_nothrow(self, monitor_index: int) -> ComResult[str]:
+    def get_monitordevicepathat_nothrow(self, monitor_index: int) -> ComResult[str]:
         with cotaskmem(c_wchar_p()) as p:
             return cr(self.__o.GetMonitorDevicePathAt(monitor_index, p), p.value or "")
 
-    def get_monitor_device_path_at(self, monitor_index: int) -> str:
-        return self.get_monitor_device_path_at_nothrow(monitor_index).value
+    def get_monitordevicepathat(self, monitor_index: int) -> str:
+        return self.get_monitordevicepathat_nothrow(monitor_index).value
 
     @property
-    def monitor_device_paths(self) -> Iterator[str]:
-        get_monitor_device_path_at = self.get_monitor_device_path_at
-        return (get_monitor_device_path_at(i) for i in range(self.monitor_device_path_count))
+    def monitordevicepaths(self) -> Iterator[str]:
+        get_monitor_device_path_at = self.get_monitordevicepathat
+        return (get_monitor_device_path_at(i) for i in range(self.monitordevicepathcount))
 
     @property
     def wallpapers(self) -> Iterator[str]:
         get_wallpaper = self.get_wallpaper
-        return (get_wallpaper(i) for i in range(self.monitor_device_path_count))
+        return (get_wallpaper(i) for i in range(self.monitordevicepathcount))
 
-    def get_monitor_rect_nothrow(self, monitor_id_or_index: int | str) -> ComResult[RECT]:
+    def get_monitorrect_nothrow(self, monitor_id_or_index: int | str) -> ComResult[RECT]:
         if isinstance(monitor_id_or_index, int):
-            ret = self.get_monitor_device_path_at_nothrow(monitor_id_or_index)
+            ret = self.get_monitordevicepathat_nothrow(monitor_id_or_index)
             if not ret:
                 return cr(ret.hr, RECT())
             monitor_id_or_index = ret.value_unchecked
@@ -165,13 +165,13 @@ class DesktopWallpaper:
         x = RECT()
         return cr(self.__o.GetMonitorRECT(monitor_id_or_index, byref(x)), x)
 
-    def get_monitor_rect(self, monitor_id_or_index: int | str) -> RECT:
-        return self.get_monitor_rect_nothrow(monitor_id_or_index).value
+    def get_monitorrect(self, monitor_id_or_index: int | str) -> RECT:
+        return self.get_monitorrect_nothrow(monitor_id_or_index).value
 
     @property
-    def monitor_rects(self) -> Iterator[RECT]:
-        get_monitor_rect = self.get_monitor_rect
-        return (get_monitor_rect(i) for i in range(self.monitor_device_path_count))
+    def monitorrects(self) -> Iterator[RECT]:
+        get_monitor_rect = self.get_monitorrect
+        return (get_monitor_rect(i) for i in range(self.monitordevicepathcount))
 
     @property
     def bgcolor_nothrow(self) -> ComResult[int]:
@@ -227,7 +227,7 @@ class DesktopWallpaper:
         slideshow_tick: int
 
     @property
-    def slideshow_options_nothrow(self) -> ComResult[SlideshowOptions]:
+    def slideshowoptions_nothrow(self) -> ComResult[SlideshowOptions]:
         x1 = c_int32()
         x2 = c_uint32()
         return cr(
@@ -235,21 +235,21 @@ class DesktopWallpaper:
         )
 
     @property
-    def slideshow_options(self) -> SlideshowOptions:
-        return self.slideshow_options_nothrow.value
+    def slideshowoptions(self) -> SlideshowOptions:
+        return self.slideshowoptions_nothrow.value
 
-    def set_slideshow_options_nothrow(self, value: SlideshowOptions) -> ComResult[None]:
+    def set_slideshowoptions_nothrow(self, value: SlideshowOptions) -> ComResult[None]:
         return self.__o.SetSlideshowOptions(int(value.options), value.slideshow_tick)
 
-    @slideshow_options.setter
-    def slideshow_options(self, value: SlideshowOptions) -> None:
-        return self.set_slideshow_options_nothrow(value).value
+    @slideshowoptions.setter
+    def slideshowoptions(self, value: SlideshowOptions) -> None:
+        return self.set_slideshowoptions_nothrow(value).value
 
     def advance_slideshow_nothrow(
         self, monitor_id_or_index: int | str, direction: DesktopSlideshowDirection
     ) -> ComResult[None]:
         if isinstance(monitor_id_or_index, int):
-            ret = self.get_monitor_device_path_at_nothrow(monitor_id_or_index)
+            ret = self.get_monitordevicepathat_nothrow(monitor_id_or_index)
             if not ret:
                 return cr(ret.hr, None)
             monitor_id_or_index = ret.value_unchecked

@@ -111,13 +111,13 @@ class UniformResourceLocator:
         return UniformResourceLocator(CoCreateInstance(CLSID_InternetShortcut, IUniformResourceLocatorW))
 
     @staticmethod
-    def create_from_file(path: str, mode: StorageMode = StorageMode.READ) -> "UniformResourceLocator":
+    def create_fromfile(path: str, mode: StorageMode = StorageMode.READ) -> "UniformResourceLocator":
         link = UniformResourceLocator.create()
         link.persist_file.load(path, mode)
         return link
 
     @staticmethod
-    def create_from_stream(stream: ComStream) -> "UniformResourceLocator":
+    def create_fromstream(stream: ComStream) -> "UniformResourceLocator":
         link = UniformResourceLocator.create()
         link.persist_stream.load(stream)
         return link
